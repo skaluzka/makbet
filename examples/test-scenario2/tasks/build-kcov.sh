@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -eu
+
+
+# Building kcov from sources according to:
+# https://github.com/SimonKagstrom/kcov/blob/master/INSTALL.md
+
+function help() {
+    echo "This is a help message for ${0} script."
+}
+
+function main() {
+    local cores=$(grep -c processor /proc/cpuinfo)
+
+    cd "${1}"
+    mkdir -pv build
+    cd build
+    cmake ..
+    make -j"${cores}" -l"${cores}"
+}
+
+main $@
+
+echo "Script ${0} completed."
+
+
+# The end
