@@ -7,7 +7,7 @@ function main() {
     tar xzf "${1}" -C "${2}"
 }
 
-main $@
+main "$@"
 
 echo "Script ${0} completed."
 

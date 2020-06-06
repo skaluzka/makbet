@@ -6,7 +6,7 @@ function main() {
     mkdir -pv "$@"
 }
 
-main $@
+main "$@"
 
 echo "Script ${0} completed."
 

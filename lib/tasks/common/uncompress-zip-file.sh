@@ -7,7 +7,7 @@ function main() {
     unzip -q "${1}" -d "${2}"
 }
 
-main $@
+main "$@"
 
 echo "Script ${0} completed."
 

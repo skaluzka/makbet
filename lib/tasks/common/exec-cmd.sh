@@ -6,7 +6,7 @@ function main() {
     "${1}" "${2}"
 }
 
-main $@
+main "$@"
 
 echo "Script ${0} completed."
 

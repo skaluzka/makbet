@@ -13,7 +13,7 @@ function main() {
     done
 }
 
-main $@
+main "$@"
 
 echo "Script ${0} completed."
 

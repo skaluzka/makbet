@@ -8,7 +8,7 @@ function main() {
     ls -al "${2}"
 }
 
-main $@
+main "$@"
 
 echo "Script ${0} completed."
 

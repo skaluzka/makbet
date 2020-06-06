@@ -10,7 +10,8 @@ function help() {
 }
 
 function main() {
-    local cores=$(grep -c processor /proc/cpuinfo)
+    local cores
+    cores=$(grep -c processor /proc/cpuinfo)
 
     cd "${1}"
     mkdir -pv build
@@ -19,7 +20,7 @@ function main() {
     make -j"${cores}" -l"${cores}"
 }
 
-main $@
+main "$@"
 
 echo "Script ${0} completed."
 

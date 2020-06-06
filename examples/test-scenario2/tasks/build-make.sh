@@ -10,14 +10,15 @@ function help() {
 }
 
 function main() {
-    local cores=$(grep -c processor /proc/cpuinfo)
+    local cores
+    cores=$(grep -c processor /proc/cpuinfo)
 
     cd "${1}"
     ./configure
     make -j"${cores}" -l"${cores}"
 }
 
-main $@
+main "$@"
 
 echo "Script ${0} completed."
 
