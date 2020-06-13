@@ -19,8 +19,8 @@ WORK_DIR := /tmp/makbet/test-scenario2/ver-A
 # All tasks required to run scenario from test-scenario2/ver-A/Makefile file.
 #
 
-.PHONY: help
-help::
+.PHONY: scenario-help
+scenario-help::
 	@echo ""
 	@echo "All targets defined in $(CURDIR)/$(firstword $(MAKEFILE_LIST)):"
 	@echo ""

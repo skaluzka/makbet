@@ -19,8 +19,8 @@ GENERIC_TASK_SCRIPT := $(MAKBET_PATH)/examples/test-scenario1/tasks/generic_task
 # All tasks required to run scenario from test-scenario1/Makefile file.
 #
 
-.PHONY: help
-help::
+.PHONY: scenario-help
+scenario-help::
 	@echo ""
 	@echo "All targets defined in $(CURDIR)/$(firstword $(MAKEFILE_LIST)):"
 	@echo ""

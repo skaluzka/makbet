@@ -75,8 +75,8 @@ EXEC_CMD := $(MAKBET_TASKS_DIR)/common/exec-cmd.sh
 # All tasks required to run scenario from test-scenario2/ver-B/Makefile file.
 #
 
-.PHONY: help
-help::
+.PHONY: scenario-help
+scenario-help::
 	@echo ""
 	@echo "All targets defined in $(CURDIR)/$(firstword $(MAKEFILE_LIST)):"
 	@echo ""

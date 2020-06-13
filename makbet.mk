@@ -373,9 +373,9 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(2),$(MAKBET
 			$(MAKBET_EVENTS_CSV_HEADER)) ; \
 	fi
 
-#
-.PHONY: help
-help::
+# Add entry to scenario-help target.
+.PHONY: scenario-help
+scenario-help::
 	@echo -e "  $(strip $(1))\t- Call target $(strip $(1)) (dependencies: $(strip $(2)))"
 
 # If MAKBET_VERBOSE=2 printing task's script path (if any) immediately
@@ -457,7 +457,6 @@ PHONY: .show-profiles-csv-dir
 	@env | grep --color=never -P '^MAKBET_[0-9A-Z_]*='
 
 
-# This is makbet-clean target. One of basic makbet targets.
 .PHONY: makbet-clean
 makbet-clean:
 	@-rm -rf $(MAKBET_DOT_DIR)
@@ -465,7 +464,6 @@ makbet-clean:
 	@-rm -rf $(MAKBET_PROFILES_DIR)
 
 
-# This is makbet-version target. One of basic makbet targets.
 .PHONY: makbet-version
 makbet-version:
 	@echo ""
@@ -473,28 +471,9 @@ makbet-version:
 	@echo ""
 
 
-# This is help target. One of basic makbet targets (see also DEFAULT_GOAL on the top).
-.PHONY: help
-help:: makbet-version
-	@echo "  \"What's done, is done.\" - William Shakespeare, Macbeth.                   "
+.PHONY: makbet-help
+makbet-help: main-help
 	@echo ""
-	@echo "Usage: make [TARGET]                                                          "
-	@echo ""
-	@echo "All makbet's basic targets defined in $(MAKBET_PATH)/makbet.mk:               "
-	@echo ""
-	@echo "  help                            - Show makbet's help message (taken from    "
-	@echo "                                    makbet.mk file) as first, then append the "
-	@echo "                                    help message from scenario makefile (if   "
-	@echo "                                    exists). This is the default target.      "
-	@echo "  makbet-clean                    - Clean entire makbet's internal dir        "
-	@echo "                                    (\$$MAKBET_PATH/.makbet/).                "
-	@echo "  makbet-version                  - Print makbet's version only.              "
-	@echo ""
-	@echo "  Examples:                                                                   "
-	@echo "           make                                                               "
-	@echo "           make help                                                          "
-	@echo "           make makbet-version                                                "
-	@echo "                                                                              "
 	@echo "All makbet's special targets defined in $(MAKBET_PATH)/makbet.mk:             "
 	@echo ""
 	@echo "  .show-makbet-dir                - Show entire content of makbet's internal  "
@@ -538,6 +517,55 @@ help:: makbet-version
 	@echo "           make .show-makbet-dir                                              "
 	@echo "           make .show-summary-profiles-csv-file MAKBET_CSV=1 MAKBET_PROFILES=1"
 	@echo ""
+	@exit 0
+
+
+.PHONY: main-help
+main-help: makbet-version
+	@echo "  \"What's done, is done.\" - William Shakespeare, Macbeth.                   "
+	@echo ""
+	@echo "Usage: make [TARGET]                                                          "
+	@echo ""
+	@echo "All makbet's basic targets defined in $(MAKBET_PATH)/makbet.mk:               "
+	@echo ""
+	@echo "  help                            - Show main makbet's help message as first  "
+	@echo "                                    then append the help messages of all tasks"
+	@echo "                                    defined in scenario's Makefile. This is   "
+	@echo "                                    the default target.                       "
+	@echo "  scenario-help                   - Show only scenario's help message (it is  "
+	@echo "                                    generated dynamically based on all tasks  "
+	@echo "                                    defined in scenario's Makefile file).     "
+	@echo "  makbet-help                     - Show main makbet's help message (same as  "
+	@echo "                                    \"make help\" above) then append extended "
+	@echo "                                    help message."
+	@echo "                                    containing all special makbet's targets.  "
+	@echo "  makbet-clean                    - Clean entire makbet's internal dir        "
+	@echo "                                    (\$$MAKBET_PATH/.makbet/).                "
+	@echo "  makbet-version                  - Print makbet's version only.              "
+	@echo ""
+	@echo "  Examples:                                                                   "
+	@echo "           make                                                               "
+	@echo "           make help                                                          "
+	@echo "           make scenario-help                                                 "
+	@echo "           make makbet-help                                                   "
+	@echo "           make makbet-clean                                                  "
+	@echo "           make makbet-version                                                "
+
+
+# This is scenario-help target (the whole scenario-specific help message).
+# If execution directory is MAKBET_PATH then the only allowed makefile at
+# this level is Makefile -> makbet.mk symlink.
+# Therefore scenario-help target is empty here. This is not valid in scenario's
+# directory where help message will be generated dynamically based on all tasks
+# defined in scenario's Makefile file.
+.PHONY: scenario-help
+scenario-help::
+	@#
+
+
+# This is makbet's main help target (see also the DEFAULT_GOAL at the top).
+.PHONY: help
+help: main-help scenario-help
 
 
 # The end
