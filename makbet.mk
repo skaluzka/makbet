@@ -427,8 +427,8 @@ endef
 
 .PHONY: .show-summary-events-csv-file
 .show-summary-events-csv-file:
-	@find $(MAKBET_EVENTS_CSV_DIR) -iname "*.csv" -exec head -1 {} \; | sort -u
-	@find $(MAKBET_EVENTS_CSV_DIR) -iname "*.csv" -exec tail -1 {} \; | sort
+	@find $(MAKBET_EVENTS_CSV_DIR) -name "*.csv" -exec head -1 {} \; | sort -u
+	@find $(MAKBET_EVENTS_CSV_DIR) -name "*.csv" -exec tail -1 {} \; | sort
 
 
 .PHONY: .show-profiles-cfg-dir
@@ -447,8 +447,8 @@ PHONY: .show-profiles-csv-dir
 
 .PHONY: .show-summary-profiles-csv-file
 .show-summary-profiles-csv-file:
-	@find $(MAKBET_PROFILES_CSV_DIR) -iname "*.csv" -exec head -1 {} \; | sort -u
-	@find $(MAKBET_PROFILES_CSV_DIR) -iname "*.csv" -exec tail -1 {} \; | sort
+	@find $(MAKBET_PROFILES_CSV_DIR) -name "*.csv" -exec head -1 {} \; | sort -u
+	@find $(MAKBET_PROFILES_CSV_DIR) -name "*.csv" -exec tail -1 {} \; | sort
 
 
 .PHONY: .show-env-vars
