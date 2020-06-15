@@ -14,9 +14,12 @@ This project has been created for several reasons...
 Mainly to help:
 
 - automating various complex scenarios,
-- modelling, and prototyping complex real-life processes (e.g.: production/delivery chain) consisting of many tasks having many dependencies,
+- modelling, and prototyping complex real-life processes
+  (e.g.: production/delivery chain) consisting of many tasks having many
+  dependencies,
 - reflecting, simulating and profiling complicated existing flows,
-- visualizing dependencies in big projects (can help to find circular dependencies, or long execution paths),
+- visualizing dependencies in big projects (can help to find circular
+  dependencies, or long execution paths),
 - optimizing execution paths in existing systems.
 
 But also to help:
@@ -45,12 +48,18 @@ Features
 - can be easy added/embedded into existing projects as 3rd party SW,
 - pure console tool - no GUI required,
 - good and fast integration with other console programs,
-- unified naming scheme for all makbet's specific environment variables (every variable has ``MAKBET_`` prefix),
-- unified syntax for all makbet's CLI options (every param has ``MAKBET_`` prefix),
-- saving tasks' details in **key=value** ``*.cfg`` files for further usage (e.g.: by shell scripts),
-- saving tasks' details in ``*.csv`` files for futher processing if needed (this feature can be enabled by ``MAKBET_CSV=1`` CLI option),
-- profiling - measuring tasks duration (this feature can be enabled by ``MAKBET_PROFILES=1`` CLI option),
-- generating **DOT** output showing relations between tasks (this feature can be enabled by ``MAKBET_DOT=1`` CLI option),
+- unified naming scheme for all makbet's specific environment variables
+  (every variable has ``MAKBET_`` prefix),
+- unified syntax for all makbet's CLI options (every param has
+  ``MAKBET_`` prefix),
+- saving tasks' details in **key=value** ``*.cfg`` files for further
+  usage (e.g.: by shell scripts),
+- saving tasks' details in ``*.csv`` files for futher processing if needed
+  (this feature can be enabled by ``MAKBET_CSV=1`` CLI option),
+- profiling - measuring tasks duration (this feature can be enabled by
+  ``MAKBET_PROFILES=1`` CLI option),
+- generating **DOT** output showing relations between tasks (this feature can
+  be enabled by ``MAKBET_DOT=1`` CLI option),
 - minimal system requirements (see below).
 
 |
@@ -66,8 +75,8 @@ The only system requirements are:
 - GNU make tool (version **3.82+**)
 - bash tool
 
-All example scenarios have been successfully tested with with **GNU make 4.3** and
-**bash 5.0.16**.
+All example scenarios have been successfully tested with with **GNU make 4.3**
+and **bash 5.0.16**.
 
 |
 
@@ -77,10 +86,11 @@ Installing
 Installing **makbet** is quite easy.
 
 - Download or clone the **makbet** project from github.
-- Export the ``MAKBET_PATH`` variable pointing to makbet's main directory (e.g.: ``export MAKBET_PATH=/tmp/makbet``).
+- Export the ``MAKBET_PATH`` variable pointing to makbet's main directory
+  (e.g.: ``export MAKBET_PATH=/tmp/makbet``).
 
-And that's all. You are now ready to write your own scenarios (or play with built-in
-`examples <https://github.com/skaluzka/makbet/tree/master/examples>`_).
+And that's all. You are now ready to write your own scenarios (or play with
+built-in `examples <https://github.com/skaluzka/makbet/tree/master/examples>`_).
 
 |
 
