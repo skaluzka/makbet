@@ -50,7 +50,7 @@ Features
 - good and fast integration with other console programs,
 - unified naming scheme for all makbet's specific environment variables
   (every variable has ``MAKBET_`` prefix),
-- unified syntax for all makbet's CLI options (every param has
+- unified syntax for all makbet's CLI options (every option has
   ``MAKBET_`` prefix),
 - saving tasks' details in **key=value** ``*.cfg`` files for further
   usage (e.g.: by shell scripts),
