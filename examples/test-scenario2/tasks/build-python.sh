@@ -5,10 +5,6 @@ set -eu
 # Building python from sources according to:
 # https://github.com/python/cpython#build-instructions
 
-function help() {
-    echo "This is a help message for ${0} script."
-}
-
 function main() {
     local cores
     cores=$(grep -c processor /proc/cpuinfo)
