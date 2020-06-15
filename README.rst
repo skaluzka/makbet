@@ -178,6 +178,10 @@ Contributing
 
 Pull requests are welcome! :)
 
+For more details about contributing rules please check
+`CONTRIBUTING.rst <https://github.com/skaluzka/makbet/blob/master/CONTRIBUTING.rst>`_
+file.
+
 |
 
 Mission statement
