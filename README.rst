@@ -187,4 +187,4 @@ file.
 Mission statement
 =================
 
-*"What's done, is done."* (William Shakespeare, **Macbeth**).
+*"What's done, is done."* - William Shakespeare, **Macbeth**.
