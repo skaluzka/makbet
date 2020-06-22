@@ -128,26 +128,26 @@ display **DOT** results as in below example:
 
     ...
 
-    2020-06-22 22:28:56 [INFO]: Task "all" started.
-    2020-06-22 22:28:56 [INFO]: Task "all" terminated.
+    2020-06-22 22:42:49 [INFO]: Task "all" started.
+    2020-06-22 22:42:49 [INFO]: Task "all" terminated.
 
     digraph {
 
-    "all" -> "t-F";
-    "t-A";
-    "t-B1" -> "t-A";
-    "t-B2" -> "t-A";
-    "t-B3" -> "t-A";
-    "t-B4" -> "t-A";
-    "t-B5" -> "t-A";
-    "t-C" -> "t-B2";
-    "t-C" -> "t-B3";
-    "t-D" -> "t-C";
-    "t-E" -> "t-B1";
-    "t-E" -> "t-B4";
-    "t-E" -> "t-B5";
-    "t-E" -> "t-D";
-    "t-F" -> "t-E";
+    	"all" -> "t-F";
+    	"t-A";
+    	"t-B1" -> "t-A";
+    	"t-B2" -> "t-A";
+    	"t-B3" -> "t-A";
+    	"t-B4" -> "t-A";
+    	"t-B5" -> "t-A";
+    	"t-C" -> "t-B2";
+    	"t-C" -> "t-B3";
+    	"t-D" -> "t-C";
+    	"t-E" -> "t-B1";
+    	"t-E" -> "t-B4";
+    	"t-E" -> "t-B5";
+    	"t-E" -> "t-D";
+    	"t-F" -> "t-E";
 
     }
 
