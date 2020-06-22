@@ -1,6 +1,9 @@
-Welcome to the **makbet** project!
+Welcome the **makbet** project!
 
-**makbet** stands for **mak**\ efile **b**\ ased **e**\ xtraordinary **t**\ ool.
+|
+
+**makbet** stands for **mak**\ (efile) **b**\ (ased) **e**\ (xtraordinary)
+**t**\ (ool).
 
 Keep reading && have fun! :)
 
