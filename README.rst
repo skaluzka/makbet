@@ -1,4 +1,4 @@
-Welcome the **makbet** project!
+Welcome to **makbet** project!
 
 |
 
