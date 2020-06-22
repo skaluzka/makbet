@@ -128,8 +128,8 @@ display **DOT** results as in below example:
 
     ...
 
-    2020-06-13 16:04:56 [INFO]: Task all started.
-    2020-06-13 16:04:56 [INFO]: Task all terminated.
+    2020-06-22 22:28:56 [INFO]: Task "all" started.
+    2020-06-22 22:28:56 [INFO]: Task "all" terminated.
 
     digraph {
 
