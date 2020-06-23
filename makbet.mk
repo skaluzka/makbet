@@ -38,20 +38,20 @@ MAKBET_PROFILES_CSV_DIR := $(MAKBET_PROFILES_DIR)/csv
 # Handling CLI input: MAKBET_VERBOSE param.
 #
 ifndef MAKBET_VERBOSE
-  MAKBET_VERBOSE = 0
+  MAKBET_VERBOSE := 0
 endif
 ifeq ($(MAKBET_VERBOSE), 0)
-  _v = 0
-  _v1 = 0
-  _v2 = @
+  _v := 0
+  _v1 := 0
+  _v2 := @
 else ifeq ($(MAKBET_VERBOSE), 1)
-  _v = 1
-  _v1 = 1
-  _v2 = @
+  _v := 1
+  _v1 := 1
+  _v2 := @
 else ifeq ($(MAKBET_VERBOSE), 2)
-  _v = 2
-  _v1 = 1
-  _v2 =
+  _v := 2
+  _v1 := 1
+  _v2 :=
 else
   $(error [ERROR]: Wrong value for MAKBET_VERBOSE param (MAKBET_VERBOSE=$(MAKBET_VERBOSE)). Allowed values: 0, 1 or 2 only)
 endif
@@ -60,12 +60,12 @@ endif
 # Handling CLI input: MAKBET_PROFILES param.
 #
 ifndef MAKBET_PROFILES
-  MAKBET_PROFILES = 0
+  MAKBET_PROFILES := 0
 endif
 ifeq ($(MAKBET_PROFILES), 0)
-  _p = 0
+  _p := 0
 else ifeq ($(MAKBET_PROFILES), 1)
-  _p = 1
+  _p := 1
 else
   $(error [ERROR]: Wrong value for MAKBET_PROFILES param (MAKBET_PROFILES=$(MAKBET_PROFILES)). Allowed values: 0 or 1 only)
 endif
@@ -74,12 +74,12 @@ endif
 # Handling CLI input: MAKBET_DOT param.
 #
 ifndef MAKBET_DOT
-  MAKBET_DOT = 0
+  MAKBET_DOT := 0
 endif
 ifeq ($(MAKBET_DOT), 0)
-  _d = 0
+  _d := 0
 else ifeq ($(MAKBET_DOT), 1)
-  _d = 1
+  _d := 1
 else
   $(error [ERROR]: Wrong value for MAKBET_DOT param (MAKBET_DOT=$(MAKBET_DOT)). Allowed values: 0 or 1 only)
 endif
