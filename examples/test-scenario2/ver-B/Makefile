@@ -90,8 +90,15 @@ $(eval $(call TASK_template, \
 ))
 
 $(eval $(call TASK_template, \
-	prepare-workdir-structure, \
+	INIT, \
 	, \
+	, \
+	\
+))
+
+$(eval $(call TASK_template, \
+	prepare-workdir-structure, \
+	INIT, \
 	$(CREATE_DIRS), $(DOXYGEN_DIR) $(GIT_DIR) $(KCOV_DIR) $(MAKE_DIR) $(PYTHON_DIR) \
 ))
 

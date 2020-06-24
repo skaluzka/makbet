@@ -126,6 +126,9 @@ display **DOT** results as in below example:
 
     [user@localhost test-scenario1]$ make all MAKBET_DOT=1 && make .show-summary-dot-file
 
+    2020-06-22 22:42:38 [INFO]: Task "INIT" started.
+    2020-06-22 22:42:38 [INFO]: Task "INIT" terminated.
+
     ...
 
     2020-06-22 22:42:49 [INFO]: Task "all" started.
@@ -134,7 +137,8 @@ display **DOT** results as in below example:
     digraph {
 
     	"all" -> "t-F";
-    	"t-A";
+    	"INIT";
+    	"t-A" -> "INIT";
     	"t-B1" -> "t-A";
     	"t-B2" -> "t-A";
     	"t-B3" -> "t-A";

@@ -26,8 +26,15 @@ scenario-help::
 	@echo ""
 
 $(eval $(call TASK_template, \
-	t-A, \
+	INIT, \
 	, \
+	, \
+	\
+))
+
+$(eval $(call TASK_template, \
+	t-A, \
+	INIT, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))

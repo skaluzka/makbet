@@ -34,8 +34,15 @@ $(eval $(call TASK_template, \
 ))
 
 $(eval $(call TASK_template, \
-	prepare-workdir-structure, \
+	INIT, \
 	, \
+	, \
+	\
+))
+
+$(eval $(call TASK_template, \
+	prepare-workdir-structure, \
+	INIT, \
 	$(MAKBET_TASKS_DIR)/common/create-dir-structure.sh, \
 		$(WORK_DIR)/doxygen \
 		$(WORK_DIR)/git \
