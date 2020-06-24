@@ -119,39 +119,49 @@ in **DOT** language (in form of so-called **digraph** - directed
 graph - showing the flow direction between all tasks).  Such output can be
 easily saved or redirected to file.  This can be achieved by passing
 ``MAKBET_DOT=1`` option to ``make`` execution command (by deafult
-``MAKBET_DOT=0``).  Special makbet's target ``.show-summary-dot-file`` will
-display **DOT** results as in below example:
+``MAKBET_DOT=0``) as in below example:
 
 ::
 
-    [user@localhost test-scenario1]$ make all MAKBET_DOT=1 && make .show-summary-dot-file
+    [user@localhost test-scenario1]$ make makbet-clean && make all MAKBET_DOT=1
 
-    2020-06-22 22:42:38 [INFO]: Task "INIT" started.
-    2020-06-22 22:42:38 [INFO]: Task "INIT" terminated.
+    2020-06-24 17:54:00 [INFO]: Task "INIT" started.
+    2020-06-24 17:54:00 [INFO]: Task "INIT" terminated.
+
+    2020-06-24 17:54:00 [INFO]: Task "task-A" started.
 
     ...
 
-    2020-06-22 22:42:49 [INFO]: Task "all" started.
-    2020-06-22 22:42:49 [INFO]: Task "all" terminated.
+    2020-06-24 17:54:11 [INFO]: Task "all" started.
+    2020-06-24 17:54:11 [INFO]: Task "all" terminated.
+    [user@localhost test-scenario1]$
+
+
+Special makbet's target ``.show-summary-dot-file`` will display **DOT**
+results which can be used for further processing:
+
+::
+
+    [user@localhost test-scenario1]$ make .show-summary-dot-file
 
     digraph {
 
-    	"all" -> "t-F";
+    	"all" -> "task-F";
     	"INIT";
-    	"t-A" -> "INIT";
-    	"t-B1" -> "t-A";
-    	"t-B2" -> "t-A";
-    	"t-B3" -> "t-A";
-    	"t-B4" -> "t-A";
-    	"t-B5" -> "t-A";
-    	"t-C" -> "t-B2";
-    	"t-C" -> "t-B3";
-    	"t-D" -> "t-C";
-    	"t-E" -> "t-B1";
-    	"t-E" -> "t-B4";
-    	"t-E" -> "t-B5";
-    	"t-E" -> "t-D";
-    	"t-F" -> "t-E";
+    	"task-A" -> "INIT";
+    	"task-B1" -> "task-A";
+    	"task-B2" -> "task-A";
+    	"task-B3" -> "task-A";
+    	"task-B4" -> "task-A";
+    	"task-B5" -> "task-A";
+    	"task-C" -> "task-B2";
+    	"task-C" -> "task-B3";
+    	"task-D" -> "task-C";
+    	"task-E" -> "task-B1";
+    	"task-E" -> "task-B4";
+    	"task-E" -> "task-B5";
+    	"task-E" -> "task-D";
+    	"task-F" -> "task-E";
 
     }
 

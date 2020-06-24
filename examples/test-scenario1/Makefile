@@ -33,84 +33,84 @@ $(eval $(call TASK_template, \
 ))
 
 $(eval $(call TASK_template, \
-	t-A, \
+	task-A, \
 	INIT, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	t-B1, \
-	t-A, \
+	task-B1, \
+	task-A, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	t-B2, \
-	t-A, \
+	task-B2, \
+	task-A, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	t-B3, \
-	t-A, \
+	task-B3, \
+	task-A, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	t-B4, \
-	t-A, \
+	task-B4, \
+	task-A, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	t-B5, \
-	t-A, \
+	task-B5, \
+	task-A, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	t-C, \
-	t-B2 t-B3, \
+	task-C, \
+	task-B2 task-B3, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	t-D, \
-	t-C, \
+	task-D, \
+	task-C, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	t-E, \
-	t-B1 t-B4 t-B5 t-D, \
+	task-E, \
+	task-B1 task-B4 task-B5 task-D, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	t-F, \
-	t-E, \
+	task-F, \
+	task-E, \
 	,, \
 ))
 
 $(eval $(call TASK_template, \
-	t-G, \
-	t-F, \
+	task-G, \
+	task-F, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
 	all, \
-	t-F, \
+	task-F, \
 	,, \
 ))
 
@@ -120,7 +120,7 @@ $(eval $(call TASK_template, \
 # generated help message. So in fact it can be treated as a poor
 # implementation of hidden (secret) target.
 .PHONY: ALL
-ALL: t-F
+ALL: task-F
 
 
 # The end
