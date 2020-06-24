@@ -167,6 +167,15 @@ results which can be used for further processing:
 
     [user@localhost test-scenario1]$
 
+The graph presented below is reflecting above **DOT** code generated for
+`test-scenario1 <https://github.com/skaluzka/makbet/tree/master/examples/test-scenario1>`_.
+
+.. image:: docs/img/test-scenario1/dot-results.png
+    :align: center
+
+Results for `test-scenario2 <https://github.com/skaluzka/makbet/tree/master/examples/test-scenario2>`_
+can be seen `here <https://github.com/skaluzka/makbet/tree/master/docs/img/test-scenario2>`_.
+
 
 Two **DOT** online editors have been successfully tested with **makbet**:
 
