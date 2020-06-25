@@ -43,15 +43,15 @@ endif
 ifeq ($(MAKBET_VERBOSE), 0)
   _v := 0
   _v1 := 0
-  _v2 := @
+  _q := @
 else ifeq ($(MAKBET_VERBOSE), 1)
   _v := 1
   _v1 := 1
-  _v2 := @
+  _q := @
 else ifeq ($(MAKBET_VERBOSE), 2)
   _v := 2
   _v1 := 1
-  _v2 :=
+  _q :=
 else
   $(error [ERROR]: Wrong value for MAKBET_VERBOSE param (MAKBET_VERBOSE=$(MAKBET_VERBOSE)). Allowed values: 0, 1 or 2 only)
 endif
@@ -217,14 +217,14 @@ endef
 # $(6) - TASK_EVENT_TYPE - The type of the event (STARTED or TERMINATED).
 #
 define __save_event =
-	$(_v2)echo -n "" > $(5)
-	$(_v2)echo "TASK_NAME=\"$(strip $(1))\"" >> $(5)
-	$(_v2)echo "TASK_DEPS=\"$(strip $(2))\"" >> $(5)
-	$(_v2)echo "TASK_SCRIPT=\"$(strip $(3))\"" >> $(5)
-	$(_v2)echo "TASK_SCRIPT_PARAMS=\"$(strip $(4))\"" >> $(5)
-	$(_v2)echo "TASK_DATE_TIME=\"`date $(MAKBET_DATE_TIME_FORMAT)`\"" >> $(5)
-	$(_v2)echo "TASK_EVENT_TYPE=\"$(strip $(6))\"" >> $(5)
-	$(_v2)cmd="TIMESTAMP_EPOCH=$$$$(date +'%s')" && \
+	$(_q)echo -n "" > $(5)
+	$(_q)echo "TASK_NAME=\"$(strip $(1))\"" >> $(5)
+	$(_q)echo "TASK_DEPS=\"$(strip $(2))\"" >> $(5)
+	$(_q)echo "TASK_SCRIPT=\"$(strip $(3))\"" >> $(5)
+	$(_q)echo "TASK_SCRIPT_PARAMS=\"$(strip $(4))\"" >> $(5)
+	$(_q)echo "TASK_DATE_TIME=\"`date $(MAKBET_DATE_TIME_FORMAT)`\"" >> $(5)
+	$(_q)echo "TASK_EVENT_TYPE=\"$(strip $(6))\"" >> $(5)
+	$(_q)cmd="TIMESTAMP_EPOCH=$$$$(date +'%s')" && \
 		eval $$$${cmd} && \
 			echo "TASK_$(6)_EPOCH=\"$$$${TIMESTAMP_EPOCH}\"" >> $(5)
 endef
@@ -308,7 +308,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(2),$(MAKBET
 	@#
 	@#
 	@# Printing additional information if MAKBET_VERBOSE=1 or MAKBET_VERBOSE=2.
-	$(_v2)if (( $(_v) >= 1 )) ; \
+	$(_q)if (( $(_v) >= 1 )) ; \
 	then \
 		$(call __print_task_details,$(1),$(2),$(3),$(4)) ; \
 	fi
@@ -319,7 +319,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(2),$(MAKBET
 	@echo -e "\n`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" started."
 	@#
 	@# Running the TASK_SCRIPT with TASK_SCRIPT_PARAMS params.
-	$(_v2)$(3) $(4)
+	$(_q)$(3) $(4)
 	@#
 	@# Saving TERMINATED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
 	$(call __save_event,$(1),$(2),$(3),$(4),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg,TERMINATED)
@@ -327,7 +327,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(2),$(MAKBET
 	@echo -e "`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" terminated."
 	@#
 	@# Saving *.dot file in .makbet/dot/ dir if MAKBET_DOT=1.
-	$(_v2)if (( $(_d) == 1 )) ; \
+	$(_q)if (( $(_d) == 1 )) ; \
 	then \
 		$(call __save_dot_file,\
 			$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg,\
@@ -335,7 +335,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(2),$(MAKBET
 	fi
 	@#
 	@# Computing time difference (task duration) if MAKBET_PROFILES=1.
-	$(_v2)if (( $(_p) == 1 )) ; \
+	$(_q)if (( $(_p) == 1 )) ; \
 	then \
 		$(call __save_task_profile,\
 			$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg,\
@@ -345,7 +345,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(2),$(MAKBET
 	@#
 	@# Converting profile *.cfg file to -> profile *.csv file
 	@# if MAKBET_CSV=1 and MAKBET_PROFILES=1.
-	$(_v2)if (( $(_c) == 1 )) && (( $(_p) == 1 )); \
+	$(_q)if (( $(_c) == 1 )) && (( $(_p) == 1 )); \
 	then \
 		$(call __convert_cfg2csv,\
 			$(MAKBET_PROFILES_CFG_DIR)/$(strip $(1)).cfg,\
@@ -355,7 +355,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(2),$(MAKBET
 	@#
 	@# Converting *.started.cfg file to -> *.started.csv file
 	@# if MAKBET_CSV=1.
-	$(_v2)if (( $(_c) == 1 )) ; \
+	$(_q)if (( $(_c) == 1 )) ; \
 	then \
 		$(call __convert_cfg2csv,\
 			$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg,\
@@ -365,7 +365,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(2),$(MAKBET
 	@#
 	@# Converting *.terminated.cfg file to -> *.terminated.csv file
 	@# if MAKBET_CSV=1.
-	$(_v2)if (( $(_c) == 1 )) ; \
+	$(_q)if (( $(_c) == 1 )) ; \
 	then \
 		$(call __convert_cfg2csv,\
 			$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg,\
@@ -380,7 +380,7 @@ scenario-help::
 
 # If MAKBET_VERBOSE=2 printing task's script path (if any) immediately
 # after TASK_template macro evaluation.
-$(if $(_v2),,
+$(if $(_q),,
   $(if $(strip $(3)),\
     $(info [INFO]: Created task $(strip $(1)) <- $(strip $(3))),\
     $(info [INFO]: Created task $(strip $(1)) <- scriptless task)\
