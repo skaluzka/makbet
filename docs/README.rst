@@ -26,3 +26,6 @@ where:
   **makbet's** main directory).
 - ``docs/img/`` - Directory dedicated to store all images and graphic files.
 - ``README.rst`` - The file you are reading now.
+
+
+.. The end
