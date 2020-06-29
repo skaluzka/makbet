@@ -197,6 +197,11 @@ Useful **DOT** language links:
 - https://graphviz.gitlab.io/documentation/
 - https://en.wikipedia.org/wiki/DOT_%28graph_description_language%29
 
+All **bash** scripts have been checked with ``schellcheck`` utility:
+
+- https://www.shellcheck.net/
+- https://github.com/koalaman/shellcheck
+
 |
 
 Contributing
