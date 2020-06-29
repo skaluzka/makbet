@@ -8,7 +8,10 @@ function main() {
 
 main "$@"
 
-echo "Script ${0} completed."
+if (( "${MAKBET_VERBOSE}" >= 1 ))
+then
+    echo "Script ${0} completed."
+fi
 
 
 # The end

@@ -38,7 +38,7 @@ MAKBET_PROFILES_CSV_DIR := $(MAKBET_PROFILES_DIR)/csv
 # Handling CLI input: MAKBET_VERBOSE param.
 #
 ifndef MAKBET_VERBOSE
-  MAKBET_VERBOSE := 0
+  export MAKBET_VERBOSE := 0
 endif
 ifeq ($(MAKBET_VERBOSE), 0)
   _v := 0

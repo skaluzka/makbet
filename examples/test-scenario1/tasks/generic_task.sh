@@ -12,7 +12,12 @@ echo "EXIT_CODE (\${1}) = ${EXIT_CODE}"
 # Wait ${SLEEP} seconds.
 sleep "${SLEEP}"
 
-echo "Script ${0} completed." && exit "${EXIT_CODE}"
+if (( "${MAKBET_VERBOSE}" >= 1 ))
+then
+    echo "Script ${0} completed."
+fi
+
+exit "${EXIT_CODE}"
 
 
 # The end
