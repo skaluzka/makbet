@@ -123,7 +123,7 @@ easily saved or redirected to file.  This can be achieved by passing
 
 ::
 
-    [user@localhost test-scenario1]$ make makbet-clean && make all MAKBET_DOT=1
+    [user@localhost dummy]$ make makbet-clean && make all MAKBET_DOT=1
 
     2020-06-24 17:54:00 [INFO]: Task "INIT" started.
     2020-06-24 17:54:00 [INFO]: Task "INIT" terminated.
@@ -134,7 +134,7 @@ easily saved or redirected to file.  This can be achieved by passing
 
     2020-06-24 17:54:11 [INFO]: Task "all" started.
     2020-06-24 17:54:11 [INFO]: Task "all" terminated.
-    [user@localhost test-scenario1]$
+    [user@localhost dummy]$
 
 
 Special makbet's target ``.show-summary-dot-file`` will display **DOT**
@@ -142,7 +142,7 @@ results which can be used for further processing:
 
 ::
 
-    [user@localhost test-scenario1]$ make .show-summary-dot-file
+    [user@localhost dummy]$ make .show-summary-dot-file
 
     digraph {
 
@@ -165,13 +165,13 @@ results which can be used for further processing:
 
     }
 
-    [user@localhost test-scenario1]$
+    [user@localhost dummy]$
 
 The graph presented below is reflecting above **DOT** code generated for
-`test-scenario1 <https://github.com/skaluzka/makbet/tree/master/examples/test-scenario1>`_
+`dummy <https://github.com/skaluzka/makbet/tree/master/examples/dummy>`_
 (for target ``all``).
 
-.. image:: docs/img/test-scenario1/dot-results.png
+.. image:: docs/img/dummy/dot-results.png
     :align: center
 
 Results for `test-scenario2 <https://github.com/skaluzka/makbet/tree/master/examples/test-scenario2>`_

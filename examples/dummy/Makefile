@@ -1,4 +1,4 @@
-# This is a test-scenario1 Makefile file.
+# This is Makefile file for "dummy" example scenario.
 
 #
 # Include mandatory makbet.mk file.
@@ -13,10 +13,10 @@ endif
 # All required global variables.
 #
 
-GENERIC_TASK_SCRIPT := $(MAKBET_PATH)/examples/test-scenario1/tasks/generic-task.sh
+GENERIC_TASK_SCRIPT := $(MAKBET_PATH)/examples/dummy/tasks/generic-task.sh
 
 #
-# All tasks required to run scenario from test-scenario1/Makefile file.
+# All tasks required to run scenario from dummy/Makefile file.
 #
 
 .PHONY: scenario-help

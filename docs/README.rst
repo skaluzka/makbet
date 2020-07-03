@@ -12,7 +12,7 @@ The documentation directory structure is:
 
     docs/
     ├── img/
-    │   ├── test-scenario1/
+    │   ├── dummy/
     │   │   └── dot-results.png
     │   └── test-scenario2/
     │       ├── ver-A-dot-results.png
