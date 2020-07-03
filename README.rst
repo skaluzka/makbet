@@ -168,14 +168,14 @@ results which can be used for further processing:
     [user@localhost dummy]$
 
 The graph presented below is reflecting above **DOT** code generated for
-`dummy <https://github.com/skaluzka/makbet/tree/master/examples/dummy>`_
-(for target ``all``).
+`dummy <https://github.com/skaluzka/makbet/tree/master/examples/dummy>`_ example
+(target ``all``).
 
 .. image:: docs/img/dummy/dot-results.png
     :align: center
 
 Results for `test-scenario2 <https://github.com/skaluzka/makbet/tree/master/examples/test-scenario2>`_
-(for target ``all``) can be seen
+example (target ``all``) can be seen
 `here <https://github.com/skaluzka/makbet/tree/master/docs/img/test-scenario2>`_.
 
 
