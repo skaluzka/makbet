@@ -1,4 +1,4 @@
-# This is a test-scenario2/ver-A/Makefile file.
+# This is a toolchain/basic/Makefile file.
 
 #
 # Include mandatory makbet.mk file.
@@ -13,10 +13,10 @@ endif
 # All required global variables.
 #
 
-WORK_DIR := /tmp/makbet/test-scenario2/ver-A
+WORK_DIR := /tmp/makbet/toolchain/basic
 
 #
-# All tasks required to run scenario from test-scenario2/ver-A/Makefile file.
+# All tasks required to run scenario from toolchain/basic/Makefile file.
 #
 
 .PHONY: scenario-help
@@ -145,35 +145,35 @@ $(eval $(call TASK_template, \
 $(eval $(call TASK_template, \
 	build-doxygen, \
 	check-all-src-dirs, \
-	$(MAKBET_PATH)/examples/test-scenario2/tasks/build-doxygen.sh, \
+	$(MAKBET_PATH)/examples/toolchain/tasks/build-doxygen.sh, \
 		$(WORK_DIR)/doxygen/doxygen-Release_1_8_18/ \
 ))
 
 $(eval $(call TASK_template, \
 	build-git, \
 	build-doxygen, \
-	$(MAKBET_PATH)/examples/test-scenario2/tasks/build-git.sh, \
+	$(MAKBET_PATH)/examples/toolchain/tasks/build-git.sh, \
 		$(WORK_DIR)/git/git-2.27.0/ \
 ))
 
 $(eval $(call TASK_template, \
 	build-kcov, \
 	build-git, \
-	$(MAKBET_PATH)/examples/test-scenario2/tasks/build-kcov.sh, \
+	$(MAKBET_PATH)/examples/toolchain/tasks/build-kcov.sh, \
 		$(WORK_DIR)/kcov/kcov-38/ \
 ))
 
 $(eval $(call TASK_template, \
 	build-make, \
 	build-kcov, \
-	$(MAKBET_PATH)/examples/test-scenario2/tasks/build-make.sh, \
+	$(MAKBET_PATH)/examples/toolchain/tasks/build-make.sh, \
 		$(WORK_DIR)/make/make-4.3/ \
 ))
 
 $(eval $(call TASK_template, \
 	build-python, \
 	build-make, \
-	$(MAKBET_PATH)/examples/test-scenario2/tasks/build-python.sh, \
+	$(MAKBET_PATH)/examples/toolchain/tasks/build-python.sh, \
 		$(WORK_DIR)/python/Python-3.9.0b3/ \
 ))
 

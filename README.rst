@@ -168,15 +168,16 @@ results which can be used for further processing:
     [user@localhost dummy]$
 
 The graph presented below is reflecting above **DOT** code generated for
-`dummy <https://github.com/skaluzka/makbet/tree/master/examples/dummy>`_ example
-(target ``all``).
+`dummy <https://github.com/skaluzka/makbet/tree/master/examples/dummy>`_
+example (target ``all``).
 
 .. image:: docs/img/dummy/dot-results.png
     :align: center
 
-Results for `test-scenario2 <https://github.com/skaluzka/makbet/tree/master/examples/test-scenario2>`_
+Results for
+`toolchain <https://github.com/skaluzka/makbet/tree/master/examples/toolchain>`_
 example (target ``all``) can be seen
-`here <https://github.com/skaluzka/makbet/tree/master/docs/img/test-scenario2>`_.
+`here <https://github.com/skaluzka/makbet/tree/master/docs/img/toolchain>`_.
 
 
 Two **DOT** online editors have been successfully tested with **makbet**:

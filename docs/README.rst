@@ -14,9 +14,9 @@ The documentation directory structure is:
     ├── img/
     │   ├── dummy/
     │   │   └── dot-results.png
-    │   └── test-scenario2/
-    │       ├── ver-A-dot-results.png
-    │       └── ver-B-dot-results.png
+    │   └── toolchain/
+    │       ├── advanced-dot-results.png
+    │       └── basic-dot-results.png
     └── README.rst
 
 where:
