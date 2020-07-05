@@ -12,11 +12,12 @@ The documentation directory structure is:
 
     docs/
     ├── img/
-    │   ├── dummy/
-    │   │   └── dot-results.png
-    │   └── toolchain/
-    │       ├── advanced-dot-results.png
-    │       └── basic-dot-results.png
+    │   └── examples/
+    │       ├── dummy/
+    │       │   └── dot-results.png
+    │       └── toolchain/
+    │           ├── advanced-dot-results.png
+    │           └── basic-dot-results.png
     └── README.rst
 
 where:

@@ -171,13 +171,13 @@ The graph presented below is reflecting above **DOT** code generated for
 `dummy <https://github.com/skaluzka/makbet/tree/master/examples/dummy>`_
 example (target ``all``).
 
-.. image:: docs/img/dummy/dot-results.png
+.. image:: docs/img/examples/dummy/dot-results.png
     :align: center
 
 Results for
 `toolchain <https://github.com/skaluzka/makbet/tree/master/examples/toolchain>`_
 example (target ``all``) can be seen
-`here <https://github.com/skaluzka/makbet/tree/master/docs/img/toolchain>`_.
+`here <https://github.com/skaluzka/makbet/tree/master/docs/img/examples/toolchain>`_.
 
 
 Two **DOT** online editors have been successfully tested with **makbet**:
