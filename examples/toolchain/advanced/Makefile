@@ -25,7 +25,7 @@ DOXYGEN_VER := Release_1_8_18.zip
 GIT_VER := v2.27.0.zip
 KCOV_VER := 38.zip
 MAKE_VER := make-4.3.tar.gz
-PYTHON_VER := Python-3.9.0b3.tar.xz
+PYTHON_VER := Python-3.9.0b4.tar.xz
 
 DOXYGEN_ZIP := $(DOXYGEN_DIR)/$(DOXYGEN_VER)
 GIT_ZIP := $(GIT_DIR)/$(GIT_VER)
@@ -52,7 +52,7 @@ DOXYGEN_UNPACK_DIR := $(DOXYGEN_DIR)/doxygen-Release_1_8_18
 GIT_UNPACK_DIR := $(GIT_DIR)/git-2.27.0
 KCOV_UNPACK_DIR := $(KCOV_DIR)/kcov-38
 MAKE_UNPACK_DIR := $(MAKE_DIR)/make-4.3
-PYTHON_UNPACK_DIR := $(PYTHON_DIR)/Python-3.9.0b3
+PYTHON_UNPACK_DIR := $(PYTHON_DIR)/Python-3.9.0b4
 
 BUILD_DOXYGEN := $(MAKBET_PATH)/examples/toolchain/tasks/build-doxygen.sh
 BUILD_GIT := $(MAKBET_PATH)/examples/toolchain/tasks/build-git.sh

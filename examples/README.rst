@@ -30,7 +30,7 @@ of:
 - **git 2.27**
 - **kcov 3.38**
 - **make 4.3**
-- **python 3.9.0b3**
+- **python 3.9.0b4**
 
 The real differences between **basic** and **advanced** versions are the
 ``Makefile`` files which both have different constructions. As mentioned above
