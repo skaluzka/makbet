@@ -376,7 +376,11 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(2),$(MAKBET
 # Add entry to scenario-help target.
 .PHONY: scenario-help
 scenario-help::
-	@echo -e "  $(strip $(1))\t- Call target $(strip $(1)) (deps: $(strip $(2)))"
+	@echo "  $(strip $(1))"
+	@echo "    - Descr: Call target \"$(strip $(1))\""
+	@echo "    - Deps: $(strip $(2))"
+	@echo "    - Path: $(strip $(3))"
+	@echo ""
 
 # If MAKBET_VERBOSE=2 printing task's script path (if any) immediately
 # after TASK_template macro evaluation.
