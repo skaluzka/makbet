@@ -92,7 +92,7 @@ Installing **makbet** is quite easy.
 - Export the ``MAKBET_PATH`` variable pointing to makbet's main directory
   (e.g.: ``export MAKBET_PATH=/tmp/makbet``).
 
-And that's all. You are now ready to write your own scenarios (or play with
+And that's all.  You are now ready to write your own scenarios (or play with
 built-in `examples <https://github.com/skaluzka/makbet/tree/master/examples>`_).
 
 |

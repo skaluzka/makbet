@@ -6,7 +6,7 @@ We are preferring so-called **fork** development model in **makbet** project.
 For more about it please read official github help pages:
 `<https://help.github.com/en/github/getting-started-with-github/fork-a-repo>`_.
 
-Main development branch is the **master** branch. We are trying to keep the
+Main development branch is the **master** branch.  We are trying to keep the
 linear history of commits, on that branch, as much as possible.
 
 |
@@ -18,16 +18,16 @@ For simplification we are distinguish only **three** type of commits in
 **makbet** project:
 
 #. Pure development commits - regular but small and reasonable updates, changes
-   or enhancements including minor refactoring as well. All of them can be done
+   or enhancements including minor refactoring as well.  All of them can be done
    on a **master** branch but they **must have** ``[DEV]`` subject in the commit
-   message. This rule is valid only for **makbet's** maintainers who are allowed
-   to work on the **master** branch directly.
+   message.  This rule is valid only for **makbet's** maintainers who are
+   allowed to work on the **master** branch directly.
    Examples:
    `45df932 <https://github.com/skaluzka/makbet/commit/45df932>`_,
    `631f41c <https://github.com/skaluzka/makbet/commit/631f41c>`_.
 #. Fix and quick fix commits - various small and trivial corrections and fixes
    noticed during the regular development phase on the **master** branch and not
-   covered by any github issue. All of them **must have** ``[FIX]`` subject in
+   covered by any github issue.  All of them **must have** ``[FIX]`` subject in
    the commit message.  This rule is valid only for **makbet's** maintainers who
    are allowed to work on the **master** branch directly.
    Examples:
@@ -36,7 +36,7 @@ For simplification we are distinguish only **three** type of commits in
 #. Issues reported in github - entire development handled via issues reported
    on github (https://github.com/skaluzka/makbet/issues). All of them
    **must have** properly constructed title in the commit message containing
-   the number of the issue in square brackets. Examples: ``[#666] Add support
+   the number of the issue in square brackets.  Examples: ``[#666] Add support
    for user sa7an`` (<- this is of course fake issue :P).
 
 |
@@ -50,7 +50,7 @@ most likely for you :)
 
 
 For better handling commits and issues we are recommending strict branch naming
-convention. Please see the table below:
+convention.  Please see the table below:
 
 .. csv-table::
    :header: The github issue, Suggested branch name
@@ -88,8 +88,8 @@ To check all pull requests please go `here <https://github.com/skaluzka/makbet/p
 **Squashing the commits**
 
 
-Sometimes it is better to squash several commits into a single one. It always
-depends on the case. The final decision should be taken by project's maintainer
+Sometimes it is better to squash several commits into a single one.  It always
+depends on the case.  The final decision should be taken by project's maintainer
 during merging phase.
 
 |
