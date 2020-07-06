@@ -295,34 +295,35 @@ endef
 #
 # Where:
 # $(1) - TASK_NAME - The name of the task.
-# $(2) - TASK_DEPS - All task dependencies.
-# $(3) - TASK_SCRIPT - Task script file.
-# $(4) - TASK_SCRIPT_PARAMS - CLI params for TASK_SCRIPT above.
+# $(2) - TASK_DESCR - Task description string.
+# $(3) - TASK_DEPS - All task dependencies.
+# $(4) - TASK_SCRIPT - Task script file.
+# $(5) - TASK_SCRIPT_PARAMS - CLI params for TASK_SCRIPT above.
 #
 define TASK_template =
 
 .PHONY: $(1)
-$(1): $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg $(foreach d,$(2),$(MAKBET_EVENTS_CFG_DIR)/$(d).terminated.cfg)
+$(1): $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg $(foreach d,$(3),$(MAKBET_EVENTS_CFG_DIR)/$(d).terminated.cfg)
 
-$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(2),$(MAKBET_EVENTS_CFG_DIR)/$(d).terminated.cfg)
+$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET_EVENTS_CFG_DIR)/$(d).terminated.cfg)
 	@#
 	@#
 	@# Printing additional information if MAKBET_VERBOSE=1 or MAKBET_VERBOSE=2.
 	$(_q)if (( $(_v) >= 1 )) ; \
 	then \
-		$(call __print_task_details,$(1),$(2),$(3),$(4)) ; \
+		$(call __print_task_details,$(1),$(3),$(4),$(5)) ; \
 	fi
 	@#
 	@# Saving STARTED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
-	$(call __save_event,$(1),$(2),$(3),$(4),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg,STARTED)
+	$(call __save_event,$(1),$(3),$(4),$(5),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg,STARTED)
 	@#
 	@echo -e "\n`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" started."
 	@#
 	@# Running the TASK_SCRIPT with TASK_SCRIPT_PARAMS params.
-	$(_q)$(3) $(4)
+	$(_q)$(4) $(5)
 	@#
 	@# Saving TERMINATED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
-	$(call __save_event,$(1),$(2),$(3),$(4),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg,TERMINATED)
+	$(call __save_event,$(1),$(3),$(4),$(5),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg,TERMINATED)
 	@#
 	@echo -e "`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" terminated."
 	@#
@@ -376,17 +377,17 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(2),$(MAKBET
 # Add entry to scenario-help target.
 .PHONY: scenario-help
 scenario-help::
-	@echo "  $(strip $(1))"
-	@echo "    - Descr: Call target \"$(strip $(1))\""
-	@echo "    - Deps: $(strip $(2))"
-	@echo "    - Path: $(strip $(3))"
-	@echo ""
+	@echo '  $(strip $(1))'
+	@echo '    - Descr: $(strip $(2))'
+	@echo '    - Deps: $(strip $(3))'
+	@echo '    - Path: $(strip $(4))'
+	@echo ''
 
 # If MAKBET_VERBOSE=2 printing task's script path (if any) immediately
 # after TASK_template macro evaluation.
 $(if $(_q),,
-  $(if $(strip $(3)),\
-    $(info [INFO]: Created task $(strip $(1)) <- $(strip $(3))),\
+  $(if $(strip $(4)),\
+    $(info [INFO]: Created task $(strip $(1)) <- $(strip $(4))),\
     $(info [INFO]: Created task $(strip $(1)) <- scriptless task)\
   )
 )

@@ -82,7 +82,7 @@ scenario-help::
 	@echo ""
 
 $(eval $(call TASK_template, \
-	clean, \
+	clean, "Remove $(WORK_DIR) dir", \
 	, \
 	rm, \
 		-rfv \
@@ -90,152 +90,152 @@ $(eval $(call TASK_template, \
 ))
 
 $(eval $(call TASK_template, \
-	INIT, \
+	INIT, "Entry point", \
 	, \
 	, \
 	\
 ))
 
 $(eval $(call TASK_template, \
-	prepare-workdir-structure, \
+	prepare-workdir-structure, "Prepare initial dir structure", \
 	INIT, \
 	$(CREATE_DIRS), $(DOXYGEN_DIR) $(GIT_DIR) $(KCOV_DIR) $(MAKE_DIR) $(PYTHON_DIR) \
 ))
 
 $(eval $(call TASK_template, \
-	fetch-doxygen-src, \
+	fetch-doxygen-src, "Fetch doxygen sources", \
 	prepare-workdir-structure, \
 	$(DOWNLOAD), $(DOXYGEN_URL) $(DOXYGEN_ZIP) \
 ))
 
 $(eval $(call TASK_template, \
-	fetch-git-src, \
+	fetch-git-src, "Fetch git sources", \
 	prepare-workdir-structure, \
 	$(DOWNLOAD), $(GIT_URL) $(GIT_ZIP) \
 ))
 
 $(eval $(call TASK_template, \
-	fetch-kcov-src, \
+	fetch-kcov-src, "Fetch kcov sources", \
 	prepare-workdir-structure, \
 	$(DOWNLOAD), $(KCOV_URL) $(KCOV_ZIP) \
 ))
 
 $(eval $(call TASK_template, \
-	fetch-make-src, \
+	fetch-make-src, "Fetch GNU make sources", \
 	prepare-workdir-structure, \
 	$(DOWNLOAD), $(MAKE_URL) $(MAKE_TGZ) \
 ))
 
 $(eval $(call TASK_template, \
-	fetch-python-src, \
+	fetch-python-src, "Fetch python sources", \
 	prepare-workdir-structure, \
 	$(DOWNLOAD), $(PYTHON_URL) $(PYTHON_TXZ) \
 ))
 
 $(eval $(call TASK_template, \
-	unpack-doxygen-src, \
+	unpack-doxygen-src, "Unpack doxygen sources", \
 	fetch-doxygen-src, \
 	$(UNPACK_ZIP), $(DOXYGEN_ZIP) $(DOXYGEN_DIR)/ \
 ))
 
 $(eval $(call TASK_template, \
-	unpack-git-src, \
+	unpack-git-src, "Unpack git sources", \
 	fetch-git-src, \
 	$(UNPACK_ZIP), $(GIT_ZIP) $(GIT_DIR)/ \
 ))
 
 $(eval $(call TASK_template, \
-	unpack-kcov-src, \
+	unpack-kcov-src, "Unpack kcov sources",  \
 	fetch-kcov-src, \
 	$(UNPACK_ZIP), $(KCOV_ZIP) $(KCOV_DIR)/ \
 ))
 
 $(eval $(call TASK_template, \
-	unpack-make-src, \
+	unpack-make-src, "Unpack GNU make sources", \
 	fetch-make-src, \
 	$(UNPACK_TGZ), $(MAKE_TGZ) $(MAKE_DIR)/ \
 ))
 
 $(eval $(call TASK_template, \
-	unpack-python-src, \
+	unpack-python-src, "Unpack python sources", \
 	fetch-python-src, \
 	$(UNPACK_TXZ), $(PYTHON_TXZ) $(PYTHON_DIR)/ \
 ))
 
 $(eval $(call TASK_template, \
-	check-all-src-dirs, \
+	check-all-src-dirs, "Check all source code dirs", \
 	unpack-doxygen-src unpack-git-src unpack-kcov-src unpack-make-src unpack-python-src, \
 	$(CHECK_DIRS), $(DOXYGEN_UNPACK_DIR)/ $(GIT_UNPACK_DIR)/ $(KCOV_UNPACK_DIR)/ $(MAKE_UNPACK_DIR)/ $(PYTHON_UNPACK_DIR)/ \
 ))
 
 $(eval $(call TASK_template, \
-	build-doxygen, \
+	build-doxygen, "Build doxygen inside its source dir", \
 	check-all-src-dirs, \
 	$(BUILD_DOXYGEN), $(DOXYGEN_UNPACK_DIR)/ \
 ))
 
 $(eval $(call TASK_template, \
-	build-git, \
+	build-git, "Build git inside its source dir", \
 	build-doxygen, \
 	$(BUILD_GIT), $(GIT_UNPACK_DIR)/ \
 ))
 
 $(eval $(call TASK_template, \
-	build-kcov, \
+	build-kcov, "Build kcov inside its source dir", \
 	build-git, \
 	$(BUILD_KCOV), $(KCOV_UNPACK_DIR)/ \
 ))
 
 $(eval $(call TASK_template, \
-	build-make, \
+	build-make, "Build GNU make inside its source dir", \
 	build-kcov, \
 	$(BUILD_MAKE), $(MAKE_UNPACK_DIR)/ \
 ))
 
 $(eval $(call TASK_template, \
-	build-python, \
+	build-python, "Build python inside its source dir", \
 	build-make, \
 	$(BUILD_PYTHON), $(PYTHON_UNPACK_DIR)/ \
 ))
 
 $(eval $(call TASK_template, \
-	check-build-binaries, \
+	check-build-binaries, "Check the presence of all built binaries", \
 	build-doxygen build-git build-kcov build-make, \
 	$(CHECK_FILES), $(DOXYGEN_BIN) $(GIT_BIN) $(KCOV_BIN) $(MAKE_BIN) $(PYTHON_BIN) \
 ))
 
 $(eval $(call TASK_template, \
-	print-doxygen-version, \
+	print-doxygen-version, "Print version of doxygen from source dir", \
 	build-doxygen, \
 	$(EXEC_CMD), $(DOXYGEN_BIN) --version \
 ))
 
 $(eval $(call TASK_template, \
-	print-git-version, \
+	print-git-version, "Print version of git from source dir", \
 	build-git, \
 	$(EXEC_CMD), $(GIT_BIN) --version \
 ))
 
 $(eval $(call TASK_template, \
-	print-kcov-version, \
+	print-kcov-version, "Print version of kcov from source dir", \
 	build-kcov, \
 	$(EXEC_CMD), $(KCOV_BIN) --version \
 ))
 
 $(eval $(call TASK_template, \
-	print-make-version, \
+	print-make-version, "Print version of GNU make from source dir", \
 	build-make, \
 	$(EXEC_CMD), $(MAKE_BIN) --version \
 ))
 
 $(eval $(call TASK_template, \
-	print-python-version, \
+	print-python-version, "Print version of python from source dir", \
 	build-python, \
 	$(EXEC_CMD), $(PYTHON_BIN) -V \
 ))
 
 $(eval $(call TASK_template, \
-	build-all, \
+	build-all, "Checkpoint for all build-* tasks", \
 	build-doxygen build-git build-kcov build-make build-python, \
 	,,\
 ))

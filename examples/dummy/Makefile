@@ -26,90 +26,90 @@ scenario-help::
 	@echo ""
 
 $(eval $(call TASK_template, \
-	INIT, \
+	INIT, "Entry point", \
 	, \
 	, \
 	\
 ))
 
 $(eval $(call TASK_template, \
-	task-A, \
+	task-A, "Run task-A", \
 	INIT, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	task-B1, \
+	task-B1, "Run task-B1", \
 	task-A, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	task-B2, \
+	task-B2, "Run task-B2", \
 	task-A, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	task-B3, \
+	task-B3, "Run task-B3", \
 	task-A, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	task-B4, \
+	task-B4, "Run task-B4", \
 	task-A, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	task-B5, \
+	task-B5, "Run task-B5", \
 	task-A, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	task-C, \
+	task-C, "Checkpoint for task-B2 and task-B3", \
 	task-B2 task-B3, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	task-D, \
+	task-D, "Run task-D", \
 	task-C, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	task-E, \
+	task-E, "Checkpoint for task-B1 task-B4 task-B5 and task-D", \
 	task-B1 task-B4 task-B5 task-D, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	task-F, \
+	task-F, "Run task-F", \
 	task-E, \
 	,, \
 ))
 
 $(eval $(call TASK_template, \
-	task-G, \
+	task-G, "Run task-G", \
 	task-F, \
 	$(GENERIC_TASK_SCRIPT), \
 		1 \
 ))
 
 $(eval $(call TASK_template, \
-	all, \
+	all, "Run task all", \
 	task-F, \
 	,, \
 ))
