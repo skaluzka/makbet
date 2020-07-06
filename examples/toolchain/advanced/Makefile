@@ -13,7 +13,7 @@ endif
 # All required global variables.
 #
 
-WORK_DIR := /tmp/makbet/toolchain/advanced
+WORK_DIR := /tmp/makbet/examples/toolchain/advanced
 
 DOXYGEN_DIR := $(WORK_DIR)/doxygen
 GIT_DIR := $(WORK_DIR)/git

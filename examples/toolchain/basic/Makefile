@@ -13,7 +13,7 @@ endif
 # All required global variables.
 #
 
-WORK_DIR := /tmp/makbet/toolchain/basic
+WORK_DIR := /tmp/makbet/examples/toolchain/basic
 
 #
 # All tasks required to run scenario from toolchain/basic/Makefile file.
