@@ -113,7 +113,7 @@ where:
   sources.
 - ``toolchain/tasks/build-python.sh`` - This ``bash`` script is used by **two**
   ``build-python`` tasks (defined in ``examples/toolchain/basic/Makefile`` and
-  ``examples/toolchain/advanced/Makefile``) for building **python 3.9.0b03**
+  ``examples/toolchain/advanced/Makefile``) for building **python 3.9.0b4**
   from sources.
 - ``toolchain/basic/Makefile`` - So-called makbet's scenario file. It contains
   complete task list for **makbet's** ``toolchain`` example. This is a **basic**
