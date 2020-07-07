@@ -27,7 +27,7 @@ example is to build, locally from the source code, a simple toolchain consists
 of:
 
 - **doxygen 1.8.18**
-- **git 2.27**
+- **git 2.27.0**
 - **kcov 3.38**
 - **make 4.3**
 - **python 3.9.0b4**
@@ -101,7 +101,7 @@ where:
   sources.
 - ``toolchain/tasks/build-git.sh`` - This ``bash`` script is used by **two**
   ``build-git`` tasks (defined in ``examples/toolchain/basic/Makefile`` and
-  ``examples/toolchain/advanced/Makefile``) for building **git 2.27** from
+  ``examples/toolchain/advanced/Makefile``) for building **git 2.27.0** from
   sources.
 - ``toolchain/tasks/build-kcov.sh`` - This ``bash`` script is used by **two**
   ``build-kcov`` tasks (defined in ``examples/toolchain/basic/Makefile`` and
