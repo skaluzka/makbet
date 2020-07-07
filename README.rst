@@ -187,6 +187,73 @@ Two **DOT** online editors have been successfully tested with **makbet**:
 
 |
 
+CSV output
+==========
+
+For every properly created scenario **makbet** is able to generate valuable
+**CSV** output.  Such output (smiliar as for **DOT** language above) can be
+easily saved or redirected to file.  This can be achieved by passing
+``MAKBET_CSV=1`` option to ``make`` execution command (by deafult
+``MAKBET_CSV=0``) as in below example:
+
+::
+
+    [user@localhost dummy]$ make makbet-clean && make all MAKBET_CSV=1
+
+    2020-07-07 10:31:03 [INFO]: Task "INIT" started.
+    2020-07-07 10:31:03 [INFO]: Task "INIT" terminated.
+
+    2020-07-07 10:31:03 [INFO]: Task "task-A" started.
+
+    ...
+
+    2020-07-07 10:31:14 [INFO]: Task "all" started.
+    2020-07-07 10:31:14 [INFO]: Task "all" terminated.
+    [user@localhost dummy]$
+
+
+Special makbet's target ``.show-summary-events-csv-file`` will display **CSV**
+results which can be used for further processing:
+
+::
+
+    [user@localhost dummy]$ make .show-summary-events-csv-file
+    TASK_NAME;TASK_DEPS;TASK_SCRIPT;TASK_SCRIPT_PARAMS;TASK_DATE_TIME;TASK_EVENT_TYPE;TASK_[STARTED|TERMINATED]_EPOCH;
+    "all";"task-F";"";"";"2020-07-07 10:31:14";"STARTED";"1594110674";
+    "all";"task-F";"";"";"2020-07-07 10:31:14";"TERMINATED";"1594110674";
+    "INIT";"";"";"";"2020-07-07 10:31:03";"STARTED";"1594110663";
+    "INIT";"";"";"";"2020-07-07 10:31:03";"TERMINATED";"1594110663";
+    "task-A";"INIT";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:03";"STARTED";"1594110663";
+    "task-A";"INIT";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:04";"TERMINATED";"1594110664";
+    "task-B1";"task-A";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:04";"STARTED";"1594110664";
+    "task-B1";"task-A";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:06";"TERMINATED";"1594110666";
+    "task-B2";"task-A";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:08";"STARTED";"1594110668";
+    "task-B2";"task-A";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:09";"TERMINATED";"1594110669";
+    "task-B3";"task-A";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:09";"STARTED";"1594110669";
+    "task-B3";"task-A";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:10";"TERMINATED";"1594110670";
+    "task-B4";"task-A";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:06";"STARTED";"1594110666";
+    "task-B4";"task-A";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:07";"TERMINATED";"1594110667";
+    "task-B5";"task-A";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:07";"STARTED";"1594110667";
+    "task-B5";"task-A";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:08";"TERMINATED";"1594110668";
+    "task-C";"task-B2 task-B3";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:10";"STARTED";"1594110670";
+    "task-C";"task-B2 task-B3";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:11";"TERMINATED";"1594110671";
+    "task-D";"task-C";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:11";"STARTED";"1594110671";
+    "task-D";"task-C";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:12";"TERMINATED";"1594110673";
+    "task-E";"task-B1 task-B4 task-B5 task-D";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:13";"STARTED";"1594110673";
+    "task-E";"task-B1 task-B4 task-B5 task-D";"/home/user/makbet/examples/dummy/tasks/generic-task.sh";"1";"2020-07-07 10:31:14";"TERMINATED";"1594110674";
+    "task-F";"task-E";"";"";"2020-07-07 10:31:14";"STARTED";"1594110674";
+    "task-F";"task-E";"";"";"2020-07-07 10:31:14";"TERMINATED";"1594110674";
+    [user@localhost dummy]$
+
+
+Above results can be downloaded from
+`here <https://github.com/skaluzka/makbet/tree/master/docs/csv/examples/dummy>`__.
+
+Example results for **toolchain** case can be found
+`here <https://github.com/skaluzka/makbet/tree/master/docs/csv/examples/toolchain>`__.
+
+|
+
 References
 ==========
 
@@ -199,6 +266,12 @@ Useful **DOT** language links:
 
 - https://graphviz.gitlab.io/documentation/
 - https://en.wikipedia.org/wiki/DOT_%28graph_description_language%29
+
+Useful **CSV** links:
+
+- https://tools.ietf.org/html/rfc4180
+- https://en.wikipedia.org/wiki/Comma-separated_values
+- https://www.convertcsv.com/csv-viewer-editor.htm
 
 All **bash** scripts have been checked with ``schellcheck`` utility:
 
