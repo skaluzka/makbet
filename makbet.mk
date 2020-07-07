@@ -378,9 +378,10 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 .PHONY: scenario-help
 scenario-help::
 	@echo '  $(strip $(1))'
-	@echo '    - Descr: $(strip $(2))'
-	@echo '    - Deps:  $(strip $(3))'
-	@echo '    - Prog:  $(strip $(4))'
+	@echo '    - Descr:  $(strip $(2))'
+	@echo '    - Deps:   $(strip $(3))'
+	@echo '    - Prog:   $(strip $(4))'
+	@echo '    - Params: $(strip $(5))'
 	@echo ''
 
 # If MAKBET_VERBOSE=2 printing task's script path (if any) immediately
