@@ -27,9 +27,6 @@ scenario-help::
 
 $(eval $(call TASK_template, \
 	INIT, "Entry point", \
-	, \
-	, \
-	\
 ))
 
 $(eval $(call TASK_template, \
@@ -98,7 +95,6 @@ $(eval $(call TASK_template, \
 $(eval $(call TASK_template, \
 	task-F, "Run task-F", \
 	task-E, \
-	,, \
 ))
 
 $(eval $(call TASK_template, \
@@ -111,7 +107,6 @@ $(eval $(call TASK_template, \
 $(eval $(call TASK_template, \
 	all, "Run task all", \
 	task-F, \
-	,, \
 ))
 
 # Note:
