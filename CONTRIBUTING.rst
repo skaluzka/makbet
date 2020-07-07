@@ -17,27 +17,40 @@ linear history of commits, on that branch, as much as possible.
 For simplification we are distinguish only **three** type of commits in
 **makbet** project:
 
-#. Pure development commits - regular but small and reasonable updates, changes
-   or enhancements including minor refactoring as well.  All of them can be done
-   on a **master** branch but they **must have** ``[DEV]`` subject in the commit
-   message.  This rule is valid only for **makbet's** maintainers who are
-   allowed to work on the **master** branch directly.
-   Examples:
-   `45df932 <https://github.com/skaluzka/makbet/commit/45df932>`_,
-   `631f41c <https://github.com/skaluzka/makbet/commit/631f41c>`_.
-#. Fix and quick fix commits - various small and trivial corrections and fixes
-   noticed during the regular development phase on the **master** branch and not
-   covered by any github issue.  All of them **must have** ``[FIX]`` subject in
-   the commit message.  This rule is valid only for **makbet's** maintainers who
-   are allowed to work on the **master** branch directly.
-   Examples:
-   `29e9822 <https://github.com/skaluzka/makbet/commit/29e9822>`_,
-   `a4d6b35 <https://github.com/skaluzka/makbet/commit/a4d6b35>`_.
-#. Issues reported in github - entire development handled via issues reported
-   on github (https://github.com/skaluzka/makbet/issues). All of them
-   **must have** properly constructed title in the commit message containing
-   the number of the issue in square brackets.  Examples: ``[#666] Add support
-   for user sa7an`` (<- this is of course fake issue :P).
+#. | Pure development commits - regular but small and reasonable updates,
+     changes or enhancements including minor refactoring as well.  All of them
+     can be submitted directly to **master** branch but they **must have**
+     ``[DEV]`` subject in the commit message.  This rule is valid only for
+      **makbet's** maintainers who are allowed to work on the **master** branch
+     directly.
+   | Examples:
+   | `45df932 <https://github.com/skaluzka/makbet/commit/45df932>`_:
+     ``[DEV] Remove all unused help() functions``
+   | `631f41c <https://github.com/skaluzka/makbet/commit/631f41c>`_:
+     ``[DEV] Improve internal summary csv targets``
+
+#. | Fix and quick fix commits - various small and trivial corrections and fixes
+     for all problems noticed during the regular development on the **master**
+     branch (and not yet reported via any issue).  All of them **must have**
+     ``[FIX]`` subject in the commit message.  This rule is valid only for
+     **makbet's** maintainers who are allowed to work on the **master** branch
+     directly.
+   | Examples:
+   | `29e9822 <https://github.com/skaluzka/makbet/commit/29e9822>`_:
+     ``[FIX] Correct all issues reported by shellcheck``
+   | `a4d6b35 <https://github.com/skaluzka/makbet/commit/a4d6b35>`_:
+     ``[FIX] Replace "param" by "option"``
+
+#. | Commits triggered by issues reported in github - **makbet's** users are
+     reporting bugs and requesting for new features using github issues
+     (https://github.com/skaluzka/makbet/issues).  All related commits **must**
+     **have** properly constructed title in the commit message containing the
+     number of the issue in square brackets.
+   | Examples:
+   | `cf593ea <https://github.com/skaluzka/makbet/commit/cf593ea>`_:
+     ``[#5] Add README.rst file to examples/ dir``
+   | `6a8464b <https://github.com/skaluzka/makbet/commit/6a8464b>`_:
+     ``[#3] Add extended help target (make makbet-help)``
 
 |
 
@@ -61,7 +74,7 @@ convention.  Please see the table below:
 
 |
 
-**Closing github issues**
+**Closing github issues via pull requests**
 
 
 According to official github documentation
@@ -74,14 +87,17 @@ every created issue can be closed in a two ways:
 In **makbet** project we are preferring the latter approach.
 
 The pull request description for issue labeled with **bug** label sholud
-contain **Fix #xxx** line, eg.: ``Fix #1234``.
+contain **Fix #xxx.** line, eg.: ``Fix #1234.``.
 
-For other issues the pull request description sholud contain **Resolve #xxx**
-line, eg.: ``Resolve #3`` here https://github.com/skaluzka/makbet/pull/6
+For other issues the pull request description sholud contain **Resolve #xxx.**
+line, eg.: ``Resolve #3.``
+An example pull request: https://github.com/skaluzka/makbet/pull/6
 
-To check all labels please go `here <https://github.com/skaluzka/makbet/labels>`_.
+To check all available labels please go
+`here <https://github.com/skaluzka/makbet/labels>`_.
 
-To check all pull requests please go `here <https://github.com/skaluzka/makbet/pulls>`__.
+To check all pull requests please go
+`here <https://github.com/skaluzka/makbet/pulls>`__.
 
 |
 
