@@ -28,9 +28,7 @@ scenario-help::
 $(eval $(call TASK_template, \
 	clean, "Remove $(WORK_DIR) dir", \
 	, \
-	rm, \
-		-rfv \
-		$(WORK_DIR) \
+	rm, -rfv $(WORK_DIR) \
 ))
 
 $(eval $(call TASK_template, \
