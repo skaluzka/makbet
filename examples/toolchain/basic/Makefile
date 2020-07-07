@@ -35,9 +35,6 @@ $(eval $(call TASK_template, \
 
 $(eval $(call TASK_template, \
 	INIT, "Entry point", \
-	, \
-	, \
-	\
 ))
 
 $(eval $(call TASK_template, \
@@ -231,19 +228,16 @@ $(eval $(call TASK_template, \
 $(eval $(call TASK_template, \
 	build-all, "Checkpoint for all build-* tasks", \
 	build-doxygen build-git build-kcov build-make build-python, \
-	,, \
 ))
 
 $(eval $(call TASK_template, \
 	print-all-versions, "Checkpoint for all print-*-version tasks", \
 	build-all print-doxygen-version print-git-version print-kcov-version print-make-version print-python-version, \
-	,, \
 ))
 
 $(eval $(call TASK_template, \
 	all, "Run task all", \
 	print-all-versions, \
-	,, \
 ))
 
 # Note:
