@@ -1,4 +1,4 @@
-# This is a toolchain/advanced/Makefile file.
+# This is Makefile file for "02.toolchain-complex" example scenario.
 
 #
 # Include mandatory makbet.mk file.
@@ -13,7 +13,7 @@ endif
 # All required global variables.
 #
 
-WORK_DIR := /tmp/makbet/examples/toolchain/advanced
+WORK_DIR := /tmp/makbet/examples/02.toolchain-complex
 
 DOXYGEN_DIR := $(WORK_DIR)/doxygen
 GIT_DIR := $(WORK_DIR)/git
@@ -54,11 +54,11 @@ KCOV_UNPACK_DIR := $(KCOV_DIR)/kcov-38
 MAKE_UNPACK_DIR := $(MAKE_DIR)/make-4.3
 PYTHON_UNPACK_DIR := $(PYTHON_DIR)/Python-3.9.0b4
 
-BUILD_DOXYGEN := $(MAKBET_PATH)/examples/toolchain/tasks/build-doxygen.sh
-BUILD_GIT := $(MAKBET_PATH)/examples/toolchain/tasks/build-git.sh
-BUILD_KCOV := $(MAKBET_PATH)/examples/toolchain/tasks/build-kcov.sh
-BUILD_MAKE := $(MAKBET_PATH)/examples/toolchain/tasks/build-make.sh
-BUILD_PYTHON := $(MAKBET_PATH)/examples/toolchain/tasks/build-python.sh
+BUILD_DOXYGEN := $(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-doxygen.sh
+BUILD_GIT := $(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-git.sh
+BUILD_KCOV := $(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-kcov.sh
+BUILD_MAKE := $(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-make.sh
+BUILD_PYTHON := $(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-python.sh
 
 CHECK_FILES := $(MAKBET_TASKS_DIR)/common/check-files.sh
 
@@ -72,7 +72,7 @@ EXEC_CMD := $(MAKBET_TASKS_DIR)/common/exec-cmd.sh
 
 
 #
-# All tasks required to run scenario from toolchain/advanced/Makefile file.
+# All tasks required to run scenario from 02.toolchain-complex/Makefile file.
 #
 
 .PHONY: scenario-help

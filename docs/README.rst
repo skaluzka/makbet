@@ -13,25 +13,27 @@ The documentation directory structure is:
     docs/
     ├── csv/
     │   └── examples/
-    │       ├── dummy/
+    │       ├── 01.dummy/
     │       │   └── results.csv
-    │       └── toolchain/
-    │           ├── advanced-results.csv
-    │           └── basic-results.csv
+    │       ├── 02.toolchain-basic/
+    │       │   └── results.csv
+    │       └── 02.toolchain-complex/
+    │           └── results.csv
     ├── img/
     │   └── examples/
-    │       ├── dummy/
+    │       ├── 01.dummy/
     │       │   └── dot-results.png
-    │       └── toolchain/
-    │           ├── advanced-dot-results.png
-    │           └── basic-dot-results.png
+    │       ├── 02.toolchain-basic/
+    │       │   └── dot-results.png
+    │       └── 02.toolchain-complex/
+    │           └── dot-results.png
     └── README.rst
 
 where:
 
-- ``docs/`` - The main documentation directory (its absolute path is defined as
-  ``$MAKBET_PATH/docs`` assuming the ``$MAKBET_PATH`` is pointing to
-  **makbet's** main directory).
+- ``docs/`` - The main documentation directory.  Its absolute path can be
+  defined as ``$MAKBET_PATH/docs`` (or ``$MAKBET_PATH/docs/``) assuming the
+  ``$MAKBET_PATH`` variable is pointing to **makbet's** main directory.
 - ``docs/csv/`` - Directory containing example ``csv`` files generated for all
   **makbet's** examples.
 - ``docs/img/`` - Directory dedicated to store all images and graphic files.
