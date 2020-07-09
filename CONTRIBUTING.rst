@@ -87,17 +87,19 @@ every created issue can be closed in a two ways:
 In **makbet** project we are preferring the latter approach.
 
 The pull request description for issue labeled with **bug** label sholud
-contain **Fix #xxx.** line, eg.: ``Fix #1234.``.
+contain separate ``Fix #xxx.`` line.
 
-For other issues the pull request description sholud contain **Resolve #xxx.**
-line, eg.: ``Resolve #3.``
-An example pull request: https://github.com/skaluzka/makbet/pull/6
+| For any other issues the pull request description sholud contain
+  separate ``Resolve #xxx.`` line.
+| Examples:
+| https://github.com/skaluzka/makbet/pull/6
 
-To check all available labels please go
-`here <https://github.com/skaluzka/makbet/labels>`_.
+|
 
-To check all pull requests please go
-`here <https://github.com/skaluzka/makbet/pulls>`__.
+| To see all pull requests please go
+  `here <https://github.com/skaluzka/makbet/pulls>`__.
+| To check all available labels please go
+  `here <https://github.com/skaluzka/makbet/labels>`_.
 
 |
 
