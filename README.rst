@@ -100,7 +100,6 @@ built-in `examples <https://github.com/skaluzka/makbet/tree/master/examples>`_).
 Few words about backward compatibility
 ======================================
 
-
 Please be aware that **makbet** is still in heavy development phase (no
 major release has been done so far).
 
