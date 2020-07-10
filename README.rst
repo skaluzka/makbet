@@ -135,7 +135,6 @@ easily saved or redirected to file.  This can be achieved by passing
     2020-06-24 17:54:11 [INFO]: Task "all" terminated.
     [user@localhost 01.dummy]$
 
-
 Special makbet's target ``.show-summary-dot-file`` will display **DOT**
 results which can be used for further processing:
 
@@ -173,10 +172,10 @@ example (target ``all``).
 .. image:: docs/img/examples/01.dummy/dot-results.png
     :align: center
 
-Results for **02.toolchain-basic** and **02.toolchain-complex** examples
-(target ``all``) can be found
-`here <https://github.com/skaluzka/makbet/tree/master/docs/img/examples/>`_.
-
+| Results for **02.toolchain-basic** example (target ``all``) can be found
+  `here <https://github.com/skaluzka/makbet/tree/master/docs/img/examples/02.toolchain-basic>`_.
+| Results for **02.toolchain-complex** example (target ``all``) are
+  `here <https://github.com/skaluzka/makbet/tree/master/docs/img/examples/02.toolchain-complex>`__.
 
 Two **DOT** online editors have been successfully tested with **makbet**:
 
@@ -208,7 +207,6 @@ easily saved or redirected to file.  This can be achieved by passing
     2020-07-07 10:31:14 [INFO]: Task "all" started.
     2020-07-07 10:31:14 [INFO]: Task "all" terminated.
     [user@localhost 01.dummy]$
-
 
 Special makbet's target ``.show-summary-events-csv-file`` will display **CSV**
 results which can be used for further processing:
@@ -243,13 +241,12 @@ results which can be used for further processing:
     "task-F";"task-E";"";"";"2020-07-07 10:31:14";"TERMINATED";"1594110674";
     [user@localhost 01.dummy]$
 
-
-Above results, which are valid for **01.dummy** example, can be fetched from
-`here <https://github.com/skaluzka/makbet/tree/master/docs/csv/examples/01.dummy>`__.
-
-Example results for **02.toolchain-basic** and **02.toolchain-complex** cases
-can be found
-`here <https://github.com/skaluzka/makbet/tree/master/docs/csv/examples/>`__.
+| Above results, which are valid for **01.dummy** example, can be fetched from
+  `here <https://github.com/skaluzka/makbet/tree/master/docs/csv/examples/01.dummy>`__.
+| Example results for **02.toolchain-basic** can be found
+  `here <https://github.com/skaluzka/makbet/tree/master/docs/csv/examples/02.toolchain-basic>`__.
+| Results for **02.toolchain-complex** case are
+  `here <https://github.com/skaluzka/makbet/tree/master/docs/csv/examples/02.toolchain-complex>`__.
 
 |
 
