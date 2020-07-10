@@ -177,6 +177,8 @@ example (target ``all``).
 | Results for **02.toolchain-complex** example (target ``all``) are
   `here <https://github.com/skaluzka/makbet/tree/master/docs/img/examples/02.toolchain-complex>`__.
 
+|
+
 Two **DOT** online editors have been successfully tested with **makbet**:
 
 - https://edotor.net/ (fully interactive!)
