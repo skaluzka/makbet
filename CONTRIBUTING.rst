@@ -74,7 +74,7 @@ convention.  Please see the table below:
 
 |
 
-**Closing github issues via pull requests**
+**Closing github issues**
 
 
 According to official github documentation
@@ -84,17 +84,23 @@ every created issue can be closed in a two ways:
 #. Directly by commit with properly constructed commit message.
 #. By pull request with special description.
 
-In **makbet** project we are preferring the latter approach.
-
-The pull request description for issue labeled with **bug** label sholud
-contain separate ``Fix #xxx.`` line.
-
-| For any other issues the pull request description sholud contain
-  separate ``Resolve #xxx.`` line.
-| Examples:
-| https://github.com/skaluzka/makbet/pull/6
-
 |
+
+**Pull requests**
+
+
+In **makbet** project we are preferring closing issues by pull requests.
+
+#. | The pull request description for issue labeled with **bug** label sholud
+     contain separate ``Fix #xxx.`` line.
+   | Examples:
+   | https://github.com/skaluzka/makbet/pull/25
+
+#. | For any other issues the pull request description sholud contain
+     separate ``Resolve #xxx.`` line.
+   | Examples:
+   | https://github.com/skaluzka/makbet/pull/6
+   | https://github.com/skaluzka/makbet/pull/23
 
 | To see all pull requests please go
   `here <https://github.com/skaluzka/makbet/pulls>`__.
