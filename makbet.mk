@@ -317,7 +317,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	@# Saving STARTED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
 	$(call __save_event,$(1),$(3),$(4),$(5),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg,STARTED)
 	@#
-	@echo -e "\n`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" started."
+	@echo -e "\n`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" started.\n"
 	@#
 	@# Running the TASK_SCRIPT with TASK_SCRIPT_PARAMS params.
 	$(_q)$(4) $(5)
@@ -325,7 +325,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	@# Saving TERMINATED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
 	$(call __save_event,$(1),$(3),$(4),$(5),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg,TERMINATED)
 	@#
-	@echo -e "`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" terminated."
+	@echo -e "\n`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" terminated.\n"
 	@#
 	@# Saving *.dot file in .makbet/dot/ dir if MAKBET_DOT=1.
 	$(_q)if (( $(_d) == 1 )) ; \
