@@ -543,7 +543,7 @@ main-help: makbet-version
 	@echo "                                    defined in scenario's Makefile file).     "
 	@echo "  makbet-help                     - Show main makbet's help message (same as  "
 	@echo "                                    \"make help\" above) then append extended "
-	@echo "                                    help message."
+	@echo "                                    help message.                             "
 	@echo "                                    containing all special makbet's targets.  "
 	@echo "  makbet-clean                    - Clean entire makbet's internal dir        "
 	@echo "                                    (\$$MAKBET_PATH/.makbet/).                "
