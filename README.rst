@@ -289,6 +289,15 @@ file.
 
 |
 
+License
+=======
+
+**makbet** is licensed under the
+`MIT <https://github.com/skaluzka/makbet/blob/master/LICENSE>`_
+license.
+
+|
+
 Mission statement
 =================
 
