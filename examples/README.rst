@@ -6,7 +6,7 @@ Keep reading && have fun! :)
 
 |
 
-We are providing **three** complete examples for further study and examination.
+We are providing **four** complete examples for further study and examination.
 
 |
 
@@ -44,6 +44,14 @@ purposes.  As expected final results for both **02.toolchain-basic** and
 
 |
 
+The last example is saved in ``examples/03.ping-dns-servers/`` directory.  The
+goal of that example is to ping **three** dns servers
+(``1.1.1.1`` + ``8.8.4.4`` + ``8.8.8.8``) simultaneously using standard ``ping``
+utility.  There is no dedicated script in this example.  Syntax of raw ``ping``
+commands are passed directly to ``TASK_template`` macro.
+
+|
+
 Every example can be freely run with all combinations of **makbet's** CLI
 flags (``MAKBET_*``) or even easily modified.  All results of modifications
 are easy to observe and notice.
@@ -62,6 +70,8 @@ The **makbet's** examples directory structure is:
   ├── 02.toolchain-basic/
   │   └── Makefile
   ├── 02.toolchain-complex/
+  │   └── Makefile
+  ├── 03.ping-dns-servers/
   │   └── Makefile
   ├── lib/
   │   └── tasks/
@@ -132,6 +142,13 @@ where:
   by **two** ``build-python`` tasks (defined in **02.toolchain-basic** and
   **02.toolchain-complex** examples).  Its aim is to build **python 3.9.0b4**
   from previously downloaded sources.
+
+|
+
+- ``03.ping-dns-servers/`` - Dedicated directory for **makbet's**
+  ``03.ping-dns-servers`` example.
+- ``03.ping-dns-servers/Makefile`` - So-called **makbet's** scenario file.  It
+  contains complete task list for **makbet's** ``03.ping-dns-servers`` example.
 
 |
 

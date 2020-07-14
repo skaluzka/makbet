@@ -17,7 +17,9 @@ The documentation directory structure is:
     │       │   └── results.csv
     │       ├── 02.toolchain-basic/
     │       │   └── results.csv
-    │       └── 02.toolchain-complex/
+    │       ├── 02.toolchain-complex/
+    │       │   └── results.csv
+    │       └── 03.ping-dns-servers/
     │           └── results.csv
     ├── img/
     │   └── examples/
@@ -25,7 +27,9 @@ The documentation directory structure is:
     │       │   └── dot-results.png
     │       ├── 02.toolchain-basic/
     │       │   └── dot-results.png
-    │       └── 02.toolchain-complex/
+    │       ├── 02.toolchain-complex/
+    │       │   └── dot-results.png
+    │       └── 03.ping-dns-servers/
     │           └── dot-results.png
     └── README.rst
 
