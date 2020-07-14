@@ -29,7 +29,7 @@ But also to help:
 
 - learning **GNU make** utility,
 - learning **DOT** language,
-- learning bash scripting.
+- learning **bash** scripting.
 
 |
 
@@ -46,14 +46,14 @@ Features
 
 - based on **GNU make** tool and its features,
 - easy extensible,
-- contains built-in minimalistic tasks library (set of bash scripts),
-- support for parallelism,
+- contains built-in minimalistic tasks library (set of simple **bash** scripts),
+- built-in support for parallelism,
 - can be easy added/embedded into existing projects as 3rd party SW,
 - pure console tool - no GUI required,
 - good and fast integration with other console programs,
-- unified naming scheme for all makbet's specific environment variables
-  (every variable has ``MAKBET_`` prefix),
-- unified syntax for all makbet's CLI options (every option has
+- unified naming scheme of all environment variables (every **makbet's**
+  environment variable has ``MAKBET_`` prefix),
+- unified syntax of all CLI options (every **makbet's** CLI option has
   ``MAKBET_`` prefix),
 - saving tasks' details in **key=value** ``*.cfg`` files for further
   usage (e.g.: by shell scripts),
@@ -63,6 +63,8 @@ Features
   ``MAKBET_PROFILES=1`` CLI option),
 - generating **DOT** output showing relations between tasks (this feature can
   be enabled by ``MAKBET_DOT=1`` CLI option),
+- it is pretty well documented,
+- has a couple of quite nice examples,
 - minimal system requirements (see below).
 
 |
@@ -89,7 +91,7 @@ Installing
 Installing **makbet** is quite easy.
 
 - Download or clone the **makbet** project from github.
-- Export the ``MAKBET_PATH`` variable pointing to makbet's main directory
+- Export the ``MAKBET_PATH`` variable pointing to **makbet's** main directory
   (e.g.: ``export MAKBET_PATH=/home/user/makbet``).
 
 And that's all.  You are now ready to write your own scenarios (or play with
@@ -135,7 +137,7 @@ easily saved or redirected to file.  This can be achieved by passing
     2020-06-24 17:54:11 [INFO]: Task "all" terminated.
     [user@localhost 01.dummy]$
 
-Special makbet's target ``.show-summary-dot-file`` will display **DOT**
+Special **makbet's** target ``.show-summary-dot-file`` will display **DOT**
 results which can be used for further processing:
 
 ::
@@ -210,8 +212,8 @@ easily saved or redirected to file.  This can be achieved by passing
     2020-07-07 10:31:14 [INFO]: Task "all" terminated.
     [user@localhost 01.dummy]$
 
-Special makbet's target ``.show-summary-events-csv-file`` will display **CSV**
-results which can be used for further processing:
+Special **makbet's** target ``.show-summary-events-csv-file`` will display
+**CSV** results which can be used for further processing:
 
 ::
 
