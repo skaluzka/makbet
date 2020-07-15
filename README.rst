@@ -196,7 +196,7 @@ CSV output
 For every properly created scenario **makbet** is able to generate valuable
 **CSV** output.  Such output (smiliar as for **DOT** language above) can be
 easily saved or redirected to file.  This can be achieved by passing
-``MAKBET_CSV=1`` option to ``make`` execution command (by deafult
+``MAKBET_CSV=1`` option to ``make`` execution command (by default
 ``MAKBET_CSV=0``) as in below example:
 
 ::
