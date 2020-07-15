@@ -173,7 +173,7 @@ results which can be used for further processing:
 
 Below graph picture has been rendered, by
 `edotor <https://edotor.net/>`_ online **DOT** editor, based on above
-``digraph``
+``digraph`` code
 (`01.dummy <https://github.com/skaluzka/makbet/tree/master/examples/01.dummy>`_
 example, target ``all``).
 
