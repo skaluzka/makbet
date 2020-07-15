@@ -35,7 +35,7 @@ MAKBET_PROFILES_CFG_DIR := $(MAKBET_PROFILES_DIR)/cfg
 MAKBET_PROFILES_CSV_DIR := $(MAKBET_PROFILES_DIR)/csv
 
 #
-# Handling CLI input: MAKBET_VERBOSE param.
+# Handling CLI input: MAKBET_VERBOSE option.
 #
 ifndef MAKBET_VERBOSE
   export MAKBET_VERBOSE := 0
@@ -53,11 +53,11 @@ else ifeq ($(MAKBET_VERBOSE), 2)
   _v1 := 1
   _q :=
 else
-  $(error [ERROR]: Wrong value for MAKBET_VERBOSE param (MAKBET_VERBOSE=$(MAKBET_VERBOSE)). Allowed values: 0, 1 or 2 only)
+  $(error [ERROR]: Wrong value for MAKBET_VERBOSE option (MAKBET_VERBOSE=$(MAKBET_VERBOSE)). Allowed values: 0, 1 or 2 only)
 endif
 
 #
-# Handling CLI input: MAKBET_PROFILES param.
+# Handling CLI input: MAKBET_PROFILES option.
 #
 ifndef MAKBET_PROFILES
   MAKBET_PROFILES := 0
@@ -67,11 +67,11 @@ ifeq ($(MAKBET_PROFILES), 0)
 else ifeq ($(MAKBET_PROFILES), 1)
   _p := 1
 else
-  $(error [ERROR]: Wrong value for MAKBET_PROFILES param (MAKBET_PROFILES=$(MAKBET_PROFILES)). Allowed values: 0 or 1 only)
+  $(error [ERROR]: Wrong value for MAKBET_PROFILES option (MAKBET_PROFILES=$(MAKBET_PROFILES)). Allowed values: 0 or 1 only)
 endif
 
 #
-# Handling CLI input: MAKBET_DOT param.
+# Handling CLI input: MAKBET_DOT option.
 #
 ifndef MAKBET_DOT
   MAKBET_DOT := 0
@@ -81,12 +81,12 @@ ifeq ($(MAKBET_DOT), 0)
 else ifeq ($(MAKBET_DOT), 1)
   _d := 1
 else
-  $(error [ERROR]: Wrong value for MAKBET_DOT param (MAKBET_DOT=$(MAKBET_DOT)). Allowed values: 0 or 1 only)
+  $(error [ERROR]: Wrong value for MAKBET_DOT option (MAKBET_DOT=$(MAKBET_DOT)). Allowed values: 0 or 1 only)
 endif
 
 #
 # Handling CLI input: MAKBET_CSV, MAKBET_CSV_SEP, MAKBET_EVENTS_CSV_HEADER
-# and MAKBET_PROFILES_CSV_HEADER params.
+# and MAKBET_PROFILES_CSV_HEADER options.
 #
 ifndef MAKBET_CSV
   MAKBET_CSV := 0
@@ -108,18 +108,18 @@ else ifeq ($(MAKBET_CSV), 1)
     MAKBET_PROFILES_CSV_HEADER := TASK_NAME;TASK_DEPS;TASK_SCRIPT;TASK_SCRIPT_PARAMS;TASK_STARTED_EPOCH;TASK_TERMINATED_EPOCH;TASK_DURATION_SECONDS;TASK_DURATION;
   endif
 else
-  $(error [ERROR]: Wrong value for MAKBET_CSV param (MAKBET_CSV=$(MAKBET_CSV)). Allowed values: 0 or 1 only)
+  $(error [ERROR]: Wrong value for MAKBET_CSV option (MAKBET_CSV=$(MAKBET_CSV)). Allowed values: 0 or 1 only)
 endif
 
 #
-# Handling CLI input: MAKBET_DATE_TIME_FORMAT param.
+# Handling CLI input: MAKBET_DATE_TIME_FORMAT option.
 #
 ifndef MAKBET_DATE_TIME_FORMAT
   MAKBET_DATE_TIME_FORMAT := +"%Y-%m-%d %H:%M:%S"
 endif
 
 #
-# Handling CLI input: MAKBET_TASKS_DIR param.
+# Handling CLI input: MAKBET_TASKS_DIR option.
 #
 ifndef MAKBET_TASKS_DIR
   MAKBET_TASKS_DIR := $(MAKBET_LIB_DIR)/tasks
@@ -139,7 +139,7 @@ endif
 #         └── csv/
 #
 # Usually it means - as soon as makbet.mk file was successfully included
-# and all provided CLI params were processed without any error.
+# and all provided CLI options were processed without any error.
 #
 $(shell mkdir -p $(MAKBET_DOT_DIR))
 $(shell mkdir -p $(MAKBET_EVENTS_CFG_DIR))
@@ -196,7 +196,7 @@ endif
 # $(1) - TASK_NAME - The name of the task.
 # $(2) - TASK_DEPS - All task dendencies.
 # $(3) - TASK_SCRIPT - Task script file.
-# $(4) - TASK_SCRIPT_PARAMS - CLI params for TASK_SCRIPT above.
+# $(4) - TASK_SCRIPT_PARAMS - Input params for TASK_SCRIPT above.
 #
 define __print_task_details =
 	echo "TASK_NAME = $(strip $(1))" ; \
@@ -212,7 +212,7 @@ endef
 # $(1) - TASK_NAME - The name of the task.
 # $(2) - TASK_DEPS - All task dendencies.
 # $(3) - TASK_SCRIPT - Task script file.
-# $(4) - TASK_SCRIPT_PARAMS - CLI params for TASK_SCRIPT above.
+# $(4) - TASK_SCRIPT_PARAMS - Input params for TASK_SCRIPT above.
 # $(5) - TASK_EVENT_FILE - Destination event file.
 # $(6) - TASK_EVENT_TYPE - The type of the event (STARTED or TERMINATED).
 #
@@ -298,7 +298,7 @@ endef
 # $(2) - TASK_DESCR - Task description string.
 # $(3) - TASK_DEPS - All task dependencies.
 # $(4) - TASK_SCRIPT - Task script file.
-# $(5) - TASK_SCRIPT_PARAMS - CLI params for TASK_SCRIPT above.
+# $(5) - TASK_SCRIPT_PARAMS - Input params for TASK_SCRIPT above.
 #
 define TASK_template =
 
@@ -319,7 +319,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	@#
 	@echo -e "\n`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" started.\n"
 	@#
-	@# Running the TASK_SCRIPT with TASK_SCRIPT_PARAMS params.
+	@# Running the TASK_SCRIPT with TASK_SCRIPT_PARAMS input params.
 	$(_q)$(4) $(5)
 	@#
 	@# Saving TERMINATED event file in $(MAKBET_EVENTS_CFG_DIR) dir.

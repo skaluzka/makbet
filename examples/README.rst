@@ -57,7 +57,7 @@ commands are passed directly to ``TASK_template`` macro.
 |
 
 Every example can be freely run with all combinations of **makbet's** CLI
-flags (``MAKBET_*``) or even easily modified.  All results of modifications
+options (``MAKBET_*``) or even easily modified.  All results of modifications
 are easy to observe and notice.
 
 |
