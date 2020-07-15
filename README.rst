@@ -178,10 +178,8 @@ example (target ``all``).
 .. image:: docs/examples/png/01.dummy/results.png
     :align: center
 
-| Results for **02.toolchain-basic** example (target ``all``) can be found
-  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/png/02.toolchain-basic>`_.
-| Results for **02.toolchain-complex** example (target ``all``) are
-  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/png/02.toolchain-complex>`__.
+| Results for other examples can be found
+  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/png>`_.
 
 |
 
@@ -249,12 +247,11 @@ Special **makbet's** target ``.show-summary-events-csv-file`` will display
     "task-F";"task-E";"";"";"2020-07-07 10:31:14";"TERMINATED";"1594110674";
     [user@localhost 01.dummy]$
 
-| Above results, which are valid for **01.dummy** example, can be fetched from
-  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/csv/01.dummy>`__.
-| Example results for **02.toolchain-basic** can be found
-  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/csv/02.toolchain-basic>`__.
-| Results for **02.toolchain-complex** case are
-  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/csv/02.toolchain-complex>`__.
+| Above results (which are valid for **01.dummy** example) have been saved into
+  this
+  `results.csv <https://github.com/skaluzka/makbet/tree/master/docs/examples/csv/01.dummy>`__ file.
+| Results for other examples are available
+  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/csv>`__.
 
 |
 
