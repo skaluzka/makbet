@@ -175,13 +175,13 @@ The graph presented below is reflecting above **DOT** code generated for
 `01.dummy <https://github.com/skaluzka/makbet/tree/master/examples/01.dummy>`_
 example (target ``all``).
 
-.. image:: docs/img/examples/01.dummy/dot-results.png
+.. image:: docs/examples/png/01.dummy/results.png
     :align: center
 
 | Results for **02.toolchain-basic** example (target ``all``) can be found
-  `here <https://github.com/skaluzka/makbet/tree/master/docs/img/examples/02.toolchain-basic>`_.
+  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/png/02.toolchain-basic>`_.
 | Results for **02.toolchain-complex** example (target ``all``) are
-  `here <https://github.com/skaluzka/makbet/tree/master/docs/img/examples/02.toolchain-complex>`__.
+  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/png/02.toolchain-complex>`__.
 
 |
 
@@ -250,11 +250,11 @@ Special **makbet's** target ``.show-summary-events-csv-file`` will display
     [user@localhost 01.dummy]$
 
 | Above results, which are valid for **01.dummy** example, can be fetched from
-  `here <https://github.com/skaluzka/makbet/tree/master/docs/csv/examples/01.dummy>`__.
+  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/csv/01.dummy>`__.
 | Example results for **02.toolchain-basic** can be found
-  `here <https://github.com/skaluzka/makbet/tree/master/docs/csv/examples/02.toolchain-basic>`__.
+  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/csv/02.toolchain-basic>`__.
 | Results for **02.toolchain-complex** case are
-  `here <https://github.com/skaluzka/makbet/tree/master/docs/csv/examples/02.toolchain-complex>`__.
+  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/csv/02.toolchain-complex>`__.
 
 |
 
