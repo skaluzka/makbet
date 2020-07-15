@@ -1,3 +1,15 @@
+Welcome to **makbet's** contribution guide!
+
+|
+
+Keep reading && have fun! :)
+
+|
+
+----
+
+|
+
 **Development model**
 
 

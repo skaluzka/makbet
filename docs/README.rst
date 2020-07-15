@@ -1,8 +1,12 @@
-Welcome to official **makbet's** documentation!
+Welcome to **makbet's** documentation!
 
 |
 
 Keep reading && have fun! :)
+
+|
+
+----
 
 |
 

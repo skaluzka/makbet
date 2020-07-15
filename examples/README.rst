@@ -6,6 +6,10 @@ Keep reading && have fun! :)
 
 |
 
+----
+
+|
+
 We are providing **four** complete examples for further study and examination.
 
 |
