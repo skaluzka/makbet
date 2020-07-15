@@ -171,14 +171,16 @@ results which can be used for further processing:
 
     [user@localhost 01.dummy]$
 
-The graph presented below is reflecting above **DOT** code generated for
-`01.dummy <https://github.com/skaluzka/makbet/tree/master/examples/01.dummy>`_
-example (target ``all``).
+Below graph picture has been rendered, by
+`edotor <https://edotor.net/>`_ online **DOT** editor, based on above
+``digraph``
+(`01.dummy <https://github.com/skaluzka/makbet/tree/master/examples/01.dummy>`_
+example, target ``all``).
 
 .. image:: docs/examples/png/01.dummy/results.png
     :align: center
 
-| Results for other examples can be found
+| Results for all **makbet's** examples can be found
   `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/png>`_.
 
 |
