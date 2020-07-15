@@ -559,11 +559,12 @@ main-help: makbet-version
 
 
 # This is scenario-help target (the whole scenario-specific help message).
-# If execution directory is MAKBET_PATH then the only allowed makefile at
-# this level is Makefile -> makbet.mk symlink.
-# Therefore scenario-help target is empty here. This is not valid in scenario's
-# directory where help message will be generated dynamically based on all tasks
-# defined in scenario's Makefile file.
+# If execution directory is $MAKBET_PATH then the only allowed Makefile file
+# on this level is symbolic link to makbet.mk file (Makefile -> makbet.mk).
+# To keep makbet.mk consistent with all scenarios below scenario-help target
+# should be empty.  This case is not valid for any scenario directory with
+# scenario's Makefile inside.  For all such cases the help message will be
+# generated dynamically based on all tasks defined in scenario's Makefile file.
 .PHONY: scenario-help
 scenario-help::
 	@#
