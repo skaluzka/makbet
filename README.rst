@@ -21,7 +21,7 @@ This project has been created for several reasons...
 Mainly to help:
 
 - automating various complex scenarios,
-- modelling, and prototyping complex real-life processes
+- modeling, and prototyping complex real-life processes
   (e.g.: production/delivery chain) consisting of many tasks having many
   dependencies,
 - reflecting, simulating and profiling complicated existing flows,
@@ -61,7 +61,7 @@ Features
   ``MAKBET_`` prefix),
 - saving tasks' details in **key=value** ``*.cfg`` files for further
   usage (e.g.: by shell scripts),
-- saving tasks' details in ``*.csv`` files for futher processing if needed
+- saving tasks' details in ``*.csv`` files for further processing if needed
   (this feature can be enabled by ``MAKBET_CSV=1`` CLI option),
 - profiling - measuring tasks duration (this feature can be enabled by
   ``MAKBET_PROFILES=1`` CLI option),
@@ -84,8 +84,8 @@ The only system requirements are:
 - GNU make tool (version **3.82+**)
 - bash tool
 
-All example scenarios have been successfully tested with with **GNU make 4.3**
-and **bash 5.0.16**.
+All example scenarios have been successfully tested with **GNU make 4.3** and
+**bash 5.0.16**.
 
 |
 
@@ -111,8 +111,8 @@ major release has been done so far).
 
 There are a couple of quite nice improvements already proposed for **makbet**,
 see the details here https://github.com/skaluzka/makbet/issues.  Therefore
-there is no guarantee that backward compatibility will be keept (at least until
-the first official version will be released).
+there is no guarantee that backward compatibility will be kept all the time
+(at least until the first official version will be released).
 
 |
 
@@ -196,7 +196,7 @@ CSV output
 ==========
 
 For every properly created scenario **makbet** is able to generate valuable
-**CSV** output.  Such output (smiliar as for **DOT** language above) can be
+**CSV** output.  Such output (similiar as for **DOT** language above) can be
 easily saved or redirected to file.  This can be achieved by passing
 ``MAKBET_CSV=1`` option to ``make`` execution command (by default
 ``MAKBET_CSV=0``) as in below example:

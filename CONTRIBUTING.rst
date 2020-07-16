@@ -103,12 +103,12 @@ every created issue can be closed in a two ways:
 
 In **makbet** project we are preferring closing issues by pull requests.
 
-#. | The pull request description for issue labeled with **bug** label sholud
+#. | The pull request description for issue labeled with **bug** label should
      contain separate ``Fix #xxx.`` line.
    | Examples:
    | https://github.com/skaluzka/makbet/pull/25
 
-#. | For any other issues the pull request description sholud contain
+#. | For any other issues the pull request description should contain
      separate ``Resolve #xxx.`` line.
    | Examples:
    | https://github.com/skaluzka/makbet/pull/6
@@ -133,7 +133,7 @@ during merging phase.
 **Merging the code**
 
 
-Becasue of github signing issue (described here:
+Because of github signing issue (described here:
 https://github.com/github/hub/issues/1241) it is recommended to merge
 code locally not via github GUI.
 
