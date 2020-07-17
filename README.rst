@@ -234,7 +234,7 @@ Special **makbet's** target ``.show-summary-events-csv-file`` will display
 ::
 
     [user@localhost 01.dummy]$ make .show-summary-events-csv-file
-    TASK_NAME;TASK_DEPS;TASK_SCRIPT;TASK_SCRIPT_PARAMS;TASK_DATE_TIME;TASK_EVENT_TYPE;TASK_[STARTED|TERMINATED]_EPOCH;
+    TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_PARAMS;TASK_DATE_TIME;TASK_EVENT_TYPE;TASK_[STARTED|TERMINATED]_EPOCH;
     "all";"task-F";"";"";"2020-07-07 10:31:14";"STARTED";"1594110674";
     "all";"task-F";"";"";"2020-07-07 10:31:14";"TERMINATED";"1594110674";
     "INIT";"";"";"";"2020-07-07 10:31:03";"STARTED";"1594110663";
