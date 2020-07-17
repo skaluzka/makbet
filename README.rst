@@ -131,14 +131,20 @@ easily saved or redirected to file.  This can be achieved by passing
     [user@localhost 01.dummy]$ make makbet-clean && make all MAKBET_DOT=1
 
     2020-06-24 17:54:00 [INFO]: Task "INIT" started.
+
+
     2020-06-24 17:54:00 [INFO]: Task "INIT" terminated.
+
 
     2020-06-24 17:54:00 [INFO]: Task "task-A" started.
 
     ...
 
     2020-06-24 17:54:11 [INFO]: Task "all" started.
+
+
     2020-06-24 17:54:11 [INFO]: Task "all" terminated.
+
     [user@localhost 01.dummy]$
 
 Special **makbet's** target ``.show-summary-dot-file`` will display **DOT**
@@ -206,14 +212,20 @@ easily saved or redirected to file.  This can be achieved by passing
     [user@localhost 01.dummy]$ make makbet-clean && make all MAKBET_CSV=1
 
     2020-07-07 10:31:03 [INFO]: Task "INIT" started.
+
+
     2020-07-07 10:31:03 [INFO]: Task "INIT" terminated.
+
 
     2020-07-07 10:31:03 [INFO]: Task "task-A" started.
 
     ...
 
     2020-07-07 10:31:14 [INFO]: Task "all" started.
+
+
     2020-07-07 10:31:14 [INFO]: Task "all" terminated.
+
     [user@localhost 01.dummy]$
 
 Special **makbet's** target ``.show-summary-events-csv-file`` will display
