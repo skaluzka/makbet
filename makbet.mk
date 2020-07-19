@@ -53,7 +53,7 @@ else ifeq ($(MAKBET_VERBOSE), 2)
   _v1 := 1
   _q :=
 else
-  $(error [ERROR]: Wrong value for MAKBET_VERBOSE option (MAKBET_VERBOSE=$(MAKBET_VERBOSE)). Allowed values: 0, 1 or 2 only)
+  $(error [ERROR]: Wrong value for MAKBET_VERBOSE option (MAKBET_VERBOSE=$(MAKBET_VERBOSE)).  Allowed values: 0, 1 or 2 only)
 endif
 
 #
@@ -67,7 +67,7 @@ ifeq ($(MAKBET_PROFILES), 0)
 else ifeq ($(MAKBET_PROFILES), 1)
   _p := 1
 else
-  $(error [ERROR]: Wrong value for MAKBET_PROFILES option (MAKBET_PROFILES=$(MAKBET_PROFILES)). Allowed values: 0 or 1 only)
+  $(error [ERROR]: Wrong value for MAKBET_PROFILES option (MAKBET_PROFILES=$(MAKBET_PROFILES)).  Allowed values: 0 or 1 only)
 endif
 
 #
@@ -81,7 +81,7 @@ ifeq ($(MAKBET_DOT), 0)
 else ifeq ($(MAKBET_DOT), 1)
   _d := 1
 else
-  $(error [ERROR]: Wrong value for MAKBET_DOT option (MAKBET_DOT=$(MAKBET_DOT)). Allowed values: 0 or 1 only)
+  $(error [ERROR]: Wrong value for MAKBET_DOT option (MAKBET_DOT=$(MAKBET_DOT)).  Allowed values: 0 or 1 only)
 endif
 
 #
@@ -108,7 +108,7 @@ else ifeq ($(MAKBET_CSV), 1)
     MAKBET_PROFILES_CSV_HEADER := TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_STARTED_EPOCH;TASK_TERMINATED_EPOCH;TASK_DURATION_SECONDS;TASK_DURATION;
   endif
 else
-  $(error [ERROR]: Wrong value for MAKBET_CSV option (MAKBET_CSV=$(MAKBET_CSV)). Allowed values: 0 or 1 only)
+  $(error [ERROR]: Wrong value for MAKBET_CSV option (MAKBET_CSV=$(MAKBET_CSV)).  Allowed values: 0 or 1 only)
 endif
 
 #
@@ -490,7 +490,7 @@ makbet-help: main-help
 	@echo "  .show-dot-dir                   - Show entire content of makbet's internal   "
 	@echo "                                    \"dot\" dir (\$$MAKBET_PATH/.makbet/dot/). "
 	@echo "                                    This target requires MAKBET_DOT=1.         "
-	@echo "  .show-summary-dot-file          - Show the content of results dot file. This "
+	@echo "  .show-summary-dot-file          - Show the content of results dot file.  This"
 	@echo "                                    target requires MAKBET_DOT=1.              "
 	@echo "  .show-events-dir                - Show entire content of makbet's            "
 	@echo "                                    \$$MAKBET_PATH/.makbet/events/ internal    "
@@ -500,23 +500,23 @@ makbet-help: main-help
 	@echo "                                    internal dir.                              "
 	@echo "  .show-events-csv-dir            - Show entire content of makbet's            "
 	@echo "                                    \$$MAKBET_PATH/.makbet/events/csv/         "
-	@echo "                                    internal dir. This target requires         "
+	@echo "                                    internal dir.  This target requires        "
 	@echo "                                    MAKBET_CSV=1.                              "
 	@echo "  .show-summary-events-csv-file   - Show the content of events summary csv     "
-	@echo "                                    file. This target requires MAKBET_CSV=1.   "
+	@echo "                                    file.  This target requires MAKBET_CSV=1.  "
 	@echo "  .show-profiles-dir              - Show entire content of makbet's            "
 	@echo "                                    \$$MAKBET_PATH/.makbet/profiles/ internal  "
 	@echo "                                    dir including all sub-dirs.                "
 	@echo "  .show-profiles-cfg-dir          - Show entire content of makbet's            "
 	@echo "                                    \$$MAKBET_PATH/.makbet/profiles/cfg/       "
-	@echo "                                    internal dir. This target requires         "
+	@echo "                                    internal dir.  This target requires        "
 	@echo "                                    MAKBET_PROFILES=1.                         "
 	@echo "  .show-profiles-csv-dir          - Show entire content of makbet's            "
 	@echo "                                    \$$MAKBET_PATH/.makbet/profiles/csv/       "
-	@echo "                                    internal dir. This target requires         "
+	@echo "                                    internal dir.  This target requires        "
 	@echo "                                    MAKBET_PROFILES=1 and MAKBET_CSV=1.        "
 	@echo "  .show-summary-profiles-csv-file - Show the content of profiles summary csv   "
-	@echo "                                    file. This target requires MAKBET_CSV=1    "
+	@echo "                                    file.  This target requires MAKBET_CSV=1   "
 	@echo "                                    and MAKBET_PROFILES=1.                     "
 	@echo "  .show-env-vars                  - Show all available MAKBET_* environment    "
 	@echo "                                    variables.                                 "
@@ -539,7 +539,7 @@ main-help: makbet-version
 	@echo ""
 	@echo "  help                            - Show main makbet's help message as first   "
 	@echo "                                    then append the help messages of all tasks "
-	@echo "                                    defined in scenario's Makefile. This is    "
+	@echo "                                    defined in scenario's Makefile.  This is   "
 	@echo "                                    the default target.                        "
 	@echo "  scenario-help                   - Show only scenario's help message (it is   "
 	@echo "                                    generated dynamically based on all tasks   "

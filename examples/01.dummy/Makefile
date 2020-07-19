@@ -102,7 +102,7 @@ $(eval $(call TASK_template, \
 # Note:
 # Target ALL is defined as a regular makefile target which is also
 # allowed, but all such targets will be not visible in automatically
-# generated help message. So in fact it can be treated as a poor
+# generated help message.  So in fact it can be treated as a poor
 # implementation of hidden (secret) target.
 .PHONY: ALL
 ALL: task-F
