@@ -102,10 +102,10 @@ else ifeq ($(MAKBET_CSV), 1)
     MAKBET_CSV_SEP := ;
   endif
   ifndef MAKBET_EVENTS_CSV_HEADER
-    MAKBET_EVENTS_CSV_HEADER := TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_PARAMS;TASK_DATE_TIME;TASK_EVENT_TYPE;TASK_[STARTED|TERMINATED]_EPOCH;
+    MAKBET_EVENTS_CSV_HEADER := TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_DATE_TIME;TASK_EVENT_TYPE;TASK_[STARTED|TERMINATED]_EPOCH;
   endif
   ifndef MAKBET_PROFILES_CSV_HEADER
-    MAKBET_PROFILES_CSV_HEADER := TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_PARAMS;TASK_STARTED_EPOCH;TASK_TERMINATED_EPOCH;TASK_DURATION_SECONDS;TASK_DURATION;
+    MAKBET_PROFILES_CSV_HEADER := TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_STARTED_EPOCH;TASK_TERMINATED_EPOCH;TASK_DURATION_SECONDS;TASK_DURATION;
   endif
 else
   $(error [ERROR]: Wrong value for MAKBET_CSV option (MAKBET_CSV=$(MAKBET_CSV)). Allowed values: 0 or 1 only)
@@ -196,13 +196,13 @@ endif
 # $(1) - TASK_NAME - The name of the task.
 # $(2) - TASK_DEPS - All task dendencies.
 # $(3) - TASK_CMD - Task command.
-# $(4) - TASK_CMD_PARAMS - Input params for TASK_CMD above.
+# $(4) - TASK_CMD_OPTS - Input options for TASK_CMD above.
 #
 define __print_task_details =
 	echo "TASK_NAME = $(strip $(1))" ; \
 	echo "TASK_DEPS = $(strip $(2))" ; \
 	echo "TASK_CMD = $(strip $(3))" ; \
-	echo "TASK_CMD_PARAMS = $(strip $(4))"
+	echo "TASK_CMD_OPTS = $(strip $(4))"
 endef
 
 #
@@ -212,7 +212,7 @@ endef
 # $(1) - TASK_NAME - The name of the task.
 # $(2) - TASK_DEPS - All task dendencies.
 # $(3) - TASK_CMD - Task command.
-# $(4) - TASK_CMD_PARAMS - Input params for TASK_CMD above.
+# $(4) - TASK_CMD_OPTS - Input options for TASK_CMD above.
 # $(5) - TASK_EVENT_FILE - Destination event file.
 # $(6) - TASK_EVENT_TYPE - The type of the event (STARTED or TERMINATED).
 #
@@ -221,7 +221,7 @@ define __save_event =
 	$(_q)echo "TASK_NAME=\"$(strip $(1))\"" >> $(5)
 	$(_q)echo "TASK_DEPS=\"$(strip $(2))\"" >> $(5)
 	$(_q)echo "TASK_CMD=\"$(strip $(3))\"" >> $(5)
-	$(_q)echo "TASK_CMD_PARAMS=\"$(strip $(4))\"" >> $(5)
+	$(_q)echo "TASK_CMD_OPTS=\"$(strip $(4))\"" >> $(5)
 	$(_q)echo "TASK_DATE_TIME=\"`date $(MAKBET_DATE_TIME_FORMAT)`\"" >> $(5)
 	$(_q)echo "TASK_EVENT_TYPE=\"$(strip $(6))\"" >> $(5)
 	$(_q)cmd="TIMESTAMP_EPOCH=$$$$(date +'%s')" && \
@@ -301,7 +301,7 @@ endef
 # $(2) - TASK_DESCR - Task description string.
 # $(3) - TASK_DEPS - All task dependencies.
 # $(4) - TASK_CMD - Task command.
-# $(5) - TASK_CMD_PARAMS - Input params for TASK_CMD above.
+# $(5) - TASK_CMD_OPTS - Input options for TASK_CMD above.
 #
 define TASK_template =
 
@@ -322,7 +322,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	@#
 	@echo -e "\n`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" started.\n"
 	@#
-	@# Running the TASK_CMD with TASK_CMD_PARAMS input params.
+	@# Running the TASK_CMD with TASK_CMD_OPTS input options.
 	$(_q)$(4) $(5)
 	@#
 	@# Saving TERMINATED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
@@ -381,10 +381,10 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 .PHONY: scenario-help
 scenario-help::
 	@echo '  $(strip $(1))'
-	@echo '    - Descr:  $(strip $(2))'
-	@echo '    - Deps:   $(strip $(3))'
-	@echo '    - Cmd:    $(strip $(4))'
-	@echo '    - Params: $(strip $(5))'
+	@echo '    - Descr: $(strip $(2))'
+	@echo '    - Deps:  $(strip $(3))'
+	@echo '    - Cmd:   $(strip $(4))'
+	@echo '    - Opts:  $(strip $(5))'
 	@echo ''
 
 # If MAKBET_VERBOSE=2 printing task's command path (if any) immediately
