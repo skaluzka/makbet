@@ -18,15 +18,19 @@ The documentation directory structure is:
   ├── examples/
   │   ├── 01.dummy/
   │   │   ├── results.csv
+  │   │   ├── results.dot
   │   │   └── results.png
   │   ├── 02.toolchain-basic/
   │   │   ├── results.csv
+  │   │   ├── results.dot
   │   │   └── results.png
   │   ├── 02.toolchain-complex/
   │   │   ├── results.csv
+  │   │   ├── results.dot
   │   │   └── results.png
   │   └── 03.ping-dns-servers/
   │       ├── results.csv
+  │       ├── results.dot
   │       └── results.png
   └── README.rst
 
