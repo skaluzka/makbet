@@ -16,7 +16,7 @@ endif
 .PHONY: scenario-help
 scenario-help::
 	@echo ""
-	@echo "All targets defined in $(CURDIR)/$(firstword $(MAKEFILE_LIST)):"
+	@echo "All targets ($(MAKBET_TASK_TOTAL)) defined in $(CURDIR)/$(firstword $(MAKEFILE_LIST)):"
 	@echo ""
 
 # Entry point.

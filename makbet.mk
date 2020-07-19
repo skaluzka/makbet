@@ -15,13 +15,25 @@ else
 endif
 
 #
+# Default target.  This target will be called if make command be
+# be invoked with no options.
+#
+.DEFAULT_GOAL := help
+
+#
+# Task counter per scenario.
+#
+MAKBET_TASK_COUNTER := 0
+
+#
+# Total task counter per scenario.
+#
+MAKBET_TASK_TOTAL := $(shell grep -c eval $(CURDIR)/$(firstword $(MAKEFILE_LIST)))
+
+#
 # Handling makbet's version.
 #
 MAKBET_VERSION := $(shell git describe --all --long 2> /dev/null || cat $(MAKBET_PATH)/VERSION)
-
-
-.DEFAULT_GOAL := help
-
 
 #
 # All internal makbet dirs.
@@ -102,10 +114,10 @@ else ifeq ($(MAKBET_CSV), 1)
     MAKBET_CSV_SEP := ;
   endif
   ifndef MAKBET_EVENTS_CSV_HEADER
-    MAKBET_EVENTS_CSV_HEADER := TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_DATE_TIME;TASK_EVENT_TYPE;TASK_[STARTED|TERMINATED]_EPOCH;
+    MAKBET_EVENTS_CSV_HEADER := TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_DATE_TIME;TASK_EVENT_TYPE;TASK_[STARTED|TERMINATED]_EPOCH;
   endif
   ifndef MAKBET_PROFILES_CSV_HEADER
-    MAKBET_PROFILES_CSV_HEADER := TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_STARTED_EPOCH;TASK_TERMINATED_EPOCH;TASK_DURATION_SECONDS;TASK_DURATION;
+    MAKBET_PROFILES_CSV_HEADER := TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_STARTED_EPOCH;TASK_TERMINATED_EPOCH;TASK_DURATION_SECONDS;TASK_DURATION;
   endif
 else
   $(error [ERROR]: Wrong value for MAKBET_CSV option (MAKBET_CSV=$(MAKBET_CSV)).  Allowed values: 0 or 1 only)
@@ -193,40 +205,44 @@ endif
 # Definition of __print_task_details macro.
 #
 # Where:
-# $(1) - TASK_NAME - The name of the task.
-# $(2) - TASK_DEPS - All task dendencies.
-# $(3) - TASK_CMD - Task command.
-# $(4) - TASK_CMD_OPTS - Input options for TASK_CMD above.
+# $(1) - TASK_ID - Order number of task's definition.
+# $(2) - TASK_NAME - The name of the task.
+# $(3) - TASK_DEPS - All task dendencies.
+# $(4) - TASK_CMD - Task command.
+# $(5) - TASK_CMD_OPTS - Input options for TASK_CMD above.
 #
 define __print_task_details =
-	echo "TASK_NAME = $(strip $(1))" ; \
-	echo "TASK_DEPS = $(strip $(2))" ; \
-	echo "TASK_CMD = $(strip $(3))" ; \
-	echo "TASK_CMD_OPTS = $(strip $(4))"
+	echo "TASK_ID = $(strip $(1))" ; \
+	echo "TASK_NAME = $(strip $(2))" ; \
+	echo "TASK_DEPS = $(strip $(3))" ; \
+	echo "TASK_CMD = $(strip $(4))" ; \
+	echo "TASK_CMD_OPTS = $(strip $(5))"
 endef
 
 #
 # Definition of __save_event macro.
 #
 # Where:
-# $(1) - TASK_NAME - The name of the task.
-# $(2) - TASK_DEPS - All task dendencies.
-# $(3) - TASK_CMD - Task command.
-# $(4) - TASK_CMD_OPTS - Input options for TASK_CMD above.
-# $(5) - TASK_EVENT_FILE - Destination event file.
-# $(6) - TASK_EVENT_TYPE - The type of the event (STARTED or TERMINATED).
+# $(1) - TASK_ID - Order number of task's definition.
+# $(2) - TASK_NAME - The name of the task.
+# $(3) - TASK_DEPS - All task dendencies.
+# $(4) - TASK_CMD - Task command.
+# $(5) - TASK_CMD_OPTS - Input options for TASK_CMD above.
+# $(6) - TASK_EVENT_FILE - Destination event file.
+# $(7) - TASK_EVENT_TYPE - The type of the event (STARTED or TERMINATED).
 #
 define __save_event =
-	$(_q)echo -n "" > $(5)
-	$(_q)echo "TASK_NAME=\"$(strip $(1))\"" >> $(5)
-	$(_q)echo "TASK_DEPS=\"$(strip $(2))\"" >> $(5)
-	$(_q)echo "TASK_CMD=\"$(strip $(3))\"" >> $(5)
-	$(_q)echo "TASK_CMD_OPTS=\"$(strip $(4))\"" >> $(5)
-	$(_q)echo "TASK_DATE_TIME=\"`date $(MAKBET_DATE_TIME_FORMAT)`\"" >> $(5)
-	$(_q)echo "TASK_EVENT_TYPE=\"$(strip $(6))\"" >> $(5)
+	$(_q)echo -n "" > $(6)
+	$(_q)echo "TASK_ID=\"$(strip $(1))\"" >> $(6)
+	$(_q)echo "TASK_NAME=\"$(strip $(2))\"" >> $(6)
+	$(_q)echo "TASK_DEPS=\"$(strip $(3))\"" >> $(6)
+	$(_q)echo "TASK_CMD=\"$(strip $(4))\"" >> $(6)
+	$(_q)echo "TASK_CMD_OPTS=\"$(strip $(5))\"" >> $(6)
+	$(_q)echo "TASK_DATE_TIME=\"`date $(MAKBET_DATE_TIME_FORMAT)`\"" >> $(6)
+	$(_q)echo "TASK_EVENT_TYPE=\"$(strip $(7))\"" >> $(6)
 	$(_q)cmd="TIMESTAMP_EPOCH=$$$$(date +'%s')" && \
 		eval $$$${cmd} && \
-			echo "TASK_$(6)_EPOCH=\"$$$${TIMESTAMP_EPOCH}\"" >> $(5)
+			echo "TASK_$(7)_EPOCH=\"$$$${TIMESTAMP_EPOCH}\"" >> $(6)
 endef
 
 #
@@ -305,6 +321,9 @@ endef
 #
 define TASK_template =
 
+# Incrementing the MAKBET_TASK_COUNTER variable.
+$(eval MAKBET_TASK_COUNTER=$(shell echo $$(($(MAKBET_TASK_COUNTER)+1))))
+
 .PHONY: $(1)
 $(1): $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg $(foreach d,$(3),$(MAKBET_EVENTS_CFG_DIR)/$(d).terminated.cfg)
 
@@ -314,21 +333,21 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	@# Printing additional information if MAKBET_VERBOSE=1 or MAKBET_VERBOSE=2.
 	$(_q)if (( $(_v) >= 1 )) ; \
 	then \
-		$(call __print_task_details,$(1),$(3),$(4),$(5)) ; \
+		$(call __print_task_details,$(MAKBET_TASK_COUNTER),$(1),$(3),$(4),$(5)) ; \
 	fi
 	@#
 	@# Saving STARTED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
-	$(call __save_event,$(1),$(3),$(4),$(5),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg,STARTED)
+	$(call __save_event,$(MAKBET_TASK_COUNTER),$(1),$(3),$(4),$(5),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg,STARTED)
 	@#
-	@echo -e "\n`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" started.\n"
+	@echo -e "\n`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" (TASK_ID: $(MAKBET_TASK_COUNTER)) started.\n"
 	@#
 	@# Running the TASK_CMD with TASK_CMD_OPTS input options.
 	$(_q)$(4) $(5)
 	@#
 	@# Saving TERMINATED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
-	$(call __save_event,$(1),$(3),$(4),$(5),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg,TERMINATED)
+	$(call __save_event,$(MAKBET_TASK_COUNTER),$(1),$(3),$(4),$(5),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg,TERMINATED)
 	@#
-	@echo -e "\n`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" terminated.\n"
+	@echo -e "\n`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" (TASK_ID: $(MAKBET_TASK_COUNTER)) terminated.\n"
 	@#
 	@# Saving *.dot file in .makbet/dot/ dir if MAKBET_DOT=1.
 	$(_q)if (( $(_d) == 1 )) ; \
@@ -381,6 +400,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 .PHONY: scenario-help
 scenario-help::
 	@echo '  $(strip $(1))'
+	@echo '    - Id.:   $(MAKBET_TASK_COUNTER)'
 	@echo '    - Descr: $(strip $(2))'
 	@echo '    - Deps:  $(strip $(3))'
 	@echo '    - Cmd:   $(strip $(4))'

@@ -22,7 +22,7 @@ GENERIC_TASK_SCRIPT := $(MAKBET_PATH)/examples/01.dummy/tasks/generic-task.sh
 .PHONY: scenario-help
 scenario-help::
 	@echo ""
-	@echo "All targets defined in $(CURDIR)/$(firstword $(MAKEFILE_LIST)):"
+	@echo "All targets ($(MAKBET_TASK_TOTAL)) defined in $(CURDIR)/$(firstword $(MAKEFILE_LIST)):"
 	@echo ""
 
 $(eval $(call TASK_template, \
