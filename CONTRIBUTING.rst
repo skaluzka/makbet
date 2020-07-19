@@ -107,6 +107,7 @@ In **makbet** project we are preferring closing issues by pull requests.
      contain separate ``Fix #xxx.`` line.
    | Examples:
    | https://github.com/skaluzka/makbet/pull/25
+   | https://github.com/skaluzka/makbet/pull/42
 
 #. | For any other issues the pull request description should contain
      separate ``Resolve #xxx.`` line.
