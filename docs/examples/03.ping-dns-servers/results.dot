@@ -1,0 +1,13 @@
+
+digraph {
+
+	"INIT";
+	"ping1111" -> "INIT";
+	"ping8844" -> "INIT";
+	"ping8888" -> "INIT";
+	"ping-all" -> "ping1111";
+	"ping-all" -> "ping8844";
+	"ping-all" -> "ping8888";
+
+}
+

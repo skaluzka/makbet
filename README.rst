@@ -180,13 +180,14 @@ results which can be used for further processing:
 Below graph picture has been rendered, by
 `edotor <https://edotor.net/>`_ online **DOT** editor, based on above
 ``digraph`` code
-(`01.dummy <https://github.com/skaluzka/makbet/tree/master/examples/01.dummy>`_
+(`01.dummy <https://github.com/skaluzka/makbet/tree/master/examples/01.dummy/Makefile>`_
 example, target ``all``).
 
 .. image:: docs/examples/01.dummy/results.png
     :align: center
 
-| Results for all **makbet's** examples can be found
+| The **DOT** files togehter with corresponding **png** images, for all
+  **makbet's** examples, can be found
   `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/>`_.
 
 |

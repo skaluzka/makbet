@@ -1,0 +1,38 @@
+
+digraph {
+
+	"build-all" -> "build-doxygen";
+	"build-all" -> "build-git";
+	"build-all" -> "build-kcov";
+	"build-all" -> "build-make";
+	"build-all" -> "build-python";
+	"build-doxygen" -> "check-all-src-dirs";
+	"build-git" -> "build-doxygen";
+	"build-kcov" -> "build-git";
+	"build-make" -> "build-kcov";
+	"build-python" -> "build-make";
+	"check-all-src-dirs" -> "unpack-doxygen-src";
+	"check-all-src-dirs" -> "unpack-git-src";
+	"check-all-src-dirs" -> "unpack-kcov-src";
+	"check-all-src-dirs" -> "unpack-make-src";
+	"check-all-src-dirs" -> "unpack-python-src";
+	"fetch-doxygen-src" -> "prepare-workdir-structure";
+	"fetch-git-src" -> "prepare-workdir-structure";
+	"fetch-kcov-src" -> "prepare-workdir-structure";
+	"fetch-make-src" -> "prepare-workdir-structure";
+	"fetch-python-src" -> "prepare-workdir-structure";
+	"INIT";
+	"prepare-workdir-structure" -> "INIT";
+	"print-doxygen-version" -> "build-doxygen";
+	"print-git-version" -> "build-git";
+	"print-kcov-version" -> "build-kcov";
+	"print-make-version" -> "build-make";
+	"print-python-version" -> "build-python";
+	"unpack-doxygen-src" -> "fetch-doxygen-src";
+	"unpack-git-src" -> "fetch-git-src";
+	"unpack-kcov-src" -> "fetch-kcov-src";
+	"unpack-make-src" -> "fetch-make-src";
+	"unpack-python-src" -> "fetch-python-src";
+
+}
+
