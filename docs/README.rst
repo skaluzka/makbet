@@ -16,24 +16,18 @@ The documentation directory structure is:
 
   docs/
   ├── examples/
-  │   ├── csv/
-  │   │   ├── 01.dummy/
-  │   │   │   └── results.csv
-  │   │   ├── 02.toolchain-basic/
-  │   │   │   └── results.csv
-  │   │   ├── 02.toolchain-complex/
-  │   │   │   └── results.csv
-  │   │   └── 03.ping-dns-servers/
-  │   │       └── results.csv
-  │   └── png/
-  │       ├── 01.dummy/
-  │       │   └── results.png
-  │       ├── 02.toolchain-basic/
-  │       │   └── results.png
-  │       ├── 02.toolchain-complex/
-  │       │   └── results.png
-  │       └── 03.ping-dns-servers/
-  │           └── results.png
+  │   ├── 01.dummy/
+  │   │   ├── results.csv
+  │   │   └── results.png
+  │   ├── 02.toolchain-basic/
+  │   │   ├── results.csv
+  │   │   └── results.png
+  │   ├── 02.toolchain-complex/
+  │   │   ├── results.csv
+  │   │   └── results.png
+  │   └── 03.ping-dns-servers/
+  │       ├── results.csv
+  │       └── results.png
   └── README.rst
 
 where:

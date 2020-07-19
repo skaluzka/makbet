@@ -183,11 +183,11 @@ Below graph picture has been rendered, by
 (`01.dummy <https://github.com/skaluzka/makbet/tree/master/examples/01.dummy>`_
 example, target ``all``).
 
-.. image:: docs/examples/png/01.dummy/results.png
+.. image:: docs/examples/01.dummy/results.png
     :align: center
 
 | Results for all **makbet's** examples can be found
-  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/png>`_.
+  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/>`_.
 
 |
 
@@ -263,9 +263,9 @@ Special **makbet's** target ``.show-summary-events-csv-file`` will display
 
 | Above results (which are valid for **01.dummy** example) have been saved into
   this
-  `results.csv <https://github.com/skaluzka/makbet/tree/master/docs/examples/csv/01.dummy>`__ file.
-| Results for other examples are available
-  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/csv>`__.
+  `results.csv <https://github.com/skaluzka/makbet/tree/master/docs/examples/01.dummy/results.csv>`__ file.
+| Results for other **makbet's** examples are available
+  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/>`__.
 
 |
 
