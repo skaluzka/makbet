@@ -383,7 +383,7 @@ scenario-help::
 	@echo '  $(strip $(1))'
 	@echo '    - Descr:  $(strip $(2))'
 	@echo '    - Deps:   $(strip $(3))'
-	@echo '    - Prog:   $(strip $(4))'
+	@echo '    - Cmd:    $(strip $(4))'
 	@echo '    - Params: $(strip $(5))'
 	@echo ''
 
