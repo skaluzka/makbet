@@ -28,7 +28,7 @@ MAKBET_TASK_COUNTER := 0
 #
 # Total task counter per scenario.
 #
-MAKBET_TASK_TOTAL := $(shell grep -c eval $(CURDIR)/$(firstword $(MAKEFILE_LIST)))
+MAKBET_TASK_TOTAL := $(shell grep -c eval $(CURDIR)/$(notdir $(firstword $(MAKEFILE_LIST))))
 
 #
 # Handling makbet's version.
