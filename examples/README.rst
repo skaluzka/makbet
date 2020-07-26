@@ -8,11 +8,29 @@ Keep reading && have fun! :)
 
 ----
 
+**Table of contents**
+
+| `Background`_
+| `01.dummy example`_
+| `02.toolchain-basic example`_
+| `02.toolchain-complex example`_
+| `03.ping-dns-servers example`_
+| `Directory structure`_
+
 |
+
+**Background**
+--------------
 
 We are providing **four** complete examples for further study and examination.
+Every example can be freely run with all combinations of **makbet's** CLI
+options (``MAKBET_*``) as well as easily modified.  All results of modifications
+are easy to observe and notice.
 
 |
+
+**01.dummy example**
+--------------------
 
 The first example is saved in ``examples/01.dummy/`` directory.  It doesn't do
 anything special.  The file ``01.dummy/Makefile`` (called also a **makbet's**
@@ -22,6 +40,9 @@ example.  All defined tasks are just a fake tasks (please check the content of
 at any time with minimal requirements and effort.
 
 |
+
+**02.toolchain-basic example**
+------------------------------
 
 The second example is saved in ``examples/02.toolchain-basic/`` directory.  The
 main goal of this example is to build, locally from the source code, a simple
@@ -34,6 +55,9 @@ toolchain consists of:
 - **python 3.9.0b4**
 
 |
+
+**02.toolchain-complex example**
+--------------------------------
 
 The next example is saved in ``examples/02.toolchain-complex/`` directory.  The
 goal of this example is exactly the same as in ``examples/02.toolchain-basic``
@@ -48,6 +72,9 @@ purposes.  As expected final results for both **02.toolchain-basic** and
 
 |
 
+**03.ping-dns-servers example**
+-------------------------------
+
 The last example is saved in ``examples/03.ping-dns-servers/`` directory.  The
 goal of that example is to ping **three** dns servers
 (``1.1.1.1`` + ``8.8.4.4`` + ``8.8.8.8``) simultaneously using standard ``ping``
@@ -56,11 +83,8 @@ commands are passed directly to ``TASK_template`` macro.
 
 |
 
-Every example can be freely run with all combinations of **makbet's** CLI
-options (``MAKBET_*``) or even easily modified.  All results of modifications
-are easy to observe and notice.
-
-|
+**Directory structure**
+-----------------------
 
 The **makbet's** examples directory structure is:
 
