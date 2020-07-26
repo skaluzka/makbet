@@ -11,6 +11,20 @@ Keep reading && have fun! :)
 
 ----
 
+**Table of contents**
+
+| `Why?`_
+| `Features`_
+| `System requirements`_
+| `Installing`_
+| `Few words about backward compatibility`_
+| `DOT output`_
+| `CSV output`_
+| `References`_
+| `Contributing`_
+| `License`_
+| `Mission statement`_
+
 |
 
 Why?
