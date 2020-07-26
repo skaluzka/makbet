@@ -434,6 +434,8 @@ endef
 	@echo ""
 	@echo "digraph {"
 	@echo ""
+	@echo -e "\tnode [shape=box];"
+	@echo ""
 	@cat $(MAKBET_DOT_DIR)/*.dot
 	@echo ""
 	@echo "}"
