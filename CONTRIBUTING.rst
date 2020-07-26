@@ -8,10 +8,20 @@ Keep reading && have fun! :)
 
 ----
 
+**Table of contents**
+
+| `Development model`_
+| `Commit types`_
+| `Branch naming convention for github issues`_
+| `Closing github issues`_
+| `Pull requests`_
+| `Squashing the commits`_
+| `Merging the code`_
+
 |
 
 **Development model**
-
+---------------------
 
 We are preferring so-called **fork** development model in **makbet** project.
 
@@ -24,7 +34,7 @@ linear history of commits, on that branch, as much as possible.
 |
 
 **Commit types**
-
+----------------
 
 For simplification we are distinguish only **three** type of commits in
 **makbet** project:
@@ -72,7 +82,7 @@ most likely for you :)
 |
 
 **Branch naming convention for github issues**
-
+----------------------------------------------
 
 For better handling commits and issues we are recommending strict branch naming
 convention.  Please see the table below:
@@ -87,7 +97,7 @@ convention.  Please see the table below:
 |
 
 **Closing github issues**
-
+-------------------------
 
 According to official github documentation
 (https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue)
@@ -99,7 +109,7 @@ every created issue can be closed in a two ways:
 |
 
 **Pull requests**
-
+-----------------
 
 In **makbet** project we are preferring closing issues by pull requests.
 
@@ -123,7 +133,7 @@ In **makbet** project we are preferring closing issues by pull requests.
 |
 
 **Squashing the commits**
-
+-------------------------
 
 Sometimes it is better to squash several commits into a single one.  It always
 depends on the case.  The final decision should be taken by project's maintainer
@@ -132,7 +142,7 @@ during merging phase.
 |
 
 **Merging the code**
-
+--------------------
 
 Because of github signing issue (described here:
 https://github.com/github/hub/issues/1241) it is recommended to merge
