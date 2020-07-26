@@ -9,6 +9,7 @@ Keep reading && have fun! :)
 ----
 
 **Table of contents**
+---------------------
 
 | `Development model`_
 | `Commit types`_

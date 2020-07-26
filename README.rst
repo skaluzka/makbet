@@ -12,6 +12,7 @@ Keep reading && have fun! :)
 ----
 
 **Table of contents**
+=====================
 
 | `Why?`_
 | `Features`_

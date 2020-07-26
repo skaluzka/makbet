@@ -9,6 +9,7 @@ Keep reading && have fun! :)
 ----
 
 **Table of contents**
+---------------------
 
 | `Background`_
 | `01.dummy example`_
