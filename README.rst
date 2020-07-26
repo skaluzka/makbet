@@ -12,7 +12,7 @@ Keep reading && have fun! :)
 ----
 
 **Table of contents**
-=====================
+---------------------
 
 | `Why?`_
 | `Features`_
@@ -29,7 +29,7 @@ Keep reading && have fun! :)
 |
 
 Why?
-====
+----
 
 This project has been created for several reasons...
 
@@ -59,7 +59,7 @@ And (the last but not least):
 |
 
 Features
-========
+--------
 
 **makbet's** key features are:
 
@@ -89,7 +89,7 @@ Features
 |
 
 System requirements
-===================
+-------------------
 
 Well... nothing special here :)
 
@@ -105,7 +105,7 @@ All example scenarios have been successfully tested with **GNU make 4.3** and
 |
 
 Installing
-==========
+----------
 
 Installing **makbet** is quite easy.
 
@@ -119,7 +119,7 @@ built-in `examples <https://github.com/skaluzka/makbet/tree/master/examples>`_).
 |
 
 Few words about backward compatibility
-======================================
+--------------------------------------
 
 Please be aware that **makbet** is still in heavy development phase (no
 major release has been done so far).
@@ -132,7 +132,7 @@ there is no guarantee that backward compatibility will be kept all the time
 |
 
 DOT output
-==========
+----------
 
 For every properly created scenario **makbet** is able to generate output
 in **DOT** language (in form of so-called **digraph** - directed
@@ -215,7 +215,7 @@ Two **DOT** online editors have been successfully tested with **makbet**:
 |
 
 CSV output
-==========
+----------
 
 For every properly created scenario **makbet** is able to generate valuable
 **CSV** output.  Such output (similiar as for **DOT** language above) can be
@@ -286,7 +286,7 @@ Special **makbet's** target ``.show-summary-events-csv-file`` will display
 |
 
 References
-==========
+----------
 
 Useful **GNU make** links:
 
@@ -312,7 +312,7 @@ All **bash** scripts have been checked with ``schellcheck`` utility:
 |
 
 Contributing
-============
+------------
 
 Pull requests are welcome! :)
 
@@ -323,7 +323,7 @@ file.
 |
 
 License
-=======
+-------
 
 **makbet** is licensed under the
 `MIT <https://github.com/skaluzka/makbet/blob/master/LICENSE>`_
@@ -332,7 +332,7 @@ license.
 |
 
 Mission statement
-=================
+-----------------
 
 *"What's done, is done."* - William Shakespeare, **Macbeth**.
 
