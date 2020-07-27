@@ -467,7 +467,7 @@ endef
 	@tree -apugsfF $(MAKBET_PROFILES_CFG_DIR)
 
 
-PHONY: .show-profiles-csv-dir
+.PHONY: .show-profiles-csv-dir
 .show-profiles-csv-dir:
 	@tree -apugsfF $(MAKBET_PROFILES_CSV_DIR)
 
