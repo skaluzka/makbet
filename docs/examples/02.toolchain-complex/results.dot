@@ -1,6 +1,8 @@
 
 digraph {
 
+	node [shape=box];
+
 	"build-all" -> "build-doxygen";
 	"build-all" -> "build-git";
 	"build-all" -> "build-kcov";

@@ -1,6 +1,8 @@
 
 digraph {
 
+	node [shape=box];
+
 	"all" -> "task-F";
 	"INIT";
 	"task-A" -> "INIT";

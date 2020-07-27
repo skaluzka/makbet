@@ -171,6 +171,8 @@ results which can be used for further processing:
 
     digraph {
 
+    	node [shape=box];
+
     	"all" -> "task-F";
     	"INIT";
     	"task-A" -> "INIT";

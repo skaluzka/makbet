@@ -1,6 +1,8 @@
 
 digraph {
 
+	node [shape=box];
+
 	"all" -> "print-all-versions";
 	"build-all" -> "build-doxygen";
 	"build-all" -> "build-git";

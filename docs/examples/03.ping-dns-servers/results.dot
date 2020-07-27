@@ -1,6 +1,8 @@
 
 digraph {
 
+	node [shape=box];
+
 	"INIT";
 	"ping1111" -> "INIT";
 	"ping8844" -> "INIT";
