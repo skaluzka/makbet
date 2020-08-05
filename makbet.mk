@@ -28,7 +28,9 @@ MAKBET_TASK_COUNTER := 0
 #
 # Total task counter per scenario.
 #
-MAKBET_TASK_TOTAL := $(shell grep -c TASK_template $(realpath $(firstword $(MAKEFILE_LIST))))
+MAKBET_TASK_TOTAL := $(shell \
+  grep -c TASK_template $(realpath $(firstword $(MAKEFILE_LIST))) \
+)
 
 #
 # Handling makbet's version.
