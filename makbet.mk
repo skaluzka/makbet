@@ -485,7 +485,7 @@ endef
 .PHONY: .show-env-vars
 .show-env-vars:
 	@echo "Listing all available MAKBET_* env variables:"
-	@env | grep --color=never -P '^MAKBET_[0-9A-Z_]*='
+	@env | grep --color=never -P '^MAKBET_[0-9A-Z_]*=' | sort
 
 
 .PHONY: makbet-clean
