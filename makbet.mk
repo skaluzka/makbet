@@ -35,7 +35,9 @@ MAKBET_TASK_TOTAL := $(shell \
 #
 # Handling makbet's version.
 #
-MAKBET_VERSION := $(shell git describe --all --long 2> /dev/null || cat $(MAKBET_PATH)/VERSION)
+MAKBET_VERSION := $(shell \
+  git describe --all --long 2> /dev/null || cat $(MAKBET_PATH)/VERSION \
+)
 
 #
 # All internal makbet dirs.
