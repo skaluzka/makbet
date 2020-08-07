@@ -125,7 +125,7 @@ Please be aware that **makbet** is still in heavy development phase (no
 major release has been done so far).
 
 There are a couple of quite nice improvements already proposed for **makbet**,
-see the details here https://github.com/skaluzka/makbet/issues.  Therefore
+see the details `here <https://github.com/skaluzka/makbet/issues>`_.  Therefore
 there is no guarantee that backward compatibility will be kept all the time
 (at least until the first official version will be released).
 
