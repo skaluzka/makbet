@@ -11,12 +11,12 @@ Keep reading && have fun! :)
 **Table of contents**
 ---------------------
 
-| `Background`_
-| `01.dummy example`_
-| `02.toolchain-basic example`_
-| `02.toolchain-complex example`_
-| `03.ping-dns-servers example`_
-| `Directory structure`_
+- | `Background`_
+- | `01.dummy example`_
+- | `02.toolchain-basic example`_
+- | `02.toolchain-complex example`_
+- | `03.ping-dns-servers example`_
+- | `Directory structure`_
 
 |
 
