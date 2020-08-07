@@ -11,7 +11,7 @@ ifndef MAKBET_PATH
   $(error MAKBET_PATH is not defined)
 else
   MAKBET_LIB_DIR := $(MAKBET_PATH)/lib
-  MAKBET_PLUGINS := $(MAKBET_LIB_DIR)/plugins
+  MAKBET_PLUGINS_DIR := $(MAKBET_LIB_DIR)/plugins
 endif
 
 #
