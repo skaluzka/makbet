@@ -149,6 +149,13 @@ where:
 
 |
 
+- ``03.ping-dns-servers/`` - Dedicated directory for **makbet's**
+  ``03.ping-dns-servers`` example.
+- ``03.ping-dns-servers/Makefile`` - So-called **makbet's** scenario file.  It
+  contains complete task list for **makbet's** ``03.ping-dns-servers`` example.
+
+|
+
 - ``lib/tasks/02.toolchain/common/`` - Separate directory containing all tasks
   common for both **02.toolchain-basic** and **02.toolchain-complex** examples.
 - ``lib/tasks/02.toolchain/common/build-doxygen.sh`` - This ``bash`` script is
@@ -167,17 +174,10 @@ where:
   by **two** ``build-make`` tasks (defined in **02.toolchain-basic** and
   **02.toolchain-complex** examples).  Its aim is to build **make 4.3** from
   previously downloaded sources.
-- ``lib/tasks/02.toolchain/common/build-python.sh`` - This ``bash`` script is used
-  by **two** ``build-python`` tasks (defined in **02.toolchain-basic** and
+- ``lib/tasks/02.toolchain/common/build-python.sh`` - This ``bash`` script is
+  used by **two** ``build-python`` tasks (defined in **02.toolchain-basic** and
   **02.toolchain-complex** examples).  Its aim is to build **python 3.9.0b4**
   from previously downloaded sources.
-
-|
-
-- ``03.ping-dns-servers/`` - Dedicated directory for **makbet's**
-  ``03.ping-dns-servers`` example.
-- ``03.ping-dns-servers/Makefile`` - So-called **makbet's** scenario file.  It
-  contains complete task list for **makbet's** ``03.ping-dns-servers`` example.
 
 |
 
