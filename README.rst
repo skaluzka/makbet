@@ -91,11 +91,11 @@ Features
 System requirements
 -------------------
 
-Well... nothing special here :)
+Well... Nothing special here :)
 
 The only system requirements are:
 
-- GNU linux OS
+- GNU Linux OS
 - GNU make tool (version **3.82+**)
 - bash tool
 
@@ -109,7 +109,7 @@ Installing
 
 Installing **makbet** is quite easy.
 
-- Download or clone the **makbet** project from github.
+- Download or clone the **makbet** project from GitHub.
 - Export the ``MAKBET_PATH`` variable pointing to **makbet's** main directory
   (e.g.: ``export MAKBET_PATH=/home/user/makbet``).
 
@@ -203,7 +203,7 @@ example, target ``all``).
 .. image:: docs/examples/01.dummy/results.png
     :align: center
 
-| The **DOT** files togehter with corresponding **png** images, for all
+| The **DOT** files together with corresponding **png** images, for all
   **makbet's** examples, can be found
   `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/>`__.
 
@@ -220,7 +220,7 @@ CSV output
 ----------
 
 For every properly created scenario **makbet** is able to generate valuable
-**CSV** output.  Such output (similiar as for **DOT** language above) can be
+**CSV** output.  Such output (similar as for **DOT** language above) can be
 easily saved or redirected to file.  This can be achieved by passing
 ``MAKBET_CSV=1`` option to ``make`` execution command (by default
 ``MAKBET_CSV=0``) as in below example:

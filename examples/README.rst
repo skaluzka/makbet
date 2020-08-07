@@ -77,7 +77,7 @@ purposes.  As expected final results for both **02.toolchain-basic** and
 -----------------------
 
 The last example is saved in ``examples/03.ping-dns-servers/`` directory.  The
-goal of that example is to ping **three** dns servers
+goal of that example is to ping **three** DNS servers
 (``1.1.1.1`` + ``8.8.4.4`` + ``8.8.8.8``) simultaneously using standard ``ping``
 utility.  There is no dedicated script in this example.  Syntax of raw ``ping``
 commands are passed directly to ``TASK_template`` macro.
