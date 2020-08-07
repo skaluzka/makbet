@@ -122,7 +122,7 @@ Few words about backward compatibility
 --------------------------------------
 
 Please be aware that **makbet** is still in heavy development phase (no
-major release has been done so far).
+major release has been published so far).
 
 There are a couple of quite nice improvements already proposed for **makbet**,
 see the details `here <https://github.com/skaluzka/makbet/issues>`_.  Therefore
