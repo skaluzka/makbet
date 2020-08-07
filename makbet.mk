@@ -211,7 +211,7 @@ endif
 # Where:
 # $(1) - TASK_ID - Order number of task's definition.
 # $(2) - TASK_NAME - The name of the task.
-# $(3) - TASK_DEPS - All task dendencies.
+# $(3) - TASK_DEPS - All task dependencies.
 # $(4) - TASK_CMD - Task command.
 # $(5) - TASK_CMD_OPTS - Input options for TASK_CMD above.
 #
@@ -229,7 +229,7 @@ endef
 # Where:
 # $(1) - TASK_ID - Order number of task's definition.
 # $(2) - TASK_NAME - The name of the task.
-# $(3) - TASK_DEPS - All task dendencies.
+# $(3) - TASK_DEPS - All task dependencies.
 # $(4) - TASK_CMD - Task command.
 # $(5) - TASK_CMD_OPTS - Input options for TASK_CMD above.
 # $(6) - TASK_EVENT_FILE - Destination event file.
