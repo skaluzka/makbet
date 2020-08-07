@@ -12,10 +12,10 @@ Keep reading && have fun! :)
 ---------------------
 
 - | `Background`_
-- | `01.dummy example`_
-- | `02.toolchain-basic example`_
-- | `02.toolchain-complex example`_
-- | `03.ping-dns-servers example`_
+- | `01.dummy`_
+- | `02.toolchain-basic`_
+- | `02.toolchain-complex`_
+- | `03.ping-dns-servers`_
 - | `Directory structure`_
 
 |
@@ -30,8 +30,8 @@ are easy to observe and notice.
 
 |
 
-**01.dummy example**
---------------------
+**01.dummy**
+------------
 
 The first example is saved in ``examples/01.dummy/`` directory.  It doesn't do
 anything special.  The file ``01.dummy/Makefile`` (called also a **makbet's**
@@ -42,8 +42,8 @@ at any time with minimal requirements and effort.
 
 |
 
-**02.toolchain-basic example**
-------------------------------
+**02.toolchain-basic**
+----------------------
 
 The second example is saved in ``examples/02.toolchain-basic/`` directory.  The
 main goal of this example is to build, locally from the source code, a simple
@@ -57,8 +57,8 @@ toolchain consists of:
 
 |
 
-**02.toolchain-complex example**
---------------------------------
+**02.toolchain-complex**
+------------------------
 
 The next example is saved in ``examples/02.toolchain-complex/`` directory.  The
 goal of this example is exactly the same as in ``examples/02.toolchain-basic``
@@ -73,8 +73,8 @@ purposes.  As expected final results for both **02.toolchain-basic** and
 
 |
 
-**03.ping-dns-servers example**
--------------------------------
+**03.ping-dns-servers**
+-----------------------
 
 The last example is saved in ``examples/03.ping-dns-servers/`` directory.  The
 goal of that example is to ping **three** dns servers
