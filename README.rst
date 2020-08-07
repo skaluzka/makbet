@@ -205,7 +205,7 @@ example, target ``all``).
 
 | The **DOT** files togehter with corresponding **png** images, for all
   **makbet's** examples, can be found
-  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/>`_.
+  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/>`__.
 
 |
 
