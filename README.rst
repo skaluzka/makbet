@@ -252,6 +252,7 @@ Special **makbet's** target ``.show-summary-events-csv-file`` will display
 ::
 
     [user@localhost 01.dummy]$ make .show-summary-events-csv-file
+
     TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_DATE_TIME;TASK_EVENT_TYPE;TASK_[STARTED|TERMINATED]_EPOCH;
     "10";"task-E";"task-B1 task-B4 task-B5 task-D";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-07-19 20:29:12";"STARTED";"1595183352";
     "10";"task-E";"task-B1 task-B4 task-B5 task-D";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-07-19 20:29:13";"TERMINATED";"1595183353";
@@ -277,6 +278,7 @@ Special **makbet's** target ``.show-summary-events-csv-file`` will display
     "8";"task-C";"task-B2 task-B3";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-07-19 20:29:11";"TERMINATED";"1595183351";
     "9";"task-D";"task-C";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-07-19 20:29:11";"STARTED";"1595183351";
     "9";"task-D";"task-C";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-07-19 20:29:12";"TERMINATED";"1595183352";
+
     [user@localhost 01.dummy]$
 
 | Above results (which are valid for **01.dummy** example) have been saved into

@@ -462,8 +462,10 @@ endef
 
 .PHONY: .show-summary-events-csv-file
 .show-summary-events-csv-file:
+	@echo ""
 	@find $(MAKBET_EVENTS_CSV_DIR) -name "*.csv" -exec head -1 {} \; | sort -u
 	@find $(MAKBET_EVENTS_CSV_DIR) -name "*.csv" -exec tail -1 {} \; | sort
+	@echo ""
 
 
 .PHONY: .show-profiles-cfg-dir
