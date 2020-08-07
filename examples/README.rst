@@ -128,7 +128,7 @@ where:
   complete task list for **makbet's** ``01.dummy`` example.
 - ``01.dummy/tasks/`` - Separate directory containing tasks specific only for
   **makbet's** ``01.dummy`` example.
-- ``01.dummy/tasks/generic-task.sh`` - Simple and generic ``bash`` script used
+- ``01.dummy/tasks/generic-task.sh`` - Simple and generic **Bash** script used
   only in **makbet's** ``01.dummy`` example.  It doesn't do anything special.
 
 |
@@ -158,23 +158,23 @@ where:
 
 - ``lib/tasks/02.toolchain/common/`` - Separate directory containing all tasks
   common for both **02.toolchain-basic** and **02.toolchain-complex** examples.
-- ``lib/tasks/02.toolchain/common/build-doxygen.sh`` - This ``bash`` script is
+- ``lib/tasks/02.toolchain/common/build-doxygen.sh`` - This **Bash** script is
   used by **two** ``build-doxygen`` tasks (defined in **02.toolchain-basic**
   and **02.toolchain-complex** examples).  Its aim is to build
   **doxygen 1.8.18** from previously downloaded sources.
-- ``lib/tasks/02.toolchain/common/build-git.sh`` - This ``bash`` script is used
+- ``lib/tasks/02.toolchain/common/build-git.sh`` - This **Bash** script is used
   by **two** ``build-git`` tasks (defined in **02.toolchain-basic** and
   **02.toolchain-complex** examples).  Its aim is to build **git 2.27.0** from
   previously downloaded sources.
-- ``lib/tasks/02.toolchain/common/build-kcov.sh`` - This ``bash`` script is used
+- ``lib/tasks/02.toolchain/common/build-kcov.sh`` - This **Bash** script is used
   by **two** ``build-kcov`` tasks (defined in **02.toolchain-basic** and
   **02.toolchain-complex** examples).  Its aim is to build **kcov 38** from
   previously downloaded sources.
-- ``lib/tasks/02.toolchain/common/build-make.sh`` - This ``bash`` script is used
+- ``lib/tasks/02.toolchain/common/build-make.sh`` - This **Bash** script is used
   by **two** ``build-make`` tasks (defined in **02.toolchain-basic** and
   **02.toolchain-complex** examples).  Its aim is to build **make 4.3** from
   previously downloaded sources.
-- ``lib/tasks/02.toolchain/common/build-python.sh`` - This ``bash`` script is
+- ``lib/tasks/02.toolchain/common/build-python.sh`` - This **Bash** script is
   used by **two** ``build-python`` tasks (defined in **02.toolchain-basic** and
   **02.toolchain-complex** examples).  Its aim is to build **python 3.9.0b4**
   from previously downloaded sources.

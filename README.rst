@@ -48,7 +48,7 @@ But also to help:
 
 - learning **GNU make** utility,
 - learning **DOT** language,
-- learning **bash** scripting.
+- learning **Bash** scripting.
 
 |
 
@@ -65,7 +65,7 @@ Features
 
 - based on **GNU make** tool and its features,
 - easy extensible,
-- contains built-in minimalistic tasks library (set of simple **bash** scripts),
+- contains built-in minimalistic tasks library (set of simple **Bash** scripts),
 - built-in support for parallelism,
 - can be easy added/embedded into existing projects as 3rd party SW,
 - pure console tool - no GUI required,
@@ -97,10 +97,10 @@ The only system requirements are:
 
 - GNU Linux OS
 - GNU make tool (version **3.82+**)
-- bash tool
+- Bash tool
 
 All example scenarios have been successfully tested with **GNU make 4.3** and
-**bash 5.0.16**.
+**Bash 5.0.16**.
 
 |
 
@@ -308,7 +308,7 @@ Useful **CSV** links:
 - https://en.wikipedia.org/wiki/Comma-separated_values
 - https://www.convertcsv.com/csv-viewer-editor.htm
 
-All **bash** scripts have been checked with ``schellcheck`` utility:
+All **Bash** scripts have been checked with ``schellcheck`` utility:
 
 - https://www.shellcheck.net/
 - https://github.com/koalaman/shellcheck
