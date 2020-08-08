@@ -42,9 +42,15 @@ $(eval $(call TASK_template, \
 	ping, -c4 8.8.8.8 \
 ))
 
-# Checkpoint task.
+# Checkpoint task "ping-all".
 $(eval $(call TASK_template, \
 	ping-all, "Ping all dns servers", \
+	ping1111 ping8844 ping8888, \
+))
+
+# Checkpoint taskc "all".
+$(eval $(call TASK_template, \
+	all, "Ping all dns servers", \
 	ping1111 ping8844 ping8888, \
 ))
 
