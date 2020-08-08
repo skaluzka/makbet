@@ -505,7 +505,7 @@ makbet-clean:
 .PHONY: makbet-version
 makbet-version:
 	@echo ""
-	@echo "makbet version $(MAKBET_VERSION)                                               "
+	@echo "makbet $(MAKBET_VERSION)                                                       "
 	@echo ""
 
 
