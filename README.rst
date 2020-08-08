@@ -171,26 +171,40 @@ results which can be used for further processing:
 
     digraph {
 
-    	node [shape=box];
+        node [shape=box];
 
-    	"all" -> "task-F";
-    	"INIT";
-    	"task-A" -> "INIT";
-    	"task-B1" -> "task-A";
-    	"task-B2" -> "task-A";
-    	"task-B3" -> "task-A";
-    	"task-B4" -> "task-A";
-    	"task-B5" -> "task-A";
-    	"task-C" -> "task-B2";
-    	"task-C" -> "task-B3";
-    	"task-D" -> "task-C";
-    	"task-E" -> "task-B1";
-    	"task-E" -> "task-B4";
-    	"task-E" -> "task-B5";
-    	"task-E" -> "task-D";
-    	"task-F" -> "task-E";
+        "all" -> "task-F";
+
+        "INIT";
+
+        "task-A" -> "INIT";
+
+        "task-B1" -> "task-A";
+
+        "task-B2" -> "task-A";
+
+        "task-B3" -> "task-A";
+
+        "task-B4" -> "task-A";
+
+        "task-B5" -> "task-A";
+
+        "task-C" -> "task-B2";
+        "task-C" -> "task-B3";
+
+        "task-D" -> "task-C";
+
+        "task-E" -> "task-B1";
+        "task-E" -> "task-B4";
+        "task-E" -> "task-B5";
+        "task-E" -> "task-D";
+
+        "task-F" -> "task-E";
+
 
     }
+
+
 
     [user@localhost 01.dummy]$
 

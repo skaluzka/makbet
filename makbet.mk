@@ -302,13 +302,14 @@ define __save_dot_file =
 	. $(1) && \
 		if [ -z "$$$${TASK_DEPS}" ] ; \
 		then \
-			cmd='echo -e "\t\"$$$${TASK_NAME}\";" >> $(strip $(2))' && \
+			cmd='echo -e "\t\"$$$${TASK_NAME}\";\n" >> $(strip $(2))' && \
 				eval $$$${cmd} ; \
 		else \
 			cmd='for t in $$$${TASK_DEPS}; \
 				do \
 					echo -e "\t\"$$$${TASK_NAME}\" -> \"$$$${t}\";" >> $(strip $(2)) ; \
-				done' && \
+				done ; \
+				echo "" >> $(strip $(2))' && \
 				eval $$$${cmd} ; \
 		fi
 endef
