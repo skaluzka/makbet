@@ -255,7 +255,7 @@ endef
 # Where:
 # $(1) - Path to T1 *.started.cfg event file.
 # $(2) - Path to T2 *.terminated.cfg event file.
-# $(3) - Path to .makbet/profiles/cfg/ dir.
+# $(3) - Path to results *.cfg file.
 #
 define __save_task_profile =
 	touch $(strip $(3)) ; \
