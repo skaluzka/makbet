@@ -49,7 +49,7 @@ The second example is saved in ``examples/02.toolchain-basic/`` directory.  The
 main goal of this example is to build, locally from the source code, a simple
 toolchain consists of:
 
-- **doxygen 1.8.18**
+- **doxygen 1.8.19**
 - **git 2.27.0**
 - **kcov 38**
 - **make 4.3**
@@ -161,7 +161,7 @@ where:
 - ``lib/tasks/02.toolchain/common/build-doxygen.sh`` - This **Bash** script is
   used by **two** ``build-doxygen`` tasks (defined in **02.toolchain-basic**
   and **02.toolchain-complex** examples).  Its aim is to build
-  **doxygen 1.8.18** from previously downloaded sources.
+  **doxygen 1.8.19** from previously downloaded sources.
 - ``lib/tasks/02.toolchain/common/build-git.sh`` - This **Bash** script is used
   by **two** ``build-git`` tasks (defined in **02.toolchain-basic** and
   **02.toolchain-complex** examples).  Its aim is to build **git 2.27.0** from

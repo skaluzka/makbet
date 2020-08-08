@@ -21,7 +21,7 @@ KCOV_DIR := $(WORK_DIR)/kcov
 MAKE_DIR := $(WORK_DIR)/make
 PYTHON_DIR := $(WORK_DIR)/python
 
-DOXYGEN_VER := Release_1_8_18.zip
+DOXYGEN_VER := Release_1_8_19.zip
 GIT_VER := v2.27.0.zip
 KCOV_VER := 38.zip
 MAKE_VER := make-4.3.tar.gz
@@ -48,7 +48,7 @@ UNPACK_TGZ := $(MAKBET_TASKS_DIR)/common/uncompress-tgz-file.sh
 UNPACK_TXZ := $(MAKBET_TASKS_DIR)/common/uncompress-txz-file.sh
 CHECK_DIRS := $(MAKBET_TASKS_DIR)/common/check-dirs.sh
 
-DOXYGEN_UNPACK_DIR := $(DOXYGEN_DIR)/doxygen-Release_1_8_18
+DOXYGEN_UNPACK_DIR := $(DOXYGEN_DIR)/doxygen-Release_1_8_19
 GIT_UNPACK_DIR := $(GIT_DIR)/git-2.27.0
 KCOV_UNPACK_DIR := $(KCOV_DIR)/kcov-38
 MAKE_UNPACK_DIR := $(MAKE_DIR)/make-4.3

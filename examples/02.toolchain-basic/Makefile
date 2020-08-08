@@ -50,8 +50,8 @@ $(eval $(call TASK_template, \
 	fetch-doxygen-src, "Fetch doxygen sources", \
 	prepare-workdir-structure, \
 	$(MAKBET_TASKS_DIR)/common/download-file.sh, \
-		https://github.com/doxygen/doxygen/archive/Release_1_8_18.zip \
-		$(WORK_DIR)/doxygen/Release_1_8_18.zip \
+		https://github.com/doxygen/doxygen/archive/Release_1_8_19.zip \
+		$(WORK_DIR)/doxygen/Release_1_8_19.zip \
 ))
 
 $(eval $(call TASK_template, \
@@ -90,7 +90,7 @@ $(eval $(call TASK_template, \
 	unpack-doxygen-src, "Unpack doxygen sources", \
 	fetch-doxygen-src, \
 	$(MAKBET_TASKS_DIR)/common/uncompress-zip-file.sh, \
-		$(WORK_DIR)/doxygen/Release_1_8_18.zip \
+		$(WORK_DIR)/doxygen/Release_1_8_19.zip \
 		$(WORK_DIR)/doxygen/ \
 ))
 
@@ -130,7 +130,7 @@ $(eval $(call TASK_template, \
 	check-all-src-dirs, "Check all source code dirs", \
 	unpack-doxygen-src unpack-git-src unpack-kcov-src unpack-make-src unpack-python-src, \
 	$(MAKBET_TASKS_DIR)/common/check-dirs.sh, \
-		$(WORK_DIR)/doxygen/doxygen-Release_1_8_18/ \
+		$(WORK_DIR)/doxygen/doxygen-Release_1_8_19/ \
 		$(WORK_DIR)/git/git-2.27.0/ \
 		$(WORK_DIR)/kcov/kcov-38/ \
 		$(WORK_DIR)/make/make-4.3/ \
@@ -141,7 +141,7 @@ $(eval $(call TASK_template, \
 	build-doxygen, "Build doxygen inside its source dir", \
 	check-all-src-dirs, \
 	$(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-doxygen.sh, \
-		$(WORK_DIR)/doxygen/doxygen-Release_1_8_18/ \
+		$(WORK_DIR)/doxygen/doxygen-Release_1_8_19/ \
 ))
 
 $(eval $(call TASK_template, \
@@ -176,7 +176,7 @@ $(eval $(call TASK_template, \
 	check-build-binaries, "Check the presence of all built binaries", \
 	build-doxygen build-git build-kcov build-make, \
 	$(MAKBET_TASKS_DIR)/common/check-files.sh, \
-		$(WORK_DIR)/doxygen/doxygen-Release_1_8_18/build/bin/doxygen \
+		$(WORK_DIR)/doxygen/doxygen-Release_1_8_19/build/bin/doxygen \
 		$(WORK_DIR)/git/git-2.27.0/git \
 		$(WORK_DIR)/kcov/kcov-38/build/src/kcov \
 		$(WORK_DIR)/make/make-4.3/make \
@@ -187,7 +187,7 @@ $(eval $(call TASK_template, \
 	print-doxygen-version, "Print version of doxygen from source dir", \
 	build-doxygen, \
 	$(MAKBET_TASKS_DIR)/common/exec-cmd.sh, \
-		$(WORK_DIR)/doxygen/doxygen-Release_1_8_18/build/bin/doxygen \
+		$(WORK_DIR)/doxygen/doxygen-Release_1_8_19/build/bin/doxygen \
 		--version \
 ))
 
