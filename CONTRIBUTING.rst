@@ -8,7 +8,7 @@ Keep reading && have fun! :)
 
 ----
 
-**Table of contents**
+**Table of Contents**
 ---------------------
 
 | `Development model`_
