@@ -46,9 +46,9 @@ MAKBET_DOT_DIR := $(MAKBET_PATH)/.makbet/dot
 MAKBET_EVENTS_DIR := $(MAKBET_PATH)/.makbet/events
 MAKBET_EVENTS_CFG_DIR := $(MAKBET_EVENTS_DIR)/cfg
 MAKBET_EVENTS_CSV_DIR := $(MAKBET_EVENTS_DIR)/csv
-MAKBET_PROFILES_DIR := $(MAKBET_PATH)/.makbet/profiles
-MAKBET_PROFILES_CFG_DIR := $(MAKBET_PROFILES_DIR)/cfg
-MAKBET_PROFILES_CSV_DIR := $(MAKBET_PROFILES_DIR)/csv
+MAKBET_PROF_DIR := $(MAKBET_PATH)/.makbet/prof
+MAKBET_PROF_CFG_DIR := $(MAKBET_PROF_DIR)/cfg
+MAKBET_PROF_CSV_DIR := $(MAKBET_PROF_DIR)/csv
 
 #
 # Handling CLI input: MAKBET_VERBOSE option.
@@ -73,17 +73,17 @@ else
 endif
 
 #
-# Handling CLI input: MAKBET_PROFILES option.
+# Handling CLI input: MAKBET_PROF option.
 #
-ifndef MAKBET_PROFILES
-  MAKBET_PROFILES := 0
+ifndef MAKBET_PROF
+  MAKBET_PROF := 0
 endif
-ifeq ($(MAKBET_PROFILES), 0)
+ifeq ($(MAKBET_PROF), 0)
   _p := 0
-else ifeq ($(MAKBET_PROFILES), 1)
+else ifeq ($(MAKBET_PROF), 1)
   _p := 1
 else
-  $(error [ERROR]: Wrong value for MAKBET_PROFILES option (MAKBET_PROFILES=$(MAKBET_PROFILES)).  Allowed values: 0 or 1 only)
+  $(error [ERROR]: Wrong value for MAKBET_PROF option (MAKBET_PROF=$(MAKBET_PROF)).  Allowed values: 0 or 1 only)
 endif
 
 #
@@ -102,7 +102,7 @@ endif
 
 #
 # Handling CLI input: MAKBET_CSV, MAKBET_CSV_SEP, MAKBET_EVENTS_CSV_HEADER
-# and MAKBET_PROFILES_CSV_HEADER options.
+# and MAKBET_PROF_CSV_HEADER options.
 #
 ifndef MAKBET_CSV
   MAKBET_CSV := 0
@@ -111,7 +111,7 @@ ifeq ($(MAKBET_CSV), 0)
   _c := 0
   MAKBET_CSV_SEP :=
   MAKBET_EVENTS_CSV_HEADER :=
-  MAKBET_PROFILES_CSV_HEADER :=
+  MAKBET_PROF_CSV_HEADER :=
 else ifeq ($(MAKBET_CSV), 1)
   _c := 1
   ifndef MAKBET_CSV_SEP
@@ -120,8 +120,8 @@ else ifeq ($(MAKBET_CSV), 1)
   ifndef MAKBET_EVENTS_CSV_HEADER
     MAKBET_EVENTS_CSV_HEADER := TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_DATE_TIME;TASK_EVENT_TYPE;TASK_[STARTED|TERMINATED]_EPOCH;
   endif
-  ifndef MAKBET_PROFILES_CSV_HEADER
-    MAKBET_PROFILES_CSV_HEADER := TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_STARTED_EPOCH;TASK_TERMINATED_EPOCH;TASK_DURATION_SECONDS;TASK_DURATION;
+  ifndef MAKBET_PROF_CSV_HEADER
+    MAKBET_PROF_CSV_HEADER := TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_STARTED_EPOCH;TASK_TERMINATED_EPOCH;TASK_DURATION_SECONDS;TASK_DURATION;
   endif
 else
   $(error [ERROR]: Wrong value for MAKBET_CSV option (MAKBET_CSV=$(MAKBET_CSV)).  Allowed values: 0 or 1 only)
@@ -150,7 +150,7 @@ endif
 #     ├── events/
 #     │   ├── cfg/
 #     │   └── csv/
-#     └── profiles/
+#     └── prof/
 #         ├── cfg/
 #         └── csv/
 #
@@ -160,8 +160,8 @@ endif
 $(shell mkdir -p $(MAKBET_DOT_DIR))
 $(shell mkdir -p $(MAKBET_EVENTS_CFG_DIR))
 $(shell mkdir -p $(MAKBET_EVENTS_CSV_DIR))
-$(shell mkdir -p $(MAKBET_PROFILES_CFG_DIR))
-$(shell mkdir -p $(MAKBET_PROFILES_CSV_DIR))
+$(shell mkdir -p $(MAKBET_PROF_CFG_DIR))
+$(shell mkdir -p $(MAKBET_PROF_CSV_DIR))
 
 #
 # If MAKBET_VERBOSE=1 then print some extra information once.
@@ -190,11 +190,11 @@ ifeq ($(_v1), 1)
   $(info MAKBET_CSV = $(MAKBET_CSV))
   $(info MAKBET_CSV_SEP = $(MAKBET_CSV_SEP))
   $(info )
-  $(info MAKBET_PROFILES = $(MAKBET_PROFILES))
-  $(info MAKBET_PROFILES_DIR = $(MAKBET_PROFILES_DIR))
-  $(info MAKBET_PROFILES_CFG_DIR = $(MAKBET_PROFILES_CFG_DIR))
-  $(info MAKBET_PROFILES_CSV_DIR = $(MAKBET_PROFILES_CSV_DIR))
-  $(info MAKBET_PROFILES_CSV_HEADER = $(MAKBET_PROFILES_CSV_HEADER))
+  $(info MAKBET_PROF = $(MAKBET_PROF))
+  $(info MAKBET_PROF_DIR = $(MAKBET_PROF_DIR))
+  $(info MAKBET_PROF_CFG_DIR = $(MAKBET_PROF_CFG_DIR))
+  $(info MAKBET_PROF_CSV_DIR = $(MAKBET_PROF_CSV_DIR))
+  $(info MAKBET_PROF_CSV_HEADER = $(MAKBET_PROF_CSV_HEADER))
   $(info )
   $(info MAKBET_EVENTS_DIR = $(MAKBET_EVENTS_DIR))
   $(info MAKBET_EVENTS_CFG_DIR = $(MAKBET_EVENTS_CFG_DIR))
@@ -362,23 +362,23 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 			$(MAKBET_DOT_DIR)/$(strip $(1)).dot) ; \
 	fi
 	@#
-	@# Computing time difference (task duration) if MAKBET_PROFILES=1.
+	@# Computing time difference (task duration) if MAKBET_PROF=1.
 	$(_q)if (( $(_p) == 1 )) ; \
 	then \
 		$(call __save_task_profile,\
 			$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg,\
 			$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg,\
-			$(MAKBET_PROFILES_CFG_DIR)/$(strip $(1)).cfg) ; \
+			$(MAKBET_PROF_CFG_DIR)/$(strip $(1)).cfg) ; \
 	fi
 	@#
 	@# Converting profile *.cfg file to -> profile *.csv file
-	@# if MAKBET_CSV=1 and MAKBET_PROFILES=1.
+	@# if MAKBET_CSV=1 and MAKBET_PROF=1.
 	$(_q)if (( $(_c) == 1 )) && (( $(_p) == 1 )); \
 	then \
 		$(call __convert_cfg2csv,\
-			$(MAKBET_PROFILES_CFG_DIR)/$(strip $(1)).cfg,\
-			$(MAKBET_PROFILES_CSV_DIR)/$(strip $(1)).csv,\
-			$(MAKBET_PROFILES_CSV_HEADER)) ; \
+			$(MAKBET_PROF_CFG_DIR)/$(strip $(1)).cfg,\
+			$(MAKBET_PROF_CSV_DIR)/$(strip $(1)).csv,\
+			$(MAKBET_PROF_CSV_HEADER)) ; \
 	fi
 	@#
 	@# Converting *.started.cfg file to -> *.started.csv file
@@ -474,25 +474,25 @@ endef
 	@echo ""
 
 
-.PHONY: .show-profiles-cfg-dir
-.show-profiles-cfg-dir:
-	@tree -apugsfF $(MAKBET_PROFILES_CFG_DIR)
+.PHONY: .show-prof-cfg-dir
+.show-prof-cfg-dir:
+	@tree -apugsfF $(MAKBET_PROF_CFG_DIR)
 
 
-.PHONY: .show-profiles-csv-dir
-.show-profiles-csv-dir:
-	@tree -apugsfF $(MAKBET_PROFILES_CSV_DIR)
+.PHONY: .show-prof-csv-dir
+.show-prof-csv-dir:
+	@tree -apugsfF $(MAKBET_PROF_CSV_DIR)
 
 
-.PHONY: .show-profiles-dir
-.show-profiles-dir: .show-profiles-cfg-dir .show-profiles-csv-dir
+.PHONY: .show-prof-dir
+.show-prof-dir: .show-prof-cfg-dir .show-prof-csv-dir
 
 
-.PHONY: .show-summary-profiles-csv-file
-.show-summary-profiles-csv-file:
+.PHONY: .show-summary-prof-csv-file
+.show-summary-prof-csv-file:
 	@echo ""
-	@find $(MAKBET_PROFILES_CSV_DIR) -name "*.csv" -exec head -1 {} \; | sort -u
-	@find $(MAKBET_PROFILES_CSV_DIR) -name "*.csv" -exec tail -1 {} \; | sort
+	@find $(MAKBET_PROF_CSV_DIR) -name "*.csv" -exec head -1 {} \; | sort -u
+	@find $(MAKBET_PROF_CSV_DIR) -name "*.csv" -exec tail -1 {} \; | sort
 	@echo ""
 
 
@@ -506,7 +506,7 @@ endef
 makbet-clean:
 	@-rm -rf $(MAKBET_DOT_DIR)
 	@-rm -rf $(MAKBET_EVENTS_DIR)
-	@-rm -rf $(MAKBET_PROFILES_DIR)
+	@-rm -rf $(MAKBET_PROF_DIR)
 
 
 .PHONY: makbet-version
@@ -540,27 +540,26 @@ makbet-help: main-help
 	@echo "                                    MAKBET_CSV=1.                              "
 	@echo "  .show-summary-events-csv-file   - Show the content of events summary csv     "
 	@echo "                                    file.  This target requires MAKBET_CSV=1.  "
-	@echo "  .show-profiles-dir              - Show entire content of makbet's            "
-	@echo "                                    \$$MAKBET_PATH/.makbet/profiles/ internal  "
-	@echo "                                    dir including all sub-dirs.                "
-	@echo "  .show-profiles-cfg-dir          - Show entire content of makbet's            "
-	@echo "                                    \$$MAKBET_PATH/.makbet/profiles/cfg/       "
-	@echo "                                    internal dir.  This target requires        "
-	@echo "                                    MAKBET_PROFILES=1.                         "
-	@echo "  .show-profiles-csv-dir          - Show entire content of makbet's            "
-	@echo "                                    \$$MAKBET_PATH/.makbet/profiles/csv/       "
-	@echo "                                    internal dir.  This target requires        "
-	@echo "                                    MAKBET_PROFILES=1 and MAKBET_CSV=1.        "
-	@echo "  .show-summary-profiles-csv-file - Show the content of profiles summary csv   "
-	@echo "                                    file.  This target requires MAKBET_CSV=1   "
-	@echo "                                    and MAKBET_PROFILES=1.                     "
+	@echo "  .show-prof-dir                  - Show entire content of makbet's            "
+	@echo "                                    \$$MAKBET_PATH/.makbet/prof/ internal dir  "
+	@echo "                                    including all sub-dirs.                    "
+	@echo "  .show-prof-cfg-dir              - Show entire content of makbet's            "
+	@echo "                                    \$$MAKBET_PATH/.makbet/prof/cfg/ internal  "
+	@echo "                                    dir.  This target requires MAKBET_PROF=1.  "
+	@echo "  .show-prof-csv-dir              - Show entire content of makbet's            "
+	@echo "                                    \$$MAKBET_PATH/.makbet/prof/csv/ internal  "
+	@echo "                                    dir.  This target requires MAKBET_PROF=1   "
+	@echo "                                    and MAKBET_CSV=1.                          "
+	@echo "  .show-summary-prof-csv-file     - Show the content of prof summary csv file. "
+	@echo "                                    This target requires MAKBET_CSV=1 and      "
+	@echo "                                    MAKBET_PROF=1.                             "
 	@echo "  .show-env-vars                  - Show all available MAKBET_* environment    "
 	@echo "                                    variables.                                 "
 	@echo ""
 	@echo "  Examples:                                                                    "
 	@echo "           make .show-env-vars                                                 "
 	@echo "           make .show-makbet-dir                                               "
-	@echo "           make .show-summary-profiles-csv-file MAKBET_CSV=1 MAKBET_PROFILES=1 "
+	@echo "           make .show-summary-prof-csv-file MAKBET_CSV=1 MAKBET_PROF=1         "
 	@echo ""
 	@exit 0
 
