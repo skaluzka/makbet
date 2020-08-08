@@ -224,7 +224,7 @@ define __print_task_details =
 endef
 
 #
-# Definition of __save_event macro.
+# Definition of __save_task_event macro.
 #
 # Where:
 # $(1) - TASK_ID - Order number of task's definition.
@@ -235,7 +235,7 @@ endef
 # $(6) - TASK_EVENT_FILE - Destination event file.
 # $(7) - TASK_EVENT_TYPE - The type of the event (STARTED or TERMINATED).
 #
-define __save_event =
+define __save_task_event =
 	$(_q)echo -n "" > $(6)
 	$(_q)echo "TASK_ID=\"$(strip $(1))\"" >> $(6)
 	$(_q)echo "TASK_NAME=\"$(strip $(2))\"" >> $(6)
@@ -342,7 +342,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	fi
 	@#
 	@# Saving STARTED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
-	$(call __save_event,$(MAKBET_TASK_COUNTER),$(1),$(3),$(4),$(5),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg,STARTED)
+	$(call __save_task_event,$(MAKBET_TASK_COUNTER),$(1),$(3),$(4),$(5),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg,STARTED)
 	@#
 	@echo -e "\n`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" (TASK_ID: $(MAKBET_TASK_COUNTER)) started.\n"
 	@#
@@ -350,7 +350,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	$(_q)$(4) $(5)
 	@#
 	@# Saving TERMINATED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
-	$(call __save_event,$(MAKBET_TASK_COUNTER),$(1),$(3),$(4),$(5),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg,TERMINATED)
+	$(call __save_task_event,$(MAKBET_TASK_COUNTER),$(1),$(3),$(4),$(5),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg,TERMINATED)
 	@#
 	@echo -e "\n`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" (TASK_ID: $(MAKBET_TASK_COUNTER)) terminated.\n"
 	@#
