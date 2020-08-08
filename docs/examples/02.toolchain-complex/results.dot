@@ -1,6 +1,9 @@
 
 digraph {
 
+	// Generated automatically by makbet heads/master-0-g5c50971
+	// Input: /home/c0rejump/data/devel/skaluzka/makbet/examples/02.toolchain-complex/Makefile
+
 	node [shape=box];
 
 	"build-all" -> "build-doxygen";
@@ -59,6 +62,8 @@ digraph {
 
 	"unpack-python-src" -> "fetch-python-src";
 
+
+	// The end
 
 }
 

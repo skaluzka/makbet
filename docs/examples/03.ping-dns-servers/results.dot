@@ -1,6 +1,9 @@
 
 digraph {
 
+	// Generated automatically by makbet heads/master-0-g5c50971
+	// Input: /home/user/makbet/examples/03.ping-dns-servers/Makefile
+
 	node [shape=box];
 
 	"INIT";
@@ -15,6 +18,8 @@ digraph {
 	"ping-all" -> "ping8844";
 	"ping-all" -> "ping8888";
 
+
+	// The end
 
 }
 

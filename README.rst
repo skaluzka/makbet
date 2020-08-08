@@ -171,6 +171,9 @@ results which can be used for further processing:
 
     digraph {
 
+        // Generated automatically by makbet heads/master-0-g5c50971
+        // Input: /home/user/makbet/examples/01.dummy/Makefile
+
         node [shape=box];
 
         "all" -> "task-F";
@@ -201,6 +204,8 @@ results which can be used for further processing:
 
         "task-F" -> "task-E";
 
+
+        // The end
 
     }
 

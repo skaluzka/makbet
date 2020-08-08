@@ -1,6 +1,9 @@
 
 digraph {
 
+	// Generated automatically by makbet heads/master-0-g5c50971
+	// Input: /home/user/makbet/examples/02.toolchain-basic/Makefile
+
 	node [shape=box];
 
 	"all" -> "print-all-versions";
@@ -68,6 +71,8 @@ digraph {
 
 	"unpack-python-src" -> "fetch-python-src";
 
+
+	// The end
 
 }
 
