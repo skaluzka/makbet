@@ -145,20 +145,20 @@ easily saved or redirected to file.  This can be achieved by passing
 
     [user@localhost 01.dummy]$ make makbet-clean && make all MAKBET_DOT=1
 
-    2020-07-19 20:29:02 [INFO]: Task "INIT" (TASK_ID: 1) started.
+    2020-08-08 22:44:39 [INFO]: Task "INIT" (TASK_ID: 1) started.
 
 
-    2020-07-19 20:29:02 [INFO]: Task "INIT" (TASK_ID: 1) terminated.
+    2020-08-08 22:44:39 [INFO]: Task "INIT" (TASK_ID: 1) terminated.
 
 
-    2020-07-19 20:29:03 [INFO]: Task "task-A" (TASK_ID: 2) started.
+    2020-08-08 22:44:39 [INFO]: Task "task-A" (TASK_ID: 2) started.
 
     ...
 
-    2020-07-19 20:29:13 [INFO]: Task "all" (TASK_ID: 13) started.
+    2020-08-08 22:44:50 [INFO]: Task "all" (TASK_ID: 13) started.
 
 
-    2020-07-19 20:29:14 [INFO]: Task "all" (TASK_ID: 13) terminated.
+    2020-08-08 22:44:50 [INFO]: Task "all" (TASK_ID: 13) terminated.
 
     [user@localhost 01.dummy]$
 
@@ -171,7 +171,8 @@ results which can be used for further processing:
 
     digraph {
 
-        // Generated automatically by makbet heads/master-0-g5c50971
+        // Generated automatically by makbet heads/master-0-g351d0e3
+        // Generation date: Sat 08 Aug 2020 10:44:50 PM CEST
         // Input: /home/user/makbet/examples/01.dummy/Makefile
 
         node [shape=box];

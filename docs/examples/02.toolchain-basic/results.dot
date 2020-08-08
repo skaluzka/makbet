@@ -1,7 +1,8 @@
 
 digraph {
 
-	// Generated automatically by makbet heads/master-0-g5c50971
+	// Generated automatically by makbet heads/master-0-g351d0e3
+	// Generation date: Sat 08 Aug 2020 10:51:10 PM CEST
 	// Input: /home/user/makbet/examples/02.toolchain-basic/Makefile
 
 	node [shape=box];

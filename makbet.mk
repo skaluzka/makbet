@@ -440,6 +440,7 @@ endef
 	@echo "digraph {"
 	@echo ""
 	@echo -e "\t// Generated automatically by makbet $(MAKBET_VERSION)"
+	@echo -e "\t// Generation date: $$(date)"
 	@echo -e "\t// Input: $(realpath $(firstword $(MAKEFILE_LIST)))"
 	@echo ""
 	@echo -e "\tnode [shape=box];"

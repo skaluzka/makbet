@@ -1,10 +1,15 @@
 
 digraph {
 
-	// Generated automatically by makbet heads/master-0-g5c50971
+	// Generated automatically by makbet heads/master-0-g351d0e3
+	// Generation date: Sat 08 Aug 2020 10:58:34 PM CEST
 	// Input: /home/user/makbet/examples/03.ping-dns-servers/Makefile
 
 	node [shape=box];
+
+	"all" -> "ping1111";
+	"all" -> "ping8844";
+	"all" -> "ping8888";
 
 	"INIT";
 
@@ -13,10 +18,6 @@ digraph {
 	"ping8844" -> "INIT";
 
 	"ping8888" -> "INIT";
-
-	"ping-all" -> "ping1111";
-	"ping-all" -> "ping8844";
-	"ping-all" -> "ping8888";
 
 
 	// The end
