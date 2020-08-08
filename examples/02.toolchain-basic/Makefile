@@ -58,8 +58,8 @@ $(eval $(call TASK_template, \
 	fetch-git-src, "Fetch git sources", \
 	prepare-workdir-structure, \
 	$(MAKBET_TASKS_DIR)/common/download-file.sh, \
-		https://github.com/git/git/archive/v2.27.0.zip \
-		$(WORK_DIR)/git/v2.27.0.zip \
+		https://github.com/git/git/archive/v2.28.0.zip \
+		$(WORK_DIR)/git/v2.28.0.zip \
 ))
 
 $(eval $(call TASK_template, \
@@ -98,7 +98,7 @@ $(eval $(call TASK_template, \
 	unpack-git-src, "Unpack git sources", \
 	fetch-git-src, \
 	$(MAKBET_TASKS_DIR)/common/uncompress-zip-file.sh, \
-		$(WORK_DIR)/git/v2.27.0.zip \
+		$(WORK_DIR)/git/v2.28.0.zip \
 		$(WORK_DIR)/git/ \
 ))
 
@@ -131,7 +131,7 @@ $(eval $(call TASK_template, \
 	unpack-doxygen-src unpack-git-src unpack-kcov-src unpack-make-src unpack-python-src, \
 	$(MAKBET_TASKS_DIR)/common/check-dirs.sh, \
 		$(WORK_DIR)/doxygen/doxygen-Release_1_8_19/ \
-		$(WORK_DIR)/git/git-2.27.0/ \
+		$(WORK_DIR)/git/git-2.28.0/ \
 		$(WORK_DIR)/kcov/kcov-38/ \
 		$(WORK_DIR)/make/make-4.3/ \
 		$(WORK_DIR)/python/Python-3.9.0b5/ \
@@ -148,7 +148,7 @@ $(eval $(call TASK_template, \
 	build-git, "Build git inside its source dir", \
 	build-doxygen, \
 	$(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-git.sh, \
-		$(WORK_DIR)/git/git-2.27.0/ \
+		$(WORK_DIR)/git/git-2.28.0/ \
 ))
 
 $(eval $(call TASK_template, \
@@ -177,7 +177,7 @@ $(eval $(call TASK_template, \
 	build-doxygen build-git build-kcov build-make, \
 	$(MAKBET_TASKS_DIR)/common/check-files.sh, \
 		$(WORK_DIR)/doxygen/doxygen-Release_1_8_19/build/bin/doxygen \
-		$(WORK_DIR)/git/git-2.27.0/git \
+		$(WORK_DIR)/git/git-2.28.0/git \
 		$(WORK_DIR)/kcov/kcov-38/build/src/kcov \
 		$(WORK_DIR)/make/make-4.3/make \
 		$(WORK_DIR)/python/Python-3.9.0b5/python \
@@ -195,7 +195,7 @@ $(eval $(call TASK_template, \
 	print-git-version, "Print version of git from source dir", \
 	build-git, \
 	$(MAKBET_TASKS_DIR)/common/exec-cmd.sh, \
-		$(WORK_DIR)/git/git-2.27.0/git \
+		$(WORK_DIR)/git/git-2.28.0/git \
 		--version \
 ))
 
