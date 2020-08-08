@@ -204,8 +204,6 @@ results which can be used for further processing:
 
     }
 
-
-
     [user@localhost 01.dummy]$
 
 Below graph picture has been rendered, by
