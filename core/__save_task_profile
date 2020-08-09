@@ -9,18 +9,18 @@ set -eu
 # shellcheck disable=SC1090
 . "${1}" && . "${2}"
 
-readonly T1="${TASK_STARTED_EPOCH}"
-readonly T2="${TASK_TERMINATED_EPOCH}"
-readonly TASK_DURATION_SECONDS=$(( "${T2}" - "${T1}" ))
-readonly TASK_DURATION=$( date +'%Hh:%Mm:%Ss' -ud "@${TASK_DURATION_SECONDS}" )
+readonly T1=$( date --date="${TASK_DATE_TIME_STARTED}" +"%s.%N" )
+readonly T2=$( date --date="${TASK_DATE_TIME_TERMINATED}" +"%s.%N" )
+readonly TASK_DURATION=$( date --date="0 ${T2} sec - ${T1} sec" +"%Hh:%Mm:%Ss.%3Nms" )
 
-echo "T1 = ${T1}secs"
-echo "T2 = ${T2}secs"
-echo "T2 - T1 = ${TASK_DURATION} (${TASK_DURATION_SECONDS}secs)"
+echo "Profiling results:"
+echo "T1 = ${T1}"
+echo "T2 = ${T2}"
+echo "T2 - T1 = ${TASK_DURATION}"
 
+# Save profiling data to results *.cfg file.
 echo -n "" > "${3}"
-comm "${1}" "${2}" | grep -Pv "EVENT_TYPE|DATE_TIME" | sed 's/^[ \t]*//' > "${3}"
-echo "TASK_DURATION_SECONDS=${TASK_DURATION_SECONDS}" >> "${3}"
+comm "${1}" "${2}" | grep -Pv "EVENT_TYPE" | sed 's/^[ \t]*//' > "${3}"
 echo "TASK_DURATION=${TASK_DURATION}" >> "${3}"
 
 

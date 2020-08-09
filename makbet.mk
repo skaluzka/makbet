@@ -118,20 +118,13 @@ else ifeq ($(MAKBET_CSV), 1)
     MAKBET_CSV_SEP := ;
   endif
   ifndef MAKBET_EVENTS_CSV_HEADER
-    MAKBET_EVENTS_CSV_HEADER := TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_DATE_TIME;TASK_EVENT_TYPE;TASK_[STARTED|TERMINATED]_EPOCH;
+    MAKBET_EVENTS_CSV_HEADER := TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_EVENT_TYPE;TASK_DATE_TIME_[STARTED|TERMINATED];
   endif
   ifndef MAKBET_PROF_CSV_HEADER
-    MAKBET_PROF_CSV_HEADER := TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_STARTED_EPOCH;TASK_TERMINATED_EPOCH;TASK_DURATION_SECONDS;TASK_DURATION;
+    MAKBET_PROF_CSV_HEADER := TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_DATE_TIME_STARTED;TASK_DATE_TIME_TERMINATED;TASK_DURATION;
   endif
 else
   $(error [ERROR]: Wrong value for MAKBET_CSV option (MAKBET_CSV=$(MAKBET_CSV)).  Allowed values: 0 or 1 only)
-endif
-
-#
-# Handling CLI input: MAKBET_DATE_TIME_FORMAT option.
-#
-ifndef MAKBET_DATE_TIME_FORMAT
-  export MAKBET_DATE_TIME_FORMAT := +%Y-%m-%d %H:%M:%S
 endif
 
 #
@@ -191,8 +184,6 @@ ifeq ($(_v1), 1)
   $(info MAKBET_EVENTS_CFG_DIR = $(MAKBET_EVENTS_CFG_DIR))
   $(info MAKBET_EVENTS_CSV_DIR = $(MAKBET_EVENTS_CSV_DIR))
   $(info MAKBET_EVENTS_CSV_HEADER = $(MAKBET_EVENTS_CSV_HEADER))
-  $(info )
-  $(info MAKBET_DATE_TIME_FORMAT = $(MAKBET_DATE_TIME_FORMAT))
   $(info )
 endif
 
@@ -368,7 +359,6 @@ endef
 
 .PHONY: .show-summary-events-csv-file
 .show-summary-events-csv-file:
-	@echo ""
 	@find $(MAKBET_EVENTS_CSV_DIR) -name "*.csv" -exec head -1 {} \; | sort -u
 	@find $(MAKBET_EVENTS_CSV_DIR) -name "*.csv" -exec tail -1 {} \; | sort
 	@echo ""
@@ -390,7 +380,6 @@ endef
 
 .PHONY: .show-summary-prof-csv-file
 .show-summary-prof-csv-file:
-	@echo ""
 	@find $(MAKBET_PROF_CSV_DIR) -name "*.csv" -exec head -1 {} \; | sort -u
 	@find $(MAKBET_PROF_CSV_DIR) -name "*.csv" -exec tail -1 {} \; | sort
 	@echo ""

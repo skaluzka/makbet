@@ -10,8 +10,8 @@ set -eu
 # ${6} - TASK_EVENT_FILE - Destination event file.
 # ${7} - TASK_EVENT_TYPE - The type of the event (STARTED or TERMINATED).
 
-readonly NOW=$( date "${MAKBET_DATE_TIME_FORMAT}" )
-readonly NOW_EPOCH=$( date --date="${NOW}" +%s )
+readonly NOW=$( date "+%Y-%m-%d %H:%M:%S.%N" )
+readonly NOW_SHORT=$( date --date="${NOW}" "+%Y-%m-%d %H:%M:%S.%3N" )
 
 echo -n "" > "${6}"
 # shellcheck disable=SC2129
@@ -20,12 +20,11 @@ echo "TASK_NAME=\"${2}\"" >> "${6}"
 echo "TASK_DEPS=\"${3}\"" >> "${6}"
 echo "TASK_CMD=\"${4}\"" >> "${6}"
 echo "TASK_CMD_OPTS=\"${5}\"" >> "${6}"
-echo "TASK_DATE_TIME=\"${NOW}\"" >> "${6}"
+echo "TASK_DATE_TIME_${7}=\"${NOW}\"" >> "${6}"
 echo "TASK_EVENT_TYPE=\"${7}\"" >> "${6}"
-echo "TASK_${7}_EPOCH=\"${NOW_EPOCH}\"" >> "${6}"
 
 # Print console message.
-echo -e "\n${NOW} [INFO]: Task \"${2}\" (TASK_ID: ${1}) ${7,,}.\n"
+echo -e "\n${NOW_SHORT} [INFO]: Task \"${2}\" (TASK_ID: ${1}) ${7,,}.\n"
 
 
 # The end
