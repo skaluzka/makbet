@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -eu
+
+
+# ${1} - Path to T1 *.started.cfg event file.
+# ${2} - Path to T2 *.terminated.cfg event file.
+# ${3} - Path to results *.cfg file.
+
+# shellcheck disable=SC1090
+. "${1}" && . "${2}"
+
+readonly T1="${TASK_STARTED_EPOCH}"
+readonly T2="${TASK_TERMINATED_EPOCH}"
+readonly TASK_DURATION_SECONDS=$(( "${T2}" - "${T1}" ))
+readonly TASK_DURATION=$( date +'%Hh:%Mm:%Ss' -ud "@${TASK_DURATION_SECONDS}" )
+
+echo "T1 = ${T1}secs"
+echo "T2 = ${T2}secs"
+echo "T2 - T1 = ${TASK_DURATION} (${TASK_DURATION_SECONDS}secs)"
+
+echo -n "" > "${3}"
+comm "${1}" "${2}" | grep -Pv "EVENT_TYPE|DATE_TIME" | sed 's/^[ \t]*//' > "${3}"
+echo "TASK_DURATION_SECONDS=${TASK_DURATION_SECONDS}" >> "${3}"
+echo "TASK_DURATION=${TASK_DURATION}" >> "${3}"
+
+
+# The end

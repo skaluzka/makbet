@@ -11,8 +11,7 @@ ifndef MAKBET_PATH
   $(error MAKBET_PATH is not defined)
 else
   MAKBET_CACHE_DIR := $(MAKBET_PATH)/.cache
-  MAKBET_LIB_DIR := $(MAKBET_PATH)/lib
-  MAKBET_PLUGINS_DIR := $(MAKBET_LIB_DIR)/plugins
+  MAKBET_CORE_DIR := $(MAKBET_PATH)/core
 endif
 
 #
@@ -132,18 +131,11 @@ endif
 # Handling CLI input: MAKBET_DATE_TIME_FORMAT option.
 #
 ifndef MAKBET_DATE_TIME_FORMAT
-  MAKBET_DATE_TIME_FORMAT := +"%Y-%m-%d %H:%M:%S"
+  export MAKBET_DATE_TIME_FORMAT := +%Y-%m-%d %H:%M:%S
 endif
 
 #
-# Handling CLI input: MAKBET_TASKS_DIR option.
-#
-ifndef MAKBET_TASKS_DIR
-  MAKBET_TASKS_DIR := $(MAKBET_LIB_DIR)/tasks
-endif
-
-#
-# Create makbet's internals as soon as possible.
+# Create makbet's internals as fast as possible.
 #
 # .
 # └── .cache/
@@ -179,11 +171,7 @@ ifeq ($(_v1), 1)
   $(info )
   $(info MAKBET_CACHE_DIR = $(MAKBET_CACHE_DIR))
   $(info )
-  $(info MAKBET_LIB_DIR = $(MAKBET_LIB_DIR))
-  $(info )
-  $(info MAKBET_TASKS_DIR = $(MAKBET_TASKS_DIR))
-  $(info )
-  $(info MAKBET_PLUGINS_DIR = $(MAKBET_PLUGINS_DIR))
+  $(info MAKBET_CORE_DIR = $(MAKBET_CORE_DIR))
   $(info )
   $(info MAKBET_VERBOSE = $(MAKBET_VERBOSE))
   $(info )
@@ -209,115 +197,6 @@ ifeq ($(_v1), 1)
 endif
 
 #
-# Definition of __print_task_details macro.
-#
-# Where:
-# $(1) - TASK_ID - Order number of task's definition.
-# $(2) - TASK_NAME - The name of the task.
-# $(3) - TASK_DEPS - All task dependencies.
-# $(4) - TASK_CMD - Task command.
-# $(5) - TASK_CMD_OPTS - Input options for TASK_CMD above.
-#
-define __print_task_details =
-	echo "TASK_ID = $(strip $(1))" ; \
-	echo "TASK_NAME = $(strip $(2))" ; \
-	echo "TASK_DEPS = $(strip $(3))" ; \
-	echo "TASK_CMD = $(strip $(4))" ; \
-	echo "TASK_CMD_OPTS = $(strip $(5))"
-endef
-
-#
-# Definition of __save_task_event macro.
-#
-# Where:
-# $(1) - TASK_ID - Order number of task's definition.
-# $(2) - TASK_NAME - The name of the task.
-# $(3) - TASK_DEPS - All task dependencies.
-# $(4) - TASK_CMD - Task command.
-# $(5) - TASK_CMD_OPTS - Input options for TASK_CMD above.
-# $(6) - TASK_EVENT_FILE - Destination event file.
-# $(7) - TASK_EVENT_TYPE - The type of the event (STARTED or TERMINATED).
-#
-define __save_task_event =
-	$(_q)echo -n "" > $(6)
-	$(_q)echo "TASK_ID=\"$(strip $(1))\"" >> $(6)
-	$(_q)echo "TASK_NAME=\"$(strip $(2))\"" >> $(6)
-	$(_q)echo "TASK_DEPS=\"$(strip $(3))\"" >> $(6)
-	$(_q)echo "TASK_CMD=\"$(strip $(4))\"" >> $(6)
-	$(_q)echo "TASK_CMD_OPTS=\"$(strip $(5))\"" >> $(6)
-	$(_q)echo "TASK_DATE_TIME=\"`date $(MAKBET_DATE_TIME_FORMAT)`\"" >> $(6)
-	$(_q)echo "TASK_EVENT_TYPE=\"$(strip $(7))\"" >> $(6)
-	$(_q)cmd="TIMESTAMP_EPOCH=$$$$(date +'%s')" && \
-		eval $$$${cmd} && \
-			echo "TASK_$(7)_EPOCH=\"$$$${TIMESTAMP_EPOCH}\"" >> $(6)
-endef
-
-#
-# Definition of __save_task_profile macro.
-#
-# Where:
-# $(1) - Path to T1 *.started.cfg event file.
-# $(2) - Path to T2 *.terminated.cfg event file.
-# $(3) - Path to results *.cfg file.
-#
-define __save_task_profile =
-	touch $(strip $(3)) ; \
-	comm $(1) $(2) | grep -Pv "EVENT_TYPE|DATE_TIME" | sed 's/^[ \t]*//' > $(strip $(3)) ; \
-	. $(1) && . $(2) && \
-		cmd="T1=$$$${TASK_STARTED_EPOCH}" && \
-			eval $$$${cmd} && \
-				echo "T1 = $$$${T1}secs" && \
-		cmd="T2=$$$${TASK_TERMINATED_EPOCH}" && \
-			eval $$$${cmd} && \
-				echo "T2 = $$$${T2}secs" && \
-		cmd="TASK_DURATION_SECONDS=$$$$(($$$${T2} - $$$${T1}))" && \
-			eval $$$${cmd} && \
-		cmd="TASK_DURATION=$$$$(date +'%Hh:%Mm:%Ss' -ud @$$$${TASK_DURATION_SECONDS})" && \
-			eval $$$${cmd} && \
-				echo "T2 - T1 = $$$${TASK_DURATION} ($$$${TASK_DURATION_SECONDS}secs)" && \
-		echo "TASK_DURATION_SECONDS=$$$${TASK_DURATION_SECONDS}" >> $(strip $(3)) && \
-		echo "TASK_DURATION=$$$${TASK_DURATION}" >> $(strip $(3))
-endef
-
-#
-# Definition of __convert_cfg2csv macro.
-#
-# Where:
-# $(1) - Path to input cfg file.
-# $(2) - Path to output csv file.
-# $(3) - The csv header variable.
-#
-define __convert_cfg2csv =
-	echo "$(strip $(3))" > $(2) ; \
-	cat $(1) | cut -d "=" -f2 | tr "\n" "$(MAKBET_CSV_SEP)" >> $(2) ; \
-	echo "" >> $(2)
-endef
-
-#
-# Definition of __save_dot_file macro.
-#
-# Where:
-# $(1) - Path to input cfg file.
-# $(2) - Path to output dot file.
-#
-define __save_dot_file =
-	touch $(strip $(2)) ; \
-	. $(1) && \
-		if [ -z "$$$${TASK_DEPS}" ] ; \
-		then \
-			cmd='echo -e "\t\"$$$${TASK_NAME}\";\n" >> $(strip $(2))' && \
-				eval $$$${cmd} ; \
-		else \
-			cmd='for t in $$$${TASK_DEPS}; \
-				do \
-					echo -e "\t\"$$$${TASK_NAME}\" -> \"$$$${t}\";" >> $(strip $(2)) ; \
-				done ; \
-				echo "" >> $(strip $(2))' && \
-				eval $$$${cmd} ; \
-		fi
-endef
-
-#
 # Definition of TASK_template macro.
 #
 # Where:
@@ -337,71 +216,88 @@ $(1): $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg $(foreach d,$(3),$(M
 
 $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET_EVENTS_CFG_DIR)/$(d).terminated.cfg)
 	@#
-	@#
 	@# Printing additional information if MAKBET_VERBOSE=1 or MAKBET_VERBOSE=2.
 	$(_q)if (( $(_v) >= 1 )) ; \
 	then \
-		$(call __print_task_details,$(MAKBET_TASK_COUNTER),$(1),$(3),$(4),$(5)) ; \
+		$(MAKBET_CORE_DIR)/__print_task_details \
+			"$(strip $(MAKBET_TASK_COUNTER))" \
+			"$(strip $(1))" \
+			"$(strip $(3))" \
+			"$(strip $(4))" \
+			"$(strip $(5))" ; \
 	fi
 	@#
 	@# Saving STARTED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
-	$(call __save_task_event,$(MAKBET_TASK_COUNTER),$(1),$(3),$(4),$(5),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg,STARTED)
-	@#
-	@echo -e "\n`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" (TASK_ID: $(MAKBET_TASK_COUNTER)) started.\n"
+	$(_q)$(MAKBET_CORE_DIR)/__save_task_event \
+		"$(strip $(MAKBET_TASK_COUNTER))" \
+		"$(strip $(1))" \
+		"$(strip $(3))" \
+		"$(strip $(4))" \
+		"$(strip $(5))" \
+		"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg" \
+		"STARTED" ;
 	@#
 	@# Running the TASK_CMD with TASK_CMD_OPTS input options.
 	$(_q)$(4) $(5)
 	@#
 	@# Saving TERMINATED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
-	$(call __save_task_event,$(MAKBET_TASK_COUNTER),$(1),$(3),$(4),$(5),$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg,TERMINATED)
-	@#
-	@echo -e "\n`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" (TASK_ID: $(MAKBET_TASK_COUNTER)) terminated.\n"
+	$(_q)$(MAKBET_CORE_DIR)/__save_task_event \
+		"$(strip $(MAKBET_TASK_COUNTER))" \
+		"$(strip $(1))" \
+		"$(strip $(3))" \
+		"$(strip $(4))" \
+		"$(strip $(5))" \
+		"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg" \
+		"TERMINATED" ;
 	@#
 	@# Saving *.dot file in .cache/dot/ dir if MAKBET_DOT=1.
 	$(_q)if (( $(_d) == 1 )) ; \
 	then \
-		$(call __save_dot_file,\
-			$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg,\
-			$(MAKBET_DOT_DIR)/$(strip $(1)).dot) ; \
+		$(MAKBET_CORE_DIR)/__save_dot_file \
+			"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg" \
+			"$(MAKBET_DOT_DIR)/$(strip $(1)).dot" ; \
 	fi
 	@#
 	@# Computing time difference (task duration) if MAKBET_PROF=1.
 	$(_q)if (( $(_p) == 1 )) ; \
 	then \
-		$(call __save_task_profile,\
-			$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg,\
-			$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg,\
-			$(MAKBET_PROF_CFG_DIR)/$(strip $(1)).cfg) ; \
+		$(MAKBET_CORE_DIR)/__save_task_profile \
+			"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg" \
+			"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg" \
+			"$(MAKBET_PROF_CFG_DIR)/$(strip $(1)).cfg" ; \
 	fi
 	@#
 	@# Converting profile *.cfg file to -> profile *.csv file
 	@# if MAKBET_CSV=1 and MAKBET_PROF=1.
 	$(_q)if (( $(_c) == 1 )) && (( $(_p) == 1 )); \
 	then \
-		$(call __convert_cfg2csv,\
-			$(MAKBET_PROF_CFG_DIR)/$(strip $(1)).cfg,\
-			$(MAKBET_PROF_CSV_DIR)/$(strip $(1)).csv,\
-			$(MAKBET_PROF_CSV_HEADER)) ; \
+		$(MAKBET_CORE_DIR)/__convert_cfg2csv \
+			"$(MAKBET_PROF_CFG_DIR)/$(strip $(1)).cfg" \
+			"$(MAKBET_PROF_CSV_DIR)/$(strip $(1)).csv" \
+			"$(MAKBET_PROF_CSV_HEADER)" \
+			"$(MAKBET_CSV_SEP)" ; \
 	fi
 	@#
 	@# Converting *.started.cfg file to -> *.started.csv file
 	@# if MAKBET_CSV=1.
 	$(_q)if (( $(_c) == 1 )) ; \
 	then \
-		$(call __convert_cfg2csv,\
-			$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg,\
-			$(MAKBET_EVENTS_CSV_DIR)/$(strip $(1)).started.csv,\
-			$(MAKBET_EVENTS_CSV_HEADER)) ; \
+		$(MAKBET_CORE_DIR)/__convert_cfg2csv \
+			"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg" \
+			"$(MAKBET_EVENTS_CSV_DIR)/$(strip $(1)).started.csv" \
+			"$(MAKBET_EVENTS_CSV_HEADER)" \
+			"$(MAKBET_CSV_SEP)" ; \
 	fi
 	@#
 	@# Converting *.terminated.cfg file to -> *.terminated.csv file
 	@# if MAKBET_CSV=1.
 	$(_q)if (( $(_c) == 1 )) ; \
 	then \
-		$(call __convert_cfg2csv,\
-			$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg,\
-			$(MAKBET_EVENTS_CSV_DIR)/$(strip $(1)).terminated.csv,\
-			$(MAKBET_EVENTS_CSV_HEADER)) ; \
+		$(MAKBET_CORE_DIR)/__convert_cfg2csv \
+			"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg" \
+			"$(MAKBET_EVENTS_CSV_DIR)/$(strip $(1)).terminated.csv" \
+			"$(MAKBET_EVENTS_CSV_HEADER)" \
+			"$(MAKBET_CSV_SEP)" ; \
 	fi
 
 # Add entry to scenario-help target.
@@ -418,9 +314,9 @@ scenario-help::
 # If MAKBET_VERBOSE=2 printing task's command path (if any) immediately
 # after TASK_template macro evaluation.
 $(if $(_q),,
-  $(if $(strip $(4)),\
-    $(info [INFO]: Created task $(strip $(1)) <- $(strip $(4))),\
-    $(info [INFO]: Created task $(strip $(1)) <- empty task)\
+  $(if $(strip $(4)), \
+    $(info [INFO]: Created task $(strip $(1)) <- $(strip $(4))), \
+    $(info [INFO]: Created task $(strip $(1)) <- empty task) \
   )
 )
 

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -eu
+
+
+# ${1} - TASK_ID - Order number of task's definition.
+# ${2} - TASK_NAME - The name of the task.
+# ${3} - TASK_DEPS - All task dependencies.
+# ${4} - TASK_CMD - Task command.
+# ${5} - TASK_CMD_OPTS - Input options for TASK_CMD above.
+
+echo "TASK_ID = ${1}"
+echo "TASK_NAME = ${2}"
+echo "TASK_DEPS = ${3:-"None"}"
+echo "TASK_CMD = ${4:-"None"}"
+echo "TASK_CMD_OPTS = ${5:-"None"}"
+
+
+# The end

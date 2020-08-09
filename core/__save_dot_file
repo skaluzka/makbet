@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -eu
+
+
+# ${1} - Path to input *.cfg file.
+# ${2} - Path to output *.dot file.
+
+# shellcheck disable=SC1090
+. "${1}"
+echo "" > "${2}"
+if [ -z "${TASK_DEPS}" ]
+then
+    echo -e "\t\"${TASK_NAME}\";" >> "${2}"
+else
+    for t in ${TASK_DEPS}
+    do
+        echo -e "\t\"${TASK_NAME}\" -> \"${t}\";" >> "${2}"
+    done
+fi
+
+
+# The end

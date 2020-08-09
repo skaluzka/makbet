@@ -7,6 +7,7 @@ ifndef MAKBET_PATH
   $(error MAKBET_PATH is not defined)
 else
   include $(MAKBET_PATH)/makbet.mk
+  MAKBET_TASKS_DIR := $(MAKBET_PATH)/examples/lib/tasks
 endif
 
 #

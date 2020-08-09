@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -eu
+
+
+# ${1} - Path to input *.cfg file.
+# ${2} - Path to output *.csv file.
+# ${3} - The csv header variable.
+# ${4} - The csv separator.
+
+echo "${3}" > "${2}"
+cat "${1}" | cut -d '=' -f2 | tr "\n" "${4}" >> "${2}"
+echo "" >> "${2}"
+
+
+# The end

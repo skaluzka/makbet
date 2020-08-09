@@ -104,13 +104,26 @@ The **makbet's** examples directory structure is:
   │   └── Makefile
   ├── lib/
   │   └── tasks/
-  │       └── 02.toolchain/
-  │           └── common/
-  │               ├── build-doxygen.sh
-  │               ├── build-git.sh
-  │               ├── build-kcov.sh
-  │               ├── build-make.sh
-  │               └── build-python.sh
+  │       ├── 02.toolchain/
+  │       │   └── common/
+  │       │       ├── build-doxygen.sh
+  │       │       ├── build-git.sh
+  │       │       ├── build-kcov.sh
+  │       │       ├── build-make.sh
+  │       │       └── build-python.sh
+  │       └── common/
+  │           ├── check-dirs.sh
+  │           ├── check-files.sh
+  │           ├── create-dir-structure.sh
+  │           ├── download-file.sh
+  │           ├── exec-cmd.sh
+  │           ├── show-free-space.sh
+  │           ├── show-uname.sh
+  │           ├── show-uptime.sh
+  │           ├── sleep.sh
+  │           ├── uncompress-tgz-file.sh
+  │           ├── uncompress-txz-file.sh
+  │           └── uncompress-zip-file.sh
   └── README.rst
 
 |
@@ -178,6 +191,12 @@ where:
   used by **two** ``build-python`` tasks (defined in **02.toolchain-basic** and
   **02.toolchain-complex** examples).  Its aim is to build **python 3.9.0b5**
   from previously downloaded sources.
+
+|
+
+- ``lib/tasks/common/`` - Separate directory containing all tasks common for
+  all makbet's examples.  Tasks from that directory are used in both
+  **02.toolchain-basic** and **02.toolchain-complex** examples.
 
 |
 
