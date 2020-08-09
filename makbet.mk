@@ -10,6 +10,7 @@
 ifndef MAKBET_PATH
   $(error MAKBET_PATH is not defined)
 else
+  MAKBET_CACHE_DIR := $(MAKBET_PATH)/.cache
   MAKBET_LIB_DIR := $(MAKBET_PATH)/lib
   MAKBET_PLUGINS_DIR := $(MAKBET_LIB_DIR)/plugins
 endif
@@ -42,11 +43,11 @@ MAKBET_VERSION := $(shell \
 #
 # All internal makbet dirs.
 #
-MAKBET_DOT_DIR := $(MAKBET_PATH)/.makbet/dot
-MAKBET_EVENTS_DIR := $(MAKBET_PATH)/.makbet/events
+MAKBET_DOT_DIR := $(MAKBET_CACHE_DIR)/dot
+MAKBET_EVENTS_DIR := $(MAKBET_CACHE_DIR)/events
 MAKBET_EVENTS_CFG_DIR := $(MAKBET_EVENTS_DIR)/cfg
 MAKBET_EVENTS_CSV_DIR := $(MAKBET_EVENTS_DIR)/csv
-MAKBET_PROF_DIR := $(MAKBET_PATH)/.makbet/prof
+MAKBET_PROF_DIR := $(MAKBET_CACHE_DIR)/prof
 MAKBET_PROF_CFG_DIR := $(MAKBET_PROF_DIR)/cfg
 MAKBET_PROF_CSV_DIR := $(MAKBET_PROF_DIR)/csv
 
@@ -145,7 +146,7 @@ endif
 # Create makbet's internals as soon as possible.
 #
 # .
-# └── .makbet/
+# └── .cache/
 #     ├── dot/
 #     ├── events/
 #     │   ├── cfg/
@@ -175,6 +176,8 @@ ifeq ($(_v1), 1)
   $(info MAKBET_VERSION = $(MAKBET_VERSION))
   $(info )
   $(info MAKBET_PATH = $(MAKBET_PATH))
+  $(info )
+  $(info MAKBET_CACHE_DIR = $(MAKBET_CACHE_DIR))
   $(info )
   $(info MAKBET_LIB_DIR = $(MAKBET_LIB_DIR))
   $(info )
@@ -354,7 +357,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	@#
 	@echo -e "\n`date $(MAKBET_DATE_TIME_FORMAT)` [INFO]: Task \"$(strip $(1))\" (TASK_ID: $(MAKBET_TASK_COUNTER)) terminated.\n"
 	@#
-	@# Saving *.dot file in .makbet/dot/ dir if MAKBET_DOT=1.
+	@# Saving *.dot file in .cache/dot/ dir if MAKBET_DOT=1.
 	$(_q)if (( $(_d) == 1 )) ; \
 	then \
 		$(call __save_dot_file,\
@@ -424,9 +427,9 @@ $(if $(_q),,
 endef
 
 
-.PHONY: .show-makbet-dir
-.show-makbet-dir:
-	@-tree -apugsfF $(MAKBET_PATH)/.makbet
+.PHONY: .show-cache-dir
+.show-cache-dir:
+	@-tree -apugsfF $(MAKBET_CACHE_DIR)
 
 
 .PHONY: .show-dot-dir
@@ -513,88 +516,87 @@ makbet-clean:
 .PHONY: makbet-version
 makbet-version:
 	@echo ""
-	@echo "makbet $(MAKBET_VERSION)                                                       "
+	@echo "makbet $(MAKBET_VERSION)                                                      "
 	@echo ""
 
 
 .PHONY: makbet-help
 makbet-help: main-help
 	@echo ""
-	@echo "All makbet's special targets defined in $(MAKBET_PATH)/makbet.mk:              "
+	@echo "All makbet's special targets defined in $(MAKBET_PATH)/makbet.mk:             "
 	@echo ""
-	@echo "  .show-makbet-dir                - Show entire content of makbet's internal   "
-	@echo "                                    dir (\$$MAKBET_PATH/.makbet/).             "
-	@echo "  .show-dot-dir                   - Show entire content of makbet's internal   "
-	@echo "                                    \"dot\" dir (\$$MAKBET_PATH/.makbet/dot/). "
-	@echo "                                    This target requires MAKBET_DOT=1.         "
-	@echo "  .show-summary-dot-file          - Show the content of results dot file.  This"
-	@echo "                                    target requires MAKBET_DOT=1.              "
-	@echo "  .show-events-dir                - Show entire content of makbet's            "
-	@echo "                                    \$$MAKBET_PATH/.makbet/events/ internal    "
-	@echo "                                    dir including all sub-dirs.                "
-	@echo "  .show-events-cfg-dir            - Show entire content of makbet's            "
-	@echo "                                    \$$MAKBET_PATH/.makbet/events/cfg/         "
-	@echo "                                    internal dir.                              "
-	@echo "  .show-events-csv-dir            - Show entire content of makbet's            "
-	@echo "                                    \$$MAKBET_PATH/.makbet/events/csv/         "
-	@echo "                                    internal dir.  This target requires        "
-	@echo "                                    MAKBET_CSV=1.                              "
-	@echo "  .show-summary-events-csv-file   - Show the content of events summary csv     "
-	@echo "                                    file.  This target requires MAKBET_CSV=1.  "
-	@echo "  .show-prof-dir                  - Show entire content of makbet's            "
-	@echo "                                    \$$MAKBET_PATH/.makbet/prof/ internal dir  "
-	@echo "                                    including all sub-dirs.                    "
-	@echo "  .show-prof-cfg-dir              - Show entire content of makbet's            "
-	@echo "                                    \$$MAKBET_PATH/.makbet/prof/cfg/ internal  "
-	@echo "                                    dir.  This target requires MAKBET_PROF=1.  "
-	@echo "  .show-prof-csv-dir              - Show entire content of makbet's            "
-	@echo "                                    \$$MAKBET_PATH/.makbet/prof/csv/ internal  "
-	@echo "                                    dir.  This target requires MAKBET_PROF=1   "
-	@echo "                                    and MAKBET_CSV=1.                          "
-	@echo "  .show-summary-prof-csv-file     - Show the content of prof summary csv file. "
-	@echo "                                    This target requires MAKBET_CSV=1 and      "
-	@echo "                                    MAKBET_PROF=1.                             "
-	@echo "  .show-env-vars                  - Show all available MAKBET_* environment    "
-	@echo "                                    variables.                                 "
+	@echo "  .show-cache-dir                - Show entire content of makbet's internal   "
+	@echo "                                   cache dir (\$$MAKBET_CACHE_DIR).           "
+	@echo "  .show-dot-dir                  - Show entire content of makbet's internal   "
+	@echo "                                   \"dot\" dir (\$$MAKBET_DOT_DIR).  This     "
+	@echo "                                   target requires MAKBET_DOT=1.              "
+	@echo "  .show-summary-dot-file         - Show the content of results dot file.      "
+	@echo "                                   This target requires MAKBET_DOT=1.         "
+	@echo "  .show-events-dir               - Show entire content of makbet's internal   "
+	@echo "                                   \"events\" dir (\$$MAKBET_EVENTS_DIR)      "
+	@echo "                                   including all sub-dirs.                    "
+	@echo "  .show-events-cfg-dir           - Show entire content of makbet's internal   "
+	@echo "                                   \"events/cfg\" (\$$MAKBET_EVENTS_CFG_DIR)  "
+	@echo "                                   dir.                                       "
+	@echo "  .show-events-csv-dir           - Show entire content of makbet's internal   "
+	@echo "                                   \"events/csv\" (\$$MAKBET_EVENTS_CSV_DIR)  "
+	@echo "                                   dir.  This target requires MAKBET_CSV=1.   "
+	@echo "  .show-summary-events-csv-file  - Show the content of events summary csv     "
+	@echo "                                   file.  This target requires MAKBET_CSV=1.  "
+	@echo "  .show-prof-dir                 - Show entire content of makbet's internal   "
+	@echo "                                   \"prof\" dir (\$$MAKBET_PROF_DIR) including"
+	@echo "                                   all sub-dirs.                              "
+	@echo "  .show-prof-cfg-dir             - Show entire content of makbet's internal   "
+	@echo "                                   \"prof/cfg\" dir (\$$MAKBET_PROF_CFG_DIR). "
+	@echo "                                   This target requires MAKBET_PROF=1.        "
+	@echo "  .show-prof-csv-dir             - Show entire content of makbet's internal   "
+	@echo "                                   \"prof/csv\" dir (\$$MAKBET_PROF_CSV_DIR). "
+	@echo "                                   This target requires MAKBET_PROF=1 and     "
+	@echo "                                   MAKBET_CSV=1.                              "
+	@echo "  .show-summary-prof-csv-file    - Show the content of prof summary csv file. "
+	@echo "                                   This target requires MAKBET_CSV=1 and      "
+	@echo "                                   MAKBET_PROF=1.                             "
+	@echo "  .show-env-vars                 - Show all available MAKBET_* environment    "
+	@echo "                                   variables (sorted).                        "
 	@echo ""
-	@echo "  Examples:                                                                    "
-	@echo "           make .show-env-vars                                                 "
-	@echo "           make .show-makbet-dir                                               "
-	@echo "           make .show-summary-prof-csv-file MAKBET_CSV=1 MAKBET_PROF=1         "
+	@echo "  Examples:                                                                   "
+	@echo "           make .show-env-vars                                                "
+	@echo "           make .show-cache-dir                                               "
+	@echo "           make .show-summary-prof-csv-file MAKBET_CSV=1 MAKBET_PROF=1        "
 	@echo ""
 	@exit 0
 
 
 .PHONY: main-help
 main-help: makbet-version
-	@echo "  \"What's done, is done.\" - William Shakespeare, Macbeth.                    "
+	@echo "  \"What's done, is done.\" - William Shakespeare, Macbeth.                   "
 	@echo ""
-	@echo "Usage: make [TARGET]                                                           "
+	@echo "Usage: make [TARGET]                                                          "
 	@echo ""
-	@echo "All makbet's basic targets defined in $(MAKBET_PATH)/makbet.mk:                "
+	@echo "All makbet's basic targets defined in $(MAKBET_PATH)/makbet.mk:               "
 	@echo ""
-	@echo "  help                            - Show main makbet's help message as first   "
-	@echo "                                    then append the help messages of all tasks "
-	@echo "                                    defined in scenario's Makefile.  This is   "
-	@echo "                                    the default target.                        "
-	@echo "  scenario-help                   - Show only scenario's help message (it is   "
-	@echo "                                    generated dynamically based on all tasks   "
-	@echo "                                    defined in scenario's Makefile file).      "
-	@echo "  makbet-help                     - Show main makbet's help message (same as   "
-	@echo "                                    \"make help\" above) then append extended  "
-	@echo "                                    help message containing the list of all    "
-	@echo "                                    special makbet's targets.                  "
-	@echo "  makbet-clean                    - Clean entire makbet's internal dir         "
-	@echo "                                    (\$$MAKBET_PATH/.makbet/).                 "
-	@echo "  makbet-version                  - Print makbet's version only.               "
+	@echo "  help                           - Show main makbet's help message as first   "
+	@echo "                                   then append the help messages of all tasks "
+	@echo "                                   defined in scenario's Makefile.  This is   "
+	@echo "                                   the default target.                        "
+	@echo "  scenario-help                  - Show only scenario's help message (it is   "
+	@echo "                                   generated dynamically based on all tasks   "
+	@echo "                                   defined in scenario's Makefile file).      "
+	@echo "  makbet-help                    - Show main makbet's help message (same as   "
+	@echo "                                   \"make help\" above) then append extended  "
+	@echo "                                   help message containing the list of all    "
+	@echo "                                   special makbet's targets.                  "
+	@echo "  makbet-clean                   - Clean entire makbet's internal cache dir   "
+	@echo "                                   (\$$MAKBET_CACHE_DIR).                     "
+	@echo "  makbet-version                 - Print makbet's version only.               "
 	@echo ""
-	@echo "  Examples:                                                                    "
-	@echo "           make                                                                "
-	@echo "           make help                                                           "
-	@echo "           make scenario-help                                                  "
-	@echo "           make makbet-help                                                    "
-	@echo "           make makbet-clean                                                   "
-	@echo "           make makbet-version                                                 "
+	@echo "  Examples:                                                                   "
+	@echo "           make                                                               "
+	@echo "           make help                                                          "
+	@echo "           make scenario-help                                                 "
+	@echo "           make makbet-help                                                   "
+	@echo "           make makbet-clean                                                  "
+	@echo "           make makbet-version                                                "
 
 
 # This is scenario-help target (the whole scenario-specific help message).
