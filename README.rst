@@ -65,7 +65,6 @@ Features
 
 - based on **GNU make** tool and its features,
 - easy extensible,
-- contains built-in minimalistic tasks library (set of simple **Bash** scripts),
 - built-in support for parallelism,
 - can be easy added/embedded into existing projects as 3rd party SW,
 - pure console tool - no GUI required,
@@ -83,7 +82,8 @@ Features
 - generating **DOT** output showing relations between tasks (this feature can
   be enabled by ``MAKBET_DOT=1`` CLI option),
 - it is pretty well documented,
-- has a couple of quite nice examples,
+- has a couple of quite nice examples, including small built-in tasks library
+  (set of simple **Bash** scripts),
 - minimal system requirements (see below).
 
 |
@@ -112,6 +112,8 @@ Installing **makbet** is quite easy.
 - Download or clone the **makbet** project from GitHub.
 - Export the ``MAKBET_PATH`` variable pointing to **makbet's** main directory
   (e.g.: ``export MAKBET_PATH=/home/user/makbet``).
+- Change directory to main **makbet's** directory then run ``make`` command to
+  see the help message.
 
 And that's all.  You are now ready to write your own scenarios (or play with
 built-in `examples <https://github.com/skaluzka/makbet/tree/master/examples>`_).
