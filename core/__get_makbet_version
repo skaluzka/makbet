@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -u
+
+
+set +e
+if [ -d "${MAKBET_PATH}/.git" ]
+then
+    git describe --all --long 2> /dev/null
+else
+    cat "${MAKBET_PATH}/VERSION"
+fi
+set -e
+
+
+# The end
