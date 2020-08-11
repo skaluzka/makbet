@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Create a bug report to help improve makbet
 title: ''
 labels: bug
 assignees: ''
@@ -21,12 +21,12 @@ Steps to reproduce the behavior:
 A clear and concise description of what you expected to happen.
 
 **Screenshots**
-If applicable, add screenshots to help explain your problem, otherwise type N/A.
+If applicable, add screenshots to help explain your problem.  Type N/A if not applicable.
 
 **Environment (please complete the following information):**
- - OS: [e.g. CentOS 7.2]
- - GNU Make version [e.g. 3.82]
- - Bash version [e.g. 5.0.18]
+ - **OS version**: [e.g. CentOS 7.2]
+ - **GNU Make version**: [e.g. 3.82]
+ - **Bash version**: [e.g. 5.0.18]
 
 **Additional context**
-Add any other context about the problem here, otherwise type N/A.
+Add any other context about the problem here.  Type N/A if not applicable.
