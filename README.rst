@@ -46,7 +46,7 @@ Mainly to help:
 
 But also to help:
 
-- learning **GNU make** utility,
+- learning **GNU Make** utility,
 - learning **DOT** language,
 - learning **Bash** scripting.
 
@@ -63,7 +63,7 @@ Features
 
 **makbet's** key features are:
 
-- based on **GNU make** tool and its features,
+- based on **GNU Make** tool and its features,
 - easy extensible,
 - built-in support for parallelism,
 - can be easy added/embedded into existing projects as 3rd party SW,
@@ -96,10 +96,10 @@ Well... Nothing special here :)
 The only system requirements are:
 
 - GNU Linux OS
-- GNU make tool (version **3.82+**)
+- GNU Make tool (version **3.82+**)
 - Bash tool
 
-All example scenarios have been successfully tested with **GNU make 4.3** and
+All example scenarios have been successfully tested with **GNU Make 4.3** and
 **Bash 5.0.16**.
 
 |
@@ -312,7 +312,7 @@ Special **makbet's** target ``.show-summary-events-csv-file`` will display
 References
 ----------
 
-Useful **GNU make** links:
+Useful **GNU Make** links:
 
 - https://www.gnu.org/software/make/manual/
 - http://www.conifersystems.com/whitepapers/gnu-make/

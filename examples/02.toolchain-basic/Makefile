@@ -72,7 +72,7 @@ $(eval $(call TASK_template, \
 ))
 
 $(eval $(call TASK_template, \
-	fetch-make-src, "Fetch GNU make sources", \
+	fetch-make-src, "Fetch GNU Make sources", \
 	prepare-workdir-structure, \
 	$(MAKBET_TASKS_DIR)/common/download-file.sh, \
 		http://ftp.gnu.org/gnu/make/make-4.3.tar.gz \
@@ -112,7 +112,7 @@ $(eval $(call TASK_template, \
 ))
 
 $(eval $(call TASK_template, \
-	unpack-make-src, "Unpack GNU make sources", \
+	unpack-make-src, "Unpack GNU Make sources", \
 	fetch-make-src, \
 	$(MAKBET_TASKS_DIR)/common/uncompress-tgz-file.sh, \
 		$(WORK_DIR)/make/make-4.3.tar.gz \
@@ -160,7 +160,7 @@ $(eval $(call TASK_template, \
 ))
 
 $(eval $(call TASK_template, \
-	build-make, "Build GNU make inside its source dir", \
+	build-make, "Build GNU Make inside its source dir", \
 	build-kcov, \
 	$(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-make.sh, \
 		$(WORK_DIR)/make/make-4.3/ \
@@ -209,7 +209,7 @@ $(eval $(call TASK_template, \
 ))
 
 $(eval $(call TASK_template, \
-	print-make-version, "Print version of GNU make from source dir", \
+	print-make-version, "Print version of GNU Make from source dir", \
 	build-make, \
 	$(MAKBET_TASKS_DIR)/common/exec-cmd.sh, \
 		$(WORK_DIR)/make/make-4.3/make \

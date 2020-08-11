@@ -117,7 +117,7 @@ $(eval $(call TASK_template, \
 ))
 
 $(eval $(call TASK_template, \
-	fetch-make-src, "Fetch GNU make sources", \
+	fetch-make-src, "Fetch GNU Make sources", \
 	prepare-workdir-structure, \
 	$(DOWNLOAD), $(MAKE_URL) $(MAKE_TGZ) \
 ))
@@ -147,7 +147,7 @@ $(eval $(call TASK_template, \
 ))
 
 $(eval $(call TASK_template, \
-	unpack-make-src, "Unpack GNU make sources", \
+	unpack-make-src, "Unpack GNU Make sources", \
 	fetch-make-src, \
 	$(UNPACK_TGZ), $(MAKE_TGZ) $(MAKE_DIR)/ \
 ))
@@ -183,7 +183,7 @@ $(eval $(call TASK_template, \
 ))
 
 $(eval $(call TASK_template, \
-	build-make, "Build GNU make inside its source dir", \
+	build-make, "Build GNU Make inside its source dir", \
 	build-kcov, \
 	$(BUILD_MAKE), $(MAKE_UNPACK_DIR)/ \
 ))
@@ -219,7 +219,7 @@ $(eval $(call TASK_template, \
 ))
 
 $(eval $(call TASK_template, \
-	print-make-version, "Print version of GNU make from source dir", \
+	print-make-version, "Print version of GNU Make from source dir", \
 	build-make, \
 	$(EXEC_CMD), $(MAKE_BIN) --version \
 ))
