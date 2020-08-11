@@ -7,26 +7,27 @@ assignees: ''
 
 ---
 
-**Describe the bug**
+## **Bug description**
 A clear and concise description of what the bug is.
 
-**To Reproduce**
-Steps to reproduce the behavior:
+## **Bug reproduction**
+Steps to reproduce the bug:
 1. Go to '...'
 2. Run the command '....'
 3. Scroll down to '....'
 4. See error
 
-**Expected behavior**
+## **Expected behavior**
 A clear and concise description of what you expected to happen.
 
-**Screenshots**
+## **Screenshots**
 If applicable, add screenshots to help explain your problem.  Type N/A if not applicable.
 
-**Environment (please complete the following information):**
- - **OS version**: [e.g. CentOS 7.2]
- - **GNU Make version**: [e.g. 3.82]
- - **Bash version**: [e.g. 5.0.18]
+## **Environment**
+Please complete all below information.
+- **OS version**: [e.g. CentOS 7.2]
+- **GNU Make version**: [e.g. 3.82]
+- **Bash version**: [e.g. 5.0.18]
 
-**Additional context**
+## **Additional context**
 Add any other context about the problem here.  Type N/A if not applicable.
