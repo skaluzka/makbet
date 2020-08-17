@@ -71,16 +71,9 @@ PYTHON_BIN := $(PYTHON_UNPACK_DIR)/python
 
 EXEC_CMD := $(MAKBET_TASKS_DIR)/common/exec-cmd.sh
 
-
 #
 # All tasks required to run scenario from 02.toolchain-complex/Makefile file.
 #
-
-.PHONY: scenario-help
-scenario-help::
-	@echo ""
-	@echo "All targets ($(MAKBET_TASK_TOTAL)) defined in $(realpath $(firstword $(MAKEFILE_LIST))):"
-	@echo ""
 
 $(eval $(call TASK_template, \
 	clean, "Remove $(WORK_DIR) dir", \

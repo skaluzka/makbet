@@ -19,12 +19,6 @@ GENERIC_TASK_SCRIPT := $(MAKBET_PATH)/examples/01.dummy/tasks/generic-task.sh
 # All tasks required to run scenario from 01.dummy/Makefile file.
 #
 
-.PHONY: scenario-help
-scenario-help::
-	@echo ""
-	@echo "All targets ($(MAKBET_TASK_TOTAL)) defined in $(realpath $(firstword $(MAKEFILE_LIST))):"
-	@echo ""
-
 $(eval $(call TASK_template, \
 	INIT, "Entry point", \
 ))

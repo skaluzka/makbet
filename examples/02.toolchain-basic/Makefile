@@ -20,12 +20,6 @@ WORK_DIR := /tmp/makbet/examples/02.toolchain-basic
 # All tasks required to run scenario from 02.toolchain-basic/Makefile file.
 #
 
-.PHONY: scenario-help
-scenario-help::
-	@echo ""
-	@echo "All targets ($(MAKBET_TASK_TOTAL)) defined in $(realpath $(firstword $(MAKEFILE_LIST))):"
-	@echo ""
-
 $(eval $(call TASK_template, \
 	clean, "Remove $(WORK_DIR) dir", \
 	, \

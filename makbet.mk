@@ -482,16 +482,21 @@ main-help: makbet-version
 	@echo "           make makbet-version                                                "
 
 
-# This is scenario-help target (the whole scenario-specific help message).
-# If execution directory is $MAKBET_PATH then the only allowed Makefile file
-# on this level is symbolic link to makbet.mk file (Makefile -> makbet.mk).
-# To keep makbet.mk consistent with all scenarios below scenario-help target
-# should be empty.  This case is not valid for any scenario directory with
-# scenario's Makefile inside.  For all such cases the help message will be
-# generated dynamically based on all tasks defined in scenario's Makefile file.
+# This is scenario-help target which generates the whole scenario-specific
+# help message.  If makbet.mk file (or symbolic link Makefile -> makbet.mk)
+# will be passed as make input file then below scenario-help target will
+# produce an empty output.  This is not valid for any other properly
+# constructed makbet's scenario file.  For all such cases the help message
+# will be generated dynamically based on all tasks defined in scenario's
+# Makefile file.
 .PHONY: scenario-help
 scenario-help::
-	@#
+	@echo ""
+	@if [ "$(notdir $(realpath $(firstword $(MAKEFILE_LIST))))" != "makbet.mk" ] ; \
+	then \
+		echo "All targets ($(MAKBET_TASK_TOTAL)) defined in $(realpath $(firstword $(MAKEFILE_LIST))):" ; \
+	fi
+	@echo ""
 
 
 # This is makbet's main help target (see also the DEFAULT_GOAL at the top).

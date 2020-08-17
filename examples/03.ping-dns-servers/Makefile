@@ -13,12 +13,6 @@ endif
 # All tasks required to run scenario from 03.ping-dns-servers/Makefile file.
 #
 
-.PHONY: scenario-help
-scenario-help::
-	@echo ""
-	@echo "All targets ($(MAKBET_TASK_TOTAL)) defined in $(realpath $(firstword $(MAKEFILE_LIST))):"
-	@echo ""
-
 # Entry point.
 $(eval $(call TASK_template, \
 	INIT, "Entry point", \
