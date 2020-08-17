@@ -32,6 +32,9 @@ The documentation directory structure is:
   │       ├── results.csv
   │       ├── results.dot
   │       └── results.png
+  ├── templates/
+  │   └── scenario/
+  │       └── Makefile
   └── README.rst
 
 where:
@@ -39,9 +42,12 @@ where:
 - ``docs/`` - The main documentation directory.  Its absolute path can be
   defined as ``$MAKBET_PATH/docs`` (or ``$MAKBET_PATH/docs/``) assuming the
   ``$MAKBET_PATH`` variable is pointing to **makbet's** main directory.
-- ``docs/examples/`` - Separate directory dedicated for storing all
+- ``docs/examples/`` - Separate directory dedicated to storing all
   documentation about **makbet's** examples placed inside top-level
   ``examples/`` directory.
+- ``docs/templates/`` - Separate directory dedicated to storing various makbet's
+  templates (like scenario template for example) which can be freely used while
+  creating custom content.
 - ``README.rst`` - The file you are reading now.
 
 
