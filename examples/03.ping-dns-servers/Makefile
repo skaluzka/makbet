@@ -10,10 +10,10 @@ else
 endif
 
 #
-# All tasks required to run scenario from 03.ping-dns-servers/Makefile file.
+# All tasks required to run "03.ping-dns-servers" scenario.
 #
 
-# Entry point.
+# Task "INIT" - an entry point for "03.ping-dns-servers" scenario.
 $(eval $(call TASK_template, \
 	INIT, "Entry point", \
 ))
@@ -36,13 +36,13 @@ $(eval $(call TASK_template, \
 	ping, -c4 8.8.8.8 \
 ))
 
-# Checkpoint task "ping-all".
+# Task "ping-all" - the ultimate goal for "03.ping-dns-servers" scenario.
 $(eval $(call TASK_template, \
 	ping-all, "Ping all dns servers", \
 	ping1111 ping8844 ping8888, \
 ))
 
-# Checkpoint task "all".
+# Task "all" - the ultimate goal for "03.ping-dns-servers" scenario.
 $(eval $(call TASK_template, \
 	all, "Ping all dns servers", \
 	ping1111 ping8844 ping8888, \

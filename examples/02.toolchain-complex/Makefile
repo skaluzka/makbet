@@ -11,7 +11,7 @@ else
 endif
 
 #
-# All required global variables.
+# All global variables required by "02.toolchain-complex" scenario.
 #
 
 WORK_DIR := /tmp/makbet/examples/02.toolchain-complex
@@ -72,9 +72,10 @@ PYTHON_BIN := $(PYTHON_UNPACK_DIR)/python
 EXEC_CMD := $(MAKBET_TASKS_DIR)/common/exec-cmd.sh
 
 #
-# All tasks required to run scenario from 02.toolchain-complex/Makefile file.
+# All tasks required to run "02.toolchain-complex" scenario.
 #
 
+# Task "INIT" - an entry point for "02.toolchain-complex" scenario.
 $(eval $(call TASK_template, \
 	INIT, "Entry point", \
 ))
@@ -223,6 +224,7 @@ $(eval $(call TASK_template, \
 	$(EXEC_CMD), $(PYTHON_BIN) -V \
 ))
 
+# Task "build-all" - the ultimate goal for "02.toolchain-complex" scenario.
 $(eval $(call TASK_template, \
 	build-all, "Checkpoint for all build-* tasks", \
 	build-doxygen build-git build-kcov build-make build-python, \
