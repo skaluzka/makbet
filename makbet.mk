@@ -335,7 +335,7 @@ endef
 	@echo ""
 	@cat $(MAKBET_DOT_DIR)/*.dot
 	@echo ""
-	@echo -e "\t// The end"
+	@echo -e "\t// End of file"
 	@echo ""
 	@echo "}"
 	@echo ""
@@ -504,4 +504,4 @@ scenario-help::
 help: main-help scenario-help
 
 
-# The end
+# End of file

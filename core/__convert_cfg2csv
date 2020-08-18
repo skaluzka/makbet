@@ -12,4 +12,4 @@ cat "${1}" | cut -d '=' -f2 | tr "\n" "${4}" >> "${2}"
 echo "" >> "${2}"
 
 
-# The end
+# End of file

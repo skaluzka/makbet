@@ -208,7 +208,7 @@ results which can be used for further processing:
         "task-F" -> "task-E";
 
 
-        // The end
+        // End of file
 
     }
 
@@ -361,4 +361,4 @@ Mission statement
 *"What's done, is done."* - William Shakespeare, **Macbeth**.
 
 
-.. The end
+.. End of file

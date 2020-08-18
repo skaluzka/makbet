@@ -27,4 +27,4 @@ echo "TASK_EVENT_TYPE=\"${7}\"" >> "${6}"
 echo -e "\n${NOW_SHORT} [INFO]: Task \"${2}\" (TASK_ID: ${1}) ${7,,}.\n"
 
 
-# The end
+# End of file

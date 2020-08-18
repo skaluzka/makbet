@@ -20,7 +20,7 @@ digraph {
 	"ping8888" -> "INIT";
 
 
-	// The end
+	// End of file
 
 }
 

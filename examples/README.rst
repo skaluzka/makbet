@@ -203,4 +203,4 @@ where:
 - ``README.rst`` - The file you are reading now.
 
 
-.. The end
+.. End of file

@@ -64,7 +64,7 @@ digraph {
 	"unpack-python-src" -> "fetch-python-src";
 
 
-	// The end
+	// End of file
 
 }
 

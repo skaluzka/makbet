@@ -150,4 +150,4 @@ https://github.com/github/hub/issues/1241) it is recommended to merge
 code locally not via github GUI.
 
 
-.. The end
+.. End of file

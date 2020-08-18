@@ -36,7 +36,7 @@ digraph {
 	"task-F" -> "task-E";
 
 
-	// The end
+	// End of file
 
 }
 
