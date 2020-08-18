@@ -1,9 +1,12 @@
-
 digraph {
 
-	// Generated automatically by makbet heads/master-0-g351d0e3
-	// Generation date: Sat 08 Aug 2020 10:55:27 PM CEST
+	// Generated automatically by makbet heads/master-0-g88262d1
+	// Generation date: Wed 19 Aug 2020 01:21:07 AM CEST
 	// Input: /home/user/makbet/examples/02.toolchain-complex/Makefile
+
+	// Graph title.
+	labelloc="t";
+	label="/home/user/makbet/examples/02.toolchain-complex/Makefile\n\n"
 
 	node [shape=box];
 
@@ -63,8 +66,6 @@ digraph {
 
 	"unpack-python-src" -> "fetch-python-src";
 
-
 	// End of file
 
 }
-

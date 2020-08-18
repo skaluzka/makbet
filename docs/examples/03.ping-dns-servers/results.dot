@@ -1,9 +1,12 @@
-
 digraph {
 
-	// Generated automatically by makbet heads/master-0-g351d0e3
-	// Generation date: Sat 08 Aug 2020 10:58:34 PM CEST
+	// Generated automatically by makbet heads/master-0-g88262d1
+	// Generation date: Wed 19 Aug 2020 01:21:07 AM CEST
 	// Input: /home/user/makbet/examples/03.ping-dns-servers/Makefile
+
+	// Graph title.
+	labelloc="t";
+	label="/home/user/makbet/examples/03.ping-dns-servers/Makefile\n\n"
 
 	node [shape=box];
 
@@ -19,8 +22,6 @@ digraph {
 
 	"ping8888" -> "INIT";
 
-
 	// End of file
 
 }
-

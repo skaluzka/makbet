@@ -331,6 +331,10 @@ endef
 	@echo -e "\t// Generation date: $$(date)"
 	@echo -e "\t// Input: $(realpath $(firstword $(MAKEFILE_LIST)))"
 	@echo ""
+	@echo -e "\t// Graph title."
+	@echo -e "\tlabelloc=\"t\";"
+	@echo -e "\tlabel=\"$(realpath $(firstword $(MAKEFILE_LIST)))\\\n\\\n\"";
+	@echo ""
 	@echo -e "\tnode [shape=box];"
 	@echo ""
 	@cat $(MAKBET_DOT_DIR)/*.dot

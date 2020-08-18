@@ -173,9 +173,13 @@ results which can be used for further processing:
 
     digraph {
 
-        // Generated automatically by makbet heads/master-0-g351d0e3
-        // Generation date: Mon 10 Aug 2020 00:00:57 AM CEST
+        // Generated automatically by makbet heads/master-0-g88262d1
+        // Generation date: Wed 19 Aug 2020 01:21:07 AM CEST
         // Input: /home/user/makbet/examples/01.dummy/Makefile
+
+        // Graph title.
+        labelloc="t";
+        label="/home/user/makbet/examples/01.dummy/Makefile\n\n"
 
         node [shape=box];
 
@@ -206,7 +210,6 @@ results which can be used for further processing:
         "task-E" -> "task-D";
 
         "task-F" -> "task-E";
-
 
         // End of file
 

@@ -1,9 +1,12 @@
-
 digraph {
 
-	// Generated automatically by makbet heads/master-0-g351d0e3
-	// Generation date: Sat 08 Aug 2020 10:44:50 PM CEST
+	// Generated automatically by makbet heads/master-0-g88262d1
+	// Generation date: Wed 19 Aug 2020 01:21:07 AM CEST
 	// Input: /home/user/makbet/examples/01.dummy/Makefile
+
+	// Graph title.
+	labelloc="t";
+	label="/home/user/makbet/examples/01.dummy/Makefile\n\n"
 
 	node [shape=box];
 
@@ -35,8 +38,6 @@ digraph {
 
 	"task-F" -> "task-E";
 
-
 	// End of file
 
 }
-
