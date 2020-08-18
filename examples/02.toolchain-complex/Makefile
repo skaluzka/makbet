@@ -76,13 +76,13 @@ EXEC_CMD := $(MAKBET_TASKS_DIR)/common/exec-cmd.sh
 #
 
 $(eval $(call TASK_template, \
-	clean, "Remove $(WORK_DIR) dir", \
-	, \
-	rm, -rfv $(WORK_DIR) \
+	INIT, "Entry point", \
 ))
 
 $(eval $(call TASK_template, \
-	INIT, "Entry point", \
+	clean, "Remove $(WORK_DIR) dir", \
+	, \
+	rm, -rfv $(WORK_DIR) \
 ))
 
 $(eval $(call TASK_template, \
