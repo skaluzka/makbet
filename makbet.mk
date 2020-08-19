@@ -340,9 +340,10 @@ endef
 	@echo ""
 	@cat $(MAKBET_DOT_DIR)/*.dot
 	@echo ""
-	@echo -e "\t// End of file"
-	@echo ""
 	@echo "}"
+	@echo ""
+	@echo ""
+	@echo "// End of file"
 	@echo ""
 
 
