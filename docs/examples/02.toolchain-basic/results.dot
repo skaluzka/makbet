@@ -8,6 +8,7 @@ digraph {
 	labelloc="t";
 	label="/home/user/makbet/examples/02.toolchain-basic/Makefile\n\n"
 
+	// Node options.
 	node [shape=box];
 
 	"all" -> "print-all-versions";

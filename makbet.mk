@@ -335,6 +335,7 @@ endef
 	@echo -e "\tlabelloc=\"t\";"
 	@echo -e "\tlabel=\"$(realpath $(firstword $(MAKEFILE_LIST)))\\\n\\\n\"";
 	@echo ""
+	@echo -e "\t// Node options."
 	@echo -e "\tnode [shape=box];"
 	@echo ""
 	@cat $(MAKBET_DOT_DIR)/*.dot

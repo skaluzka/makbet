@@ -8,6 +8,7 @@ digraph {
 	labelloc="t";
 	label="/home/user/makbet/examples/02.toolchain-complex/Makefile\n\n"
 
+	// Node options.
 	node [shape=box];
 
 	"build-all" -> "build-doxygen";

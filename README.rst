@@ -181,6 +181,7 @@ results which can be used for further processing:
         labelloc="t";
         label="/home/user/makbet/examples/01.dummy/Makefile\n\n"
 
+        // Node options.
         node [shape=box];
 
         "all" -> "task-F";

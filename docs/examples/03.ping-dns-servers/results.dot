@@ -8,6 +8,7 @@ digraph {
 	labelloc="t";
 	label="/home/user/makbet/examples/03.ping-dns-servers/Makefile\n\n"
 
+	// Node options.
 	node [shape=box];
 
 	"all" -> "ping1111";
