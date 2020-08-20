@@ -11,13 +11,13 @@ Keep reading && have fun! :)
 **Table of Contents**
 ---------------------
 
-| `Development model`_
-| `Commit types`_
-| `Branch naming convention for GitHub issues`_
-| `Closing GitHub issues`_
-| `Pull requests`_
-| `Squashing the commits`_
-| `Merging the code`_
+- | `Development model`_
+- | `Commit types`_
+- | `Branch naming convention for GitHub issues`_
+- | `Closing GitHub issues`_
+- | `Pull requests`_
+- | `Squashing the commits`_
+- | `Merging the code`_
 
 |
 
