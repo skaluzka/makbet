@@ -13,8 +13,8 @@ Keep reading && have fun! :)
 
 | `Development model`_
 | `Commit types`_
-| `Branch naming convention for github issues`_
-| `Closing github issues`_
+| `Branch naming convention for GitHub issues`_
+| `Closing GitHub issues`_
 | `Pull requests`_
 | `Squashing the commits`_
 | `Merging the code`_
@@ -26,7 +26,7 @@ Keep reading && have fun! :)
 
 We are preferring so-called **fork** development model in **makbet** project.
 
-For more about it please read official github help pages:
+For more about it please read official GitHub help pages:
 `<https://help.github.com/en/github/getting-started-with-github/fork-a-repo>`_.
 
 Main development branch is the **master** branch.  We are trying to keep the
@@ -64,8 +64,8 @@ For simplification we are distinguish only **three** type of commits in
    | `a4d6b35 <https://github.com/skaluzka/makbet/commit/a4d6b35>`_:
      ``[FIX] Replace "param" by "option"``
 
-#. | Commits triggered by issues reported in github - **makbet's** users are
-     reporting bugs and requesting for new features using github issues
+#. | Commits triggered by issues reported in GitHub - **makbet's** users are
+     reporting bugs and requesting for new features using GitHub issues
      (https://github.com/skaluzka/makbet/issues).  All related commits **must**
      **have** properly constructed title in the commit message containing the
      number of the issue in square brackets.
@@ -82,14 +82,14 @@ most likely for you :)
 
 |
 
-**Branch naming convention for github issues**
+**Branch naming convention for GitHub issues**
 ----------------------------------------------
 
 For better handling commits and issues we are recommending strict branch naming
 convention.  Please see the table below:
 
 .. csv-table::
-   :header: The github issue, Suggested branch name
+   :header: The GitHub issue, Suggested branch name
    :delim: |
 
    `#2 <https://github.com/skaluzka/makbet/issues/2>`_ | users/sa7an/issues/2
@@ -97,10 +97,10 @@ convention.  Please see the table below:
 
 |
 
-**Closing github issues**
+**Closing GitHub issues**
 -------------------------
 
-According to official github documentation
+According to official GitHub documentation
 (https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue)
 every created issue can be closed in a two ways:
 
@@ -145,9 +145,9 @@ during merging phase.
 **Merging the code**
 --------------------
 
-Because of github signing issue (described here:
+Because of GitHub signing issue (described here:
 https://github.com/github/hub/issues/1241) it is recommended to merge
-code locally not via github GUI.
+code locally not via GitHub GUI.
 
 
 .. End of file
