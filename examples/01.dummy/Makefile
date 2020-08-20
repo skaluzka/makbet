@@ -19,7 +19,9 @@ GENERIC_TASK_SCRIPT := $(MAKBET_PATH)/examples/01.dummy/tasks/generic-task.sh
 # All tasks required to run "01.dummy" scenario.
 #
 
+#
 # Task "INIT" - an entry point for "01.dummy" scenario.
+#
 $(eval $(call TASK_template, \
 	INIT, "Entry point", \
 ))
@@ -89,7 +91,9 @@ $(eval $(call TASK_template, \
 	$(GENERIC_TASK_SCRIPT), 1 \
 ))
 
+#
 # Task "all" - the ultimate goal for "01.dummy" scenario.
+#
 $(eval $(call TASK_template, \
 	all, "Run task all", \
 	task-F, \

@@ -75,7 +75,9 @@ EXEC_CMD := $(MAKBET_TASKS_DIR)/common/exec-cmd.sh
 # All tasks required to run "02.toolchain-complex" scenario.
 #
 
+#
 # Task "INIT" - an entry point for "02.toolchain-complex" scenario.
+#
 $(eval $(call TASK_template, \
 	INIT, "Entry point", \
 ))
@@ -224,7 +226,9 @@ $(eval $(call TASK_template, \
 	$(EXEC_CMD), $(PYTHON_BIN) -V \
 ))
 
+#
 # Task "build-all" - the ultimate goal for "02.toolchain-complex" scenario.
+#
 $(eval $(call TASK_template, \
 	build-all, "Checkpoint for all build-* tasks", \
 	build-doxygen build-git build-kcov build-make build-python, \

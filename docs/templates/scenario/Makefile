@@ -19,7 +19,9 @@ endif
 # All tasks required to run "..." scenario.
 #
 
+#
 # Task "@01-INIT" - an entry point for "..." scenario.
+#
 $(eval $(call TASK_template, \
 	@01-INIT, "Entry point", \
 ))
@@ -31,7 +33,9 @@ $(eval $(call TASK_template, \
 		TASK_CMD_OPT_1 TASK_CMD_OPT_2 TASK_CMD_OPT_3 \
 ))
 
+#
 # Task "all" - the ultimate goal for "..." scenario.
+#
 $(eval $(call TASK_template, \
 	all, "Run task all", \
 	task-F, \

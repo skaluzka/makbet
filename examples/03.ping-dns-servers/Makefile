@@ -13,7 +13,9 @@ endif
 # All tasks required to run "03.ping-dns-servers" scenario.
 #
 
+#
 # Task "INIT" - an entry point for "03.ping-dns-servers" scenario.
+#
 $(eval $(call TASK_template, \
 	INIT, "Entry point", \
 ))
@@ -36,13 +38,17 @@ $(eval $(call TASK_template, \
 	ping, -c4 8.8.8.8 \
 ))
 
+#
 # Task "ping-all" - the ultimate goal for "03.ping-dns-servers" scenario.
+#
 $(eval $(call TASK_template, \
 	ping-all, "Ping all dns servers", \
 	ping1111 ping8844 ping8888, \
 ))
 
+#
 # Task "all" - the ultimate goal for "03.ping-dns-servers" scenario.
+#
 $(eval $(call TASK_template, \
 	all, "Ping all dns servers", \
 	ping1111 ping8844 ping8888, \

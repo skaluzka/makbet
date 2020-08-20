@@ -20,7 +20,9 @@ WORK_DIR := /tmp/makbet/examples/02.toolchain-basic
 # All tasks required to run "02.toolchain-basic" scenario.
 #
 
+#
 # Task "INIT" - an entry point for "02.toolchain-basic" scenario.
+#
 $(eval $(call TASK_template, \
 	INIT, "Entry point", \
 ))
@@ -229,7 +231,9 @@ $(eval $(call TASK_template, \
 	build-all print-doxygen-version print-git-version print-kcov-version print-make-version print-python-version, \
 ))
 
+#
 # Task "all" - the ultimate goal for "02.toolchain-basic" scenario.
+#
 $(eval $(call TASK_template, \
 	all, "Run task all", \
 	print-all-versions, \
