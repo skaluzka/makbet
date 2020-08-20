@@ -116,7 +116,7 @@ Installing **makbet** is quite easy.
   see the help message.
 
 And that's all.  You are now ready to write your own scenarios (or play with
-built-in `examples <https://github.com/skaluzka/makbet/tree/master/examples>`_).
+built-in `examples <examples>`_).
 
 |
 
@@ -222,7 +222,7 @@ results which can be used for further processing:
 Below graph picture has been rendered, by
 `edotor <https://edotor.net/>`_ online **DOT** editor, based on above
 ``digraph`` code
-(`01.dummy <https://github.com/skaluzka/makbet/tree/master/examples/01.dummy/Makefile>`_
+(`01.dummy <examples/01.dummy/Makefile>`_
 example, target ``all``).
 
 .. image:: docs/examples/01.dummy/results.png
@@ -230,7 +230,7 @@ example, target ``all``).
 
 | The **DOT** files together with corresponding **png** images, for all
   **makbet's** examples, can be found
-  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/>`__.
+  `here <docs/examples/>`__.
 
 |
 
@@ -308,9 +308,9 @@ Special **makbet's** target ``.show-summary-events-csv-file`` will display
 
 | Above results (which are valid for **01.dummy** example) have been saved into
   this
-  `results.csv <https://github.com/skaluzka/makbet/tree/master/docs/examples/01.dummy/results.csv>`__ file.
+  `results.csv <docs/examples/01.dummy/results.csv>`__ file.
 | Results for other **makbet's** examples are available
-  `here <https://github.com/skaluzka/makbet/tree/master/docs/examples/>`__.
+  `here <docs/examples/>`__.
 
 |
 
@@ -346,7 +346,7 @@ Contributing
 Pull requests are welcome! :)
 
 For more details about contributing rules please check
-`CONTRIBUTING.rst <https://github.com/skaluzka/makbet/blob/master/CONTRIBUTING.rst>`_
+`CONTRIBUTING.rst <CONTRIBUTING.rst>`_
 file.
 
 |
@@ -355,7 +355,7 @@ License
 -------
 
 **makbet** is licensed under the
-`MIT <https://github.com/skaluzka/makbet/blob/master/LICENSE>`_
+`MIT <LICENSE>`_
 license.
 
 |
