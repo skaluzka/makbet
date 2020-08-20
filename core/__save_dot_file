@@ -10,11 +10,11 @@ set -eu
 echo "" > "${2}"
 if [ -z "${TASK_DEPS}" ]
 then
-    echo -e "\t\"${TASK_NAME}\";" >> "${2}"
+    echo "\"${TASK_NAME}\";" >> "${2}"
 else
     for t in ${TASK_DEPS}
     do
-        echo -e "\t\"${TASK_NAME}\" -> \"${t}\";" >> "${2}"
+        echo "\"${TASK_NAME}\" -> \"${t}\";" >> "${2}"
     done
 fi
 
