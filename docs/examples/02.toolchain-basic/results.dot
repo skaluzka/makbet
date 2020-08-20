@@ -45,9 +45,9 @@ digraph {
 
 	"fetch-python-src" -> "prepare-workdir-structure";
 
-	"INIT";
+	"@01-INIT";
 
-	"prepare-workdir-structure" -> "INIT";
+	"prepare-workdir-structure" -> "@01-INIT";
 
 	"print-all-versions" -> "build-all";
 	"print-all-versions" -> "print-doxygen-version";

@@ -13,9 +13,9 @@ digraph {
 
 	"all" -> "task-F";
 
-	"INIT";
+	"@01-INIT";
 
-	"task-A" -> "INIT";
+	"task-A" -> "@01-INIT";
 
 	"task-B1" -> "task-A";
 

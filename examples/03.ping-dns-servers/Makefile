@@ -14,27 +14,27 @@ endif
 #
 
 #
-# Task "INIT" - an entry point for "03.ping-dns-servers" scenario.
+# Task "@01-INIT" - an entry point for "03.ping-dns-servers" scenario.
 #
 $(eval $(call TASK_template, \
-	INIT, "Entry point", \
+	@01-INIT, "Entry point", \
 ))
 
 $(eval $(call TASK_template, \
 	ping1111, "Ping 1.1.1.1 dns server", \
-	INIT, \
+	@01-INIT, \
 	ping, -c10 1.1.1.1 \
 ))
 
 $(eval $(call TASK_template, \
 	ping8844, "Ping 8.8.4.4 dns server", \
-	INIT, \
+	@01-INIT, \
 	ping, -c4 8.8.4.4 \
 ))
 
 $(eval $(call TASK_template, \
 	ping8888, "Ping 8.8.8.8 dns server", \
-	INIT, \
+	@01-INIT, \
 	ping, -c4 8.8.8.8 \
 ))
 

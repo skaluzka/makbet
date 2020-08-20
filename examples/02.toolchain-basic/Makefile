@@ -21,10 +21,10 @@ WORK_DIR := /tmp/makbet/examples/02.toolchain-basic
 #
 
 #
-# Task "INIT" - an entry point for "02.toolchain-basic" scenario.
+# Task "@01-INIT" - an entry point for "02.toolchain-basic" scenario.
 #
 $(eval $(call TASK_template, \
-	INIT, "Entry point", \
+	@01-INIT, "Entry point", \
 ))
 
 $(eval $(call TASK_template, \
@@ -35,7 +35,7 @@ $(eval $(call TASK_template, \
 
 $(eval $(call TASK_template, \
 	prepare-workdir-structure, "Prepare initial dir structure", \
-	INIT, \
+	@01-INIT, \
 	$(MAKBET_TASKS_DIR)/common/create-dir-structure.sh, \
 		$(WORK_DIR)/doxygen \
 		$(WORK_DIR)/git \

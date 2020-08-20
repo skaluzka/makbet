@@ -15,13 +15,13 @@ digraph {
 	"all" -> "ping8844";
 	"all" -> "ping8888";
 
-	"INIT";
+	"@01-INIT";
 
-	"ping1111" -> "INIT";
+	"ping1111" -> "@01-INIT";
 
-	"ping8844" -> "INIT";
+	"ping8844" -> "@01-INIT";
 
-	"ping8888" -> "INIT";
+	"ping8888" -> "@01-INIT";
 
 }
 

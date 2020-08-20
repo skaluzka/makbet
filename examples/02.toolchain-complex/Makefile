@@ -76,10 +76,10 @@ EXEC_CMD := $(MAKBET_TASKS_DIR)/common/exec-cmd.sh
 #
 
 #
-# Task "INIT" - an entry point for "02.toolchain-complex" scenario.
+# Task "@01-INIT" - an entry point for "02.toolchain-complex" scenario.
 #
 $(eval $(call TASK_template, \
-	INIT, "Entry point", \
+	@01-INIT, "Entry point", \
 ))
 
 $(eval $(call TASK_template, \
@@ -90,7 +90,7 @@ $(eval $(call TASK_template, \
 
 $(eval $(call TASK_template, \
 	prepare-workdir-structure, "Prepare initial dir structure", \
-	INIT, \
+	@01-INIT, \
 	$(CREATE_DIRS), $(DOXYGEN_DIR) $(GIT_DIR) $(KCOV_DIR) $(MAKE_DIR) $(PYTHON_DIR) \
 ))
 
