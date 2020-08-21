@@ -333,7 +333,7 @@ endef
 	@echo ""
 	@echo "// Graph title."
 	@echo "labelloc=\"t\";"
-	@echo "label=\"$(realpath $(firstword $(MAKEFILE_LIST)))\\\n\\\n\"";
+	@echo "label=\"$(realpath $(firstword $(MAKEFILE_LIST)))\\n\\n\"";
 	@echo ""
 	@echo "// Node options."
 	@echo "node [shape=box];"
