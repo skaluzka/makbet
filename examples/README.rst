@@ -16,6 +16,7 @@ Keep reading && have fun! :)
 - | `02.toolchain-basic`_
 - | `02.toolchain-complex`_
 - | `03.ping-dns-servers`_
+- | `04.sleep`_
 - | `Directory structure`_
 
 |
@@ -76,11 +77,27 @@ purposes.  As expected final results for both **02.toolchain-basic** and
 **03.ping-dns-servers**
 -----------------------
 
-The last example is saved in ``examples/03.ping-dns-servers/`` directory.  The
-goal of that example is to ping **three** DNS servers
-(``1.1.1.1`` + ``8.8.4.4`` + ``8.8.8.8``) simultaneously using standard ``ping``
-utility.  There is no dedicated task script in this example.  The syntax of raw
-``ping`` commands are passed directly to ``TASK_template`` macro.
+The next example is saved in ``examples/03.ping-dns-servers/`` directory.  The
+goal of that example is to show how useful parallel tasks execution can be.
+With this scenario **three** popular DNS servers
+(``1.1.1.1`` + ``8.8.4.4`` + ``8.8.8.8``) can be checked/pinged simultaneously
+using standard ``ping`` utility.  To achieve that, the ``-j`` flag has to be
+passed to the ``make`` command (for example ``make -j4``).  Please note that
+there is no dedicated task script in this example.  The syntax of all raw
+``ping`` commands is passed directly to ``TASK_template`` macro.
+
+|
+
+**04.sleep**
+------------
+
+The last example is saved in ``examples/04.sleep/`` directory.  This is another
+good example showing how to play with parallel tasks execution.  The Makefile
+file of this scenario contains 3 sleep tasks: ``sleep-10s``, ``sleep-100s`` and
+``sleep-1m``.  All of them can be run, sequentially - one after another, if
+``make`` command will be run with ``-j1`` flag (or without ``-j`` flag at all). 
+But they can be also run in parallel if ``-j3`` (or in general if jobs value
+will be greater than 1) flag will be passed to the ``make`` command.
 
 |
 
@@ -101,6 +118,8 @@ The **makbet's** examples directory structure is:
   ├── 02.toolchain-complex/
   │   └── Makefile
   ├── 03.ping-dns-servers/
+  │   └── Makefile
+  ├── 04.sleep/
   │   └── Makefile
   ├── lib/
   │   └── tasks/
@@ -166,6 +185,12 @@ where:
   ``03.ping-dns-servers`` example.
 - ``03.ping-dns-servers/Makefile`` - So-called **makbet's** scenario file.  It
   contains complete task list for **makbet's** ``03.ping-dns-servers`` example.
+
+|
+
+- ``04.sleep/`` - Dedicated directory for **makbet's** ``04.sleep`` example.
+- ``04.sleep/Makefile`` - So-called **makbet's** scenario file.  It contains
+  complete task list for **makbet's** ``04.sleep`` example.
 
 |
 

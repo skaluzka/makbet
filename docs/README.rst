@@ -28,7 +28,11 @@ The documentation directory structure is:
   │   │   ├── results.csv
   │   │   ├── results.dot
   │   │   └── results.png
-  │   └── 03.ping-dns-servers/
+  │   ├── 03.ping-dns-servers/
+  │   │   ├── results.csv
+  │   │   ├── results.dot
+  │   │   └── results.png
+  │   └── 04.sleep/
   │       ├── results.csv
   │       ├── results.dot
   │       └── results.png
