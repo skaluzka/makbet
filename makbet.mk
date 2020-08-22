@@ -391,7 +391,7 @@ endef
 
 .PHONY: .show-env-vars
 .show-env-vars:
-	@echo "Listing all available MAKBET_* env variables:"
+	@echo "All MAKBET_* env vars available during processing makbet.mk file:"
 	@env | grep --color=never -P '^MAKBET_[0-9A-Z_]*=' | sort
 
 
@@ -446,7 +446,7 @@ makbet-help: main-help
 	@echo "                                   This target requires MAKBET_CSV=1 and      "
 	@echo "                                   MAKBET_PROF=1.                             "
 	@echo "  .show-env-vars                 - Show all MAKBET_* environment variables    "
-	@echo "                                   available while processing makbet.mk file. "
+	@echo "                                   available during processing makbet.mk file."
 	@echo ""
 	@echo "  Examples:                                                                   "
 	@echo "           make .show-env-vars                                                "
