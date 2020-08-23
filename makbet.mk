@@ -5,7 +5,7 @@
 
 
 #
-# Checking MAKBET_PATH env variable.
+# Check MAKBET_PATH env variable.
 #
 ifndef MAKBET_PATH
   $(error MAKBET_PATH is not defined)
@@ -33,12 +33,12 @@ MAKBET_TASK_TOTAL := $(shell \
 )
 
 #
-# Handling makbet's version.
+# Handle makbet's version.
 #
 MAKBET_VERSION := $(shell $(MAKBET_CORE_DIR)/__get_makbet_version)
 
 #
-# All internal makbet dirs.
+# Define all internal makbet dirs.
 #
 MAKBET_DOT_DIR := $(MAKBET_CACHE_DIR)/dot
 MAKBET_EVENTS_DIR := $(MAKBET_CACHE_DIR)/events
@@ -49,7 +49,7 @@ MAKBET_PROF_CFG_DIR := $(MAKBET_PROF_DIR)/cfg
 MAKBET_PROF_CSV_DIR := $(MAKBET_PROF_DIR)/csv
 
 #
-# Handling CLI input: MAKBET_VERBOSE option.
+# Handle CLI input: MAKBET_VERBOSE option.
 #
 ifndef MAKBET_VERBOSE
   export MAKBET_VERBOSE := 0
@@ -71,7 +71,7 @@ else
 endif
 
 #
-# Handling CLI input: MAKBET_PROF option.
+# Handle CLI input: MAKBET_PROF option.
 #
 ifndef MAKBET_PROF
   MAKBET_PROF := 0
@@ -85,7 +85,7 @@ else
 endif
 
 #
-# Handling CLI input: MAKBET_DOT option.
+# Handle CLI input: MAKBET_DOT option.
 #
 ifndef MAKBET_DOT
   MAKBET_DOT := 0
@@ -99,7 +99,7 @@ else
 endif
 
 #
-# Handling CLI input: MAKBET_CSV, MAKBET_CSV_SEP, MAKBET_EVENTS_CSV_HEADER
+# Handle CLI input: MAKBET_CSV, MAKBET_CSV_SEP, MAKBET_EVENTS_CSV_HEADER
 # and MAKBET_PROF_CSV_HEADER options.
 #
 ifndef MAKBET_CSV
@@ -126,7 +126,7 @@ else
 endif
 
 #
-# Create makbet's internals as fast as possible.
+# Create makbet's internals dir structure as fast as possible.
 #
 # .
 # └── .cache/
@@ -197,7 +197,7 @@ endif
 #
 define TASK_template =
 
-# Incrementing the MAKBET_TASK_COUNTER variable.
+# Increment the MAKBET_TASK_COUNTER variable.
 $(eval MAKBET_TASK_COUNTER=$(shell echo $$(($(MAKBET_TASK_COUNTER)+1))))
 
 .PHONY: $(1)
@@ -205,7 +205,7 @@ $(1): $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg $(foreach d,$(3),$(M
 
 $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET_EVENTS_CFG_DIR)/$(d).terminated.cfg)
 	@#
-	@# Printing additional information if MAKBET_VERBOSE=1 or MAKBET_VERBOSE=2.
+	@# Print additional information if MAKBET_VERBOSE=1 or MAKBET_VERBOSE=2.
 	$(_q)if (( $(_v) >= 1 )) ; \
 	then \
 		$(MAKBET_CORE_DIR)/__print_task_details \
@@ -216,7 +216,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 			"$(strip $(5))" ; \
 	fi
 	@#
-	@# Saving STARTED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
+	@# Save STARTED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
 	$(_q)$(MAKBET_CORE_DIR)/__save_task_event \
 		"$(strip $(MAKBET_TASK_COUNTER))" \
 		"$(strip $(1))" \
@@ -226,10 +226,10 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 		"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg" \
 		"STARTED" ;
 	@#
-	@# Running the TASK_CMD with TASK_CMD_OPTS input options.
+	@# Run the TASK_CMD with TASK_CMD_OPTS input options.
 	$(_q)$(4) $(5)
 	@#
-	@# Saving TERMINATED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
+	@# Save TERMINATED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
 	$(_q)$(MAKBET_CORE_DIR)/__save_task_event \
 		"$(strip $(MAKBET_TASK_COUNTER))" \
 		"$(strip $(1))" \
@@ -239,7 +239,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 		"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg" \
 		"TERMINATED" ;
 	@#
-	@# Saving *.dot file in .cache/dot/ dir if MAKBET_DOT=1.
+	@# Save *.dot file in .cache/dot/ dir if MAKBET_DOT=1.
 	$(_q)if (( $(_d) == 1 )) ; \
 	then \
 		$(MAKBET_CORE_DIR)/__save_dot_file \
@@ -247,7 +247,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 			"$(MAKBET_DOT_DIR)/$(strip $(1)).dot" ; \
 	fi
 	@#
-	@# Computing time difference (task duration) if MAKBET_PROF=1.
+	@# Compute time difference (task duration) if MAKBET_PROF=1.
 	$(_q)if (( $(_p) == 1 )) ; \
 	then \
 		$(MAKBET_CORE_DIR)/__save_task_profile \
@@ -256,7 +256,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 			"$(MAKBET_PROF_CFG_DIR)/$(strip $(1)).cfg" ; \
 	fi
 	@#
-	@# Converting profile *.cfg file to -> profile *.csv file
+	@# Convert profile *.cfg file to -> profile *.csv file
 	@# if MAKBET_CSV=1 and MAKBET_PROF=1.
 	$(_q)if (( $(_c) == 1 )) && (( $(_p) == 1 )); \
 	then \
@@ -267,7 +267,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 			"$(MAKBET_CSV_SEP)" ; \
 	fi
 	@#
-	@# Converting *.started.cfg file to -> *.started.csv file
+	@# Convert *.started.cfg file to -> *.started.csv file
 	@# if MAKBET_CSV=1.
 	$(_q)if (( $(_c) == 1 )) ; \
 	then \
@@ -278,7 +278,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 			"$(MAKBET_CSV_SEP)" ; \
 	fi
 	@#
-	@# Converting *.terminated.cfg file to -> *.terminated.csv file
+	@# Convert *.terminated.cfg file to -> *.terminated.csv file
 	@# if MAKBET_CSV=1.
 	$(_q)if (( $(_c) == 1 )) ; \
 	then \
@@ -300,7 +300,7 @@ scenario-help::
 	@echo '    - Opts:  $(strip $(5))'
 	@echo ''
 
-# If MAKBET_VERBOSE=2 printing task's command path (if any) immediately
+# If MAKBET_VERBOSE=2 print task's command path (if any) immediately
 # after TASK_template macro evaluation.
 $(if $(_q),,
   $(if $(strip $(4)), \
