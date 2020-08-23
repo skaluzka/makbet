@@ -14,7 +14,7 @@ The documentation directory structure is:
 
 ::
 
-  docs/
+  $MAKBET_PATH/docs/
   ├── examples/
   │   ├── 01.dummy/
   │   │   ├── results.csv

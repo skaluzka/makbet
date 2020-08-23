@@ -128,7 +128,7 @@ endif
 #
 # Create makbet's internals dir structure as fast as possible.
 #
-# .
+# $MAKBET_PATH/
 # └── .cache/
 #     ├── dot/
 #     ├── events/

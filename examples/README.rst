@@ -108,7 +108,7 @@ The **makbet's** examples directory structure is:
 
 ::
 
-  examples/
+  $MAKBET_PATH/examples/
   ├── 01.dummy/
   │   ├── Makefile
   │   └── tasks/
