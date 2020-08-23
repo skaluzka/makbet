@@ -121,6 +121,8 @@ The **makbet's** examples directory structure is:
   │   └── Makefile
   ├── 04.sleep/
   │   └── Makefile
+  ├── 05.comments/
+  │   └── Makefile
   ├── lib/
   │   └── tasks/
   │       ├── 02.toolchain/
@@ -191,6 +193,13 @@ where:
 - ``04.sleep/`` - Dedicated directory for **makbet's** ``04.sleep`` example.
 - ``04.sleep/Makefile`` - So-called **makbet's** scenario file.  It contains
   complete task list for **makbet's** ``04.sleep`` example.
+
+|
+
+- ``05.comments/`` - Dedicated directory for **makbet's** ``05.comments``
+  example.
+- ``05.comments/Makefile`` - So-called **makbet's** scenario file.  It contains
+  complete task list for **makbet's** ``05.comments`` example.
 
 |
 

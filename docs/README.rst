@@ -32,7 +32,11 @@ The documentation directory structure is:
   │   │   ├── results.csv
   │   │   ├── results.dot
   │   │   └── results.png
-  │   └── 04.sleep/
+  │   ├── 04.sleep/
+  │   │   ├── results.csv
+  │   │   ├── results.dot
+  │   │   └── results.png
+  │   └── 05.comments/
   │       ├── results.csv
   │       ├── results.dot
   │       └── results.png
