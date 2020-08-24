@@ -502,7 +502,7 @@ scenario-help::
 	@echo ""
 	@if [ "$(notdir $(realpath $(firstword $(MAKEFILE_LIST))))" != "makbet.mk" ] ; \
 	then \
-		echo "All targets ($(MAKBET_TASK_TOTAL)) defined in $(realpath $(firstword $(MAKEFILE_LIST))):" ; \
+		echo "All available tasks ($(MAKBET_TASK_TOTAL)) defined in $(realpath $(firstword $(MAKEFILE_LIST))):" ; \
 	fi
 	@echo ""
 
