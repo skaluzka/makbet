@@ -502,12 +502,15 @@ main-help: makbet-version
 # Makefile file.
 .PHONY: scenario-help
 scenario-help::
-	@echo ""
 	@if [ "$(notdir $(MAKBET_SCENARIO_PATH))" != "makbet.mk" ] ; \
 	then \
-		echo "All available tasks ($(MAKBET_TASK_TOTAL)) defined in $(MAKBET_SCENARIO_PATH):" ; \
+		if [ "$(MAKBET_TASK_TOTAL)" -gt "0" ] ; \
+		then \
+			echo "" ; \
+			echo "Found $(MAKBET_TASK_TOTAL) valid task(s) defined in $(MAKBET_SCENARIO_PATH):" ; \
+			echo "" ; \
+		fi ; \
 	fi
-	@echo ""
 
 
 # This is makbet's main help target (see also the DEFAULT_GOAL at the top).
