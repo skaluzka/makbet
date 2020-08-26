@@ -8,6 +8,7 @@ set -eu
 # ${4} - The csv separator.
 
 echo "${3}" > "${2}"
+# shellcheck disable=SC2002
 cat "${1}" | cut -d '=' -f2 | tr "\n" "${4}" >> "${2}"
 echo "" >> "${2}"
 
