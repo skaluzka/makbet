@@ -1,5 +1,14 @@
+# Ignore makbet's cache directory.
 .cache/
+
+# Ignore the top-level Visual Studio Code directory.
 .vscode/
+
+# Ignore temporary directory for tests' logs.
+tests/logs/
+
+# Ignore temporary directory for tests' results.
+tests/output/
 
 
 # End of file

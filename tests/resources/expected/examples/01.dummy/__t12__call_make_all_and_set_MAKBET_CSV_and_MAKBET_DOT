@@ -1,0 +1,70 @@
+.cache/
+├── dot/
+│   ├── @01-INIT.dot
+│   ├── all.dot
+│   ├── task-A.dot
+│   ├── task-B1.dot
+│   ├── task-B2.dot
+│   ├── task-B3.dot
+│   ├── task-B4.dot
+│   ├── task-B5.dot
+│   ├── task-C.dot
+│   ├── task-D.dot
+│   ├── task-E.dot
+│   └── task-F.dot
+├── events/
+│   ├── cfg/
+│   │   ├── @01-INIT.started.cfg
+│   │   ├── @01-INIT.terminated.cfg
+│   │   ├── all.started.cfg
+│   │   ├── all.terminated.cfg
+│   │   ├── task-A.started.cfg
+│   │   ├── task-A.terminated.cfg
+│   │   ├── task-B1.started.cfg
+│   │   ├── task-B1.terminated.cfg
+│   │   ├── task-B2.started.cfg
+│   │   ├── task-B2.terminated.cfg
+│   │   ├── task-B3.started.cfg
+│   │   ├── task-B3.terminated.cfg
+│   │   ├── task-B4.started.cfg
+│   │   ├── task-B4.terminated.cfg
+│   │   ├── task-B5.started.cfg
+│   │   ├── task-B5.terminated.cfg
+│   │   ├── task-C.started.cfg
+│   │   ├── task-C.terminated.cfg
+│   │   ├── task-D.started.cfg
+│   │   ├── task-D.terminated.cfg
+│   │   ├── task-E.started.cfg
+│   │   ├── task-E.terminated.cfg
+│   │   ├── task-F.started.cfg
+│   │   └── task-F.terminated.cfg
+│   └── csv/
+│       ├── @01-INIT.started.csv
+│       ├── @01-INIT.terminated.csv
+│       ├── all.started.csv
+│       ├── all.terminated.csv
+│       ├── task-A.started.csv
+│       ├── task-A.terminated.csv
+│       ├── task-B1.started.csv
+│       ├── task-B1.terminated.csv
+│       ├── task-B2.started.csv
+│       ├── task-B2.terminated.csv
+│       ├── task-B3.started.csv
+│       ├── task-B3.terminated.csv
+│       ├── task-B4.started.csv
+│       ├── task-B4.terminated.csv
+│       ├── task-B5.started.csv
+│       ├── task-B5.terminated.csv
+│       ├── task-C.started.csv
+│       ├── task-C.terminated.csv
+│       ├── task-D.started.csv
+│       ├── task-D.terminated.csv
+│       ├── task-E.started.csv
+│       ├── task-E.terminated.csv
+│       ├── task-F.started.csv
+│       └── task-F.terminated.csv
+└── prof/
+    ├── cfg/
+    └── csv/
+
+7 directories, 60 files

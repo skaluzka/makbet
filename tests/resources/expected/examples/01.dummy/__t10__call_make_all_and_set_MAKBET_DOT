@@ -1,0 +1,46 @@
+.cache/
+├── dot/
+│   ├── @01-INIT.dot
+│   ├── all.dot
+│   ├── task-A.dot
+│   ├── task-B1.dot
+│   ├── task-B2.dot
+│   ├── task-B3.dot
+│   ├── task-B4.dot
+│   ├── task-B5.dot
+│   ├── task-C.dot
+│   ├── task-D.dot
+│   ├── task-E.dot
+│   └── task-F.dot
+├── events/
+│   ├── cfg/
+│   │   ├── @01-INIT.started.cfg
+│   │   ├── @01-INIT.terminated.cfg
+│   │   ├── all.started.cfg
+│   │   ├── all.terminated.cfg
+│   │   ├── task-A.started.cfg
+│   │   ├── task-A.terminated.cfg
+│   │   ├── task-B1.started.cfg
+│   │   ├── task-B1.terminated.cfg
+│   │   ├── task-B2.started.cfg
+│   │   ├── task-B2.terminated.cfg
+│   │   ├── task-B3.started.cfg
+│   │   ├── task-B3.terminated.cfg
+│   │   ├── task-B4.started.cfg
+│   │   ├── task-B4.terminated.cfg
+│   │   ├── task-B5.started.cfg
+│   │   ├── task-B5.terminated.cfg
+│   │   ├── task-C.started.cfg
+│   │   ├── task-C.terminated.cfg
+│   │   ├── task-D.started.cfg
+│   │   ├── task-D.terminated.cfg
+│   │   ├── task-E.started.cfg
+│   │   ├── task-E.terminated.cfg
+│   │   ├── task-F.started.cfg
+│   │   └── task-F.terminated.cfg
+│   └── csv/
+└── prof/
+    ├── cfg/
+    └── csv/
+
+7 directories, 36 files

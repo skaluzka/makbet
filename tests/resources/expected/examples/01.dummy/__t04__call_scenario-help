@@ -1,0 +1,94 @@
+
+Found 13 valid task(s) defined in /home/user/makbet/examples/01.dummy/Makefile:
+
+  @01-INIT
+    - Id.:   1
+    - Descr: "Entry point"
+    - Deps:  
+    - Cmd:   
+    - Opts:  
+
+  task-A
+    - Id.:   2
+    - Descr: "Run task-A"
+    - Deps:  @01-INIT
+    - Cmd:   /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+    - Opts:  1
+
+  task-B1
+    - Id.:   3
+    - Descr: "Run task-B1"
+    - Deps:  task-A
+    - Cmd:   /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+    - Opts:  1
+
+  task-B2
+    - Id.:   4
+    - Descr: "Run task-B2"
+    - Deps:  task-A
+    - Cmd:   /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+    - Opts:  1
+
+  task-B3
+    - Id.:   5
+    - Descr: "Run task-B3"
+    - Deps:  task-A
+    - Cmd:   /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+    - Opts:  1
+
+  task-B4
+    - Id.:   6
+    - Descr: "Run task-B4"
+    - Deps:  task-A
+    - Cmd:   /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+    - Opts:  1
+
+  task-B5
+    - Id.:   7
+    - Descr: "Run task-B5"
+    - Deps:  task-A
+    - Cmd:   /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+    - Opts:  1
+
+  task-C
+    - Id.:   8
+    - Descr: "Checkpoint for task-B2 and task-B3"
+    - Deps:  task-B2 task-B3
+    - Cmd:   /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+    - Opts:  1
+
+  task-D
+    - Id.:   9
+    - Descr: "Run task-D"
+    - Deps:  task-C
+    - Cmd:   /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+    - Opts:  1
+
+  task-E
+    - Id.:   10
+    - Descr: "Checkpoint for task-B1 task-B4 task-B5 and task-D"
+    - Deps:  task-B1 task-B4 task-B5 task-D
+    - Cmd:   /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+    - Opts:  1
+
+  task-F
+    - Id.:   11
+    - Descr: "Run task-F"
+    - Deps:  task-E
+    - Cmd:   
+    - Opts:  
+
+  task-G
+    - Id.:   12
+    - Descr: "Run task-G"
+    - Deps:  task-F
+    - Cmd:   /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+    - Opts:  1
+
+  all
+    - Id.:   13
+    - Descr: "Run task all"
+    - Deps:  task-F
+    - Cmd:   
+    - Opts:  
+

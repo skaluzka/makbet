@@ -1,0 +1,83 @@
+
+makbet heads/users/skaluzka/issues/95-0-g0faf41e                                                      
+
+  "What's done, is done." - William Shakespeare, Macbeth.                   
+
+Usage: make [TARGET]                                                          
+
+All makbet's basic targets defined in /home/user/makbet/makbet.mk:               
+
+  help                           - Show main makbet's help message as first   
+                                   then append the help messages of all tasks 
+                                   defined in scenario's Makefile.  This is   
+                                   the default target.                        
+  scenario-help                  - Show only scenario's help message (it is   
+                                   generated dynamically based on all tasks   
+                                   defined in scenario's Makefile file).      
+  makbet-help                    - Show main makbet's help message (same as   
+                                   "make help" above) then append extended  
+                                   help message containing the list of all    
+                                   special makbet's targets.                  
+  makbet-clean                   - Clean entire makbet's internal cache dir   
+                                   ($MAKBET_CACHE_DIR).                     
+  makbet-version                 - Print makbet's version only.               
+
+  Examples:                                                                   
+           make                                                               
+           make help                                                          
+           make scenario-help                                                 
+           make makbet-help                                                   
+           make makbet-clean                                                  
+           make makbet-version                                                
+
+Found 7 valid task(s) defined in /home/user/makbet/examples/04.sleep/Makefile:
+
+  @01-INIT
+    - Id.:   1
+    - Descr: "Entry point"
+    - Deps:  
+    - Cmd:   
+    - Opts:  
+
+  sleep-1s
+    - Id.:   2
+    - Descr: "Do nothing - just sleep for 1 second"
+    - Deps:  @01-INIT
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/sleep.sh
+    - Opts:  1s
+
+  sleep-2s
+    - Id.:   3
+    - Descr: "Do nothing - just sleep for 2 seconds"
+    - Deps:  @01-INIT
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/sleep.sh
+    - Opts:  2s
+
+  sleep-3s
+    - Id.:   4
+    - Descr: "Do nothing - just sleep for 3 seconds"
+    - Deps:  @01-INIT
+    - Cmd:   sleep
+    - Opts:  3s
+
+  sleep-5s
+    - Id.:   5
+    - Descr: "Do nothing - just sleep for 5 seconds"
+    - Deps:  @01-INIT
+    - Cmd:   sleep
+    - Opts:  5s
+
+  sleep-8s
+    - Id.:   6
+    - Descr: "Do nothing - just sleep for 8 seconds"
+    - Deps:  @01-INIT
+    - Cmd:   sleep
+    - Opts:  8s
+
+  all
+    - Id.:   7
+    - Descr: "Run all sleep tasks"
+    - Deps:  sleep-1s sleep-2s sleep-3s sleep-5s sleep-8s
+    - Cmd:   
+    - Opts:  
+
