@@ -6,7 +6,7 @@ digraph {
 
 // Graph title.
 labelloc="t";
-label="/home/user/makbet/examples/04.sleep/Makefile\n\n"
+label="/home/user/makbet/examples/04.sleep/Makefile\n\n\n\n"
 
 // Node options.
 node [shape=box];
