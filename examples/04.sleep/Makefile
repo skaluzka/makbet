@@ -22,21 +22,33 @@ $(eval $(call TASK_template, \
 ))
 
 $(eval $(call TASK_template, \
-	sleep-10s, "Do nothing - just sleep for 10 seconds", \
+	sleep-1s, "Do nothing - just sleep for 1 second", \
 	@01-INIT, \
-	$(MAKBET_TASKS_DIR)/common/sleep.sh, 10s \
+	$(MAKBET_TASKS_DIR)/common/sleep.sh, 1s \
 ))
 
 $(eval $(call TASK_template, \
-	sleep-100s, "Do nothing - just sleep for 100 seconds", \
+	sleep-2s, "Do nothing - just sleep for 2 seconds", \
 	@01-INIT, \
-	$(MAKBET_TASKS_DIR)/common/sleep.sh, 100s \
+	$(MAKBET_TASKS_DIR)/common/sleep.sh, 2s \
 ))
 
 $(eval $(call TASK_template, \
-	sleep-1m, "Do nothing - just sleep for 1 minute", \
+	sleep-3s, "Do nothing - just sleep for 3 seconds", \
 	@01-INIT, \
-	sleep, 1m \
+	sleep, 3s \
+))
+
+$(eval $(call TASK_template, \
+	sleep-5s, "Do nothing - just sleep for 5 seconds", \
+	@01-INIT, \
+	sleep, 5s \
+))
+
+$(eval $(call TASK_template, \
+	sleep-8s, "Do nothing - just sleep for 8 seconds", \
+	@01-INIT, \
+	sleep, 8s \
 ))
 
 #
@@ -44,7 +56,7 @@ $(eval $(call TASK_template, \
 #
 $(eval $(call TASK_template, \
 	all, "Run all sleep tasks", \
-	sleep-10s sleep-100s sleep-1m, \
+	sleep-1s sleep-2s sleep-3s sleep-5s sleep-8s, \
 ))
 
 
