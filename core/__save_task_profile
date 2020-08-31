@@ -20,7 +20,10 @@ echo "T2 - T1 = ${TASK_DURATION}"
 
 # Save profiling data to results *.cfg file.
 echo -n "" > "${3}"
-comm "${1}" "${2}" | grep -Pv "EVENT_TYPE" | sed 's/^[ \t]*//' > "${3}"
+comm --nocheck-order "${1}" "${2}" \
+    | grep -Pv "EVENT_TYPE" \
+    | sed 's/^[ \t]*//' \
+    > "${3}"
 echo "TASK_DURATION=${TASK_DURATION}" >> "${3}"
 
 

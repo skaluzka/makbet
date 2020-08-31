@@ -20,8 +20,8 @@ echo "TASK_NAME=\"${2}\"" >> "${6}"
 echo "TASK_DEPS=\"${3}\"" >> "${6}"
 echo "TASK_CMD=\"${4}\"" >> "${6}"
 echo "TASK_CMD_OPTS=\"${5}\"" >> "${6}"
-echo "TASK_DATE_TIME_${7}=\"${NOW}\"" >> "${6}"
 echo "TASK_EVENT_TYPE=\"${7}\"" >> "${6}"
+echo "TASK_DATE_TIME_${7}=\"${NOW}\"" >> "${6}"
 
 # Print console message.
 echo -e "\n${NOW_SHORT} [INFO]: Task \"${2}\" (TASK_ID: ${1}) ${7,,}.\n"

@@ -293,30 +293,30 @@ Special **makbet's** target ``.show-summary-events-csv-file`` will display
     [user@localhost 01.dummy]$ echo ; make .show-summary-events-csv-file
 
     TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_EVENT_TYPE;TASK_DATE_TIME_[STARTED|TERMINATED];
-    "1";"@01-INIT";"";"";"";"2020-08-31 21:12:42.319928557";"STARTED";
-    "1";"@01-INIT";"";"";"";"2020-08-31 21:12:42.336716295";"TERMINATED";
-    "10";"task-E";"task-B1 task-B4 task-B5 task-D";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:51.578156890";"STARTED";
-    "10";"task-E";"task-B1 task-B4 task-B5 task-D";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:52.605022184";"TERMINATED";
-    "11";"task-F";"task-E";"";"";"2020-08-31 21:12:52.719545849";"STARTED";
-    "11";"task-F";"task-E";"";"";"2020-08-31 21:12:52.742226929";"TERMINATED";
-    "13";"all";"task-F";"";"";"2020-08-31 21:12:52.851445742";"STARTED";
-    "13";"all";"task-F";"";"";"2020-08-31 21:12:52.870757067";"TERMINATED";
-    "2";"task-A";"@01-INIT";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:42.424386893";"STARTED";
-    "2";"task-A";"@01-INIT";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:43.473549916";"TERMINATED";
-    "3";"task-B1";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:43.588116880";"STARTED";
-    "3";"task-B1";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:44.613992334";"TERMINATED";
-    "4";"task-B2";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:47.039666516";"STARTED";
-    "4";"task-B2";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:48.072602440";"TERMINATED";
-    "5";"task-B3";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:48.164702121";"STARTED";
-    "5";"task-B3";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:49.213087496";"TERMINATED";
-    "6";"task-B4";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:44.718276628";"STARTED";
-    "6";"task-B4";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:45.747039419";"TERMINATED";
-    "7";"task-B5";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:45.863860100";"STARTED";
-    "7";"task-B5";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:46.893625390";"TERMINATED";
-    "8";"task-C";"task-B2 task-B3";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:49.328563711";"STARTED";
-    "8";"task-C";"task-B2 task-B3";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:50.354678433";"TERMINATED";
-    "9";"task-D";"task-C";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:50.455119666";"STARTED";
-    "9";"task-D";"task-C";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-08-31 21:12:51.483000714";"TERMINATED";
+    "1";"@01-INIT";"";"";"";"STARTED";"2020-08-31 23:56:00.649587995";
+    "1";"@01-INIT";"";"";"";"TERMINATED";"2020-08-31 23:56:00.666786322";
+    "10";"task-E";"task-B1 task-B4 task-B5 task-D";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:10.289023250";
+    "10";"task-E";"task-B1 task-B4 task-B5 task-D";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:11.338833366";
+    "11";"task-F";"task-E";"";"";"STARTED";"2020-08-31 23:56:11.482923596";
+    "11";"task-F";"task-E";"";"";"TERMINATED";"2020-08-31 23:56:11.502223078";
+    "13";"all";"task-F";"";"";"STARTED";"2020-08-31 23:56:11.602816027";
+    "13";"all";"task-F";"";"";"TERMINATED";"2020-08-31 23:56:11.621920583";
+    "2";"task-A";"@01-INIT";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:00.759734577";
+    "2";"task-A";"@01-INIT";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:01.809743217";
+    "3";"task-B1";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:01.969186347";
+    "3";"task-B1";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:03.022288809";
+    "4";"task-B2";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:05.582568852";
+    "4";"task-B2";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:06.632680835";
+    "5";"task-B3";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:06.763160648";
+    "5";"task-B3";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:07.805955418";
+    "6";"task-B4";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:03.182027713";
+    "6";"task-B4";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:04.238375080";
+    "7";"task-B5";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:04.362296060";
+    "7";"task-B5";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:05.412659255";
+    "8";"task-C";"task-B2 task-B3";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:07.924800941";
+    "8";"task-C";"task-B2 task-B3";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:08.974943831";
+    "9";"task-D";"task-C";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:09.103416326";
+    "9";"task-D";"task-C";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:10.154993911";
 
     [user@localhost 01.dummy]$
 
