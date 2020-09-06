@@ -25,7 +25,7 @@ Keep reading && have fun! :)
 **Background**
 --------------
 
-We are providing **four** complete examples for further study and examination.
+We are providing **six** complete examples for further study and examination.
 Every example can be freely run with all combinations of **makbet's** CLI
 options (``MAKBET_*``) as well as easily modified.  All results of modifications
 are easy to observe and notice.
