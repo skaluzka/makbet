@@ -16,33 +16,33 @@ The documentation directory structure is:
 
   $MAKBET_PATH/docs/
   ├── examples/
-  │   ├── 01.dummy/
-  │   │   ├── results.csv
-  │   │   ├── results.dot
-  │   │   └── results.png
-  │   ├── 02.toolchain-basic/
-  │   │   ├── results.csv
-  │   │   ├── results.dot
-  │   │   └── results.png
-  │   ├── 02.toolchain-complex/
-  │   │   ├── results.csv
-  │   │   ├── results.dot
-  │   │   └── results.png
-  │   ├── 03.ping-dns-servers/
-  │   │   ├── results.csv
-  │   │   ├── results.dot
-  │   │   └── results.png
-  │   ├── 04.sleep/
-  │   │   ├── results.csv
-  │   │   ├── results.dot
-  │   │   └── results.png
-  │   └── 05.comments/
-  │       ├── results.csv
-  │       ├── results.dot
-  │       └── results.png
+  │   ├── 01.dummy/
+  │   │   ├── results.csv
+  │   │   ├── results.dot
+  │   │   └── results.png
+  │   ├── 02.toolchain-basic/
+  │   │   ├── results.csv
+  │   │   ├── results.dot
+  │   │   └── results.png
+  │   ├── 02.toolchain-complex/
+  │   │   ├── results.csv
+  │   │   ├── results.dot
+  │   │   └── results.png
+  │   ├── 03.ping-dns-servers/
+  │   │   ├── results.csv
+  │   │   ├── results.dot
+  │   │   └── results.png
+  │   ├── 04.sleep/
+  │   │   ├── results.csv
+  │   │   ├── results.dot
+  │   │   └── results.png
+  │   └── 05.comments/
+  │       ├── results.csv
+  │       ├── results.dot
+  │       └── results.png
   ├── templates/
-  │   └── scenario/
-  │       └── Makefile
+  │   └── scenario/
+  │       └── Makefile
   └── README.rst
 
 where:

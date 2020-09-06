@@ -121,41 +121,41 @@ The **makbet's** examples directory structure is:
 
   $MAKBET_PATH/examples/
   ├── 01.dummy/
-  │   ├── Makefile
-  │   └── tasks/
-  │       └── generic-task.sh
+  │   ├── Makefile
+  │   └── tasks/
+  │       └── generic-task.sh
   ├── 02.toolchain-basic/
-  │   └── Makefile
+  │   └── Makefile
   ├── 02.toolchain-complex/
-  │   └── Makefile
+  │   └── Makefile
   ├── 03.ping-dns-servers/
-  │   └── Makefile
+  │   └── Makefile
   ├── 04.sleep/
-  │   └── Makefile
+  │   └── Makefile
   ├── 05.comments/
-  │   └── Makefile
+  │   └── Makefile
   ├── lib/
-  │   └── tasks/
-  │       ├── 02.toolchain/
-  │       │   └── common/
-  │       │       ├── build-doxygen.sh
-  │       │       ├── build-git.sh
-  │       │       ├── build-kcov.sh
-  │       │       ├── build-make.sh
-  │       │       └── build-python.sh
-  │       └── common/
-  │           ├── check-dirs.sh
-  │           ├── check-files.sh
-  │           ├── create-dir-structure.sh
-  │           ├── download-file.sh
-  │           ├── exec-cmd.sh
-  │           ├── show-free-space.sh
-  │           ├── show-uname.sh
-  │           ├── show-uptime.sh
-  │           ├── sleep.sh
-  │           ├── uncompress-tgz-file.sh
-  │           ├── uncompress-txz-file.sh
-  │           └── uncompress-zip-file.sh
+  │   └── tasks/
+  │       ├── 02.toolchain/
+  │       │   └── common/
+  │       │       ├── build-doxygen.sh
+  │       │       ├── build-git.sh
+  │       │       ├── build-kcov.sh
+  │       │       ├── build-make.sh
+  │       │       └── build-python.sh
+  │       └── common/
+  │           ├── check-dirs.sh
+  │           ├── check-files.sh
+  │           ├── create-dir-structure.sh
+  │           ├── download-file.sh
+  │           ├── exec-cmd.sh
+  │           ├── show-free-space.sh
+  │           ├── show-uname.sh
+  │           ├── show-uptime.sh
+  │           ├── sleep.sh
+  │           ├── uncompress-tgz-file.sh
+  │           ├── uncompress-txz-file.sh
+  │           └── uncompress-zip-file.sh
   └── README.rst
 
 |
