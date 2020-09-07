@@ -1,4 +1,4 @@
-# This is Makefile file for "02.toolchain-basic" example scenario.
+# This is Makefile file for "02.toolchain-simple" example scenario.
 
 #
 # Include mandatory makbet.mk file.
@@ -11,17 +11,17 @@ else
 endif
 
 #
-# All global variables required by "02.toolchain-basic" scenario.
+# All global variables required by "02.toolchain-simple" scenario.
 #
 
-WORK_DIR := /tmp/makbet/examples/02.toolchain-basic
+WORK_DIR := /tmp/makbet/examples/02.toolchain-simple
 
 #
-# All tasks required to run "02.toolchain-basic" scenario.
+# All tasks required to run "02.toolchain-simple" scenario.
 #
 
 #
-# Task "@01-INIT" - an entry point for "02.toolchain-basic" scenario.
+# Task "@01-INIT" - an entry point for "02.toolchain-simple" scenario.
 #
 $(eval $(call TASK_template, \
 	@01-INIT, "Entry point", \
@@ -232,7 +232,7 @@ $(eval $(call TASK_template, \
 ))
 
 #
-# Task "all" - the ultimate goal for "02.toolchain-basic" scenario.
+# Task "all" - the ultimate goal for "02.toolchain-simple" scenario.
 #
 $(eval $(call TASK_template, \
 	all, "Run task all", \

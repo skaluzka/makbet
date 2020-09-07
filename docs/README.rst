@@ -40,23 +40,23 @@ The **makbet's** documentation directory structure is:
   │   │   ├── results.csv
   │   │   ├── results.dot
   │   │   └── results.png
-  │   ├── 02.toolchain-basic/
+  │   ├── 02.toolchain-simple/
   │   │   ├── results.csv
   │   │   ├── results.dot
   │   │   └── results.png
-  │   ├── 02.toolchain-complex/
+  │   ├── 03.toolchain-advanced/
   │   │   ├── results.csv
   │   │   ├── results.dot
   │   │   └── results.png
-  │   ├── 03.ping-dns-servers/
+  │   ├── 04.ping-dns-servers/
   │   │   ├── results.csv
   │   │   ├── results.dot
   │   │   └── results.png
-  │   ├── 04.sleep/
+  │   ├── 05.sleep/
   │   │   ├── results.csv
   │   │   ├── results.dot
   │   │   └── results.png
-  │   └── 05.comments/
+  │   └── 06.comments/
   │       ├── results.csv
   │       ├── results.dot
   │       └── results.png

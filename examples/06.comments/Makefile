@@ -1,4 +1,4 @@
-# This is Makefile file for "05.comments" scenario.
+# This is Makefile file for "06.comments" scenario.
 
 #
 # Include mandatory makbet.mk file.
@@ -10,17 +10,17 @@ else
 endif
 
 #
-# All global variables required by "05.comments" scenario.
+# All global variables required by "06.comments" scenario.
 #
 
 # ...
 
 #
-# All tasks required to run "05.comments" scenario.
+# All tasks required to run "06.comments" scenario.
 #
 
 #
-# Task "@01-INIT" - an entry point for "05.comments" scenario.
+# Task "@01-INIT" - an entry point for "06.comments" scenario.
 #
 # $(eval $(call TASK_template, \
 # 	@01-INIT, "Entry point", \
@@ -34,7 +34,7 @@ endif
 # ))
 
 #
-# Task "all" - the ultimate goal for "05.comments" scenario.
+# Task "all" - the ultimate goal for "06.comments" scenario.
 #
 # $(eval $(call TASK_template, \
 # 	all, "Run task all", \

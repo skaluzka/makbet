@@ -1,4 +1,4 @@
-# This is Makefile file for "03.ping-dns-servers" example scenario.
+# This is Makefile file for "04.ping-dns-servers" example scenario.
 
 #
 # Include mandatory makbet.mk file.
@@ -10,11 +10,11 @@ else
 endif
 
 #
-# All tasks required to run "03.ping-dns-servers" scenario.
+# All tasks required to run "04.ping-dns-servers" scenario.
 #
 
 #
-# Task "@01-INIT" - an entry point for "03.ping-dns-servers" scenario.
+# Task "@01-INIT" - an entry point for "04.ping-dns-servers" scenario.
 #
 $(eval $(call TASK_template, \
 	@01-INIT, "Entry point", \
@@ -39,7 +39,7 @@ $(eval $(call TASK_template, \
 ))
 
 #
-# Task "ping-all" - the ultimate goal for "03.ping-dns-servers" scenario.
+# Task "ping-all" - the ultimate goal for "04.ping-dns-servers" scenario.
 #
 $(eval $(call TASK_template, \
 	ping-all, "Ping all dns servers", \
@@ -47,7 +47,7 @@ $(eval $(call TASK_template, \
 ))
 
 #
-# Task "all" - the ultimate goal for "03.ping-dns-servers" scenario.
+# Task "all" - the ultimate goal for "04.ping-dns-servers" scenario.
 #
 $(eval $(call TASK_template, \
 	all, "Ping all dns servers", \

@@ -30,7 +30,7 @@ All makbet's basic targets defined in /home/user/makbet/makbet.mk:
            make makbet-clean                                                  
            make makbet-version                                                
 
-Found 7 valid task(s) defined in /home/user/makbet/examples/04.sleep/Makefile:
+Found 7 valid task(s) defined in /home/user/makbet/examples/05.sleep/Makefile:
 
   @01-INIT
     - Id.:   1

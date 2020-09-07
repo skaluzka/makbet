@@ -1,4 +1,4 @@
-# This is Makefile file for "04.sleep" example scenario.
+# This is Makefile file for "05.sleep" example scenario.
 
 #
 # Include mandatory makbet.mk file.
@@ -11,11 +11,11 @@ else
 endif
 
 #
-# All tasks required to run "04.sleep" scenario.
+# All tasks required to run "05.sleep" scenario.
 #
 
 #
-# Task "@01-INIT" - an entry point for "04.sleep" scenario.
+# Task "@01-INIT" - an entry point for "05.sleep" scenario.
 #
 $(eval $(call TASK_template, \
 	@01-INIT, "Entry point", \
@@ -52,7 +52,7 @@ $(eval $(call TASK_template, \
 ))
 
 #
-# Task "all" - the ultimate goal for "04.sleep" scenario.
+# Task "all" - the ultimate goal for "05.sleep" scenario.
 #
 $(eval $(call TASK_template, \
 	all, "Run all sleep tasks", \

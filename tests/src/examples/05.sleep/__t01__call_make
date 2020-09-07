@@ -6,7 +6,7 @@ set -x
 
 readonly output_file="${1}"
 readonly expected_file="${2}"
-pushd "${MAKBET_PATH}/examples/04.sleep/" > /dev/null
+pushd "${MAKBET_PATH}/examples/05.sleep/" > /dev/null
 make > "${output_file}"
 diff -u -s \
     <( \

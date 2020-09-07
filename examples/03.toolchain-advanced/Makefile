@@ -1,4 +1,4 @@
-# This is Makefile file for "02.toolchain-complex" example scenario.
+# This is Makefile file for "03.toolchain-advanced" example scenario.
 
 #
 # Include mandatory makbet.mk file.
@@ -11,10 +11,10 @@ else
 endif
 
 #
-# All global variables required by "02.toolchain-complex" scenario.
+# All global variables required by "03.toolchain-advanced" scenario.
 #
 
-WORK_DIR := /tmp/makbet/examples/02.toolchain-complex
+WORK_DIR := /tmp/makbet/examples/03.toolchain-advanced
 
 DOXYGEN_DIR := $(WORK_DIR)/doxygen
 GIT_DIR := $(WORK_DIR)/git
@@ -72,11 +72,11 @@ PYTHON_BIN := $(PYTHON_UNPACK_DIR)/python
 EXEC_CMD := $(MAKBET_TASKS_DIR)/common/exec-cmd.sh
 
 #
-# All tasks required to run "02.toolchain-complex" scenario.
+# All tasks required to run "03.toolchain-advanced" scenario.
 #
 
 #
-# Task "@01-INIT" - an entry point for "02.toolchain-complex" scenario.
+# Task "@01-INIT" - an entry point for "03.toolchain-advanced" scenario.
 #
 $(eval $(call TASK_template, \
 	@01-INIT, "Entry point", \
@@ -227,7 +227,7 @@ $(eval $(call TASK_template, \
 ))
 
 #
-# Task "build-all" - the ultimate goal for "02.toolchain-complex" scenario.
+# Task "build-all" - the ultimate goal for "03.toolchain-advanced" scenario.
 #
 $(eval $(call TASK_template, \
 	build-all, "Checkpoint for all build-* tasks", \

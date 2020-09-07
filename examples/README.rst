@@ -13,11 +13,11 @@ Keep reading && have fun! :)
 
 - | `Background`_
 - | `01.dummy`_
-- | `02.toolchain-basic`_
-- | `02.toolchain-complex`_
-- | `03.ping-dns-servers`_
-- | `04.sleep`_
-- | `05.comments`_
+- | `02.toolchain-simple`_
+- | `03.toolchain-advanced`_
+- | `04.ping-dns-servers`_
+- | `05.sleep`_
+- | `06.comments`_
 - | `Directory structure`_
 
 |
@@ -44,12 +44,12 @@ at any time with minimal requirements and effort.
 
 |
 
-**02.toolchain-basic**
-----------------------
+**02.toolchain-simple**
+-----------------------
 
-The second example is saved in ``examples/02.toolchain-basic/`` directory.  The
-main goal of this example is to build, locally from the source code, a simple
-toolchain consists of:
+The second example is saved in ``examples/02.toolchain-simple/`` directory.
+The main goal of this example is to build, locally from the source code,
+a simple toolchain consists of:
 
 - **doxygen 1.8.19**
 - **git 2.28.0**
@@ -59,26 +59,26 @@ toolchain consists of:
 
 |
 
-**02.toolchain-complex**
-------------------------
+**03.toolchain-advanced**
+-------------------------
 
-The next example is saved in ``examples/02.toolchain-complex/`` directory.  The
-goal of this example is exactly the same as in ``examples/02.toolchain-basic``
-case.  In fact, the real differences between **02.toolchain-basic** and
-**02.toolchain-complex** examples are the ``Makefile`` files which both have
-different constructions.  **02.toolchain-complex** example uses more advanced
+The next example is saved in ``examples/03.toolchain-advanced/`` directory.  The
+goal of this example is exactly the same as in ``examples/02.toolchain-simple``
+case.  In fact, the real differences between **02.toolchain-simple** and
+**03.toolchain-advanced** examples are the ``Makefile`` files which both have
+different constructions.  **03.toolchain-advanced** example uses more advanced
 syntax in its ``Makefile`` file.  However both examples share the same set of
 tasks from ``examples/lib/tasks/02.toolchain/common/`` directory.  Two different
 versions of the same scenario have been created for comparison and testing
-purposes.  As expected final results for both **02.toolchain-basic** and
-**02.toolchain-complex** should be the same.
+purposes.  As expected final results for both **02.toolchain-simple** and
+**03.toolchain-advanced** should be the same.
 
 |
 
-**03.ping-dns-servers**
+**04.ping-dns-servers**
 -----------------------
 
-The next example is saved in ``examples/03.ping-dns-servers/`` directory.  The
+The next example is saved in ``examples/04.ping-dns-servers/`` directory.  The
 goal of that example is to show how useful parallel tasks execution can be.
 With this scenario **three** popular DNS servers
 (``1.1.1.1`` + ``8.8.4.4`` + ``8.8.8.8``) can be checked/pinged simultaneously
@@ -89,10 +89,10 @@ there is no dedicated task script in this example.  The syntax of all raw
 
 |
 
-**04.sleep**
+**05.sleep**
 ------------
 
-The next example is saved in ``examples/04.sleep/`` directory.  This is another
+The next example is saved in ``examples/05.sleep/`` directory.  This is another
 good example showing how to play with parallel tasks execution.  The Makefile
 file of this scenario contains **five** sleep tasks: ``sleep-1s``, ``sleep-2s``,
 ``sleep-3s``, ``sleep-5s`` and ``sleep-8s``.  All of them can be run,
@@ -103,10 +103,10 @@ to the ``make`` command.
 
 |
 
-**05.comments**
+**06.comments**
 ---------------
 
-The last example is saved in ``examples/05.comments/`` directory.  This example
+The last example is saved in ``examples/06.comments/`` directory.  This example
 is degraded - all tasks inside scenario ``Makefile`` are commented nonetheless
 ``makbet.mk`` works as expected and works the same like for any other scenario.
 
@@ -124,15 +124,15 @@ The **makbet's** examples directory structure is:
   │   ├── Makefile
   │   └── tasks/
   │       └── generic-task.sh
-  ├── 02.toolchain-basic/
+  ├── 02.toolchain-simple/
   │   └── Makefile
-  ├── 02.toolchain-complex/
+  ├── 03.toolchain-advanced/
   │   └── Makefile
-  ├── 03.ping-dns-servers/
+  ├── 04.ping-dns-servers/
   │   └── Makefile
-  ├── 04.sleep/
+  ├── 05.sleep/
   │   └── Makefile
-  ├── 05.comments/
+  ├── 06.comments/
   │   └── Makefile
   ├── lib/
   │   └── tasks/
@@ -178,70 +178,71 @@ where:
 
 |
 
-- ``02.toolchain-basic/`` - Dedicated directory for **makbet's**
-  ``02.toolchain-basic`` example.
-- ``02.toolchain-basic/Makefile`` - So-called **makbet's** scenario file.  It
-  contains complete task list for **makbet's** ``02.toolchain-basic`` example.
+- ``02.toolchain-simple/`` - Dedicated directory for **makbet's**
+  ``02.toolchain-simple`` example.
+- ``02.toolchain-simple/Makefile`` - So-called **makbet's** scenario file.  It
+  contains complete task list for **makbet's** ``02.toolchain-simple`` example.
 
 |
 
-- ``02.toolchain-complex/`` - Dedicated directory for **makbet's**
-  ``02.toolchain-complex`` example.
-- ``02.toolchain-complex/Makefile`` - So-called **makbet's** scenario file.  It
-  contains complete task list for **makbet's** ``02.toolchain-complex`` example.
-  This ``Makefile`` file is more advanced version of
-  ``02.toolchain-basic/Makefile`` file described earlier.
+- ``03.toolchain-advanced/`` - Dedicated directory for **makbet's**
+  ``03.toolchain-advanced`` example.
+- ``03.toolchain-advanced/Makefile`` - So-called **makbet's** scenario file.  It
+  contains complete task list for **makbet's** ``03.toolchain-advanced``
+  example.  This ``Makefile`` file is more advanced version of
+  ``02.toolchain-simple/Makefile`` file described earlier.
 
 |
 
-- ``03.ping-dns-servers/`` - Dedicated directory for **makbet's**
-  ``03.ping-dns-servers`` example.
-- ``03.ping-dns-servers/Makefile`` - So-called **makbet's** scenario file.  It
-  contains complete task list for **makbet's** ``03.ping-dns-servers`` example.
+- ``04.ping-dns-servers/`` - Dedicated directory for **makbet's**
+  ``04.ping-dns-servers`` example.
+- ``04.ping-dns-servers/Makefile`` - So-called **makbet's** scenario file.  It
+  contains complete task list for **makbet's** ``04.ping-dns-servers`` example.
 
 |
 
-- ``04.sleep/`` - Dedicated directory for **makbet's** ``04.sleep`` example.
-- ``04.sleep/Makefile`` - So-called **makbet's** scenario file.  It contains
-  complete task list for **makbet's** ``04.sleep`` example.
+- ``05.sleep/`` - Dedicated directory for **makbet's** ``05.sleep`` example.
+- ``05.sleep/Makefile`` - So-called **makbet's** scenario file.  It contains
+  complete task list for **makbet's** ``05.sleep`` example.
 
 |
 
-- ``05.comments/`` - Dedicated directory for **makbet's** ``05.comments``
+- ``06.comments/`` - Dedicated directory for **makbet's** ``06.comments``
   example.
-- ``05.comments/Makefile`` - So-called **makbet's** scenario file.  It contains
-  complete task list for **makbet's** ``05.comments`` example.
+- ``06.comments/Makefile`` - So-called **makbet's** scenario file.  It contains
+  complete task list for **makbet's** ``06.comments`` example.
 
 |
 
 - ``lib/tasks/02.toolchain/common/`` - Separate directory containing all tasks
-  common for both **02.toolchain-basic** and **02.toolchain-complex** examples.
+  common for both **02.toolchain-simple** and **03.toolchain-advanced**
+  examples.
 - ``lib/tasks/02.toolchain/common/build-doxygen.sh`` - This **Bash** script is
-  used by **two** ``build-doxygen`` tasks (defined in **02.toolchain-basic**
-  and **02.toolchain-complex** examples).  Its aim is to build
+  used by **two** ``build-doxygen`` tasks (defined in **02.toolchain-simple**
+  and **03.toolchain-advanced** examples).  Its aim is to build
   **doxygen 1.8.19** from previously downloaded sources.
 - ``lib/tasks/02.toolchain/common/build-git.sh`` - This **Bash** script is used
-  by **two** ``build-git`` tasks (defined in **02.toolchain-basic** and
-  **02.toolchain-complex** examples).  Its aim is to build **git 2.28.0** from
+  by **two** ``build-git`` tasks (defined in **02.toolchain-simple** and
+  **03.toolchain-advanced** examples).  Its aim is to build **git 2.28.0** from
   previously downloaded sources.
 - ``lib/tasks/02.toolchain/common/build-kcov.sh`` - This **Bash** script is used
-  by **two** ``build-kcov`` tasks (defined in **02.toolchain-basic** and
-  **02.toolchain-complex** examples).  Its aim is to build **kcov 38** from
+  by **two** ``build-kcov`` tasks (defined in **02.toolchain-simple** and
+  **03.toolchain-advanced** examples).  Its aim is to build **kcov 38** from
   previously downloaded sources.
 - ``lib/tasks/02.toolchain/common/build-make.sh`` - This **Bash** script is used
-  by **two** ``build-make`` tasks (defined in **02.toolchain-basic** and
-  **02.toolchain-complex** examples).  Its aim is to build **make 4.3** from
+  by **two** ``build-make`` tasks (defined in **02.toolchain-simple** and
+  **03.toolchain-advanced** examples).  Its aim is to build **make 4.3** from
   previously downloaded sources.
 - ``lib/tasks/02.toolchain/common/build-python.sh`` - This **Bash** script is
-  used by **two** ``build-python`` tasks (defined in **02.toolchain-basic** and
-  **02.toolchain-complex** examples).  Its aim is to build **python 3.9.0b5**
+  used by **two** ``build-python`` tasks (defined in **02.toolchain-simple** and
+  **03.toolchain-advanced** examples).  Its aim is to build **python 3.9.0b5**
   from previously downloaded sources.
 
 |
 
 - ``lib/tasks/common/`` - Separate directory containing all tasks common for
   all makbet's examples.  Tasks from that directory are used in both
-  **02.toolchain-basic** and **02.toolchain-complex** examples.
+  **02.toolchain-simple** and **03.toolchain-advanced** examples.
 
 |
 
