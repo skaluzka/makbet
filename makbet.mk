@@ -327,8 +327,8 @@ endef
 	@-tree -apugsfF $(MAKBET_DOT_DIR)
 
 
-.PHONY: .show-summary-dot-file
-.show-summary-dot-file:
+.PHONY: .show-merged-dot-results
+.show-merged-dot-results:
 	@echo ""
 	@echo "digraph {"
 	@echo ""
@@ -424,7 +424,7 @@ makbet-help: main-help
 	@echo "  .show-dot-dir                  - Show entire content of makbet's internal   "
 	@echo "                                   \"dot\" dir (\$$MAKBET_DOT_DIR).  This     "
 	@echo "                                   target requires MAKBET_DOT=1.              "
-	@echo "  .show-summary-dot-file         - Show the content of results dot file.      "
+	@echo "  .show-merged-dot-results       - Show the merged content of all dot files.  "
 	@echo "                                   This target requires MAKBET_DOT=1.         "
 	@echo "  .show-events-dir               - Show entire content of makbet's internal   "
 	@echo "                                   \"events\" dir (\$$MAKBET_EVENTS_DIR)      "

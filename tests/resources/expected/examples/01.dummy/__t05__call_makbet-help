@@ -37,7 +37,7 @@ All makbet's special targets defined in /home/user/makbet/makbet.mk:
   .show-dot-dir                  - Show entire content of makbet's internal   
                                    "dot" dir ($MAKBET_DOT_DIR).  This     
                                    target requires MAKBET_DOT=1.              
-  .show-summary-dot-file         - Show the content of results dot file.      
+  .show-merged-dot-results       - Show the merged content of all dot files.  
                                    This target requires MAKBET_DOT=1.         
   .show-events-dir               - Show entire content of makbet's internal   
                                    "events" dir ($MAKBET_EVENTS_DIR)      

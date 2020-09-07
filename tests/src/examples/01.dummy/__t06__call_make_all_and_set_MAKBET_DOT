@@ -8,7 +8,7 @@ readonly output_file="${1}"
 readonly expected_file="${2}"
 pushd "${MAKBET_PATH}/examples/01.dummy/" > /dev/null
 make makbet-clean && make MAKBET_DOT=1 all
-make .show-summary-dot-file > "${output_file}"
+make .show-merged-dot-results > "${output_file}"
 diff -u -s \
     <( \
         cat "${output_file}" \

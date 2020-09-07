@@ -165,12 +165,12 @@ easily saved or redirected to file.  This can be achieved by passing
 
   [user@localhost 01.dummy]$
 
-Special **makbet's** target ``.show-summary-dot-file`` will display **DOT**
+Special **makbet's** target ``.show-merged-dot-results`` will display **DOT**
 results which can be used for further processing:
 
 ::
 
-  [user@localhost 01.dummy]$ make .show-summary-dot-file
+  [user@localhost 01.dummy]$ make .show-merged-dot-results
 
   digraph {
 
