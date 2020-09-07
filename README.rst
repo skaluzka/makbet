@@ -285,12 +285,12 @@ easily saved or redirected to file.  This can be achieved by passing
 
   [user@localhost 01.dummy]$
 
-Special **makbet's** target ``.show-summary-events-csv-file`` will display
+Special **makbet's** target ``.show-merged-csv-events`` will display
 **CSV** results which can be used for further processing:
 
 ::
 
-  [user@localhost 01.dummy]$ echo ; make .show-summary-events-csv-file
+  [user@localhost 01.dummy]$ echo ; make .show-merged-csv-events
 
   TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_EVENT_TYPE;TASK_DATE_TIME_[STARTED|TERMINATED];
   "1";"@01-INIT";"";"";"";"STARTED";"2020-08-31 23:56:00.649587995";

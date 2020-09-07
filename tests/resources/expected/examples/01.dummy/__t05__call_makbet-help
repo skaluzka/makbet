@@ -48,8 +48,8 @@ All makbet's special targets defined in /home/user/makbet/makbet.mk:
   .show-events-csv-dir           - Show entire content of makbet's internal   
                                    "events/csv" ($MAKBET_EVENTS_CSV_DIR)  
                                    dir.  This target requires MAKBET_CSV=1.   
-  .show-summary-events-csv-file  - Show the content of events summary csv     
-                                   file.  This target requires MAKBET_CSV=1.  
+  .show-merged-csv-events        - Show the merged content of all events csv  
+                                   files.  This target requires MAKBET_CSV=1. 
   .show-prof-dir                 - Show entire content of makbet's internal   
                                    "prof" dir ($MAKBET_PROF_DIR) including
                                    all sub-dirs.                              

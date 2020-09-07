@@ -366,8 +366,8 @@ endef
 .show-events-dir: .show-events-cfg-dir .show-events-csv-dir
 
 
-.PHONY: .show-summary-events-csv-file
-.show-summary-events-csv-file:
+.PHONY: .show-merged-csv-events
+.show-merged-csv-events:
 	@find $(MAKBET_EVENTS_CSV_DIR) -name "*.csv" -exec head -1 {} \; | sort -u
 	@find $(MAKBET_EVENTS_CSV_DIR) -name "*.csv" -exec tail -1 {} \; | sort
 	@echo ""
@@ -435,8 +435,8 @@ makbet-help: main-help
 	@echo "  .show-events-csv-dir           - Show entire content of makbet's internal   "
 	@echo "                                   \"events/csv\" (\$$MAKBET_EVENTS_CSV_DIR)  "
 	@echo "                                   dir.  This target requires MAKBET_CSV=1.   "
-	@echo "  .show-summary-events-csv-file  - Show the content of events summary csv     "
-	@echo "                                   file.  This target requires MAKBET_CSV=1.  "
+	@echo "  .show-merged-csv-events        - Show the merged content of all events csv  "
+	@echo "                                   files.  This target requires MAKBET_CSV=1. "
 	@echo "  .show-prof-dir                 - Show entire content of makbet's internal   "
 	@echo "                                   \"prof\" dir (\$$MAKBET_PROF_DIR) including"
 	@echo "                                   all sub-dirs.                              "
