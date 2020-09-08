@@ -138,35 +138,35 @@ $(eval $(call TASK_template, \
 $(eval $(call TASK_template, \
 	build-doxygen, "Build doxygen inside its source dir", \
 	check-all-src-dirs, \
-	$(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-doxygen.sh, \
+	$(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-doxygen.sh, \
 		$(WORK_DIR)/doxygen/doxygen-Release_1_8_19/ \
 ))
 
 $(eval $(call TASK_template, \
 	build-git, "Build git inside its source dir", \
 	build-doxygen, \
-	$(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-git.sh, \
+	$(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-git.sh, \
 		$(WORK_DIR)/git/git-2.28.0/ \
 ))
 
 $(eval $(call TASK_template, \
 	build-kcov, "Build kcov inside its source dir", \
 	build-git, \
-	$(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-kcov.sh, \
+	$(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-kcov.sh, \
 		$(WORK_DIR)/kcov/kcov-38/ \
 ))
 
 $(eval $(call TASK_template, \
 	build-make, "Build GNU Make inside its source dir", \
 	build-kcov, \
-	$(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-make.sh, \
+	$(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-make.sh, \
 		$(WORK_DIR)/make/make-4.3/ \
 ))
 
 $(eval $(call TASK_template, \
 	build-python, "Build python inside its source dir", \
 	build-make, \
-	$(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-python.sh, \
+	$(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-python.sh, \
 		$(WORK_DIR)/python/Python-3.9.0b5/ \
 ))
 

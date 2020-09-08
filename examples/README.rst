@@ -68,7 +68,7 @@ case.  In fact, the real differences between **02.toolchain-simple** and
 **03.toolchain-advanced** examples are the ``Makefile`` files which both have
 different constructions.  **03.toolchain-advanced** example uses more advanced
 syntax in its ``Makefile`` file.  However both examples share the same set of
-tasks from ``examples/lib/tasks/02.toolchain/common/`` directory.  Two different
+tasks from ``examples/lib/tasks/build-scripts/`` directory.  Two different
 versions of the same scenario have been created for comparison and testing
 purposes.  As expected final results for both **02.toolchain-simple** and
 **03.toolchain-advanced** should be the same.
@@ -214,26 +214,26 @@ where:
 
 |
 
-- ``lib/tasks/02.toolchain/common/`` - Separate directory containing all tasks
+- ``lib/tasks/build-scripts/`` - Separate directory containing all tasks
   common for both **02.toolchain-simple** and **03.toolchain-advanced**
   examples.
-- ``lib/tasks/02.toolchain/common/build-doxygen.sh`` - This **Bash** script is
+- ``lib/tasks/build-scripts/build-doxygen.sh`` - This **Bash** script is
   used by **two** ``build-doxygen`` tasks (defined in **02.toolchain-simple**
   and **03.toolchain-advanced** examples).  Its aim is to build
   **doxygen 1.8.19** from previously downloaded sources.
-- ``lib/tasks/02.toolchain/common/build-git.sh`` - This **Bash** script is used
+- ``lib/tasks/build-scripts/build-git.sh`` - This **Bash** script is used
   by **two** ``build-git`` tasks (defined in **02.toolchain-simple** and
   **03.toolchain-advanced** examples).  Its aim is to build **git 2.28.0** from
   previously downloaded sources.
-- ``lib/tasks/02.toolchain/common/build-kcov.sh`` - This **Bash** script is used
+- ``lib/tasks/build-scripts/build-kcov.sh`` - This **Bash** script is used
   by **two** ``build-kcov`` tasks (defined in **02.toolchain-simple** and
   **03.toolchain-advanced** examples).  Its aim is to build **kcov 38** from
   previously downloaded sources.
-- ``lib/tasks/02.toolchain/common/build-make.sh`` - This **Bash** script is used
+- ``lib/tasks/build-scripts/build-make.sh`` - This **Bash** script is used
   by **two** ``build-make`` tasks (defined in **02.toolchain-simple** and
   **03.toolchain-advanced** examples).  Its aim is to build **make 4.3** from
   previously downloaded sources.
-- ``lib/tasks/02.toolchain/common/build-python.sh`` - This **Bash** script is
+- ``lib/tasks/build-scripts/build-python.sh`` - This **Bash** script is
   used by **two** ``build-python`` tasks (defined in **02.toolchain-simple** and
   **03.toolchain-advanced** examples).  Its aim is to build **python 3.9.0b5**
   from previously downloaded sources.

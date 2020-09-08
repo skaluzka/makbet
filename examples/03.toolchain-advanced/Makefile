@@ -55,11 +55,11 @@ KCOV_UNPACK_DIR := $(KCOV_DIR)/kcov-38
 MAKE_UNPACK_DIR := $(MAKE_DIR)/make-4.3
 PYTHON_UNPACK_DIR := $(PYTHON_DIR)/Python-3.9.0b5
 
-BUILD_DOXYGEN := $(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-doxygen.sh
-BUILD_GIT := $(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-git.sh
-BUILD_KCOV := $(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-kcov.sh
-BUILD_MAKE := $(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-make.sh
-BUILD_PYTHON := $(MAKBET_PATH)/examples/lib/tasks/02.toolchain/common/build-python.sh
+BUILD_DOXYGEN := $(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-doxygen.sh
+BUILD_GIT := $(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-git.sh
+BUILD_KCOV := $(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-kcov.sh
+BUILD_MAKE := $(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-make.sh
+BUILD_PYTHON := $(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-python.sh
 
 CHECK_FILES := $(MAKBET_TASKS_DIR)/common/check-files.sh
 
