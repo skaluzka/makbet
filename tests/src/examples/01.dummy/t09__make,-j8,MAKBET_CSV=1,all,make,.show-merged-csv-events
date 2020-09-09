@@ -7,17 +7,19 @@ set -x
 readonly output_file="${1}"
 readonly expected_file="${2}"
 pushd "${MAKBET_PATH}/examples/01.dummy/" > /dev/null
-make makbet-clean && make -j8 MAKBET_DOT=1 all
-make .show-merged-dot-results > "${output_file}"
+make makbet-clean
+make -j8 MAKBET_CSV=1 all
+make .show-merged-csv-events > "${output_file}"
 diff -u -s \
     <( \
         cat "${output_file}" \
-        | sed '1d;4,6d;10d;48d' \
+        | cut -d ";" -f1-3,5-6 \
         | nl -b a \
+        | sed '26d' \
     ) \
     <( \
         cat "${expected_file}" \
-        | sed '3,5d;9d' \
+        | cut -d ";" -f1-3,5-6 \
         | nl -b a \
     )
 readonly __rc=$?

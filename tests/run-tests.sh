@@ -39,7 +39,7 @@ mkdir -pv "${MAKBET_TESTS_LOGS_DIR}"
 echo "[INFO]: CWD=${CWD}"
 
 # Build file list.
-readonly FILE_LIST=$( find "${MAKBET_TESTS_SRC_DIR}" -type f -iname "__t[0-9][0-9]__*" | sort )
+readonly FILE_LIST=$( find "${MAKBET_TESTS_SRC_DIR}" -type f -iname "t[0-9][0-9]__make*" | sort )
 
 # Declare some counter variables.
 file_counter=0
