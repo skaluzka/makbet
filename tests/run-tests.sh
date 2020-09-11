@@ -27,6 +27,13 @@ export MAKBET_TESTS_LOGS_DIR="${MAKBET_TESTS_DIR}/logs"
 # OK, Let's play!
 #
 
+# Print some extra debug messages.
+echo "[INFO]: CWD=${CWD}"
+echo ""
+
+echo "[INFO]: Preparing directory structure..."
+echo ""
+
 # Prepare empty .../tests/output/ directory.
 rm -rf "${MAKBET_TESTS_OUTPUT_DIR}"
 mkdir -pv "${MAKBET_TESTS_OUTPUT_DIR}"
@@ -34,9 +41,6 @@ mkdir -pv "${MAKBET_TESTS_OUTPUT_DIR}"
 # Prepare empty .../tests/logs/ directory.
 rm -rf "${MAKBET_TESTS_LOGS_DIR}"
 mkdir -pv "${MAKBET_TESTS_LOGS_DIR}"
-
-# Print some extra debug messages.
-echo "[INFO]: CWD=${CWD}"
 
 # Build file list.
 readonly FILE_LIST=$( find "${MAKBET_TESTS_SRC_DIR}" -type f -iname "t[0-9][0-9]__make*" | sort )
