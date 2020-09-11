@@ -7,7 +7,7 @@ set -x
 readonly output_file="${1}"
 readonly expected_file="${2}"
 pushd "${MAKBET_PATH}" > /dev/null
-make -f makbet.mk MAKBET_VERBOSE=0 help > "${output_file}"
+make -f "makbet.mk" MAKBET_VERBOSE=0 help > "${output_file}"
 diff -u -s \
     <( \
         cat "${output_file}" \
