@@ -34,11 +34,11 @@ echo ""
 echo "[INFO]: Preparing directory structure..."
 echo ""
 
-# Prepare empty .../tests/output/ directory.
+# Prepare empty ./tests/output/ directory.
 rm -rf "${MAKBET_TESTS_OUTPUT_DIR}"
 mkdir -pv "${MAKBET_TESTS_OUTPUT_DIR}"
 
-# Prepare empty .../tests/logs/ directory.
+# Prepare empty ./tests/logs/ directory.
 rm -rf "${MAKBET_TESTS_LOGS_DIR}"
 mkdir -pv "${MAKBET_TESTS_LOGS_DIR}"
 
@@ -70,10 +70,10 @@ time {
         output_subdir=$( dirname "${__file_path//src/output}" )
         output_file_path="${output_subdir}/${__file_name}.out"
 
-        # Create directory structure inside .../tests/logs/ dir.
+        # Create directory structure inside ./tests/logs/ dir.
         mkdir -p "${logs_subdir}"
 
-        # Create directory structure inside .../tests/output/ dir.
+        # Create directory structure inside ./tests/output/ dir.
         mkdir -p "${output_subdir}"
 
         # Disable errors handling.
