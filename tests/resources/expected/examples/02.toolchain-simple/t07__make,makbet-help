@@ -1,0 +1,73 @@
+
+makbet heads/master-0-g1870ed8                                                      
+
+  "What's done, is done." - William Shakespeare, Macbeth.                   
+
+Usage: make [TARGET]                                                          
+
+All makbet's basic targets defined in /home/user/makbet/makbet.mk:               
+
+  help                           - Show main makbet's help message as first   
+                                   then append the help messages of all tasks 
+                                   defined in scenario's Makefile.  This is   
+                                   the default target.                        
+  scenario-help                  - Show only scenario's help message (it is   
+                                   generated dynamically based on all tasks   
+                                   defined in scenario's Makefile file).      
+  makbet-help                    - Show main makbet's help message (same as   
+                                   "make help" above) then append extended  
+                                   help message containing the list of all    
+                                   special makbet's targets.                  
+  makbet-clean                   - Clean entire makbet's internal cache dir   
+                                   ($MAKBET_CACHE_DIR).                     
+  makbet-version                 - Print makbet's version only.               
+
+  Examples:                                                                   
+           make                                                               
+           make help                                                          
+           make scenario-help                                                 
+           make makbet-help                                                   
+           make makbet-clean                                                  
+           make makbet-version                                                
+
+All makbet's special targets defined in /home/user/makbet/makbet.mk:             
+
+  .show-cache-dir                - Show entire content of makbet's internal   
+                                   cache dir ($MAKBET_CACHE_DIR).           
+  .show-dot-dir                  - Show entire content of makbet's internal   
+                                   "dot" dir ($MAKBET_DOT_DIR).  This     
+                                   target requires MAKBET_DOT=1.              
+  .show-merged-dot-results       - Show the merged content of all dot files.  
+                                   This target requires MAKBET_DOT=1.         
+  .show-events-dir               - Show entire content of makbet's internal   
+                                   "events" dir ($MAKBET_EVENTS_DIR)      
+                                   including all sub-dirs.                    
+  .show-events-cfg-dir           - Show entire content of makbet's internal   
+                                   "events/cfg" ($MAKBET_EVENTS_CFG_DIR)  
+                                   dir.                                       
+  .show-events-csv-dir           - Show entire content of makbet's internal   
+                                   "events/csv" ($MAKBET_EVENTS_CSV_DIR)  
+                                   dir.  This target requires MAKBET_CSV=1.   
+  .show-merged-csv-events        - Show the merged content of all events csv  
+                                   files.  This target requires MAKBET_CSV=1. 
+  .show-prof-dir                 - Show entire content of makbet's internal   
+                                   "prof" dir ($MAKBET_PROF_DIR) including
+                                   all sub-dirs.                              
+  .show-prof-cfg-dir             - Show entire content of makbet's internal   
+                                   "prof/cfg" dir ($MAKBET_PROF_CFG_DIR). 
+                                   This target requires MAKBET_PROF=1.        
+  .show-prof-csv-dir             - Show entire content of makbet's internal   
+                                   "prof/csv" dir ($MAKBET_PROF_CSV_DIR). 
+                                   This target requires MAKBET_PROF=1 and     
+                                   MAKBET_CSV=1.                              
+  .show-summary-prof-csv-file    - Show the content of prof summary csv file. 
+                                   This target requires MAKBET_CSV=1 and      
+                                   MAKBET_PROF=1.                             
+  .show-env-vars                 - Show all MAKBET_* environment variables    
+                                   available during processing makbet.mk file.
+
+  Examples:                                                                   
+           make .show-env-vars                                                
+           make .show-cache-dir                                               
+           make .show-summary-prof-csv-file MAKBET_CSV=1 MAKBET_PROF=1        
+
