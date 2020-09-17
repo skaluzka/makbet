@@ -1,0 +1,76 @@
+
+makbet heads/master-0-g4bde29c                                                      
+
+  "What's done, is done." - William Shakespeare, Macbeth.                   
+
+Usage: make [TARGET]                                                          
+
+All makbet's basic targets defined in /home/user/makbet//makbet.mk:               
+
+  help                           - Show main makbet's help message as first   
+                                   then append the help messages of all tasks 
+                                   defined in scenario's Makefile.  This is   
+                                   the default target.                        
+  scenario-help                  - Show only scenario's help message (it is   
+                                   generated dynamically based on all tasks   
+                                   defined in scenario's Makefile file).      
+  makbet-help                    - Show main makbet's help message (same as   
+                                   "make help" above) then append extended  
+                                   help message containing the list of all    
+                                   special makbet's targets.                  
+  makbet-clean                   - Clean entire makbet's internal cache dir   
+                                   ($MAKBET_CACHE_DIR).                     
+  makbet-version                 - Print makbet's version only.               
+
+  Examples:                                                                   
+           make                                                               
+           make help                                                          
+           make scenario-help                                                 
+           make makbet-help                                                   
+           make makbet-clean                                                  
+           make makbet-version                                                
+
+Found 6 valid task(s) defined in /home/user/makbet/examples/04.ping-dns-servers/Makefile:
+
+  @01-INIT
+    - Id.:   1
+    - Descr: "Entry point"
+    - Deps:  
+    - Cmd:   
+    - Opts:  
+
+  ping1111
+    - Id.:   2
+    - Descr: "Ping 1.1.1.1 dns server"
+    - Deps:  @01-INIT
+    - Cmd:   ping
+    - Opts:  -c10 1.1.1.1
+
+  ping8844
+    - Id.:   3
+    - Descr: "Ping 8.8.4.4 dns server"
+    - Deps:  @01-INIT
+    - Cmd:   ping
+    - Opts:  -c4 8.8.4.4
+
+  ping8888
+    - Id.:   4
+    - Descr: "Ping 8.8.8.8 dns server"
+    - Deps:  @01-INIT
+    - Cmd:   ping
+    - Opts:  -c4 8.8.8.8
+
+  ping-all
+    - Id.:   5
+    - Descr: "Ping all dns servers"
+    - Deps:  ping1111 ping8844 ping8888
+    - Cmd:   
+    - Opts:  
+
+  all
+    - Id.:   6
+    - Descr: "Ping all dns servers"
+    - Deps:  ping1111 ping8844 ping8888
+    - Cmd:   
+    - Opts:  
+
