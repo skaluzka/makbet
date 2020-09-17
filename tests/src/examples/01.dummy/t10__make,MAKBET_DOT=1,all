@@ -9,7 +9,10 @@ readonly expected_file="${2}"
 pushd "${MAKBET_PATH}/examples/01.dummy/" > /dev/null
 make makbet-clean
 make MAKBET_DOT=1 all
-tree -F "${MAKBET_CACHE_DIR}" > "${output_file}"
+
+tree -F "${MAKBET_CACHE_DIR}" \
+    > "${output_file}"
+
 diff -u -s \
     <( \
         cat "${output_file}" \

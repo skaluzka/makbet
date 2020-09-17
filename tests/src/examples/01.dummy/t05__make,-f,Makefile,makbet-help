@@ -7,9 +7,10 @@ set -x
 readonly output_file="${1}"
 readonly expected_file="${2}"
 pushd "${MAKBET_TESTS_LOGS_DIR}" > /dev/null
-make -f "${MAKBET_PATH}/examples/01.dummy/Makefile" \
-    makbet-help \
+
+make -f "${MAKBET_PATH}/examples/01.dummy/Makefile" makbet-help \
     > "${output_file}"
+
 diff -u -s \
     <( \
         cat "${output_file}" \

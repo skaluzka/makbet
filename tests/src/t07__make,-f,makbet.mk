@@ -7,7 +7,10 @@ set -x
 readonly output_file="${1}"
 readonly expected_file="${2}"
 pushd "${MAKBET_TESTS_DIR}" > /dev/null
-make -f "../makbet.mk" > "${output_file}"
+
+make -f "../makbet.mk" \
+    > "${output_file}"
+
 diff -u -s \
     <( \
         cat "${output_file}" \

@@ -9,7 +9,10 @@ readonly expected_file="${2}"
 pushd "${MAKBET_PATH}/examples/01.dummy/" > /dev/null
 make makbet-clean
 make -j8 MAKBET_CSV=1 all
-make .show-merged-csv-events > "${output_file}"
+
+make .show-merged-csv-events \
+    > "${output_file}"
+
 diff -u -s \
     <( \
         cat "${output_file}" \
