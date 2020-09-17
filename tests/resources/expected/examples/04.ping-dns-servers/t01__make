@@ -5,7 +5,7 @@ makbet heads/master-0-g4bde29c
 
 Usage: make [TARGET]                                                          
 
-All makbet's basic targets defined in /home/user/makbet//makbet.mk:               
+All makbet's basic targets defined in /home/user/makbet/makbet.mk:               
 
   help                           - Show main makbet's help message as first   
                                    then append the help messages of all tasks 
