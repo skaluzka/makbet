@@ -1,0 +1,185 @@
+
+Found 26 valid task(s) defined in /home/user/makbet/examples/03.toolchain-advanced/Makefile:
+
+  @01-INIT
+    - Id.:   1
+    - Descr: "Entry point"
+    - Deps:  
+    - Cmd:   
+    - Opts:  
+
+  clean
+    - Id.:   2
+    - Descr: "Remove /tmp/makbet/examples/03.toolchain-advanced dir"
+    - Deps:  
+    - Cmd:   rm
+    - Opts:  -rfv /tmp/makbet/examples/03.toolchain-advanced
+
+  prepare-workdir-structure
+    - Id.:   3
+    - Descr: "Prepare initial dir structure"
+    - Deps:  @01-INIT
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/create-dir-structure.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/doxygen /tmp/makbet/examples/03.toolchain-advanced/git /tmp/makbet/examples/03.toolchain-advanced/kcov /tmp/makbet/examples/03.toolchain-advanced/make /tmp/makbet/examples/03.toolchain-advanced/python
+
+  fetch-doxygen-src
+    - Id.:   4
+    - Descr: "Fetch doxygen sources"
+    - Deps:  prepare-workdir-structure
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/download-file.sh
+    - Opts:  https://github.com/doxygen/doxygen/archive/Release_1_8_19.zip /tmp/makbet/examples/03.toolchain-advanced/doxygen/Release_1_8_19.zip
+
+  fetch-git-src
+    - Id.:   5
+    - Descr: "Fetch git sources"
+    - Deps:  prepare-workdir-structure
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/download-file.sh
+    - Opts:  https://github.com/git/git/archive/v2.28.0.zip /tmp/makbet/examples/03.toolchain-advanced/git/v2.28.0.zip
+
+  fetch-kcov-src
+    - Id.:   6
+    - Descr: "Fetch kcov sources"
+    - Deps:  prepare-workdir-structure
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/download-file.sh
+    - Opts:  https://github.com/SimonKagstrom/kcov/archive/38.zip /tmp/makbet/examples/03.toolchain-advanced/kcov/38.zip
+
+  fetch-make-src
+    - Id.:   7
+    - Descr: "Fetch GNU Make sources"
+    - Deps:  prepare-workdir-structure
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/download-file.sh
+    - Opts:  http://ftp.gnu.org/gnu/make/make-4.3.tar.gz /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3.tar.gz
+
+  fetch-python-src
+    - Id.:   8
+    - Descr: "Fetch python sources"
+    - Deps:  prepare-workdir-structure
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/download-file.sh
+    - Opts:  https://www.python.org/ftp/python/3.9.0/Python-3.9.0b5.tar.xz /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0b5.tar.xz
+
+  unpack-doxygen-src
+    - Id.:   9
+    - Descr: "Unpack doxygen sources"
+    - Deps:  fetch-doxygen-src
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/uncompress-zip-file.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/doxygen/Release_1_8_19.zip /tmp/makbet/examples/03.toolchain-advanced/doxygen/
+
+  unpack-git-src
+    - Id.:   10
+    - Descr: "Unpack git sources"
+    - Deps:  fetch-git-src
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/uncompress-zip-file.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/git/v2.28.0.zip /tmp/makbet/examples/03.toolchain-advanced/git/
+
+  unpack-kcov-src
+    - Id.:   11
+    - Descr: "Unpack kcov sources"
+    - Deps:  fetch-kcov-src
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/uncompress-zip-file.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/kcov/38.zip /tmp/makbet/examples/03.toolchain-advanced/kcov/
+
+  unpack-make-src
+    - Id.:   12
+    - Descr: "Unpack GNU Make sources"
+    - Deps:  fetch-make-src
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/uncompress-tgz-file.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3.tar.gz /tmp/makbet/examples/03.toolchain-advanced/make/
+
+  unpack-python-src
+    - Id.:   13
+    - Descr: "Unpack python sources"
+    - Deps:  fetch-python-src
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/uncompress-txz-file.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0b5.tar.xz /tmp/makbet/examples/03.toolchain-advanced/python/
+
+  check-all-src-dirs
+    - Id.:   14
+    - Descr: "Check all source code dirs"
+    - Deps:  unpack-doxygen-src unpack-git-src unpack-kcov-src unpack-make-src unpack-python-src
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/check-dirs.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_8_19/ /tmp/makbet/examples/03.toolchain-advanced/git/git-2.28.0/ /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/ /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/ /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0b5/
+
+  build-doxygen
+    - Id.:   15
+    - Descr: "Build doxygen inside its source dir"
+    - Deps:  check-all-src-dirs
+    - Cmd:   /home/user/makbet/examples/lib/tasks/build-scripts/build-doxygen.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_8_19/
+
+  build-git
+    - Id.:   16
+    - Descr: "Build git inside its source dir"
+    - Deps:  build-doxygen
+    - Cmd:   /home/user/makbet/examples/lib/tasks/build-scripts/build-git.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/git/git-2.28.0/
+
+  build-kcov
+    - Id.:   17
+    - Descr: "Build kcov inside its source dir"
+    - Deps:  build-git
+    - Cmd:   /home/user/makbet/examples/lib/tasks/build-scripts/build-kcov.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/
+
+  build-make
+    - Id.:   18
+    - Descr: "Build GNU Make inside its source dir"
+    - Deps:  build-kcov
+    - Cmd:   /home/user/makbet/examples/lib/tasks/build-scripts/build-make.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/
+
+  build-python
+    - Id.:   19
+    - Descr: "Build python inside its source dir"
+    - Deps:  build-make
+    - Cmd:   /home/user/makbet/examples/lib/tasks/build-scripts/build-python.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0b5/
+
+  check-build-binaries
+    - Id.:   20
+    - Descr: "Check the presence of all built binaries"
+    - Deps:  build-doxygen build-git build-kcov build-make
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/check-files.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_8_19/build/bin/doxygen /tmp/makbet/examples/03.toolchain-advanced/git/git-2.28.0/git /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/build/src/kcov /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/make /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0b5/python
+
+  print-doxygen-version
+    - Id.:   21
+    - Descr: "Print version of doxygen from source dir"
+    - Deps:  build-doxygen
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/exec-cmd.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_8_19/build/bin/doxygen --version
+
+  print-git-version
+    - Id.:   22
+    - Descr: "Print version of git from source dir"
+    - Deps:  build-git
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/exec-cmd.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/git/git-2.28.0/git --version
+
+  print-kcov-version
+    - Id.:   23
+    - Descr: "Print version of kcov from source dir"
+    - Deps:  build-kcov
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/exec-cmd.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/build/src/kcov --version
+
+  print-make-version
+    - Id.:   24
+    - Descr: "Print version of GNU Make from source dir"
+    - Deps:  build-make
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/exec-cmd.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/make --version
+
+  print-python-version
+    - Id.:   25
+    - Descr: "Print version of python from source dir"
+    - Deps:  build-python
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/exec-cmd.sh
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0b5/python -V
+
+  build-all
+    - Id.:   26
+    - Descr: "Checkpoint for all build-* tasks"
+    - Deps:  build-doxygen build-git build-kcov build-make build-python
+    - Cmd:   
+    - Opts:  
+
