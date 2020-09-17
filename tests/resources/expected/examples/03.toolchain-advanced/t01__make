@@ -30,7 +30,7 @@ All makbet's basic targets defined in /home/user/makbet/makbet.mk:
            make makbet-clean                                                  
            make makbet-version                                                
 
-Found 26 valid task(s) defined in /home/c0rejump/data/devel/skaluzka/makbet/examples/03.toolchain-advanced/Makefile:
+Found 26 valid task(s) defined in /home/user/makbet/examples/03.toolchain-advanced/Makefile:
 
   @01-INIT
     - Id.:   1
