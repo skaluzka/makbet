@@ -180,7 +180,7 @@ results which can be used for further processing:
 
   // Graph title.
   labelloc="t";
-  label="Scenario file: /home/user/makbet/examples/01.dummy/Makefile\n\n\n\n"
+  label="Scenario file: /home/user/makbet/examples/01.dummy/Makefile\n\n\n\n";
 
   // Node options.
   node [shape=box];
