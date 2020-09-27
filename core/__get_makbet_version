@@ -5,7 +5,8 @@ set -u
 set +e
 if [ -d "${MAKBET_PATH}/.git" ]
 then
-    git describe --all --long 2> /dev/null
+    readonly LAST_COMMIT_DETAILS="$(git log -1 --format="g%h-%cI")"
+    echo "$(cat "${MAKBET_PATH}/VERSION")-${LAST_COMMIT_DETAILS}"
 else
     cat "${MAKBET_PATH}/VERSION"
 fi
