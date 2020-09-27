@@ -338,7 +338,7 @@ endef
 	@echo ""
 	@echo "// Graph title."
 	@echo "labelloc=\"t\";"
-	@echo "label=\"Scenario file: $(MAKBET_SCENARIO_PATH)\\n\\n\\n\\n\"";
+	@echo "label=\"Scenario file: $(MAKBET_SCENARIO_PATH)\\n\\n\\n\\n\";"
 	@echo ""
 	@echo "// Node options."
 	@echo "node [shape=box];"

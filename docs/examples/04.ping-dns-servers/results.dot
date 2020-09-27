@@ -6,7 +6,7 @@ digraph {
 
 // Graph title.
 labelloc="t";
-label="Scenario file: /home/user/makbet/examples/04.ping-dns-servers/Makefile\n\n\n\n"
+label="Scenario file: /home/user/makbet/examples/04.ping-dns-servers/Makefile\n\n\n\n";
 
 // Node options.
 node [shape=box];

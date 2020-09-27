@@ -6,7 +6,7 @@ digraph {
 
 // Graph title.
 labelloc="t";
-label="Scenario file: /home/user/makbet/examples/03.toolchain-advanced/Makefile\n\n\n\n"
+label="Scenario file: /home/user/makbet/examples/03.toolchain-advanced/Makefile\n\n\n\n";
 
 // Node options.
 node [shape=box];
