@@ -130,7 +130,7 @@ major release has been published so far).
 There are a couple of quite nice improvements already proposed for **makbet**,
 see the details `here <https://github.com/skaluzka/makbet/issues>`_.  Therefore
 there is no guarantee that backward compatibility will be kept all the time
-(at least until the first official version will be released).
+(at least until the first major version will be released).
 
 |
 
