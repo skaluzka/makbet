@@ -1,0 +1,76 @@
+digraph {
+
+    rankdir="BT";
+    edge [minlen="1" maxlen="1"]
+
+    labelloc="t";
+    label="Branching convention used in makbet's development and release processes\n\n\n\n";
+
+    master [shape=plaintext label="master"];
+    A01 [shape=circle label=A01];
+    A02 [shape=circle label=A02];
+    A03 [shape=circle label=A03];
+    A04 [shape=circle label=A04];
+    A05 [shape=circle label=A05];
+    A06 [shape=circle label=A06];
+    A07 [shape=circle label=A07];
+    A08 [shape=circle label=A08];
+    A09 [shape=circle label=A09];
+    A10 [shape=circle label=A10];
+    A11 [shape=circle label=A11];
+    A12 [shape=circle label=A12];
+    A13 [shape=circle label=A13];
+    A14 [shape=circle label=A14];
+
+    A01 -> master [style="dashed" arrowhead="none"];
+    A02 -> A01;
+    A03 -> A02;
+    A04 -> A03;
+    A05 -> A04;
+    A06 -> A05;
+    A07 -> A06;
+    A08 -> A07;
+    A09 -> A08;
+    A10 -> A09;
+    A11 -> A10;
+    A12 -> A11;
+    A13 -> A12;
+    A14 -> A13;
+
+
+    stable01x [shape=plaintext label="stable/v0.1.x"];
+    B01 [shape=circle label=B01];
+    B02 [shape=circle label=B02];
+    B03 [shape=circle label=B03];
+    B04 [shape=circle label=B04];
+
+    B01 -> stable01x [style="dashed" arrowhead="none"];
+    B01 -> A05 [minlen="5"];
+    B02 -> B01;
+    B03 -> B02;
+    B04 -> B03;
+
+    stable02x [shape=plaintext label="stable/v0.2.x"];
+    C01 [shape=circle label=C01];
+    C02 [shape=circle label=C02];
+    C03 [shape=circle label=C03];
+    C04 [shape=circle label=C04];
+
+    C01 -> stable02x [style="dashed" arrowhead="none"];
+    C01 -> A10 [minlen="15"];
+    C02 -> C01;
+    C03 -> C02;
+    C04 -> C03;
+
+    {rank=same master stable01x stable02x};
+    {rank=same A05 B01}
+    {rank=same A06 B02}
+    {rank=same A07 B03}
+    {rank=same A08 B04}
+    {rank=same A10 C01}
+    {rank=same A13 C04}
+
+}
+
+
+// End of file
