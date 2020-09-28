@@ -37,8 +37,8 @@ linear history of commits, on that branch, as much as possible.
 **Commit types**
 ----------------
 
-For simplification we are distinguish only **three** type of commits in
-**makbet** project:
+To make development process simple and fast we are distinguish only **three**
+type of commits in **makbet** project:
 
 #. | Pure development commits - regular but small and reasonable updates,
      changes or enhancements including minor refactoring as well.  All of them
@@ -92,7 +92,7 @@ convention.  Please see the table below:
    :header: The GitHub issue, Suggested branch name
    :delim: |
 
-   `#2 <https://github.com/skaluzka/makbet/issues/2>`_ | users/sa7an/issues/2
+   `#2 <https://github.com/skaluzka/makbet/issues/2>`_ | users/skaluzka/issues/2
    `#3 <https://github.com/skaluzka/makbet/issues/3>`_ | users/skaluzka/issues/3
 
 |
