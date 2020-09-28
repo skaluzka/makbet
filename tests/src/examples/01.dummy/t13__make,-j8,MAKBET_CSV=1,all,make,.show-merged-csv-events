@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2002,SC2164
+set -u
+set -x
+
+
+readonly output_file="${1}"
+readonly expected_file="${2}"
+pushd "${MAKBET_PATH}/examples/01.dummy/" > /dev/null
+make makbet-clean
+make -j8 MAKBET_CSV=1 all
+
+make .show-merged-csv-events \
+    > "${output_file}"
+
+diff -u -s \
+    <( \
+        head -1 "${output_file}" \
+        | nl -b a \
+    ) \
+    <( \
+        head -1 "${expected_file}" \
+        | nl -b a \
+    )
+readonly __rc=$?
+popd > /dev/null
+exit ${__rc}
+
+
+# End of file
