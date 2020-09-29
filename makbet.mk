@@ -70,7 +70,7 @@ else ifeq ($(MAKBET_VERBOSE), 2)
   _v1 := 1
   _q :=
 else
-  $(error [ERROR]: Wrong value for MAKBET_VERBOSE option (MAKBET_VERBOSE=$(MAKBET_VERBOSE)).  Allowed values: 0, 1 or 2 only)
+  $(error [ERROR]: Wrong input for MAKBET_VERBOSE option!  Expected value: {0|1|2} (found MAKBET_VERBOSE=$(MAKBET_VERBOSE)))
 endif
 
 #
@@ -84,7 +84,7 @@ ifeq ($(MAKBET_PROF), 0)
 else ifeq ($(MAKBET_PROF), 1)
   _p := 1
 else
-  $(error [ERROR]: Wrong value for MAKBET_PROF option (MAKBET_PROF=$(MAKBET_PROF)).  Allowed values: 0 or 1 only)
+  $(error [ERROR]: Wrong input for MAKBET_PROF option!  Expected value: {0|1} (found MAKBET_PROF=$(MAKBET_PROF)))
 endif
 
 #
@@ -98,7 +98,7 @@ ifeq ($(MAKBET_DOT), 0)
 else ifeq ($(MAKBET_DOT), 1)
   _d := 1
 else
-  $(error [ERROR]: Wrong value for MAKBET_DOT option (MAKBET_DOT=$(MAKBET_DOT)).  Allowed values: 0 or 1 only)
+  $(error [ERROR]: Wrong input for MAKBET_DOT option!  Expected value: {0|1} (found MAKBET_DOT=$(MAKBET_DOT)))
 endif
 
 #
@@ -125,7 +125,7 @@ else ifeq ($(MAKBET_CSV), 1)
     MAKBET_PROF_CSV_HEADER := TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_DATE_TIME_STARTED;TASK_DATE_TIME_TERMINATED;TASK_DURATION;
   endif
 else
-  $(error [ERROR]: Wrong value for MAKBET_CSV option (MAKBET_CSV=$(MAKBET_CSV)).  Allowed values: 0 or 1 only)
+  $(error [ERROR]: Wrong input for MAKBET_CSV option!  Expected value: {0|1} (found MAKBET_CSV=$(MAKBET_CSV)))
 endif
 
 #
