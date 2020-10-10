@@ -513,7 +513,7 @@ scenario-help::
 	fi
 
 
-# This is makbet's main help target (see also the DEFAULT_GOAL at the top).
+# This is makbet's default help target (see also the DEFAULT_GOAL at the top).
 .PHONY: help
 help: main-help scenario-help
 
