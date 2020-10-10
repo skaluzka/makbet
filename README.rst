@@ -23,6 +23,7 @@ Keep reading && have fun! :)
 - | `PNG output`_
 - | `CSV output`_
 - | `Profiling`_
+- | `Saving profiling results in CSV files`_
 - | `References`_
 - | `Contributing`_
 - | `License`_
@@ -341,29 +342,43 @@ execution command (by default ``MAKBET_PROF=0``) as in example below:
 
   [user@t460p 01.dummy]$ make makbet-clean && make all MAKBET_PROF=1
 
-  2020-10-10 18:20:47.143 [INFO]: Task "@01-INIT" (TASK_ID: 1) started.
+  2020-10-10 19:53:24.373 [INFO]: Task "@01-INIT" (TASK_ID: 1) started.
 
 
-  2020-10-10 18:20:47.161 [INFO]: Task "@01-INIT" (TASK_ID: 1) terminated.
+  2020-10-10 19:53:24.391 [INFO]: Task "@01-INIT" (TASK_ID: 1) terminated.
 
   Profiling results:
-  T1 = 1602346847.143565328
-  T2 = 1602346847.161162307
-  T2 - T1 = 00h:00m:00s.017ms
+  T1 = 1602352404.373039503
+  T2 = 1602352404.391242333
+  T2 - T1 = 00h:00m:00s.018ms
 
-  2020-10-10 18:20:47.244 [INFO]: Task "task-A" (TASK_ID: 2) started.
+  2020-10-10 19:53:24.490 [INFO]: Task "task-A" (TASK_ID: 2) started.
+
+  Script opts:
+  PATH (${0}) = /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+  SLEEP (${1}) = 1
+  EXIT_CODE (${2}) = 0
+
+  2020-10-10 19:53:25.524 [INFO]: Task "task-A" (TASK_ID: 2) terminated.
+
+  Profiling results:
+  T1 = 1602352404.490856272
+  T2 = 1602352405.524938384
+  T2 - T1 = 00h:00m:01s.034ms
+
+  2020-10-10 19:53:25.680 [INFO]: Task "task-B1" (TASK_ID: 3) started.
 
   ...
 
-  2020-10-10 18:20:57.680 [INFO]: Task "all" (TASK_ID: 13) started.
+  2020-10-10 19:53:35.123 [INFO]: Task "all" (TASK_ID: 13) started.
 
 
-  2020-10-10 18:20:57.698 [INFO]: Task "all" (TASK_ID: 13) terminated.
+  2020-10-10 19:53:35.143 [INFO]: Task "all" (TASK_ID: 13) terminated.
 
   Profiling results:
-  T1 = 1602346857.680028075
-  T2 = 1602346857.698575943
-  T2 - T1 = 00h:00m:00s.018ms
+  T1 = 1602352415.123305878
+  T2 = 1602352415.143659530
+  T2 - T1 = 00h:00m:00s.020ms
   [user@t460p 01.dummy]$ 
 
 **makbet** measures the duration of tasks with **milliseconds** accuracy.
@@ -372,6 +387,7 @@ When ``MAKBET_PROF=1`` is passed to the ``make`` command then **makbet** will
 save some additional **cfg** files during the runtime.  All these files will be
 saved in ``.cache/prof/cfg/`` directory and can be seen by invoking one of
 **makbet's** special targets: ``.show-prof-dir`` or ``.show-prof-cfg-dir``.
+
 For example:
 
 ::
@@ -397,23 +413,183 @@ For example:
   0 directories, 0 files
   [user@t460p 01.dummy]$ 
 
-An example content of profiling file (for **all** target):
+An example content of **cfg** profiling file (target ``all``):
 
 ::
 
-  [user@t460p 01.dummy]$ cat /home/user/makbet/.cache/prof/cfg/all.cfg
+  [user@t460p 01.dummy]$ echo ; cat /home/user/makbet/.cache/prof/cfg/all.cfg ; echo
+
   TASK_ID="13"
   TASK_NAME="all"
   TASK_DEPS="task-F"
   TASK_CMD=""
   TASK_CMD_OPTS=""
-  TASK_DATE_TIME_STARTED="2020-10-10 18:20:57.680028075"
-  TASK_DATE_TIME_TERMINATED="2020-10-10 18:20:57.698575943"
-  TASK_DURATION=00h:00m:00s.018ms
+  TASK_DATE_TIME_STARTED="2020-10-10 19:53:35.123305878"
+  TASK_DATE_TIME_TERMINATED="2020-10-10 19:53:35.143659530"
+  TASK_DURATION=00h:00m:00s.020ms
+
   [user@t460p 01.dummy]$ 
 
-Every profiling **cfg** file has so-called **key=value** format and can be
+Every **cfg** profiling file has so-called **key=value** format and can be
 easily used for further preprocessing if needed.
+
+|
+
+Saving profiling results in CSV files
+-------------------------------------
+
+Profiling results can be also saved in **CSV** format by combining option
+``MAKBET_PROF=1`` together with ``MAKBET_CSV=1``.
+
+For example:
+
+::
+
+  [user@t460p 01.dummy]$ make makbet-clean && make all MAKBET_PROF=1 MAKBET_CSV=1
+
+  2020-10-10 19:53:24.373 [INFO]: Task "@01-INIT" (TASK_ID: 1) started.
+
+
+  2020-10-10 19:53:24.391 [INFO]: Task "@01-INIT" (TASK_ID: 1) terminated.
+
+  Profiling results:
+  T1 = 1602352404.373039503
+  T2 = 1602352404.391242333
+  T2 - T1 = 00h:00m:00s.018ms
+
+  2020-10-10 19:53:24.490 [INFO]: Task "task-A" (TASK_ID: 2) started.
+
+  Script opts:
+  PATH (${0}) = /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+  SLEEP (${1}) = 1
+  EXIT_CODE (${2}) = 0
+
+  2020-10-10 19:53:25.524 [INFO]: Task "task-A" (TASK_ID: 2) terminated.
+
+  Profiling results:
+  T1 = 1602352404.490856272
+  T2 = 1602352405.524938384
+  T2 - T1 = 00h:00m:01s.034ms
+
+  2020-10-10 19:53:25.680 [INFO]: Task "task-B1" (TASK_ID: 3) started.
+
+  ...
+
+  2020-10-10 19:53:35.123 [INFO]: Task "all" (TASK_ID: 13) started.
+
+
+  2020-10-10 19:53:35.143 [INFO]: Task "all" (TASK_ID: 13) terminated.
+
+  Profiling results:
+  T1 = 1602352415.123305878
+  T2 = 1602352415.143659530
+  T2 - T1 = 00h:00m:00s.020ms
+  [user@t460p 01.dummy]$ 
+
+When both ``MAKBET_PROF=1`` and ``MAKBET_CSV=1`` options are passed to the
+``make`` command then **makbet** will save **a pair of additional files** for
+each target run during the runtime.  As already mentioned above the
+``MAKBET_PROF=1`` option will produce **cfg** files inside ``.cache/prof/cfg/``
+directory.  Using ``MAKBET_CSV=1`` option will generate extra **csv** files
+inside corresponding ``.cache/prof/csv/`` directory.  The whole ``.cache/prof/``
+directory content can be shown by invoking **makbet's** special target
+``.show-prof-dir`` as in example below:
+
+::
+
+  [user@t460p 01.dummy]$ make .show-prof-dir
+  /home/user/makbet/.cache/prof/cfg
+  ├── [-rw-r--r-- user user         220]  /home/user/makbet/.cache/prof/cfg/@01-INIT.cfg
+  ├── [-rw-r--r-- user user         222]  /home/user/makbet/.cache/prof/cfg/all.cfg
+  ├── [-rw-r--r-- user user         304]  /home/user/makbet/.cache/prof/cfg/task-A.cfg
+  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.cache/prof/cfg/task-B1.cfg
+  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.cache/prof/cfg/task-B2.cfg
+  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.cache/prof/cfg/task-B3.cfg
+  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.cache/prof/cfg/task-B4.cfg
+  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.cache/prof/cfg/task-B5.cfg
+  ├── [-rw-r--r-- user user         311]  /home/user/makbet/.cache/prof/cfg/task-C.cfg
+  ├── [-rw-r--r-- user user         302]  /home/user/makbet/.cache/prof/cfg/task-D.cfg
+  ├── [-rw-r--r-- user user         327]  /home/user/makbet/.cache/prof/cfg/task-E.cfg
+  └── [-rw-r--r-- user user         225]  /home/user/makbet/.cache/prof/cfg/task-F.cfg
+
+  0 directories, 12 files
+  /home/user/makbet/.cache/prof/csv
+  ├── [-rw-r--r-- user user         222]  /home/user/makbet/.cache/prof/csv/@01-INIT.csv
+  ├── [-rw-r--r-- user user         224]  /home/user/makbet/.cache/prof/csv/all.csv
+  ├── [-rw-r--r-- user user         306]  /home/user/makbet/.cache/prof/csv/task-A.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B1.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B2.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B3.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B4.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B5.csv
+  ├── [-rw-r--r-- user user         313]  /home/user/makbet/.cache/prof/csv/task-C.csv
+  ├── [-rw-r--r-- user user         304]  /home/user/makbet/.cache/prof/csv/task-D.csv
+  ├── [-rw-r--r-- user user         329]  /home/user/makbet/.cache/prof/csv/task-E.csv
+  └── [-rw-r--r-- user user         227]  /home/user/makbet/.cache/prof/csv/task-F.csv
+
+  0 directories, 12 files
+  [user@t460p 01.dummy]$ 
+
+For showing the content of ``.cache/prof/csv/`` directory only, dedicated
+special target ``.show-prof-csv-dir`` can be used:
+
+::
+
+  [user@t460p 01.dummy]$ make .show-prof-csv-dir
+  /home/user/.cache/prof/csv
+  ├── [-rw-r--r-- user user         222]  /home/user/makbet/.cache/prof/csv/@01-INIT.csv
+  ├── [-rw-r--r-- user user         224]  /home/user/makbet/.cache/prof/csv/all.csv
+  ├── [-rw-r--r-- user user         306]  /home/user/makbet/.cache/prof/csv/task-A.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B1.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B2.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B3.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B4.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B5.csv
+  ├── [-rw-r--r-- user user         313]  /home/user/makbet/.cache/prof/csv/task-C.csv
+  ├── [-rw-r--r-- user user         304]  /home/user/makbet/.cache/prof/csv/task-D.csv
+  ├── [-rw-r--r-- user user         329]  /home/user/makbet/.cache/prof/csv/task-E.csv
+  └── [-rw-r--r-- user user         227]  /home/user/makbet/.cache/prof/csv/task-F.csv
+  
+  0 directories, 12 files
+  [user@t460p 01.dummy]$ 
+
+An example content of **csv** profiling file (target ``all``):
+
+::
+
+  [user@t460p 01.dummy]$ echo ; cat /home/user/makbet/.cache/prof/csv/all.csv ; echo
+
+  TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_DATE_TIME_STARTED;TASK_DATE_TIME_TERMINATED;TASK_DURATION;
+  "13";"all";"task-F";"";"";"2020-10-10 19:53:35.123305878";"2020-10-10 19:53:35.143659530";00h:00m:00s.020ms;
+
+  [user@t460p 01.dummy]$ 
+
+The most sophisticated profiling target (named ``.show-merged-csv-profiles``)
+will merge all the contents of generated **csv** profiling files and display it
+as single listing on the console:
+
+::
+
+  [user@t460p 01.dummy]$ echo ; make .show-merged-csv-profiles
+
+  TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_DATE_TIME_STARTED;TASK_DATE_TIME_TERMINATED;TASK_DURATION;
+  "1";"@01-INIT";"";"";"";"2020-10-10 19:53:24.373039503";"2020-10-10 19:53:24.391242333";00h:00m:00s.018ms;
+  "10";"task-E";"task-B1 task-B4 task-B5 task-D";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:33.833312565";"2020-10-10 19:53:34.871290211";00h:00m:01s.037ms;
+  "11";"task-F";"task-E";"";"";"2020-10-10 19:53:34.988159983";"2020-10-10 19:53:35.009261860";00h:00m:00s.021ms;
+  "13";"all";"task-F";"";"";"2020-10-10 19:53:35.123305878";"2020-10-10 19:53:35.143659530";00h:00m:00s.020ms;
+  "2";"task-A";"@01-INIT";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:24.490856272";"2020-10-10 19:53:25.524938384";00h:00m:01s.034ms;
+  "3";"task-B1";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:25.680238597";"2020-10-10 19:53:26.724783327";00h:00m:01s.044ms;
+  "4";"task-B2";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:29.184722456";"2020-10-10 19:53:30.216890547";00h:00m:01s.032ms;
+  "5";"task-B3";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:30.342059102";"2020-10-10 19:53:31.377982995";00h:00m:01s.035ms;
+  "6";"task-B4";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:26.857648363";"2020-10-10 19:53:27.897165844";00h:00m:01s.039ms;
+  "7";"task-B5";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:28.000244187";"2020-10-10 19:53:29.042166621";00h:00m:01s.041ms;
+  "8";"task-C";"task-B2 task-B3";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:31.499257448";"2020-10-10 19:53:32.549793914";00h:00m:01s.050ms;
+  "9";"task-D";"task-C";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:32.669063505";"2020-10-10 19:53:33.716411930";00h:00m:01s.047ms;
+
+  [user@t460p 01.dummy]$ 
+
+Such output can be easily redirected/save to the file for further processing or
+comparison.
 
 |
 
