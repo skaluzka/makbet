@@ -16,8 +16,8 @@ else
 endif
 
 #
-# Default target.  This target will be called if make command will
-# be invoked with no options.
+# Default target for GNU make.  This target will be made if make
+# command is run without options.
 #
 .DEFAULT_GOAL := help
 
