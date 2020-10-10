@@ -14,12 +14,12 @@ make makbet-help \
 diff -u -s \
     <( \
         cat "${output_file}" \
-        | sed '2d;8d;33d;46d;53d' \
+        | sed '2d;8d;34d;46d;53d' \
         | nl -b a \
     ) \
     <( \
         cat "${expected_file}" \
-        | sed '2d;8d;33d;46d;53d' \
+        | sed '2d;8d;34d;46d;53d' \
         | nl -b a \
     )
 readonly __rc=$?

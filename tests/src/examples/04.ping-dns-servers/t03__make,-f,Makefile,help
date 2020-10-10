@@ -14,12 +14,12 @@ make -f "examples/04.ping-dns-servers/Makefile" help \
 diff -u -s \
     <( \
         cat "${output_file}" \
-        | sed '2d;8d;33d' \
+        | sed '2d;8d;34d' \
         | nl -b a \
     ) \
     <( \
         cat "${expected_file}" \
-        | sed '2d;8d;33d' \
+        | sed '2d;8d;34d' \
         | nl -b a \
     )
 readonly __rc=$?

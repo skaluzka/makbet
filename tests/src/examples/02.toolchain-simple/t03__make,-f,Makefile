@@ -14,13 +14,13 @@ make -f Makefile \
 diff -u -s \
     <( \
         cat "${output_file}" \
-        | sed '2d;8d;33d' \
+        | sed '2d;8d;34d' \
         | grep -v '\- Cmd:  ' \
         | nl -b a \
     ) \
     <( \
         cat "${expected_file}" \
-        | sed '2d;8d;33d' \
+        | sed '2d;8d;34d' \
         | grep -v '\- Cmd:  ' \
         | nl -b a \
     )

@@ -1,31 +1,32 @@
 
-makbet heads/master-0-gdf67a35                                                      
+makbet master-gbbe0cfa-2020-10-10T13:58:58+02:00                                                      
 
   "What's done, is done." - William Shakespeare, Macbeth.                   
 
 Usage: make [TARGET]                                                          
 
-All makbet's basic targets defined in /home/user/makbet/makbet.mk:               
+All makbet's basic targets defined in /home/user/makbet//makbet.mk:               
 
-  help                           - Show main makbet's help message as first   
+    help                         - Show main makbet's help message as first   
                                    then append the help messages of all tasks 
                                    defined in scenario's Makefile.  This is   
                                    the default target.                        
-  scenario-help                  - Show only scenario's help message (it is   
+    scenario-help                - Show only scenario's help message (it is   
                                    generated dynamically based on all tasks   
                                    defined in scenario's Makefile file).      
-  makbet-help                    - Show main makbet's help message (same as   
+    makbet-help                  - Show main makbet's help message (same as   
                                    "make help" above) then append extended  
                                    help message containing the list of all    
                                    special makbet's targets.                  
-  makbet-clean                   - Clean entire makbet's internal cache dir   
-                                   ($MAKBET_CACHE_DIR).                     
-  makbet-version                 - Print makbet's version only.               
+    makbet-clean                 - Clean entire makbet's internal ".cache/" 
+                                   dir.                                       
+    makbet-version               - Print makbet's version only.               
 
-  Examples:                                                                   
-           make                                                               
-           make help                                                          
-           make scenario-help                                                 
-           make makbet-help                                                   
-           make makbet-clean                                                  
-           make makbet-version                                                
+Examples:                                                                     
+
+    make                                                                      
+    make help                                                                 
+    make scenario-help                                                        
+    make makbet-help                                                          
+    make makbet-clean                                                         
+    make makbet-version                                                       
