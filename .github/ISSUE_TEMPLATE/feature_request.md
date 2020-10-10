@@ -8,17 +8,18 @@ assignees: ''
 ---
 
 ## **makbet's version**
-The version of makbet (please use ``make -f makbet.mk makbet-version`` command
-to fetch it then paste it below).
+Please paste below the version of **makbet** used (use
+``make -f makbet.mk makbet-version`` command to fetch it).
 
 `` ... ``
 
-## **Is your feature request related to a problem?  Please describe.**
-A clear and concise description of what the problem is.  Ex. I'm always frustrated when [...]
+## **Feature description**
+Please provide clear and concise description of desired/missing feature.
 
-## **Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+## **Expected solution**
+Please provide as detailed as possible description of what is expected
+to happen.
 
 ## **Additional context**
-Add any other context or screenshots about the feature request here.  Please
-type N/A if not applicable.
+Add any other context or screenshots about the feature request here.
+Please type N/A if not applicable.
