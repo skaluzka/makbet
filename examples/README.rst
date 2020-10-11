@@ -55,7 +55,7 @@ a simple toolchain consists of:
 - **git 2.28.0**
 - **kcov 38**
 - **make 4.3**
-- **python 3.9.0b5**
+- **python 3.9.0**
 
 |
 
@@ -235,7 +235,7 @@ where:
   previously downloaded sources.
 - ``lib/tasks/build-scripts/build-python.sh`` - This **Bash** script is
   used by **two** ``build-python`` tasks (defined in **02.toolchain-simple** and
-  **03.toolchain-advanced** examples).  Its aim is to build **python 3.9.0b5**
+  **03.toolchain-advanced** examples).  Its aim is to build **python 3.9.0**
   from previously downloaded sources.
 
 |
