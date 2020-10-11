@@ -414,7 +414,8 @@ For example:
   0 directories, 0 files
   [user@t460p 01.dummy]$ 
 
-An example content of **cfg** profiling file (target ``all``):
+An example content of **cfg** profiling file (taken from **01.dummy** example,
+target ``all``):
 
 ::
 
@@ -554,7 +555,8 @@ special target ``.show-prof-csv-dir`` can be used:
   0 directories, 12 files
   [user@t460p 01.dummy]$ 
 
-An example content of **csv** profiling file (target ``all``):
+An example content of **csv** profiling file (taken from **01.dummy** example,
+target ``all``):
 
 ::
 
