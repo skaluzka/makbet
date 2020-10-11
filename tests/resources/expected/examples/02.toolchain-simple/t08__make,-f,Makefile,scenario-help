@@ -27,7 +27,7 @@ Found 28 valid task(s) defined in /home/user/makbet/examples/02.toolchain-simple
     - Descr: "Fetch doxygen sources"
     - Deps:  prepare-workdir-structure
     - Cmd:   /home/user/makbet/examples/lib/tasks/common/download-file.sh
-    - Opts:  https://github.com/doxygen/doxygen/archive/Release_1_8_19.zip /tmp/makbet/examples/02.toolchain-simple/doxygen/Release_1_8_19.zip
+    - Opts:  https://github.com/doxygen/doxygen/archive/Release_1_8_20.zip /tmp/makbet/examples/02.toolchain-simple/doxygen/Release_1_8_20.zip
 
   fetch-git-src
     - Id.:   5
@@ -62,7 +62,7 @@ Found 28 valid task(s) defined in /home/user/makbet/examples/02.toolchain-simple
     - Descr: "Unpack doxygen sources"
     - Deps:  fetch-doxygen-src
     - Cmd:   /home/user/makbet/examples/lib/tasks/common/uncompress-zip-file.sh
-    - Opts:  /tmp/makbet/examples/02.toolchain-simple/doxygen/Release_1_8_19.zip /tmp/makbet/examples/02.toolchain-simple/doxygen/
+    - Opts:  /tmp/makbet/examples/02.toolchain-simple/doxygen/Release_1_8_20.zip /tmp/makbet/examples/02.toolchain-simple/doxygen/
 
   unpack-git-src
     - Id.:   10
@@ -97,14 +97,14 @@ Found 28 valid task(s) defined in /home/user/makbet/examples/02.toolchain-simple
     - Descr: "Check all source code dirs"
     - Deps:  unpack-doxygen-src unpack-git-src unpack-kcov-src unpack-make-src unpack-python-src
     - Cmd:   /home/user/makbet/examples/lib/tasks/common/check-dirs.sh
-    - Opts:  /tmp/makbet/examples/02.toolchain-simple/doxygen/doxygen-Release_1_8_19/ /tmp/makbet/examples/02.toolchain-simple/git/git-2.28.0/ /tmp/makbet/examples/02.toolchain-simple/kcov/kcov-38/ /tmp/makbet/examples/02.toolchain-simple/make/make-4.3/ /tmp/makbet/examples/02.toolchain-simple/python/Python-3.9.0b5/
+    - Opts:  /tmp/makbet/examples/02.toolchain-simple/doxygen/doxygen-Release_1_8_20/ /tmp/makbet/examples/02.toolchain-simple/git/git-2.28.0/ /tmp/makbet/examples/02.toolchain-simple/kcov/kcov-38/ /tmp/makbet/examples/02.toolchain-simple/make/make-4.3/ /tmp/makbet/examples/02.toolchain-simple/python/Python-3.9.0b5/
 
   build-doxygen
     - Id.:   15
     - Descr: "Build doxygen inside its source dir"
     - Deps:  check-all-src-dirs
     - Cmd:   /home/user/makbet/examples/lib/tasks/build-scripts/build-doxygen.sh
-    - Opts:  /tmp/makbet/examples/02.toolchain-simple/doxygen/doxygen-Release_1_8_19/
+    - Opts:  /tmp/makbet/examples/02.toolchain-simple/doxygen/doxygen-Release_1_8_20/
 
   build-git
     - Id.:   16
@@ -139,14 +139,14 @@ Found 28 valid task(s) defined in /home/user/makbet/examples/02.toolchain-simple
     - Descr: "Check the presence of all built binaries"
     - Deps:  build-doxygen build-git build-kcov build-make
     - Cmd:   /home/user/makbet/examples/lib/tasks/common/check-files.sh
-    - Opts:  /tmp/makbet/examples/02.toolchain-simple/doxygen/doxygen-Release_1_8_19/build/bin/doxygen /tmp/makbet/examples/02.toolchain-simple/git/git-2.28.0/git /tmp/makbet/examples/02.toolchain-simple/kcov/kcov-38/build/src/kcov /tmp/makbet/examples/02.toolchain-simple/make/make-4.3/make /tmp/makbet/examples/02.toolchain-simple/python/Python-3.9.0b5/python
+    - Opts:  /tmp/makbet/examples/02.toolchain-simple/doxygen/doxygen-Release_1_8_20/build/bin/doxygen /tmp/makbet/examples/02.toolchain-simple/git/git-2.28.0/git /tmp/makbet/examples/02.toolchain-simple/kcov/kcov-38/build/src/kcov /tmp/makbet/examples/02.toolchain-simple/make/make-4.3/make /tmp/makbet/examples/02.toolchain-simple/python/Python-3.9.0b5/python
 
   print-doxygen-version
     - Id.:   21
     - Descr: "Print version of doxygen from source dir"
     - Deps:  build-doxygen
     - Cmd:   /home/user/makbet/examples/lib/tasks/common/exec-cmd.sh
-    - Opts:  /tmp/makbet/examples/02.toolchain-simple/doxygen/doxygen-Release_1_8_19/build/bin/doxygen --version
+    - Opts:  /tmp/makbet/examples/02.toolchain-simple/doxygen/doxygen-Release_1_8_20/build/bin/doxygen --version
 
   print-git-version
     - Id.:   22
