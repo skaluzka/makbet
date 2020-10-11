@@ -613,7 +613,7 @@ Useful **CSV** links:
 - https://en.wikipedia.org/wiki/Comma-separated_values
 - https://www.convertcsv.com/csv-viewer-editor.htm
 
-All **Bash** scripts have been checked with ``schellcheck`` utility:
+All **Bash** scripts have been checked with ``shellcheck`` utility:
 
 - https://www.shellcheck.net/
 - https://github.com/koalaman/shellcheck
