@@ -184,8 +184,8 @@ results which can be used for further processing:
   labelloc="t";
   label="Scenario file: /home/user/makbet/examples/01.dummy/Makefile\n\n\n\n";
 
-  // Node options.
-  node [shape=box];
+  // Global options for all nodes.
+  node [shape="box" style="rounded, bold"];
 
 
   "@01-INIT";
