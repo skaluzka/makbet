@@ -18,7 +18,7 @@ Keep reading && have fun! :)
 - | `Features`_
 - | `System requirements`_
 - | `Installing`_
-- | `Few words about backward compatibility`_
+- | `Few words regarding backward compatibility`_
 - | `DOT output`_
 - | `PNG output`_
 - | `CSV output`_
@@ -122,16 +122,16 @@ built-in `examples <examples>`_).
 
 |
 
-Few words about backward compatibility
---------------------------------------
+Few words regarding backward compatibility
+------------------------------------------
 
 Please be aware that **makbet** is still in heavy development phase (no
-major release has been published so far).
+**major** release has been published so far).
 
-There are a couple of quite nice improvements already proposed for **makbet**,
-see the details `here <https://github.com/skaluzka/makbet/issues>`_.  Therefore
-there is no guarantee that backward compatibility will be kept all the time,
-at least until the first major version will be released (see rationale
+Nevertheless, a couple of quite nice improvements have been proposed already
+(see the details `here <https://github.com/skaluzka/makbet/issues>`_).
+Therefore, there is no guarantee that backward compatibility will be kept all
+the time, at least until the first major version will be released (see rationale
 `here <https://semver.org/#doesnt-this-discourage-rapid-development-and-fast-iteration>`__).
 
 |
