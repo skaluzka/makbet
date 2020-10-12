@@ -39,12 +39,11 @@ This project has been created for several reasons...
 Mainly to help:
 
 - automating various complex scenarios,
-- modeling, and prototyping complex real-life processes
-  (e.g.: production/delivery chain) consisting of many tasks having many
-  dependencies,
+- modeling, and prototyping complex real-life processes consisting of many
+  tasks having many dependencies (e.g.: production or delivery chains),
 - reflecting, simulating and profiling complicated existing flows,
-- visualizing dependencies in big projects (can help to find circular
-  dependencies, or long execution paths),
+- visualizing dependencies in big projects (**makbet** can help to find
+  circular dependencies, or long execution paths),
 - optimizing execution paths in existing systems.
 
 But also to help:
