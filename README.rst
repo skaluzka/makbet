@@ -97,12 +97,12 @@ Well... Nothing special here :)
 
 The only system requirements are:
 
-- GNU Linux OS
-- GNU Make tool (version **3.82+**)
-- Bash tool
+- GNU Linux OS.
+- GNU Make tool (version **3.82+**).
+- Bash interpreter (available in ``/bin/bash`` location).
 
-All example scenarios have been successfully tested with **GNU Make 4.3** and
-**Bash 5.0.16**.
+All provided examples have been successfully tested with **GNU Make 4.3** and
+**Bash 5.0.16** combination.
 
 |
 
