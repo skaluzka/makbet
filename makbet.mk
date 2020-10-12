@@ -10,6 +10,10 @@
 ifndef MAKBET_PATH
   $(error MAKBET_PATH is not defined)
 else
+
+  # Set the SHELL variable as soon as MAKBET_PATH is defined.
+  SHELL=/bin/bash
+
   MAKBET_CACHE_DIR := $(MAKBET_PATH)/.cache
   MAKBET_CORE_DIR := $(MAKBET_PATH)/core
   MAKBET_SCENARIO_PATH := $(realpath $(firstword $(MAKEFILE_LIST)))
