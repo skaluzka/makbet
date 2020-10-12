@@ -109,15 +109,15 @@ All provided examples have been successfully tested with **GNU Make 4.3** and
 Installing
 ----------
 
-Installing **makbet** is quite easy.
+Installing **makbet** is easy and straightforward.
 
-- Download or clone the **makbet** project from GitHub.
-- Export the ``MAKBET_PATH`` variable pointing to **makbet's** main directory
+- Clone (or download and unpack) **makbet** project from GitHub.
+- Export ``MAKBET_PATH`` variable pointing to **makbet's** main directory
   (e.g.: ``export MAKBET_PATH=/home/user/makbet``).
 - Change directory to main **makbet's** directory then run ``make`` command to
-  see the help message.
+  see default help message.
 
-And that's all.  You are now ready to write your own scenarios (or play with
+That's all.  You are now ready to write your own scenarios (or play with
 built-in `examples <examples>`_).
 
 |
