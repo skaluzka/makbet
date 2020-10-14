@@ -37,11 +37,13 @@ were intentionally omitted to shrink the listing).
   │   └── expected/
   │       └── examples/
   │           ├── 01.dummy/
-  │           └── 05.sleep/
+  │           ...
+  │           └── 06.comments/
   ├── src/
   │   └── examples/
   │       ├── 01.dummy/
-  │       └── 05.sleep/
+  │       ...
+  │       └── 06.comments/
   ├── README.rst
   └── run-tests.sh
 
@@ -68,9 +70,9 @@ where:
   created based on **01.dummy** example provided together with **makbet** (see
   the content of ``examples/01.dummy/`` directory).
 
-- ``resources/expected/examples/05.sleep`` - This directory contains only files
-  created based on **05.sleep** example provided together with **makbet** (see
-  the content of ``examples/05.sleep/`` directory).
+- ``resources/expected/examples/06.comments`` - This directory contains only
+  files created based on **06.comments** example provided together with
+  **makbet** (see the content of ``examples/06.comments/`` directory).
 
 - ``src/`` - This directory contains set of all test scenarios (written as
   **Bash** scripts) which are used for testing **makbet's** source code.
@@ -84,9 +86,9 @@ where:
   provided together with **makbet** (see the top-level ``examples/01.dummy/``
   directory).
 
-- ``src/examples/05.sleep/`` - This directory contains set of various test
-  scenarios (written as **Bash** scripts) based only on **05.sleep** example
-  provided together with **makbet** (see the top-level ``examples/05.sleep/``
+- ``src/examples/06.comments/`` - This directory contains set of various test
+  scenarios (written as **Bash** scripts) based only on **06.comments** example
+  provided together with **makbet** (see the top-level ``examples/06.comments/``
   directory).
 
 - ``README.rst`` - The file you are reading now.
