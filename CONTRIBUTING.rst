@@ -42,7 +42,7 @@ type of commits in **makbet** project:
 
 #. | Pure development commits - regular but small and reasonable updates,
      changes or enhancements including minor refactoring as well.  All of them
-     can be submitted directly to **master** branch but they **must have**
+     can be submitted directly to **master** branch, but they **must have**
      ``[DEV]`` subject in the commit message.  This rule is valid only for
       **makbet's** maintainers who are allowed to work on the **master** branch
      directly.
