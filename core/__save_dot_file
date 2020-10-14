@@ -7,7 +7,12 @@ set -eu
 
 # shellcheck source=/dev/null
 . "${1}"
+
+# Create new *.dot file.
 echo "" > "${2}"
+
+# Append information regarding node and its dependencies (if
+# there are any) to *.dot file created above.
 if [ -z "${TASK_DEPS}" ]
 then
     echo "\"${TASK_NAME}\";" >> "${2}"
