@@ -5,7 +5,7 @@ set -eu
 # ${1} - Path to input *.cfg file.
 # ${2} - Path to output *.dot file.
 
-# shellcheck disable=SC1090
+# shellcheck source=/dev/null
 . "${1}"
 echo "" > "${2}"
 if [ -z "${TASK_DEPS}" ]
