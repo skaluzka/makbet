@@ -7,9 +7,13 @@ set -eu
 # ${3} - The csv header variable.
 # ${4} - The csv separator.
 
+# Save csv header in output *.csv file.
 echo "${3}" > "${2}"
+
 # shellcheck disable=SC2002
 cat "${1}" | cut -d '=' -f2 | tr "\n" "${4}" >> "${2}"
+
+# Append an empty line at the end of *.csv file.
 echo "" >> "${2}"
 
 
