@@ -23,12 +23,6 @@ readonly T2=$( date --date="${TASK_DATE_TIME_TERMINATED}" +"%s.%N" )
 # decimal places (milliseconds).
 readonly TASK_DURATION=$( date --date="0 ${T2} sec - ${T1} sec" +"%Hh:%Mm:%Ss.%3Nms" )
 
-# Print profiling results to the console.
-echo "Profiling results:"
-echo "T1 = ${T1}"
-echo "T2 = ${T2}"
-echo "T2 - T1 = ${TASK_DURATION}"
-
 # Create an emtpy results *.cfg file.
 echo -n "" > "${3}"
 
@@ -38,6 +32,12 @@ comm --nocheck-order "${1}" "${2}" \
     | sed 's/^[ \t]*//' \
     > "${3}"
 echo "TASK_DURATION=${TASK_DURATION}" >> "${3}"
+
+# Print profiling results to the console.
+echo "Profiling results:"
+echo "T1 = ${T1}"
+echo "T2 = ${T2}"
+echo "T2 - T1 = ${TASK_DURATION}"
 
 
 # End of file
