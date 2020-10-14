@@ -6,7 +6,7 @@ set -eu
 # ${2} - Path to T2 *.terminated.cfg event file.
 # ${3} - Path to results *.cfg file.
 
-# shellcheck disable=SC1090
+# shellcheck source=/dev/null
 . "${1}" && . "${2}"
 
 readonly T1=$( date --date="${TASK_DATE_TIME_STARTED}" +"%s.%N" )
