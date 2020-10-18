@@ -2,6 +2,8 @@
 # set -eu
 
 
+# ${1} - Path to makbet's scenario (make file) file.
+
 # shellcheck disable=SC2016
 grep -c '^$(eval $(call TASK_template' "${1}"
 
