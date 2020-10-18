@@ -12,60 +12,180 @@ label="Scenario file: /home/user/makbet/examples/03.toolchain-advanced/Makefile\
 node [shape="box" style="rounded, bold"];
 
 
+// TASK_NAME: @01-INIT
+// TASK_ID: 1
+// TASK_DEPS: 
+// TASK_CMD: 
+// TASK_CMD_OPTS: 
 "@01-INIT";
 
+// TASK_NAME: build-all
+// TASK_ID: 26
+// TASK_DEPS: build-doxygen build-git build-kcov build-make build-python
+// TASK_CMD: 
+// TASK_CMD_OPTS: 
 "build-all" -> "build-doxygen";
 "build-all" -> "build-git";
 "build-all" -> "build-kcov";
 "build-all" -> "build-make";
 "build-all" -> "build-python";
 
+// TASK_NAME: build-doxygen
+// TASK_ID: 15
+// TASK_DEPS: check-all-src-dirs
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/build-scripts/build-doxygen.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_8_20/
 "build-doxygen" -> "check-all-src-dirs";
 
+// TASK_NAME: build-git
+// TASK_ID: 16
+// TASK_DEPS: build-doxygen
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/build-scripts/build-git.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/git/git-2.29.2/
 "build-git" -> "build-doxygen";
 
+// TASK_NAME: build-kcov
+// TASK_ID: 17
+// TASK_DEPS: build-git
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/build-scripts/build-kcov.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/
 "build-kcov" -> "build-git";
 
+// TASK_NAME: build-make
+// TASK_ID: 18
+// TASK_DEPS: build-kcov
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/build-scripts/build-make.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/
 "build-make" -> "build-kcov";
 
+// TASK_NAME: build-python
+// TASK_ID: 19
+// TASK_DEPS: build-make
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/build-scripts/build-python.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0/
 "build-python" -> "build-make";
 
+// TASK_NAME: check-all-src-dirs
+// TASK_ID: 14
+// TASK_DEPS: unpack-doxygen-src unpack-git-src unpack-kcov-src unpack-make-src unpack-python-src
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/check-dirs.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_8_20/ /tmp/makbet/examples/03.toolchain-advanced/git/git-2.29.2/ /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/ /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/ /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0/
 "check-all-src-dirs" -> "unpack-doxygen-src";
 "check-all-src-dirs" -> "unpack-git-src";
 "check-all-src-dirs" -> "unpack-kcov-src";
 "check-all-src-dirs" -> "unpack-make-src";
 "check-all-src-dirs" -> "unpack-python-src";
 
+// TASK_NAME: fetch-doxygen-src
+// TASK_ID: 4
+// TASK_DEPS: prepare-workdir-structure
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/download-file.sh
+// TASK_CMD_OPTS: https://github.com/doxygen/doxygen/archive/Release_1_8_20.zip /tmp/makbet/examples/03.toolchain-advanced/doxygen/Release_1_8_20.zip
 "fetch-doxygen-src" -> "prepare-workdir-structure";
 
+// TASK_NAME: fetch-git-src
+// TASK_ID: 5
+// TASK_DEPS: prepare-workdir-structure
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/download-file.sh
+// TASK_CMD_OPTS: https://github.com/git/git/archive/v2.29.2.zip /tmp/makbet/examples/03.toolchain-advanced/git/v2.29.2.zip
 "fetch-git-src" -> "prepare-workdir-structure";
 
+// TASK_NAME: fetch-kcov-src
+// TASK_ID: 6
+// TASK_DEPS: prepare-workdir-structure
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/download-file.sh
+// TASK_CMD_OPTS: https://github.com/SimonKagstrom/kcov/archive/38.zip /tmp/makbet/examples/03.toolchain-advanced/kcov/38.zip
 "fetch-kcov-src" -> "prepare-workdir-structure";
 
+// TASK_NAME: fetch-make-src
+// TASK_ID: 7
+// TASK_DEPS: prepare-workdir-structure
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/download-file.sh
+// TASK_CMD_OPTS: http://ftp.gnu.org/gnu/make/make-4.3.tar.gz /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3.tar.gz
 "fetch-make-src" -> "prepare-workdir-structure";
 
+// TASK_NAME: fetch-python-src
+// TASK_ID: 8
+// TASK_DEPS: prepare-workdir-structure
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/download-file.sh
+// TASK_CMD_OPTS: https://www.python.org/ftp/python/3.9.0/Python-3.9.0.tar.xz /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0.tar.xz
 "fetch-python-src" -> "prepare-workdir-structure";
 
+// TASK_NAME: prepare-workdir-structure
+// TASK_ID: 3
+// TASK_DEPS: @01-INIT
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/create-dir-structure.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/doxygen /tmp/makbet/examples/03.toolchain-advanced/git /tmp/makbet/examples/03.toolchain-advanced/kcov /tmp/makbet/examples/03.toolchain-advanced/make /tmp/makbet/examples/03.toolchain-advanced/python
 "prepare-workdir-structure" -> "@01-INIT";
 
+// TASK_NAME: print-doxygen-version
+// TASK_ID: 21
+// TASK_DEPS: build-doxygen
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/exec-cmd.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_8_20/build/bin/doxygen --version
 "print-doxygen-version" -> "build-doxygen";
 
+// TASK_NAME: print-git-version
+// TASK_ID: 22
+// TASK_DEPS: build-git
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/exec-cmd.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/git/git-2.29.2/git --version
 "print-git-version" -> "build-git";
 
+// TASK_NAME: print-kcov-version
+// TASK_ID: 23
+// TASK_DEPS: build-kcov
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/exec-cmd.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/build/src/kcov --version
 "print-kcov-version" -> "build-kcov";
 
+// TASK_NAME: print-make-version
+// TASK_ID: 24
+// TASK_DEPS: build-make
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/exec-cmd.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/make --version
 "print-make-version" -> "build-make";
 
+// TASK_NAME: print-python-version
+// TASK_ID: 25
+// TASK_DEPS: build-python
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/exec-cmd.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0/python -V
 "print-python-version" -> "build-python";
 
+// TASK_NAME: unpack-doxygen-src
+// TASK_ID: 9
+// TASK_DEPS: fetch-doxygen-src
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/uncompress-zip-file.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/doxygen/Release_1_8_20.zip /tmp/makbet/examples/03.toolchain-advanced/doxygen/
 "unpack-doxygen-src" -> "fetch-doxygen-src";
 
+// TASK_NAME: unpack-git-src
+// TASK_ID: 10
+// TASK_DEPS: fetch-git-src
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/uncompress-zip-file.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/git/v2.29.2.zip /tmp/makbet/examples/03.toolchain-advanced/git/
 "unpack-git-src" -> "fetch-git-src";
 
+// TASK_NAME: unpack-kcov-src
+// TASK_ID: 11
+// TASK_DEPS: fetch-kcov-src
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/uncompress-zip-file.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/kcov/38.zip /tmp/makbet/examples/03.toolchain-advanced/kcov/
 "unpack-kcov-src" -> "fetch-kcov-src";
 
+// TASK_NAME: unpack-make-src
+// TASK_ID: 12
+// TASK_DEPS: fetch-make-src
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/uncompress-tgz-file.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3.tar.gz /tmp/makbet/examples/03.toolchain-advanced/make/
 "unpack-make-src" -> "fetch-make-src";
 
+// TASK_NAME: unpack-python-src
+// TASK_ID: 13
+// TASK_DEPS: fetch-python-src
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/uncompress-txz-file.sh
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0.tar.xz /tmp/makbet/examples/03.toolchain-advanced/python/
 "unpack-python-src" -> "fetch-python-src";
 
 }

@@ -17,6 +17,14 @@ set -eu
 # Create new *.dot file.
 echo "" > "${2}"
 
+# ...
+# shellcheck disable=SC2129
+echo "// TASK_NAME: ${TASK_NAME}" >> "${2}"
+echo "// TASK_ID: ${TASK_ID}" >> "${2}"
+echo "// TASK_DEPS: ${TASK_DEPS}" >> "${2}"
+echo "// TASK_CMD: ${TASK_CMD}" >> "${2}"
+echo "// TASK_CMD_OPTS: ${TASK_CMD_OPTS}" >> "${2}"
+
 # Append information regarding node and its dependencies (if
 # there are any) to *.dot file created above.
 if [ -z "${TASK_DEPS}" ]
