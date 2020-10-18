@@ -7,13 +7,16 @@ set -eu
 # ${3} - TASK_DEPS - All task dendencies.
 # ${4} - TASK_CMD - Task command.
 # ${5} - TASK_CMD_OPTS - Input options for TASK_CMD above.
-# ${6} - TASK_EVENT_FILE - Destination event file.
+# ${6} - TASK_EVENT_FILE - Destination *.cfg event file.
 # ${7} - TASK_EVENT_TYPE - The type of the event (STARTED or TERMINATED).
 
 readonly NOW=$( date "+%Y-%m-%d %H:%M:%S.%N" )
 readonly NOW_SHORT=$( date --date="${NOW}" "+%Y-%m-%d %H:%M:%S.%3N" )
 
+# Create an empty destination *.cfg event file.
 echo -n "" > "${6}"
+
+# Append data to destination *.cfg event file.
 # shellcheck disable=SC2129
 echo "TASK_ID=\"${1}\"" >> "${6}"
 echo "TASK_NAME=\"${2}\"" >> "${6}"
