@@ -2,12 +2,17 @@
 set -eu
 
 
-# ${1} - Path to T1 *.started.cfg event file.
-# ${2} - Path to T2 *.terminated.cfg event file.
+# ${1} - Path to *.started.cfg event file.
+# ${2} - Path to *.terminated.cfg event file.
 # ${3} - Path to results *.cfg file.
 
+# Source input *.started.cfg event file.
 # shellcheck source=/dev/null
-. "${1}" && . "${2}"
+. "${1}"
+
+# Source input *.terminated.cfg event file.
+# shellcheck source=/dev/null
+. "${2}"
 
 # Define T1 variable (read-only) - take TASK_DATE_TIME_STARTED
 # value from "${1}" file and convert it to seconds.NANOSECONDS
