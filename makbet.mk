@@ -26,12 +26,12 @@ endif
 .DEFAULT_GOAL := help
 
 #
-# Task counter per scenario.
+# Init task counter variable.
 #
-MAKBET_TASK_COUNTER := 0
+MAKBET_TASK_ID := 0
 
 #
-# Total task counter per scenario.
+# Count all tasks in the scenario.
 #
 MAKBET_TASK_TOTAL := $(shell \
   $(MAKBET_CORE_DIR)/__count_tasks $(MAKBET_SCENARIO_PATH) \
@@ -206,8 +206,8 @@ endif
 #
 define TASK_template =
 
-# Increment the MAKBET_TASK_COUNTER variable.
-$(eval MAKBET_TASK_COUNTER=$(shell echo $$(($(MAKBET_TASK_COUNTER)+1))))
+# Increment the MAKBET_TASK_ID variable.
+$(eval MAKBET_TASK_ID=$(shell echo $$(($(MAKBET_TASK_ID)+1))))
 
 .PHONY: $(1)
 $(1): $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg $(foreach d,$(3),$(MAKBET_EVENTS_CFG_DIR)/$(d).terminated.cfg)
@@ -218,7 +218,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	$(_q)if (( $(_v) >= 1 )) ; \
 	then \
 		$(MAKBET_CORE_DIR)/__print_task_details \
-			"$(strip $(MAKBET_TASK_COUNTER))" \
+			"$(strip $(MAKBET_TASK_ID))" \
 			"$(strip $(1))" \
 			"$(strip $(3))" \
 			"$(strip $(4))" \
@@ -227,7 +227,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	@#
 	@# Save STARTED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
 	$(_q)$(MAKBET_CORE_DIR)/__save_task_event \
-		"$(strip $(MAKBET_TASK_COUNTER))" \
+		"$(strip $(MAKBET_TASK_ID))" \
 		"$(strip $(1))" \
 		"$(strip $(3))" \
 		"$(strip $(4))" \
@@ -240,7 +240,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	@#
 	@# Save TERMINATED event file in $(MAKBET_EVENTS_CFG_DIR) dir.
 	$(_q)$(MAKBET_CORE_DIR)/__save_task_event \
-		"$(strip $(MAKBET_TASK_COUNTER))" \
+		"$(strip $(MAKBET_TASK_ID))" \
 		"$(strip $(1))" \
 		"$(strip $(3))" \
 		"$(strip $(4))" \
@@ -302,7 +302,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 .PHONY: scenario-help
 scenario-help::
 	@echo '  $(strip $(1))'
-	@echo '    - Id.:   $(MAKBET_TASK_COUNTER)'
+	@echo '    - Id.:   $(MAKBET_TASK_ID)'
 	@echo '    - Descr: $(strip $(2))'
 	@echo '    - Deps:  $(strip $(3))'
 	@echo '    - Cmd:   $(strip $(4))'
