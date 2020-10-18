@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
-set -u
+set -eu
 
+
+# This file is a core part of makbet.
+# Do not change it unless you know what you are doing.
+#
+# Params:
 
 set +e
 if [ -d "${MAKBET_PATH}/.git" ]

@@ -2,6 +2,11 @@
 set -eu
 
 
+# This file is a core part of makbet.
+# Do not change it unless you know what you are doing.
+#
+# Params:
+#
 # ${1} - TASK_ID - Order number of task's definition.
 # ${2} - TASK_NAME - The name of the task.
 # ${3} - TASK_DEPS - All task dependencies.
