@@ -98,8 +98,8 @@ Well... Nothing special here :)
 The only system requirements are:
 
 - GNU Linux OS.
-- GNU Make tool (version **3.82+**).
-- Bash interpreter (available in ``/bin/bash`` location).
+- **GNU Make** tool (version **3.82+**).
+- **Bash** interpreter (available in ``/bin/bash`` location).
 
 All provided examples have been successfully tested with **GNU Make 4.3** and
 **Bash 5.0.16** combination.
@@ -229,7 +229,7 @@ results which can be used for further processing:
 PNG output
 ----------
 
-Below **PNG** picture has been rendered, by `edotor <https://edotor.net/>`_
+Below **PNG** picture has been rendered, by `edotor <https://edotor.net>`_
 online **DOT** editor, based on ``digraph`` code for
 `01.dummy <examples/01.dummy/Makefile>`_ example (target ``all``).
 
@@ -253,8 +253,8 @@ Typical **DOT** -> **PNG** conversion is simple and straightforward:
 
 Two **DOT** online editors have been successfully tested with **makbet**:
 
-- https://edotor.net/ (fully interactive!)
-- http://webgraphviz.com/ (very simple, but works! :D)
+- https://edotor.net (fully interactive!)
+- http://webgraphviz.com (very simple, but works! :D)
 
 |
 
@@ -601,12 +601,12 @@ References
 
 Useful **GNU Make** links:
 
-- https://www.gnu.org/software/make/manual/
-- http://www.conifersystems.com/whitepapers/gnu-make/
+- https://www.gnu.org/software/make/manual
+- http://www.conifersystems.com/whitepapers/gnu-make
 
 Useful **DOT** language links:
 
-- https://graphviz.gitlab.io/documentation/
+- https://graphviz.gitlab.io/documentation
 - https://en.wikipedia.org/wiki/DOT_%28graph_description_language%29
 
 Useful **CSV** links:
@@ -617,7 +617,7 @@ Useful **CSV** links:
 
 All **Bash** scripts have been checked with ``shellcheck`` utility:
 
-- https://www.shellcheck.net/
+- https://www.shellcheck.net
 - https://github.com/koalaman/shellcheck
 
 |
