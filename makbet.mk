@@ -86,9 +86,7 @@ ifndef MAKBET_PROF
   MAKBET_PROF := 0
 endif
 ifeq ($(MAKBET_PROF), 0)
-  _p := 0
 else ifeq ($(MAKBET_PROF), 1)
-  _p := 1
 else
   $(error [ERROR]: Wrong input for MAKBET_PROF option!  Expected value: {0|1} (found MAKBET_PROF=$(MAKBET_PROF)))
 endif
@@ -259,7 +257,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	fi
 	@#
 	@# Compute time difference (task duration) if MAKBET_PROF=1.
-	$(_q)if (( $(_p) == 1 )) ; \
+	$(_q)if (( $(MAKBET_PROF) == 1 )) ; \
 	then \
 		$(MAKBET_CORE_DIR)/__save_task_profile \
 			"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg" \
@@ -269,7 +267,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	@#
 	@# Convert profile *.cfg file to -> profile *.csv file
 	@# if MAKBET_CSV=1 and MAKBET_PROF=1.
-	$(_q)if (( $(_c) == 1 )) && (( $(_p) == 1 )); \
+	$(_q)if (( $(_c) == 1 )) && (( $(MAKBET_PROF) == 1 )); \
 	then \
 		$(MAKBET_CORE_DIR)/__convert_cfg2csv \
 			"$(MAKBET_PROF_CFG_DIR)/$(strip $(1)).cfg" \
