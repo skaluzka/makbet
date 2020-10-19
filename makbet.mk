@@ -98,9 +98,7 @@ ifndef MAKBET_DOT
   MAKBET_DOT := 0
 endif
 ifeq ($(MAKBET_DOT), 0)
-  _d := 0
 else ifeq ($(MAKBET_DOT), 1)
-  _d := 1
 else
   $(error [ERROR]: Wrong input for MAKBET_DOT option!  Expected value: {0|1} (found MAKBET_DOT=$(MAKBET_DOT)))
 endif
@@ -249,7 +247,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 		"TERMINATED" ;
 	@#
 	@# Save *.dot file in .cache/dot/ dir if MAKBET_DOT=1.
-	$(_q)if (( $(_d) == 1 )) ; \
+	$(_q)if (( $(MAKBET_DOT) == 1 )) ; \
 	then \
 		$(MAKBET_CORE_DIR)/__save_dot_file \
 			"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg" \
