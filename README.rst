@@ -382,7 +382,7 @@ execution command (by default ``MAKBET_PROF=0``) as in example below:
   T2 - T1 = 00h:00m:00s.020ms
   [user@t460p 01.dummy]$ 
 
-**makbet** measures the duration of tasks with **milliseconds** accuracy.
+**makbet** measures the duration of tasks with **milliseconds** (ms) accuracy.
 
 When ``MAKBET_PROF=1`` is passed to the ``make`` command then **makbet** will
 save some additional **cfg** files during the runtime.  All these files will
