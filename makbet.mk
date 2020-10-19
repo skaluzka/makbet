@@ -231,7 +231,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 		"$(strip $(4))" \
 		"$(strip $(5))" \
 		"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg" \
-		"STARTED" ;
+		"STARTED"
 	@#
 	@# Run the TASK_CMD with TASK_CMD_OPTS input options.
 	$(_q)$(4) $(5)
@@ -244,7 +244,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 		"$(strip $(4))" \
 		"$(strip $(5))" \
 		"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg" \
-		"TERMINATED" ;
+		"TERMINATED"
 	@#
 	@# Save *.dot file in .cache/dot/ dir if MAKBET_DOT=1.
 	$(_q)if (( $(MAKBET_DOT) == 1 )) ; \
