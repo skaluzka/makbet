@@ -11,7 +11,9 @@ assignees: ''
 Please paste below the version of **makbet** used (use
 ``make -f makbet.mk makbet-version`` command to fetch it).
 
-`` ... ``
+```
+make -f makbet.mk makbet-version # printing makbet's version
+```
 
 ## **Bug description**
 A clear and concise description of what the bug is.
