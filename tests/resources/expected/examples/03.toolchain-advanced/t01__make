@@ -66,7 +66,7 @@ Found 26 valid task(s) defined in /home/user/makbet/examples/03.toolchain-advanc
     - Descr: "Fetch git sources"
     - Deps:  prepare-workdir-structure
     - Cmd:   /home/user/makbet/examples/lib/tasks/common/download-file.sh
-    - Opts:  https://github.com/git/git/archive/v2.28.0.zip /tmp/makbet/examples/03.toolchain-advanced/git/v2.28.0.zip
+    - Opts:  https://github.com/git/git/archive/v2.29.0.zip /tmp/makbet/examples/03.toolchain-advanced/git/v2.29.0.zip
 
   fetch-kcov-src
     - Id.:   6
@@ -101,7 +101,7 @@ Found 26 valid task(s) defined in /home/user/makbet/examples/03.toolchain-advanc
     - Descr: "Unpack git sources"
     - Deps:  fetch-git-src
     - Cmd:   /home/user/makbet/examples/lib/tasks/common/uncompress-zip-file.sh
-    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/git/v2.28.0.zip /tmp/makbet/examples/03.toolchain-advanced/git/
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/git/v2.29.0.zip /tmp/makbet/examples/03.toolchain-advanced/git/
 
   unpack-kcov-src
     - Id.:   11
@@ -129,7 +129,7 @@ Found 26 valid task(s) defined in /home/user/makbet/examples/03.toolchain-advanc
     - Descr: "Check all source code dirs"
     - Deps:  unpack-doxygen-src unpack-git-src unpack-kcov-src unpack-make-src unpack-python-src
     - Cmd:   /home/user/makbet/examples/lib/tasks/common/check-dirs.sh
-    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_8_20/ /tmp/makbet/examples/03.toolchain-advanced/git/git-2.28.0/ /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/ /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/ /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0/
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_8_20/ /tmp/makbet/examples/03.toolchain-advanced/git/git-2.29.0/ /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/ /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/ /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0/
 
   build-doxygen
     - Id.:   15
@@ -143,7 +143,7 @@ Found 26 valid task(s) defined in /home/user/makbet/examples/03.toolchain-advanc
     - Descr: "Build git inside its source dir"
     - Deps:  build-doxygen
     - Cmd:   /home/user/makbet/examples/lib/tasks/build-scripts/build-git.sh
-    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/git/git-2.28.0/
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/git/git-2.29.0/
 
   build-kcov
     - Id.:   17
@@ -171,7 +171,7 @@ Found 26 valid task(s) defined in /home/user/makbet/examples/03.toolchain-advanc
     - Descr: "Check the presence of all built binaries"
     - Deps:  build-doxygen build-git build-kcov build-make
     - Cmd:   /home/user/makbet/examples/lib/tasks/common/check-files.sh
-    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_8_20/build/bin/doxygen /tmp/makbet/examples/03.toolchain-advanced/git/git-2.28.0/git /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/build/src/kcov /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/make /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0/python
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_8_20/build/bin/doxygen /tmp/makbet/examples/03.toolchain-advanced/git/git-2.29.0/git /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/build/src/kcov /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/make /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0/python
 
   print-doxygen-version
     - Id.:   21
@@ -185,7 +185,7 @@ Found 26 valid task(s) defined in /home/user/makbet/examples/03.toolchain-advanc
     - Descr: "Print version of git from source dir"
     - Deps:  build-git
     - Cmd:   /home/user/makbet/examples/lib/tasks/common/exec-cmd.sh
-    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/git/git-2.28.0/git --version
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/git/git-2.29.0/git --version
 
   print-kcov-version
     - Id.:   23
