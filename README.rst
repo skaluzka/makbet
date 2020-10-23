@@ -127,12 +127,16 @@ Few words regarding backward compatibility
 Please be aware that **makbet** is still in heavy development phase (no
 **major** release has been published so far).
 
-Nevertheless, a couple of quite nice improvements have been proposed already
-(see the details `here <https://github.com/skaluzka/makbet/issues>`_).
-Therefore, there is no guarantee that backward compatibility will be kept all
-the time, at least until the first **major** version will be released (see
-rationale
-`here <https://semver.org/#doesnt-this-discourage-rapid-development-and-fast-iteration>`__).
+A couple of nice improvements have been proposed already (see the details
+`here <https://github.com/skaluzka/makbet/issues>`_) and there is no guarantee
+that backward compatibility will be kept forever (at least until the first
+**major** version will be released).
+
+Therefore **always use stable versions on the prduction** (from dedicated
+``stable/v*.*.x`` branches).
+
+In doubts, follow the common sense and use `semantic versioning
+<https://semver.org>`_ approach.
 
 |
 
