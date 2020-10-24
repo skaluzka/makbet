@@ -132,8 +132,7 @@ A couple of nice improvements have been proposed already (see the details
 that backward compatibility will be kept forever (at least until the first
 **major** version will be released).
 
-Therefore **always use stable versions on the prduction** (from dedicated
-``stable/v*.*.x`` branches).
+Therefore **always use stable versions on the production**.
 
 In doubts, follow the common sense and use `semantic versioning
 <https://semver.org>`_ approach.
