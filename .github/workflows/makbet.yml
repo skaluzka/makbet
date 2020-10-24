@@ -33,7 +33,7 @@ jobs:
       - name: Run makbet's test suite...
         run: |
           cd tests/
-          ./run_tests.sh
+          ./run-tests.sh
 
 
 # End of file
