@@ -1,0 +1,109 @@
+
+makbet master+g1fbaa44-2020-10-24T16:20:34+02:00                                                      
+
+  "What's done, is done." - William Shakespeare, Macbeth.                   
+
+Usage: make [TARGET]                                                          
+
+All makbet's basic targets defined in /home/user/makbet//makbet.mk:               
+
+    help                         - Show main makbet's help message as first   
+                                   then append the help messages of all tasks 
+                                   defined in scenario's Makefile.  This is   
+                                   the default target.                        
+    scenario-help                - Show only scenario's help message (it is   
+                                   generated dynamically based on all tasks   
+                                   defined in scenario's Makefile file).      
+    makbet-help                  - Show main makbet's help message (same as   
+                                   "make help" above) then append extended  
+                                   help message containing the list of all    
+                                   special makbet's targets.                  
+    makbet-clean                 - Clean entire makbet's internal ".cache/" 
+                                   dir.                                       
+    makbet-version               - Print makbet's version only.               
+
+Examples:                                                                     
+
+    make                                                                      
+    make help                                                                 
+    make scenario-help                                                        
+    make makbet-help                                                          
+    make makbet-clean                                                         
+    make makbet-version                                                       
+
+All makbet's special targets defined in /home/user/makbet//makbet.mk:             
+
+    .show-cache-dir              - Show entire content of makbet's internal   
+                                   ".cache/" dir.                           
+    .show-dot-dir                - Show entire content of makbet's internal   
+                                   ".cache/dot/" dir (this target requires  
+                                   prior MAKBET_DOT=1 usage).                 
+    .show-merged-dot-results     - Show merged content of all dot files (this 
+                                   target requires prior MAKBET_DOT=1 usage). 
+    .show-events-dir             - Show entire content of makbet's internal   
+                                   ".cache/events/" dir including all       
+                                   sub-dirs.                                  
+    .show-events-cfg-dir         - Show entire content of makbet's internal   
+                                   ".cache/events/cfg/" dir.                
+    .show-events-csv-dir         - Show entire content of makbet's internal   
+                                   ".cache/events/csv/" dir (this target    
+                                   requires prior MAKBET_CSV=1 usage).        
+    .show-merged-csv-events      - Show merged content of all event csv files 
+                                   (this target requires prior MAKBET_CSV=1   
+                                   usage).                                    
+    .show-prof-dir               - Show entire content of makbet's internal   
+                                   ".cache/prof/" dir including all         
+                                   sub-dirs.                                  
+    .show-prof-cfg-dir           - Show entire content of makbet's internal   
+                                   ".cache/prof/cfg/" dir (this target      
+                                   requires prior MAKBET_PROF=1 usage).       
+    .show-prof-csv-dir           - Show entire content of makbet's internal   
+                                   ".cache/prof/csv/" dir (this target      
+                                   requires prior MAKBET_PROF=1 and           
+                                   MAKBET_CSV=1 usage).                       
+    .show-merged-csv-profiles    - Show merged content of all profile csv     
+                                   files (this target requires prior          
+                                   MAKBET_CSV=1 and MAKBET_PROF=1 usage).     
+    .show-env-vars               - Show all MAKBET_* environment variables    
+                                   available during processing makbet.mk file.
+
+Mandatory variables:                                                          
+
+    MAKBET_PATH                  - Mandatory env variable which is required by
+                                   makbet.mk file.  It should point to main   
+                                   makbet's directory (the directory where the
+                                   makbet.mk file is stored).                 
+
+Optional variables:                                                           
+
+    MAKBET_VERBOSE               - Optional cli/env variable for controlling  
+                                   verbosity.  Allowed value: 0 or 1 or 2.    
+                                   The default value is 0.                    
+    MAKBET_DOT                   - Optional cli/env variable for enabling (1) 
+                                   or disabling (0) dot files generation.     
+                                   Allowed value: 0 or 1.  The default value  
+                                   is 0.  For more details please see         
+                                   description of ".show-merged-dot-results"
+                                   and ".show-dot-dir" targets above.       
+    MAKBET_CSV                   - Optional cli/env variable for enabling (1) 
+                                   or disabling (0) csv files generation.     
+                                   Allowed value: 0 or 1.  The default value  
+                                   is 0.  For more details please see         
+                                   description of ".show-events-csv-dir",   
+                                   ".show-merged-csv-events", and           
+                                   ".show-prof-csv-dir" targets above.      
+    MAKBET_PROF                  - Optional cli/env variable for enabling (1) 
+                                   or disabling (0) profile files generation. 
+                                   Allowed value: 0 or 1.  The default value  
+                                   is 0.  For more details please see         
+                                   description of ".show-prof-dir",         
+                                   ".show-merged-csv-profiles",             
+                                   ".show-prof-cfg-dir", and                
+                                   ".show-prof-csv-dir" targets above.      
+
+Examples:                                                                     
+
+    make .show-env-vars                                                       
+    make .show-cache-dir                                                      
+    make .show-merged-csv-profiles MAKBET_CSV=1 MAKBET_PROF=1                 
+
