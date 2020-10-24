@@ -254,9 +254,10 @@ Typical **DOT** -> **PNG** conversion is simple and straightforward:
 
 |
 
-Two **DOT** online editors have been successfully tested with **makbet**:
+Three **DOT** online editors have been successfully tested with **makbet**:
 
 - https://edotor.net (fully interactive!)
+- http://viz-js.com (also fully interactive!)
 - http://webgraphviz.com (very simple, but works! :D)
 
 |
