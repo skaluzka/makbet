@@ -38,13 +38,13 @@ jobs:
       # can access it.
       - uses: actions/checkout@v2
 
-      # Runs a set of commands using the runners shell.
       - name: Run makbet's test suite...
         run: |
           cd tests/
           ./run-tests.sh
           echo $?
 
+      # Archive tests/logs/ + tests/output/ in artifacts.zip file.
       - uses: actions/upload-artifact@v2
         with:
           name: artifacts
