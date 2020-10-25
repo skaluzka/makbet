@@ -22,6 +22,12 @@ jobs:
     # of the job.
     steps:
 
+      - name: Install tree utility...
+        run: sudo apt-get install tree
+
+      - name: Check tree version...
+        run: tree --version
+
       - name: Check GNU Make version...
         run: make --version
 
