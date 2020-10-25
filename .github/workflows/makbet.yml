@@ -3,10 +3,16 @@ name: CI
 # Controls when the action will run.  Triggers the workflow on push or pull
 # request events but only for master and stable/v0.1.x branches.
 on:
+
   push:
-    branches: [ master stable/v0.1.x ]
+    branches:
+      - master
+      - stable/v0.1.x
+
   pull_request:
-    branches: [ master stable/v0.1.x ]
+    branches:
+      - master
+      - stable/v0.1.x
 
 # A workflow run is made up of one or more jobs that can run sequentially
 # or in parallel.
@@ -16,6 +22,8 @@ jobs:
   build:
 
     # The type of runner that the job will run on.
+    # More details about what SW is available can be found on below page:
+    # https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu1804-README.md
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part
