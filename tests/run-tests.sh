@@ -45,10 +45,16 @@ mkdir -pv "${MAKBET_TESTS_LOGS_DIR}"
 # Build file list.
 readonly FILE_LIST=$( find "${MAKBET_TESTS_SRC_DIR}" -type f -iname "t[0-9][0-9]__make*" | sort )
 
-# Declare some counter variables.
+# Declare few counter variables.
 file_counter=0
 failed_counter=0
 passed_counter=0
+
+# Declare return/exit codes.
+readonly RC_SUCCESS=0
+readonly RC_ERROR=1
+
+rc="${RC_SUCCESS}"
 
 echo ""
 echo "[INFO]: Starting tests loop..."
@@ -97,6 +103,7 @@ time {
             passed_counter=$(( passed_counter+1 ))
             echo "PASSED:  ${__file_path}"
         else
+            rc="${RC_ERROR}"
             failed_counter=$(( failed_counter+1 ))
             echo "FAILED:  ${__file_path}"
             echo "Please check the log file: ${log_file_path}"
@@ -119,6 +126,9 @@ time {
 }
 
 echo ""
+
+# Exit script and return RC_SUCCESS or RC_ERROR value.
+exit "${rc}"
 
 
 # End of file
