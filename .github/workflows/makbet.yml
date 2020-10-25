@@ -35,5 +35,12 @@ jobs:
           cd tests/
           ./run-tests.sh
 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: artifacts
+          path: |
+            tests/logs/
+            tests/output/
+
 
 # End of file
