@@ -22,7 +22,7 @@ jobs:
     # of the job.
     steps:
 
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job
+      # Checks-out the repository under $GITHUB_WORKSPACE, so all jobs
       # can access it.
       - uses: actions/checkout@v2
 
