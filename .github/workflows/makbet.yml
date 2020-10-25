@@ -34,6 +34,7 @@ jobs:
         run: |
           cd tests/
           ./run-tests.sh
+          echo $?
 
       - uses: actions/upload-artifact@v2
         with:
