@@ -12,12 +12,6 @@ Keep reading && have fun! :)
 ---------------------
 
 - | `Background`_
-- | `01.dummy`_
-- | `02.toolchain-simple`_
-- | `03.toolchain-advanced`_
-- | `04.ping-dns-servers`_
-- | `05.sleep`_
-- | `06.comments`_
 - | `Directory structure`_
 
 |
@@ -32,86 +26,6 @@ are easy to observe and notice.
 
 |
 
-**01.dummy**
-------------
-
-The first example is saved in ``examples/01.dummy/`` directory.  It doesn't do
-anything special.  The file ``01.dummy/Makefile`` (called also a **makbet's**
-scenario file) contains list of all tasks which are specific for this
-example.  All defined tasks are just a fake tasks (please check the content of
-``examples/01.dummy/tasks/generic-task.sh`` script).  This example can be run
-at any time with minimal requirements and effort.
-
-|
-
-**02.toolchain-simple**
------------------------
-
-The second example is saved in ``examples/02.toolchain-simple/`` directory.
-The main goal of this example is to build, locally from the source code,
-a simple toolchain consists of:
-
-- **doxygen 1.8.20**
-- **git 2.29.2**
-- **kcov 38**
-- **make 4.3**
-- **python 3.9.0**
-
-|
-
-**03.toolchain-advanced**
--------------------------
-
-The next example is saved in ``examples/03.toolchain-advanced/`` directory.  The
-goal of this example is exactly the same as in ``examples/02.toolchain-simple``
-case.  In fact, the real differences between **02.toolchain-simple** and
-**03.toolchain-advanced** examples are the ``Makefile`` files which both have
-different constructions.  **03.toolchain-advanced** example uses more advanced
-syntax in its ``Makefile`` file.  However both examples share the same set of
-tasks from ``examples/lib/tasks/build-scripts/`` directory.  Two different
-versions of the same scenario have been created for comparison and testing
-purposes.  As expected final results for both **02.toolchain-simple** and
-**03.toolchain-advanced** should be the same.
-
-|
-
-**04.ping-dns-servers**
------------------------
-
-The next example is saved in ``examples/04.ping-dns-servers/`` directory.  The
-goal of that example is to show how useful parallel tasks execution can be.
-With this scenario **three** popular DNS servers
-(``1.1.1.1`` + ``8.8.4.4`` + ``8.8.8.8``) can be checked/pinged simultaneously
-using standard ``ping`` utility.  To achieve that, the ``-j`` flag has to be
-passed to the ``make`` command (for example ``make -j4``).  Please note that
-there is no dedicated task script in this example.  The syntax of all raw
-``ping`` commands is passed directly to ``TASK_template`` macro.
-
-|
-
-**05.sleep**
-------------
-
-The next example is saved in ``examples/05.sleep/`` directory.  This is another
-good example showing how to play with parallel tasks execution.  The Makefile
-file of this scenario contains **five** sleep tasks: ``sleep-1s``, ``sleep-2s``,
-``sleep-3s``, ``sleep-5s`` and ``sleep-8s``.  All of them can be run,
-sequentially - one after another, if ``make`` command will be run with ``-j1``
-flag (or without ``-j`` flag at all).  But they can be also run in parallel if
-``-j3`` (or in general if jobs value will be greater than 1) flag will be passed
-to the ``make`` command.
-
-|
-
-**06.comments**
----------------
-
-The last example is saved in ``examples/06.comments/`` directory.  This example
-is degraded - all tasks inside scenario ``Makefile`` are commented nonetheless
-``makbet.mk`` works as expected and works the same like for any other scenario.
-
-|
-
 **Directory structure**
 -----------------------
 
@@ -122,6 +36,7 @@ The **makbet's** examples directory structure is:
   $MAKBET_PATH/examples/
   ├── 01.dummy/
   │   ├── Makefile
+  │   ├── README.rst
   │   ├── results/
   │   │   ├── output.csv
   │   │   ├── output.dot
@@ -130,30 +45,35 @@ The **makbet's** examples directory structure is:
   │       └── generic-task.sh
   ├── 02.toolchain-simple/
   │   ├── Makefile
+  │   ├── README.rst
   │   └── results/
   │       ├── output.csv
   │       ├── output.dot
   │       └── output.png
   ├── 03.toolchain-advanced/
   │   ├── Makefile
+  │   ├── README.rst
   │   └── results/
   │       ├── output.csv
   │       ├── output.dot
   │       └── output.png
   ├── 04.ping-dns-servers/
   │   ├── Makefile
+  │   ├── README.rst
   │   └── results/
   │       ├── output.csv
   │       ├── output.dot
   │       └── output.png
   ├── 05.sleep/
   │   ├── Makefile
+  │   ├── README.rst
   │   └── results/
   │       ├── output.csv
   │       ├── output.dot
   │       └── output.png
   ├── 06.comments/
   │   ├── Makefile
+  │   ├── README.rst
   │   └── results/
   │       ├── output.csv
   │       ├── output.dot
@@ -181,7 +101,7 @@ The **makbet's** examples directory structure is:
   │           └── uncompress-zip-file.sh
   └── README.rst
 
-  11 directories, 31 files
+  17 directories, 49 files
 
 |
 

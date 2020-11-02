@@ -40,7 +40,7 @@ The **makbet's** documentation directory structure is:
   │       └── Makefile
   └── README.rst
 
-  9 directories, 20 files
+  2 directories, 2 files
 
 where:
 
