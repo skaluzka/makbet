@@ -122,18 +122,42 @@ The **makbet's** examples directory structure is:
   $MAKBET_PATH/examples/
   ├── 01.dummy/
   │   ├── Makefile
+  │   ├── results/
+  │   │   ├── output.csv
+  │   │   ├── output.dot
+  │   │   └── output.png
   │   └── tasks/
   │       └── generic-task.sh
   ├── 02.toolchain-simple/
-  │   └── Makefile
+  │   ├── Makefile
+  │   └── results/
+  │       ├── output.csv
+  │       ├── output.dot
+  │       └── output.png
   ├── 03.toolchain-advanced/
-  │   └── Makefile
+  │   ├── Makefile
+  │   └── results/
+  │       ├── output.csv
+  │       ├── output.dot
+  │       └── output.png
   ├── 04.ping-dns-servers/
-  │   └── Makefile
+  │   ├── Makefile
+  │   └── results/
+  │       ├── output.csv
+  │       ├── output.dot
+  │       └── output.png
   ├── 05.sleep/
-  │   └── Makefile
+  │   ├── Makefile
+  │   └── results/
+  │       ├── output.csv
+  │       ├── output.dot
+  │       └── output.png
   ├── 06.comments/
-  │   └── Makefile
+  │   ├── Makefile
+  │   └── results/
+  │       ├── output.csv
+  │       ├── output.dot
+  │       └── output.png
   ├── lib/
   │   └── tasks/
   │       ├── build-scripts/
