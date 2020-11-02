@@ -37,29 +37,29 @@ The **makbet's** documentation directory structure is:
   $MAKBET_PATH/docs/
   ├── examples/
   │   ├── 01.dummy/
-  │   │   ├── results.csv
-  │   │   ├── results.dot
-  │   │   └── results.png
+  │   │   ├── output.csv
+  │   │   ├── output.dot
+  │   │   └── output.png
   │   ├── 02.toolchain-simple/
-  │   │   ├── results.csv
-  │   │   ├── results.dot
-  │   │   └── results.png
+  │   │   ├── output.csv
+  │   │   ├── output.dot
+  │   │   └── output.png
   │   ├── 03.toolchain-advanced/
-  │   │   ├── results.csv
-  │   │   ├── results.dot
-  │   │   └── results.png
+  │   │   ├── output.csv
+  │   │   ├── output.dot
+  │   │   └── output.png
   │   ├── 04.ping-dns-servers/
-  │   │   ├── results.csv
-  │   │   ├── results.dot
-  │   │   └── results.png
+  │   │   ├── output.csv
+  │   │   ├── output.dot
+  │   │   └── output.png
   │   ├── 05.sleep/
-  │   │   ├── results.csv
-  │   │   ├── results.dot
-  │   │   └── results.png
+  │   │   ├── output.csv
+  │   │   ├── output.dot
+  │   │   └── output.png
   │   └── 06.comments/
-  │       ├── results.csv
-  │       ├── results.dot
-  │       └── results.png
+  │       ├── output.csv
+  │       ├── output.dot
+  │       └── output.png
   ├── templates/
   │   └── scenario/
   │       └── Makefile
