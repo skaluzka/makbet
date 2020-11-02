@@ -157,6 +157,8 @@ The **makbet's** examples directory structure is:
   │           └── uncompress-zip-file.sh
   └── README.rst
 
+  11 directories, 31 files
+
 |
 
 where:

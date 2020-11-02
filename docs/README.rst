@@ -65,6 +65,8 @@ The **makbet's** documentation directory structure is:
   │       └── Makefile
   └── README.rst
 
+  9 directories, 20 files
+
 where:
 
 - ``docs/`` - The main documentation directory.  Its absolute path can be
