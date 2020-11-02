@@ -136,13 +136,12 @@ The **makbet's** examples directory structure is:
   │   └── Makefile
   ├── lib/
   │   └── tasks/
-  │       ├── 02.toolchain/
-  │       │   └── common/
-  │       │       ├── build-doxygen.sh
-  │       │       ├── build-git.sh
-  │       │       ├── build-kcov.sh
-  │       │       ├── build-make.sh
-  │       │       └── build-python.sh
+  │       ├── build-scripts/
+  │       │   ├── build-doxygen.sh
+  │       │   ├── build-git.sh
+  │       │   ├── build-kcov.sh
+  │       │   ├── build-make.sh
+  │       │   └── build-python.sh
   │       └── common/
   │           ├── check-dirs.sh
   │           ├── check-files.sh
