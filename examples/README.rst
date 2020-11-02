@@ -52,7 +52,7 @@ The main goal of this example is to build, locally from the source code,
 a simple toolchain consists of:
 
 - **doxygen 1.8.20**
-- **git 2.29.0**
+- **git 2.29.2**
 - **kcov 38**
 - **make 4.3**
 - **python 3.9.0**
@@ -223,7 +223,7 @@ where:
   **doxygen 1.8.20** from previously downloaded sources.
 - ``lib/tasks/build-scripts/build-git.sh`` - This **Bash** script is used
   by **two** ``build-git`` tasks (defined in **02.toolchain-simple** and
-  **03.toolchain-advanced** examples).  Its aim is to build **git 2.29.0** from
+  **03.toolchain-advanced** examples).  Its aim is to build **git 2.29.2** from
   previously downloaded sources.
 - ``lib/tasks/build-scripts/build-kcov.sh`` - This **Bash** script is used
   by **two** ``build-kcov`` tasks (defined in **02.toolchain-simple** and
