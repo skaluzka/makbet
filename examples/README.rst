@@ -137,11 +137,11 @@ The **makbet's** examples directory structure is:
   ├── lib/
   │   └── tasks/
   │       ├── build-scripts/
-  │       │   ├── build-doxygen.sh
-  │       │   ├── build-git.sh
-  │       │   ├── build-kcov.sh
-  │       │   ├── build-make.sh
-  │       │   └── build-python.sh
+  │       │   ├── build-doxygen.sh
+  │       │   ├── build-git.sh
+  │       │   ├── build-kcov.sh
+  │       │   ├── build-make.sh
+  │       │   └── build-python.sh
   │       └── common/
   │           ├── check-dirs.sh
   │           ├── check-files.sh
