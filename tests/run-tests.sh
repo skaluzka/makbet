@@ -42,8 +42,8 @@ mkdir -pv "${MAKBET_TESTS_OUTPUT_DIR}"
 rm -rf "${MAKBET_TESTS_LOGS_DIR}"
 mkdir -pv "${MAKBET_TESTS_LOGS_DIR}"
 
-# Build file list.
-readonly FILE_LIST=$( find "${MAKBET_TESTS_SRC_DIR}" -type f -iname "t[0-9][0-9]__make*" | sort )
+# Create the list of test files.
+readonly TEST_FILES=$( find "${MAKBET_TESTS_SRC_DIR}" -type f -iname "t[0-9][0-9]__make*" | sort )
 
 # Declare few counter variables.
 file_counter=0
@@ -62,8 +62,8 @@ echo ""
 
 time {
 
-    # Start iteration through file list.
-    for __file_path in ${FILE_LIST}
+    # Start iteration through test file list.
+    for __file_path in ${TEST_FILES}
     do
 
         echo "STARTED: ${__file_path}"
