@@ -5,7 +5,7 @@ set -eu
 # Fetch current working directory.
 readonly CWD="$(pwd)"
 
-# Export MAKBET_PATH variable.
+# Export mandatory MAKBET_PATH variable.
 export MAKBET_PATH="$( readlink -f "${CWD}/.." )"
 
 # Export MAKBET_CACHE_DIR variable.
@@ -45,7 +45,7 @@ mkdir -pv "${MAKBET_TESTS_LOGS_DIR}"
 # Create the list of test files.
 readonly TEST_FILES=$( find "${MAKBET_TESTS_SRC_DIR}" -type f -iname "t[0-9][0-9]__make*" | sort )
 
-# Declare few counter variables.
+# Declare few global counter variables.
 file_counter=0
 failed_counter=0
 passed_counter=0
@@ -85,13 +85,13 @@ time {
         # Disable errors handling.
         set +e
 
-            # Call test scenario file.
+            # Call test case file.
             "${__file_path}" \
                 "${output_file_path}" \
                 "${__file_path//src/resources\/expected}" \
                 > "${log_file_path}" 2>&1
 
-            # Fetch file's return code.
+            # Fetch test case return code.
             __file_pathrc=$?
 
         # Enable errors handling.
@@ -109,6 +109,7 @@ time {
             echo "Please check the log file: ${log_file_path}"
         fi
 
+        # Increment test case counter.
         file_counter=$(( file_counter+1 ))
 
         echo ""
