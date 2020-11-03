@@ -9,10 +9,10 @@ assignees: ''
 
 ## **makbet's version**
 Please paste below the version of **makbet** used (use
-``make -f makbet.mk makbet-version`` command to fetch it).
+``make -f "${MAKBET_PATH}/makbet.mk" makbet-version`` command to fetch it).
 
 ```
-make -f makbet.mk makbet-version # printing makbet's version
+make -f "${MAKBET_PATH}/makbet.mk" makbet-version # printing makbet's version
 ```
 
 ## **Feature description**
