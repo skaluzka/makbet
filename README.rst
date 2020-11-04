@@ -15,7 +15,7 @@ Keep reading && have fun! :)
 ---------------------
 
 - | `Why?`_
-- | `Features`_
+- | `Key features`_
 - | `System requirements`_
 - | `Installing`_
 - | `Few words regarding backward compatibility`_
@@ -60,8 +60,8 @@ And (the last but not least):
 
 |
 
-Features
---------
+Key features
+------------
 
 **makbet's** key features are:
 
