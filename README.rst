@@ -68,7 +68,7 @@ Key features
 - based on **GNU Make** tool and its features,
 - easy extensible,
 - built-in support for parallelism,
-- can be easy added/embedded into existing projects as 3rd party SW,
+- can be easily added/embedded into existing projects as 3rd party SW,
 - pure console tool - no GUI required,
 - good and fast integration with other console programs,
 - unified naming scheme of all environment variables (every **makbet's**
