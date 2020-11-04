@@ -81,7 +81,7 @@ Key features
   usage (e.g.: by shell scripts),
 - saving tasks' details in ``*.csv`` files for further processing if needed
   (this feature can be enabled by ``MAKBET_CSV=1`` CLI option),
-- profiling - measuring tasks duration (this feature can be enabled by
+- time profiling - measuring tasks duration (this feature can be enabled by
   ``MAKBET_PROF=1`` CLI option),
 - generating **DOT** output showing relations between tasks (this feature can
   be enabled by ``MAKBET_DOT=1`` CLI option),
