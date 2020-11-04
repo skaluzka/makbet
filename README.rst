@@ -68,9 +68,11 @@ Key features
 - based on **GNU Make** tool and its features,
 - easy extensible,
 - built-in support for parallelism,
-- can be easily added/embedded into existing projects as 3rd party SW,
-- pure console tool - no GUI required,
-- good and fast integration with other console programs,
+- can be easily added/embedded into existing projects as a 3rd party SW,
+- no ``root/admin`` privileges required,
+- pure console tool - no GUI required for usage,
+- good and fast integration with other console tools,
+- fast and easy installation process,
 - unified naming scheme of all environment variables (every **makbet's**
   environment variable has ``MAKBET_`` prefix),
 - unified syntax of all CLI options (every **makbet's** CLI option has
@@ -83,10 +85,17 @@ Key features
   ``MAKBET_PROF=1`` CLI option),
 - generating **DOT** output showing relations between tasks (this feature can
   be enabled by ``MAKBET_DOT=1`` CLI option),
-- it is pretty well documented,
-- has a couple of quite nice examples, including small built-in tasks library
-  (set of simple **Bash** scripts),
-- minimal system requirements (see below).
+- written in self-explanatory code,
+- widely and richly commented,
+- contains useful examples, including small built-in tasks library (set of few
+  simple **Bash** scripts),
+- based on easy development model (all features are being developed on a
+  ``master`` branch, while all releases are made from dedicated
+  ``stable/vMAJOR.minor.x`` branches),
+- it's developed according to good SW development practices,
+- follows semver (https://semver.org) versioning patterns (see section
+  `Few words regarding backward compatibility`_  below),
+- minimal system requirements (see the next section - `System requirements`_).
 
 |
 
