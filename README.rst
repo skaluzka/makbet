@@ -87,15 +87,16 @@ Key features
   be enabled by ``MAKBET_DOT=1`` CLI option),
 - written in self-explanatory code,
 - widely and richly commented,
-- contains useful examples, including small built-in tasks library (set of few
-  simple **Bash** scripts),
+- contains few useful examples, including small built-in tasks library (set of
+  several, but simple **Bash** scripts),
 - based on easy development model (all features are being developed on a
   ``master`` branch, while all releases are made from dedicated
   ``stable/vMAJOR.minor.x`` branches),
 - it's developed according to good SW development practices,
-- follows semver (https://semver.org) versioning patterns (see section
-  `Few words regarding backward compatibility`_  below),
-- minimal system requirements (see the next section - `System requirements`_).
+- follows so-called **semver** (`<https://semver.org>`_) versioning patterns
+  (see also `Few words regarding backward compatibility`_ section),
+- minimal system requirements (see the next section
+  below - `System requirements`_).
 
 |
 
