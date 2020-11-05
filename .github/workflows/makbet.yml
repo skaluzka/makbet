@@ -1,7 +1,8 @@
 name: CI
 
-# Controls when the action will run.  Triggers the workflow on push or pull
-# request events but only for master and stable/v0.1.x branches.
+# Controls when the action will run.  Triggers the workflow on push
+# or pull request events but only for "master" and "stable/v0.1.x"
+# branches.
 on:
 
   push:
@@ -14,20 +15,21 @@ on:
       - master
       - stable/v0.1.x
 
-# A workflow run is made up of one or more jobs that can run sequentially
-# or in parallel.
+# A workflow run is made up of one or more jobs that can run
+# sequentially or in parallel.
 jobs:
 
   # This workflow contains a single job called "build".
   build:
 
     # The type of runner that the job will run on.
-    # More details about what SW is available can be found on below page:
+    # More details about SW installed on "ubuntu-latest" runner
+    # can be found on below page:
     # https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu1804-README.md
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part
-    # of the job.
+    # Steps represent a sequence of tasks that will be executed
+    # as part of the job.
     steps:
 
       - name: Install tree utility...
@@ -42,8 +44,8 @@ jobs:
       - name: Check bash version...
         run: bash --version
 
-      # Checks-out the repository under $GITHUB_WORKSPACE, so all jobs
-      # can access it.
+      # Checks-out the repository under ${GITHUB_WORKSPACE}, so all
+      # jobs can access it.
       - uses: actions/checkout@v2
 
       - name: Run makbet's test suite...
