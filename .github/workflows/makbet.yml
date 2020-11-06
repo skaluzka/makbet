@@ -54,10 +54,11 @@ jobs:
           ./run-tests.sh
           echo $?
 
-      # Archive tests/logs/ + tests/output/ in artifacts.zip file.
+      # Compress ${MAKBET_PATH}/tests/logs/ and ${MAKBET_PATH}/tests/output/
+      # directories and create test_artifacts.zip archive.
       - uses: actions/upload-artifact@v2
         with:
-          name: artifacts
+          name: test_artifacts
           path: |
             tests/logs/
             tests/output/
