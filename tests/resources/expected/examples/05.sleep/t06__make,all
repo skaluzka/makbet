@@ -1,0 +1,14 @@
+[INFO]: Task "@01-INIT" (TASK_ID: 1) started.
+[INFO]: Task "@01-INIT" (TASK_ID: 1) terminated.
+[INFO]: Task "sleep-1s" (TASK_ID: 2) started.
+[INFO]: Task "sleep-1s" (TASK_ID: 2) terminated.
+[INFO]: Task "sleep-2s" (TASK_ID: 3) started.
+[INFO]: Task "sleep-2s" (TASK_ID: 3) terminated.
+[INFO]: Task "sleep-3s" (TASK_ID: 4) started.
+[INFO]: Task "sleep-3s" (TASK_ID: 4) terminated.
+[INFO]: Task "sleep-5s" (TASK_ID: 5) started.
+[INFO]: Task "sleep-5s" (TASK_ID: 5) terminated.
+[INFO]: Task "sleep-8s" (TASK_ID: 6) started.
+[INFO]: Task "sleep-8s" (TASK_ID: 6) terminated.
+[INFO]: Task "all" (TASK_ID: 7) started.
+[INFO]: Task "all" (TASK_ID: 7) terminated.

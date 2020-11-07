@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2002,SC2164
+set -u
+set -x
+
+
+readonly output_file="${1}"
+readonly expected_file="${2}"
+pushd "${MAKBET_PATH}/examples/05.sleep/" > /dev/null
+
+make makbet-clean
+make all \
+    > "${output_file}"
+
+diff -u -s \
+    <( \
+        cat "${output_file}" \
+        | grep -o '\[INFO].*' \
+    ) \
+    <( \
+        cat "${expected_file}" \
+    )
+readonly __rc=$?
+popd > /dev/null
+exit ${__rc}
+
+
+# End of file
