@@ -4,7 +4,7 @@ set -eu
 
 function main() {
 
-    w
+    uptime
 
 }
 
