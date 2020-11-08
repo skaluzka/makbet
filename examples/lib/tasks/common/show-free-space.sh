@@ -3,7 +3,9 @@ set -eu
 
 
 function main() {
+
     df -hT
+
 }
 
 main "$@"

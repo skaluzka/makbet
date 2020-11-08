@@ -3,6 +3,7 @@ set -eu
 
 
 function main() {
+
     for f in "${@}"
     do
         echo "Checking if \"${f}\" file exists..."
@@ -11,6 +12,7 @@ function main() {
             echo "${f} -> File found."
         fi
     done
+
 }
 
 main "$@"

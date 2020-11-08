@@ -8,6 +8,7 @@ function main() {
     delay_in_seconds="${1}"
 
     sleep "${delay_in_seconds}"
+
 }
 
 main "$@"

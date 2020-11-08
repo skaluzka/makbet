@@ -3,9 +3,10 @@ set -eu
 
 
 function main() {
-    curl -L "${1}" > "${2}"
 
+    curl -L "${1}" > "${2}"
     ls -al "${2}"
+
 }
 
 main "$@"

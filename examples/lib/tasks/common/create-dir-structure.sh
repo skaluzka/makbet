@@ -3,7 +3,9 @@ set -eu
 
 
 function main() {
+
     mkdir -pv "$@"
+
 }
 
 main "$@"

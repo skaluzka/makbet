@@ -3,6 +3,7 @@ set -eu
 
 
 function main() {
+
     for d in "${@}"
     do
         echo "Checking if \"${d}\" directory exists..."
@@ -11,6 +12,7 @@ function main() {
             echo "${d} -> Directory found."
         fi
     done
+
 }
 
 main "$@"

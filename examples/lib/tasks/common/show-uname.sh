@@ -3,7 +3,9 @@ set -eu
 
 
 function main() {
+
     uname "${1}"
+
 }
 
 main "$@"
