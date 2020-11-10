@@ -30,7 +30,9 @@ $(eval $(call TASK_template, \
 	task-1, "Task 1 description", \
 	@01-INIT, \
 	TASK_CMD, \
-		TASK_CMD_OPT_1 TASK_CMD_OPT_2 TASK_CMD_OPT_3 \
+		TASK_CMD_OPT_1 \
+		TASK_CMD_OPT_2 \
+		TASK_CMD_OPT_3 \
 ))
 
 #
