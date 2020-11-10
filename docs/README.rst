@@ -44,12 +44,13 @@ The **makbet's** documentation directory structure is:
 
 where:
 
-- ``docs/`` - The main documentation directory.  Its absolute path can be
+- ``docs/`` - **makbet's** main documentation directory.  Its absolute path can be
   defined as ``$MAKBET_PATH/docs`` (or ``$MAKBET_PATH/docs/``) assuming the
   ``$MAKBET_PATH`` variable is pointing to **makbet's** main directory.
-- ``docs/templates/`` - Separate directory dedicated to storing various makbet's
-  templates (like scenario template for example) which can be freely used while
-  creating custom content.
+- ``docs/templates/`` - Separate directory dedicated to storing various
+  **makbet's** templates ready to be used while creating custom content.
+- ``docs/templates/scenario/Makefile`` - Recommended **makbet's** scenario
+  template file.  Easily expandable.  Tested.
 - ``README.rst`` - The file you are reading now.
 
 
