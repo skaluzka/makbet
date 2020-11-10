@@ -66,7 +66,7 @@ Key features
 **makbet's** key features are:
 
 - based on **GNU Make** tool and its features,
-- easy extensible,
+- easily extensible,
 - built-in support for parallelism,
 - can be easily added/embedded into existing projects as a 3rd party SW,
 - no ``root/admin`` privileges required,
