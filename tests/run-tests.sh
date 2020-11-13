@@ -131,7 +131,7 @@ time {
     echo "Failed:           ${failed_counter}"
     echo ""
 
-# End of "time {...}" block.
+# End of "time {...}" code block.
 }
 
 echo ""
