@@ -47,21 +47,22 @@ jobs:
       - name: Check shellcheck version...
         run: shellcheck --version
 
-      # Checks-out the repository under ${GITHUB_WORKSPACE}, so all
+      # Checkout the repository under ${GITHUB_WORKSPACE}, so all
       # jobs can access it.
       - uses: actions/checkout@v2
 
       - name: Run makbet's test suite...
         run: |
+          echo "[INFO]: GITHUB_WORKSPACE = ${GITHUB_WORKSPACE}"
           cd tests/
           ./run-tests.sh
           echo $?
 
       # Compress ${MAKBET_PATH}/tests/logs/ and ${MAKBET_PATH}/tests/output/
-      # directories and create test_artifacts.zip archive.
+      # directories and create CI-tests-artifacts.zip archive.
       - uses: actions/upload-artifact@v2
         with:
-          name: test_artifacts
+          name: CI-tests-artifacts
           path: |
             tests/logs/
             tests/output/
