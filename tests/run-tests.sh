@@ -26,9 +26,18 @@ export MAKBET_TESTS_SRC_DIR="${MAKBET_TESTS_DIR}/src"
 # Export MAKBET_TESTS_LOGS_DIR variable.
 export MAKBET_TESTS_LOGS_DIR="${MAKBET_TESTS_DIR}/logs"
 
+# Declare return/exit codes.
+readonly RC_SUCCESS=0
+readonly RC_ERROR=1
+
+# Init the global exit code variable with ${RC_SUCCESS}.
+__rc="${RC_SUCCESS}"
+
 #
 # OK, Let's play!
 #
+
+echo ""
 
 # Print some extra debug messages.
 echo "[INFO]: CWD=${CWD}"
@@ -45,21 +54,17 @@ mkdir -pv "${MAKBET_TESTS_OUTPUT_DIR}"
 rm -rf "${MAKBET_TESTS_LOGS_DIR}"
 mkdir -pv "${MAKBET_TESTS_LOGS_DIR}"
 
-# Create the list of test files.
-readonly TEST_FILES=$( find "${MAKBET_TESTS_SRC_DIR}" -type f -iname "t[0-9][0-9]__make*" | sort )
+# Collecting all test files.
+readonly test_files=$( find "${MAKBET_TESTS_SRC_DIR}" -type f -iname "t[0-9][0-9]__make*" | sort )
 
-# Declare few global counter variables.
-file_counter=0
+# Declare some conuters.
+test_files_counter=0
+total_files=$(echo "${test_files}" | wc -l)
 failed_counter=0
 passed_counter=0
 
-# Declare return/exit codes.
-readonly RC_SUCCESS=0
-readonly RC_ERROR=1
-
-# Init the global exit code variable with ${RC_SUCCESS}.
-__rc="${RC_SUCCESS}"
-
+echo ""
+echo "[INFO]: Found ${total_files} test files in ${CWD} directory."
 echo ""
 echo "[INFO]: Starting tests loop..."
 echo ""
@@ -67,8 +72,13 @@ echo ""
 time {
 
     # Start iteration through test file list.
-    for __file_path in ${TEST_FILES}
+    for __file_path in ${test_files}
     do
+
+        # Increment test case counter.
+        test_files_counter=$(( test_files_counter+1 ))
+
+        echo "FILE:    ${test_files_counter}/${total_files}"
 
         echo "STARTED: ${__file_path}"
 
@@ -86,19 +96,25 @@ time {
         # Create directory structure inside ./tests/output/ dir.
         mkdir -p "${output_subdir}"
 
+        #
         # Disable errors handling.
+        #
         set +e
 
-            # Call test case file.
-            "${__file_path}" \
-                "${output_file_path}" \
-                "${__file_path//src/resources\/expected}" \
-                > "${log_file_path}" 2>&1
+        #
+        # Call test case file.
+        #
+        "${__file_path}" \
+            "${output_file_path}" \
+            "${__file_path//src/resources\/expected}" \
+            > "${log_file_path}" 2>&1
 
-            # Fetch test case return code.
-            __file_pathrc=$?
+        # Fetch above^^ test case return code.
+        __file_pathrc=$?
 
+        #
         # Enable errors handling.
+        #
         set -e
 
         # Print results.
@@ -117,16 +133,13 @@ time {
             echo "Please check the log file: ${log_file_path}"
         fi
 
-        # Increment test case counter.
-        file_counter=$(( file_counter+1 ))
-
         echo ""
 
     done
 
     # Show summary.
     echo ""
-    echo "Total test files: ${file_counter}"
+    echo "Total test files: ${test_files_counter}"
     echo "Passed:           ${passed_counter}"
     echo "Failed:           ${failed_counter}"
     echo ""
