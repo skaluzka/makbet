@@ -15,7 +15,7 @@ All makbet's basic targets defined in /home/user/makbet/makbet.mk:
                                    generated dynamically based on all tasks   
                                    defined in scenario's Makefile file).      
     makbet-help                  - Show main makbet's help message (same as   
-                                   "make help" above) then append extended  
+                                   target "help" above) then append extended
                                    help message containing the list of all    
                                    special makbet's targets.                  
     makbet-clean                 - Clean entire makbet's internal ".cache/" 
