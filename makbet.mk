@@ -515,7 +515,7 @@ main-help: makbet-version
 	@echo "                                   generated dynamically based on all tasks   "
 	@echo "                                   defined in scenario's Makefile file).      "
 	@echo "    makbet-help                  - Show main makbet's help message (same as   "
-	@echo "                                   \"make help\" above) then append extended  "
+	@echo "                                   target \"help\" above) then append extended"
 	@echo "                                   help message containing the list of all    "
 	@echo "                                   special makbet's targets.                  "
 	@echo "    makbet-clean                 - Clean entire makbet's internal \".cache/\" "
