@@ -14,7 +14,7 @@ Keep reading && have fun! :)
 **Table of Contents**
 ---------------------
 
-- | `Why?`_
+- | `About`_
 - | `Key features`_
 - | `System requirements`_
 - | `Installing`_
@@ -31,8 +31,8 @@ Keep reading && have fun! :)
 
 |
 
-Why?
-----
+About
+-----
 
 This project has been created for several reasons...
 
