@@ -122,14 +122,15 @@ Installing
 
 Installing **makbet** is easy and straightforward.
 
-- Clone (or download then unpack) **makbet** project from GitHub.
+- Clone (alternatively download + unpack) **makbet** project from GitHub.
 - Export ``MAKBET_PATH`` variable pointing to **makbet's** main directory
   (e.g.: ``export MAKBET_PATH=/home/user/makbet``).
 - Change directory to main **makbet's** directory then run ``make`` command to
   see default help message.
 
-That's all.  You are now ready to write your own scenarios (or play with
-built-in `examples <examples>`_).
+That's all.  You are now ready to write your own scenarios (based on provided
+`template <docs/templates/scenario>`_) or play with
+built-in `examples <examples>`_.
 
 |
 
