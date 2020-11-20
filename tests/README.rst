@@ -47,7 +47,7 @@ were intentionally omitted to shrink the listing).
   ├── README.rst
   └── run-tests.sh
 
-  17 directories, 128 files
+  17 directories, 130 files
 
 |
 
