@@ -339,8 +339,8 @@ Special **makbet's** target ``.show-merged-csv-events`` will display
 
   [user@localhost 01.dummy]$
 
-| Above results (which are valid for **01.dummy** example) have been saved into
-  this
+| Above results (which are valid for `01.dummy <examples/01.dummy/>`__ example)
+  have been saved into this
   `output.csv <examples/01.dummy/results/output.csv>`__ file.
 | Results for other **makbet's** examples are available `here <examples/>`__.
 
