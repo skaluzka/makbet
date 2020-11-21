@@ -340,7 +340,7 @@ execution command (by default ``MAKBET_PROF=0``) as in example below:
 
 ::
 
-  [user@t460p 01.dummy]$ make makbet-clean && make all MAKBET_PROF=1
+  [user@localhost 01.dummy]$ make makbet-clean && make all MAKBET_PROF=1
 
   2020-10-10 19:53:24.373 [INFO]: Task "@01-INIT" (TASK_ID: 1) started.
 
@@ -379,7 +379,7 @@ execution command (by default ``MAKBET_PROF=0``) as in example below:
   T1 = 1602352415.123305878
   T2 = 1602352415.143659530
   T2 - T1 = 00h:00m:00s.020ms
-  [user@t460p 01.dummy]$ 
+  [user@localhost 01.dummy]$ 
 
 **makbet** measures the duration of tasks with **milliseconds** accuracy.
 
@@ -392,7 +392,7 @@ For example:
 
 ::
 
-  [user@t460p 01.dummy]$ make .show-prof-dir
+  [user@localhost 01.dummy]$ make .show-prof-dir
   /home/user/makbet/.cache/prof/cfg
   ├── [-rw-r--r-- user user         220]  /home/user/makbet/.cache/prof/cfg/@01-INIT.cfg
   ├── [-rw-r--r-- user user         222]  /home/user/makbet/.cache/prof/cfg/all.cfg
@@ -411,14 +411,14 @@ For example:
   /home/user/makbet/.cache/prof/csv
 
   0 directories, 0 files
-  [user@t460p 01.dummy]$ 
+  [user@localhost 01.dummy]$ 
 
 An example content of **cfg** profiling file (taken from **01.dummy** example,
 target ``all``):
 
 ::
 
-  [user@t460p 01.dummy]$ echo ; cat /home/user/makbet/.cache/prof/cfg/all.cfg ; echo
+  [user@localhost 01.dummy]$ echo ; cat /home/user/makbet/.cache/prof/cfg/all.cfg ; echo
 
   TASK_ID="13"
   TASK_NAME="all"
@@ -429,7 +429,7 @@ target ``all``):
   TASK_DATE_TIME_TERMINATED="2020-10-10 19:53:35.143659530"
   TASK_DURATION=00h:00m:00s.020ms
 
-  [user@t460p 01.dummy]$ 
+  [user@localhost 01.dummy]$ 
 
 Every **cfg** profiling file has so-called **key=value** format and can be
 easily used for further preprocessing if needed.
@@ -446,7 +446,7 @@ For example:
 
 ::
 
-  [user@t460p 01.dummy]$ make makbet-clean && make all MAKBET_PROF=1 MAKBET_CSV=1
+  [user@localhost 01.dummy]$ make makbet-clean && make all MAKBET_PROF=1 MAKBET_CSV=1
 
   2020-10-10 19:53:24.373 [INFO]: Task "@01-INIT" (TASK_ID: 1) started.
 
@@ -485,7 +485,7 @@ For example:
   T1 = 1602352415.123305878
   T2 = 1602352415.143659530
   T2 - T1 = 00h:00m:00s.020ms
-  [user@t460p 01.dummy]$ 
+  [user@localhost 01.dummy]$ 
 
 When both ``MAKBET_PROF=1`` and ``MAKBET_CSV=1`` options are passed to the
 ``make`` command then **makbet** will save **a pair of additional files** for
@@ -498,7 +498,7 @@ directory content can be shown by invoking **makbet's** special target
 
 ::
 
-  [user@t460p 01.dummy]$ make .show-prof-dir
+  [user@localhost 01.dummy]$ make .show-prof-dir
   /home/user/makbet/.cache/prof/cfg
   ├── [-rw-r--r-- user user         220]  /home/user/makbet/.cache/prof/cfg/@01-INIT.cfg
   ├── [-rw-r--r-- user user         222]  /home/user/makbet/.cache/prof/cfg/all.cfg
@@ -529,14 +529,14 @@ directory content can be shown by invoking **makbet's** special target
   └── [-rw-r--r-- user user         227]  /home/user/makbet/.cache/prof/csv/task-F.csv
 
   0 directories, 12 files
-  [user@t460p 01.dummy]$ 
+  [user@localhost 01.dummy]$ 
 
 For showing the content of ``.cache/prof/csv/`` directory only, dedicated
 special target ``.show-prof-csv-dir`` can be used:
 
 ::
 
-  [user@t460p 01.dummy]$ make .show-prof-csv-dir
+  [user@localhost 01.dummy]$ make .show-prof-csv-dir
   /home/user/.cache/prof/csv
   ├── [-rw-r--r-- user user         222]  /home/user/makbet/.cache/prof/csv/@01-INIT.csv
   ├── [-rw-r--r-- user user         224]  /home/user/makbet/.cache/prof/csv/all.csv
@@ -552,19 +552,19 @@ special target ``.show-prof-csv-dir`` can be used:
   └── [-rw-r--r-- user user         227]  /home/user/makbet/.cache/prof/csv/task-F.csv
   
   0 directories, 12 files
-  [user@t460p 01.dummy]$ 
+  [user@localhost 01.dummy]$ 
 
 An example content of **csv** profiling file (taken from **01.dummy** example,
 target ``all``):
 
 ::
 
-  [user@t460p 01.dummy]$ echo ; cat /home/user/makbet/.cache/prof/csv/all.csv ; echo
+  [user@localhost 01.dummy]$ echo ; cat /home/user/makbet/.cache/prof/csv/all.csv ; echo
 
   TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_DATE_TIME_STARTED;TASK_DATE_TIME_TERMINATED;TASK_DURATION;
   "13";"all";"task-F";"";"";"2020-10-10 19:53:35.123305878";"2020-10-10 19:53:35.143659530";00h:00m:00s.020ms;
 
-  [user@t460p 01.dummy]$ 
+  [user@localhost 01.dummy]$ 
 
 The most sophisticated profiling target (named ``.show-merged-csv-profiles``)
 will merge all the contents of generated **csv** profiling files and display it
@@ -572,7 +572,7 @@ as single listing on the console:
 
 ::
 
-  [user@t460p 01.dummy]$ echo ; make .show-merged-csv-profiles
+  [user@localhost 01.dummy]$ echo ; make .show-merged-csv-profiles
 
   TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_DATE_TIME_STARTED;TASK_DATE_TIME_TERMINATED;TASK_DURATION;
   "1";"@01-INIT";"";"";"";"2020-10-10 19:53:24.373039503";"2020-10-10 19:53:24.391242333";00h:00m:00s.018ms;
@@ -588,7 +588,7 @@ as single listing on the console:
   "8";"task-C";"task-B2 task-B3";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:31.499257448";"2020-10-10 19:53:32.549793914";00h:00m:01s.050ms;
   "9";"task-D";"task-C";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:32.669063505";"2020-10-10 19:53:33.716411930";00h:00m:01s.047ms;
 
-  [user@t460p 01.dummy]$ 
+  [user@localhost 01.dummy]$ 
 
 Such output can be easily redirected/save to the file for further processing or
 comparison.
