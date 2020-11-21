@@ -122,7 +122,7 @@ Installing
 
 Installing **makbet** is easy and straightforward.
 
-- Clone (alternatively download + unpack) **makbet** project from GitHub.
+- Clone (or alternatively download + unpack) **makbet** project from GitHub.
 - Export ``MAKBET_PATH`` variable pointing to **makbet's** main directory
   (e.g.: ``export MAKBET_PATH=/home/user/makbet``).
 - Change directory to main **makbet's** directory then run ``make`` command to
