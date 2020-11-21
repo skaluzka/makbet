@@ -259,7 +259,7 @@ Typical **DOT** -> **PNG** conversion is simple and straightforward:
 
 ::
 
-  [user@host 01.dummy]$ dot -Tpng output.dot -o output.png
+  [user@localhost 01.dummy]$ dot -Tpng output.dot -o output.png
 
 | For all **makbet's** examples the **DOT** files with their corresponding
   **PNG** images, can be found `here <examples/>`__.
