@@ -33,7 +33,7 @@ help pages:
 |
 
 | The main development branch is the **master** branch.
-|  On this branch we keep the linear history of commits.
+| On this branch we keep the linear history of commits.
 
 |
 
