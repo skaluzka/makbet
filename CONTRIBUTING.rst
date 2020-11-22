@@ -24,13 +24,16 @@ Keep reading && have fun! :)
 **Development model**
 ---------------------
 
-We are preferring so-called **fork** development model in **makbet** project.
+In **makbet** project we are preferring so-called **fork development model**.
 
-For more about it please read official GitHub help pages:
+More information regarding this way of working can be found on official GitHub
+help pages:
 `<https://help.github.com/en/github/getting-started-with-github/fork-a-repo>`_.
 
-Main development branch is the **master** branch.  We are trying to keep the
-linear history of commits, on that branch, as much as possible.
+|
+
+| The main development branch is the **master** branch.
+|  On this branch we keep the linear history of commits.
 
 |
 
