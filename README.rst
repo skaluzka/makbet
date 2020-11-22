@@ -109,7 +109,7 @@ Well... Nothing special here :)
 
 The only system requirements are:
 
-- **GNU Linux** compatible OS.
+- **GNU/Linux** compatible OS.
 - **GNU Make** tool (version **3.82+**).
 - **Bash** interpreter (available in ``/bin/bash`` location).
 
