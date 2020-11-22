@@ -146,8 +146,8 @@ during merging phase.
 --------------------
 
 Because of GitHub signing issue (described here:
-https://github.com/github/hub/issues/1241) it is recommended to merge
-code locally not via GitHub GUI.
+https://github.com/github/hub/issues/1241) we are merging code locally 
+without using GitHub GUI.
 
 
 .. End of file
