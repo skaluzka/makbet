@@ -196,11 +196,11 @@ results which can be used for further processing:
   // Generation date: Sun Oct 18 11:37:21 PM CEST 2020
   // Scenario file: /home/user/makbet/examples/01.dummy/Makefile
 
-  // Graph title.
+  // Define graph title.
   labelloc="t";
   label="Scenario file: /home/user/makbet/examples/01.dummy/Makefile\n\n\n\n";
 
-  // Global options for all nodes.
+  // Define global options for all nodes.
   node [shape="box" style="rounded, bold"];
 
 
