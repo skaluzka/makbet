@@ -15,12 +15,12 @@ make MAKBET_DOT=1 all .show-merged-dot-results \
 diff -u -s \
     <( \
         cat "${output_file}" \
-        | sed '1,109d;112,114d;118d;156d' \
+        | sed '1,109d;112,114d;118d;141d;148d;155d;162d;169d;176d;183d;191d;198d;216d' \
         | nl -b a \
     ) \
     <( \
         cat "${expected_file}" \
-        | sed '3,5d;9d' \
+        | sed '3,5d;9d;32d;39d;46d;53d;60d;67d;74d;82d;89d' \
         | nl -b a \
     )
 readonly __rc=$?

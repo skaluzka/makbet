@@ -16,12 +16,12 @@ make .show-merged-dot-results \
 diff -u -s \
     <( \
         cat "${output_file}" \
-        | sed '1d;4,6d;10d;48d' \
+        | sed '1d;4,6d;10d;33d;40d;47d;54d;61d;68d;75d;83d;90d;108d' \
         | nl -b a \
     ) \
     <( \
         cat "${expected_file}" \
-        | sed '3,5d;9d' \
+        | sed '3,5d;9d;32d;39d;46d;53d;60d;67d;74d;82d;89d' \
         | nl -b a \
     )
 readonly __rc=$?
