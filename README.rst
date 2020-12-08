@@ -129,8 +129,7 @@ Installing **makbet** is easy and straightforward.
   see default help message.
 
 That's all.  You are now ready to write your own scenarios (based on provided
-`template <docs/templates/scenario>`_) or play with
-built-in `examples <examples>`_.
+`template <templates/scenario>`_) or play with built-in `examples <examples>`_.
 
 |
 
