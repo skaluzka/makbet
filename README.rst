@@ -201,7 +201,7 @@ results which can be used for further processing:
   label="Scenario file: /home/user/makbet/examples/01.dummy/Makefile\n\n\n\n";
 
   // Define global options for all nodes.
-  node [shape="box" style="rounded, bold, filled"];
+  node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 
 
   // TASK_NAME: @01-INIT
