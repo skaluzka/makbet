@@ -9,7 +9,7 @@ labelloc="t";
 label="Scenario file: /home/user/makbet/examples/02.toolchain-simple/Makefile\n\n\n\n";
 
 // Global options for all nodes.
-node [shape="box" style="rounded, bold"];
+node [shape="box" style="rounded, bold, filled"];
 
 
 // TASK_NAME: @01-INIT

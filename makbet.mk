@@ -344,7 +344,7 @@ endef
 	@echo "label=\"Scenario file: $(MAKBET_SCENARIO_PATH)\\n\\n\\n\\n\";"
 	@echo ""
 	@echo "// Define global options for all nodes."
-	@echo "node [shape=\"box\" style=\"rounded, bold\"];"
+	@echo "node [shape=\"box\" style=\"rounded, bold, filled\"];"
 	@echo ""
 	@cat $(MAKBET_DOT_DIR)/*.dot
 	@echo ""

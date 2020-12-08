@@ -9,7 +9,7 @@ labelloc="t";
 label="Scenario file: /home/user/makbet/examples/05.sleep/Makefile\n\n\n\n";
 
 // Define global options for all nodes.
-node [shape="box" style="rounded, bold"];
+node [shape="box" style="rounded, bold, filled"];
 
 
 // TASK_NAME: @01-INIT
