@@ -83,12 +83,12 @@ Key features
   (this feature can be enabled by ``MAKBET_CSV=1`` CLI option),
 - time profiling - measuring tasks duration (this feature can be enabled by
   ``MAKBET_PROF=1`` CLI option),
-- generating **DOT** output showing relations between tasks (this feature can
-  be enabled by ``MAKBET_DOT=1`` CLI option),
+- generating **DOT** output showing relations between tasks (this feature
+  can be enabled by ``MAKBET_DOT=1`` CLI option),
 - written in self-explanatory code,
 - widely and richly commented,
-- contains few useful examples, including small built-in tasks library (set of
-  several, but simple **Bash** scripts),
+- contains few useful examples, including small built-in tasks library (set
+  of several, but simple **Bash** scripts),
 - based on easy development model (all features are being developed on a
   ``master`` branch, while all releases are made from dedicated
   ``stable/vMAJOR.minor.x`` branches),
@@ -125,8 +125,8 @@ Installing **makbet** is easy and straightforward.
 - Clone (or alternatively download + unpack) **makbet** project from GitHub.
 - Export ``MAKBET_PATH`` variable pointing to **makbet's** main directory
   (e.g.: ``export MAKBET_PATH=/home/user/makbet``).
-- Change directory to main **makbet's** directory then run ``make`` command to
-  see default help message.
+- Change directory to main **makbet's** directory then run ``make`` command
+  to see default help message.
 
 That's all.  You are now ready to write your own scenarios (based on provided
 `template <templates/scenario>`_) or play with built-in `examples <examples>`_.
@@ -182,8 +182,8 @@ easily saved or redirected to file.  This can be achieved by passing
 
   [user@localhost 01.dummy]$
 
-Special **makbet's** target ``.show-merged-dot-results`` will display **DOT**
-results which can be used for further processing:
+Special **makbet's** target ``.show-merged-dot-results`` will display
+the **DOT** results which can be used for further processing:
 
 ::
 
@@ -563,8 +563,8 @@ For example:
   [user@localhost 01.dummy]$ 
 
 When both ``MAKBET_PROF=1`` and ``MAKBET_CSV=1`` options are passed to the
-``make`` command then **makbet** will save **a pair of additional files** for
-each target run during the runtime.  As already mentioned above the
+``make`` command then **makbet** will save **a pair of additional files**
+for each target run during the runtime.  As already mentioned above the
 ``MAKBET_PROF=1`` option will produce **cfg** files inside ``.cache/prof/cfg/``
 directory.  Using ``MAKBET_CSV=1`` option will generate extra **csv** files
 inside corresponding ``.cache/prof/csv/`` directory.  The whole ``.cache/prof/``
@@ -642,8 +642,8 @@ target ``all``):
   [user@localhost 01.dummy]$ 
 
 The most sophisticated profiling target (named ``.show-merged-csv-profiles``)
-will merge all the contents of generated **csv** profiling files and display it
-as single listing on the console:
+will merge all the contents of generated **csv** profiling files and display
+it as single listing on the console:
 
 ::
 
