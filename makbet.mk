@@ -339,11 +339,11 @@ endef
 	@echo  "// Generation date: $$(date)"
 	@echo  "// Scenario file: $(MAKBET_SCENARIO_PATH)"
 	@echo ""
-	@echo "// Graph title."
+	@echo "// Define graph title."
 	@echo "labelloc=\"t\";"
 	@echo "label=\"Scenario file: $(MAKBET_SCENARIO_PATH)\\n\\n\\n\\n\";"
 	@echo ""
-	@echo "// Global options for all nodes."
+	@echo "// Define global options for all nodes."
 	@echo "node [shape=\"box\" style=\"rounded, bold\"];"
 	@echo ""
 	@cat $(MAKBET_DOT_DIR)/*.dot
