@@ -488,8 +488,8 @@ For example:
   0 directories, 0 files
   [user@localhost 01.dummy]$ 
 
-An example content of **cfg** profiling file (taken from **01.dummy** example,
-target ``all``):
+An example content of **cfg** profiling file (generated for task ``all`` from
+`01.dummy <examples/01.dummy/>`__ example) can be seen below:
 
 ::
 
