@@ -629,8 +629,8 @@ special target ``.show-prof-csv-dir`` can be used:
   0 directories, 12 files
   [user@localhost 01.dummy]$ 
 
-An example content of **csv** profiling file (taken from **01.dummy** example,
-target ``all``):
+An example content of **csv** profiling file (generated for task ``all`` from
+`01.dummy <examples/01.dummy/>`__ example) can be seen below:
 
 ::
 
