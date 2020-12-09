@@ -17,7 +17,6 @@ set -eu
 # Create new *.dot file.
 echo "" > "${2}"
 
-# ...
 # shellcheck disable=SC2129
 echo "// TASK_NAME: ${TASK_NAME}" >> "${2}"
 echo "// TASK_ID: ${TASK_ID}" >> "${2}"
