@@ -116,6 +116,8 @@ where:
 - ``01.dummy/`` - Dedicated directory for **makbet's** ``01.dummy`` example.
 - ``01.dummy/Makefile`` - So-called **makbet's** scenario file.  It contains
   complete task list for **makbet's** ``01.dummy`` example.
+- ``01.dummy/README.rst`` - Short description of **makbet's** ``01.dummy``
+  example.
 - ``01.dummy/tasks/`` - Separate directory containing tasks specific only for
   **makbet's** ``01.dummy`` example.
 - ``01.dummy/tasks/generic-task.sh`` - Simple and generic **Bash** script used
@@ -127,15 +129,19 @@ where:
   ``02.toolchain-simple`` example.
 - ``02.toolchain-simple/Makefile`` - So-called **makbet's** scenario file.  It
   contains complete task list for **makbet's** ``02.toolchain-simple`` example.
+- ``02.toolchain-simple/README.rst`` - Short description of **makbet's**
+  ``02.toolchain-simple`` example.
 
 |
 
 - ``03.toolchain-advanced/`` - Dedicated directory for **makbet's**
   ``03.toolchain-advanced`` example.
-- ``03.toolchain-advanced/Makefile`` - So-called **makbet's** scenario file.  It
-  contains complete task list for **makbet's** ``03.toolchain-advanced``
+- ``03.toolchain-advanced/Makefile`` - So-called **makbet's** scenario file.
+  It contains complete task list for **makbet's** ``03.toolchain-advanced``
   example.  This ``Makefile`` file is more advanced version of
   ``02.toolchain-simple/Makefile`` file described earlier.
+- ``03.toolchain-advanced/README.rst`` - Short description of **makbet's**
+  ``03.toolchain-advanced`` example.
 
 |
 
@@ -143,12 +149,16 @@ where:
   ``04.ping-dns-servers`` example.
 - ``04.ping-dns-servers/Makefile`` - So-called **makbet's** scenario file.  It
   contains complete task list for **makbet's** ``04.ping-dns-servers`` example.
+- ``04.ping-dns-servers/README.rst`` - Short description of **makbet's**
+  ``04.ping-dns-servers`` example.
 
 |
 
 - ``05.sleep/`` - Dedicated directory for **makbet's** ``05.sleep`` example.
 - ``05.sleep/Makefile`` - So-called **makbet's** scenario file.  It contains
   complete task list for **makbet's** ``05.sleep`` example.
+- ``05.sleep/README.rst`` - Short description of **makbet's** ``05.sleep``
+  example.
 
 |
 
@@ -156,6 +166,8 @@ where:
   example.
 - ``06.comments/Makefile`` - So-called **makbet's** scenario file.  It contains
   complete task list for **makbet's** ``06.comments`` example.
+- ``06.comments/README.rst`` - Short description of **makbet's**
+  ``06.comments`` example.
 
 |
 
