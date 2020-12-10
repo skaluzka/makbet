@@ -3,7 +3,7 @@ set -eu
 
 
 # This file is a core part of makbet project.
-# Do not change it unless you know what you are doing.
+# Do not change it, unless you know what you are doing.
 #
 # Params:
 
