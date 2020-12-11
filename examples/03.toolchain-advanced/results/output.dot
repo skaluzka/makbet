@@ -62,14 +62,14 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 19
 // TASK_DEPS: build-make
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/build-scripts/build-python.sh
-// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0/
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.1/
 "build-python" -> "build-make";
 
 // TASK_NAME: check-all-src-dirs
 // TASK_ID: 14
 // TASK_DEPS: unpack-doxygen-src unpack-git-src unpack-kcov-src unpack-make-src unpack-python-src
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/common/check-dirs.sh
-// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_8_20/ /tmp/makbet/examples/03.toolchain-advanced/git/git-2.29.2/ /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/ /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/ /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0/
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_8_20/ /tmp/makbet/examples/03.toolchain-advanced/git/git-2.29.2/ /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/ /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/ /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.1/
 "check-all-src-dirs" -> "unpack-doxygen-src";
 "check-all-src-dirs" -> "unpack-git-src";
 "check-all-src-dirs" -> "unpack-kcov-src";
@@ -108,7 +108,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 8
 // TASK_DEPS: prepare-workdir-structure
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/common/download-file.sh
-// TASK_CMD_OPTS: https://www.python.org/ftp/python/3.9.0/Python-3.9.0.tar.xz /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0.tar.xz
+// TASK_CMD_OPTS: https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tar.xz /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.1.tar.xz
 "fetch-python-src" -> "prepare-workdir-structure";
 
 // TASK_NAME: prepare-workdir-structure
@@ -150,7 +150,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 25
 // TASK_DEPS: build-python
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/common/exec-cmd.sh
-// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0/python -V
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.1/python -V
 "print-python-version" -> "build-python";
 
 // TASK_NAME: unpack-doxygen-src
@@ -185,7 +185,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 13
 // TASK_DEPS: fetch-python-src
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/common/uncompress-txz-file.sh
-// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.0.tar.xz /tmp/makbet/examples/03.toolchain-advanced/python/
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.1.tar.xz /tmp/makbet/examples/03.toolchain-advanced/python/
 "unpack-python-src" -> "fetch-python-src";
 
 }
