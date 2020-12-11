@@ -20,9 +20,9 @@ Keep reading && have fun! :)
 --------------
 
 We are providing **six** complete examples for further study and examination.
-Every example can be freely run with all combinations of **makbet's** CLI
-options (``MAKBET_*``) as well as easily modified.  All results of modifications
-are easy to observe and notice.
+Every example can be freely run with all combinations of **makbet's**
+CLI options (``MAKBET_*``) as well as easily modified.  All results of
+modifications are easy to observe and notice.
 
 |
 
@@ -107,9 +107,10 @@ The **makbet's** examples directory structure is:
 
 where:
 
-- ``examples/`` - The main examples directory.  Its absolute path can be defined
-  as ``$MAKBET_PATH/examples`` (or ``$MAKBET_PATH/examples/``) assuming the
-  ``$MAKBET_PATH`` variable is pointing to **makbet's** main directory.
+- ``examples/`` - The main examples directory.  Its absolute path can be
+  defined as ``$MAKBET_PATH/examples`` (or ``$MAKBET_PATH/examples/``)
+  assuming the ``$MAKBET_PATH`` variable is pointing to **makbet's** main
+  directory.
 
 |
 
@@ -127,8 +128,9 @@ where:
 
 - ``02.toolchain-simple/`` - Dedicated directory for **makbet's**
   ``02.toolchain-simple`` example.
-- ``02.toolchain-simple/Makefile`` - So-called **makbet's** scenario file.  It
-  contains complete task list for **makbet's** ``02.toolchain-simple`` example.
+- ``02.toolchain-simple/Makefile`` - So-called **makbet's** scenario file.
+  It contains complete task list for **makbet's** ``02.toolchain-simple``
+  example.
 - ``02.toolchain-simple/README.rst`` - Short description of **makbet's**
   ``02.toolchain-simple`` example.
 
@@ -147,8 +149,9 @@ where:
 
 - ``04.ping-dns-servers/`` - Dedicated directory for **makbet's**
   ``04.ping-dns-servers`` example.
-- ``04.ping-dns-servers/Makefile`` - So-called **makbet's** scenario file.  It
-  contains complete task list for **makbet's** ``04.ping-dns-servers`` example.
+- ``04.ping-dns-servers/Makefile`` - So-called **makbet's** scenario file.
+  It contains complete task list for **makbet's** ``04.ping-dns-servers``
+  example.
 - ``04.ping-dns-servers/README.rst`` - Short description of **makbet's**
   ``04.ping-dns-servers`` example.
 
@@ -164,8 +167,8 @@ where:
 
 - ``06.comments/`` - Dedicated directory for **makbet's** ``06.comments``
   example.
-- ``06.comments/Makefile`` - So-called **makbet's** scenario file.  It contains
-  complete task list for **makbet's** ``06.comments`` example.
+- ``06.comments/Makefile`` - So-called **makbet's** scenario file.
+  It contains complete task list for **makbet's** ``06.comments`` example.
 - ``06.comments/README.rst`` - Short description of **makbet's**
   ``06.comments`` example.
 
@@ -180,8 +183,8 @@ where:
   **doxygen 1.8.20** from previously downloaded sources.
 - ``lib/tasks/build-scripts/build-git.sh`` - This **Bash** script is used
   by **two** ``build-git`` tasks (defined in **02.toolchain-simple** and
-  **03.toolchain-advanced** examples).  Its aim is to build **git 2.29.2** from
-  previously downloaded sources.
+  **03.toolchain-advanced** examples).  Its aim is to build **git 2.29.2**
+  from previously downloaded sources.
 - ``lib/tasks/build-scripts/build-kcov.sh`` - This **Bash** script is used
   by **two** ``build-kcov`` tasks (defined in **02.toolchain-simple** and
   **03.toolchain-advanced** examples).  Its aim is to build **kcov 38** from
@@ -190,8 +193,8 @@ where:
   by **two** ``build-make`` tasks (defined in **02.toolchain-simple** and
   **03.toolchain-advanced** examples).  Its aim is to build **make 4.3** from
   previously downloaded sources.
-- ``lib/tasks/build-scripts/build-python.sh`` - This **Bash** script is
-  used by **two** ``build-python`` tasks (defined in **02.toolchain-simple** and
+- ``lib/tasks/build-scripts/build-python.sh`` - This **Bash** script is used
+  by **two** ``build-python`` tasks (defined in **02.toolchain-simple** and
   **03.toolchain-advanced** examples).  Its aim is to build **python 3.9.1**
   from previously downloaded sources.
 
