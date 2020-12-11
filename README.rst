@@ -67,7 +67,8 @@ Key features
 
 - based on **GNU Make** tool and its features,
 - easily extensible,
-- built-in support for parallelism,
+- built-in excellent support for parallelism (using jobserver mechanism
+  from **GNU Make**),
 - can be easily added/embedded into existing projects as a 3rd party SW,
 - no ``root/admin`` privileges required,
 - pure console tool - no GUI required for usage,
