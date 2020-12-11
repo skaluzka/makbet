@@ -93,6 +93,8 @@ Key features
   ``master`` branch, while all releases are made from dedicated
   ``stable/vMAJOR.minor.x`` branches),
 - it's developed according to good SW development practices,
+- it's easy to debug (using standard techniques of makefiles and shell
+  scripts debugging),
 - tested `continuously <https://github.com/skaluzka/makbet/actions>`_ on
   ``master`` and all stable branches, with every commit and pull request,
 - follows so-called **semver** (`<https://semver.org>`_) versioning patterns
