@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# set -eu
+set -u
 
 
 # This file is a core part of makbet project.
