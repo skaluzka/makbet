@@ -13,7 +13,7 @@ a simple toolchain consists of the following tools:
 
 The ``Makefile`` file in current directory contains tasks needed to
 download the source code of all above tools as well as to build them
-locally from freshly downloaded shources.
+locally from freshly downloaded sources.
 
 
 .. End of file
