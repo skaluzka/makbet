@@ -28,7 +28,7 @@ endif
 .DEFAULT_GOAL := help
 
 #
-# Init task counter variable.
+# Define and init task counter variable.
 #
 MAKBET_TASK_ID := 0
 
