@@ -63,7 +63,7 @@ And (the last but not least):
 Key features
 ------------
 
-**makbet's** key features are:
+The **makbet's** key features are:
 
 - based on **GNU Make** tool and its features,
 - easily extensible,
