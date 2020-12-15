@@ -89,7 +89,7 @@ Key features
 - written in self-explanatory code,
 - widely and richly commented,
 - contains few useful examples, including small built-in tasks library (set
-  of several, but simple **Bash** scripts),
+  of several, simple **Bash** scripts),
 - based on easy development model (all features are being developed on a
   ``master`` branch, while all releases are made from dedicated
   ``stable/vMAJOR.minor.x`` branches),
