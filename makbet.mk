@@ -33,7 +33,7 @@ endif
 MAKBET_TASK_ID := 0
 
 #
-# Count all tasks in the scenario.
+# Count all valid tasks in scenario file.
 #
 MAKBET_TASK_TOTAL := $(shell \
   $(MAKBET_CORE_DIR)/__count_tasks $(MAKBET_SCENARIO_PATH) \
