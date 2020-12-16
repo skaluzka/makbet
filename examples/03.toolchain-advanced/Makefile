@@ -42,12 +42,12 @@ KCOV_URL := $(GITHUB_URL)/SimonKagstrom/kcov/archive/$(KCOV_VER)
 MAKE_URL := http://ftp.gnu.org/gnu/make/$(MAKE_VER)
 PYTHON_URL := https://www.python.org/ftp/python/3.9.1/$(PYTHON_VER)
 
-CREATE_DIRS := $(MAKBET_TASKS_DIR)/common/create-dir-structure.sh
-DOWNLOAD := $(MAKBET_TASKS_DIR)/common/download-file.sh
-UNPACK_ZIP := $(MAKBET_TASKS_DIR)/common/uncompress-zip-file.sh
-UNPACK_TGZ := $(MAKBET_TASKS_DIR)/common/uncompress-tgz-file.sh
-UNPACK_TXZ := $(MAKBET_TASKS_DIR)/common/uncompress-txz-file.sh
-CHECK_DIRS := $(MAKBET_TASKS_DIR)/common/check-dirs.sh
+CREATE_DIRS := $(MAKBET_TASKS_DIR)/common/create-dir-structure
+DOWNLOAD := $(MAKBET_TASKS_DIR)/common/download-file
+UNPACK_ZIP := $(MAKBET_TASKS_DIR)/common/uncompress-zip-file
+UNPACK_TGZ := $(MAKBET_TASKS_DIR)/common/uncompress-tgz-file
+UNPACK_TXZ := $(MAKBET_TASKS_DIR)/common/uncompress-txz-file
+CHECK_DIRS := $(MAKBET_TASKS_DIR)/common/check-dirs
 
 DOXYGEN_UNPACK_DIR := $(DOXYGEN_DIR)/doxygen-Release_1_8_20
 GIT_UNPACK_DIR := $(GIT_DIR)/git-2.29.2
@@ -55,13 +55,13 @@ KCOV_UNPACK_DIR := $(KCOV_DIR)/kcov-38
 MAKE_UNPACK_DIR := $(MAKE_DIR)/make-4.3
 PYTHON_UNPACK_DIR := $(PYTHON_DIR)/Python-3.9.1
 
-BUILD_DOXYGEN := $(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-doxygen.sh
-BUILD_GIT := $(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-git.sh
-BUILD_KCOV := $(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-kcov.sh
-BUILD_MAKE := $(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-make.sh
-BUILD_PYTHON := $(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-python.sh
+BUILD_DOXYGEN := $(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-doxygen
+BUILD_GIT := $(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-git
+BUILD_KCOV := $(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-kcov
+BUILD_MAKE := $(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-make
+BUILD_PYTHON := $(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-python
 
-CHECK_FILES := $(MAKBET_TASKS_DIR)/common/check-files.sh
+CHECK_FILES := $(MAKBET_TASKS_DIR)/common/check-files
 
 DOXYGEN_BIN := $(DOXYGEN_UNPACK_DIR)/build/bin/doxygen
 GIT_BIN := $(GIT_UNPACK_DIR)/git
@@ -69,7 +69,7 @@ KCOV_BIN := $(KCOV_UNPACK_DIR)/build/src/kcov
 MAKE_BIN := $(MAKE_UNPACK_DIR)/make
 PYTHON_BIN := $(PYTHON_UNPACK_DIR)/python
 
-EXEC_CMD := $(MAKBET_TASKS_DIR)/common/exec-cmd.sh
+EXEC_CMD := $(MAKBET_TASKS_DIR)/common/exec-cmd
 
 #
 # All tasks required to run "03.toolchain-advanced" scenario.

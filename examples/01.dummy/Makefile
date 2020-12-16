@@ -13,7 +13,7 @@ endif
 # All global variables required by "01.dummy" scenario.
 #
 
-GENERIC_TASK_SCRIPT := $(MAKBET_PATH)/examples/01.dummy/tasks/generic-task.sh
+GENERIC_TASK_SCRIPT := $(MAKBET_PATH)/examples/01.dummy/tasks/generic-task
 
 #
 # All tasks required to run "01.dummy" scenario.

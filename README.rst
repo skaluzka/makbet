@@ -223,49 +223,49 @@ the **DOT** results which can be used for further processing:
   // TASK_NAME: task-A
   // TASK_ID: 2
   // TASK_DEPS: @01-INIT
-  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task
   // TASK_CMD_OPTS: 1
   "task-A" -> "@01-INIT";
 
   // TASK_NAME: task-B1
   // TASK_ID: 3
   // TASK_DEPS: task-A
-  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task
   // TASK_CMD_OPTS: 1
   "task-B1" -> "task-A";
 
   // TASK_NAME: task-B2
   // TASK_ID: 4
   // TASK_DEPS: task-A
-  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task
   // TASK_CMD_OPTS: 1
   "task-B2" -> "task-A";
 
   // TASK_NAME: task-B3
   // TASK_ID: 5
   // TASK_DEPS: task-A
-  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task
   // TASK_CMD_OPTS: 1
   "task-B3" -> "task-A";
 
   // TASK_NAME: task-B4
   // TASK_ID: 6
   // TASK_DEPS: task-A
-  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task
   // TASK_CMD_OPTS: 1
   "task-B4" -> "task-A";
 
   // TASK_NAME: task-B5
   // TASK_ID: 7
   // TASK_DEPS: task-A
-  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task
   // TASK_CMD_OPTS: 1
   "task-B5" -> "task-A";
 
   // TASK_NAME: task-C
   // TASK_ID: 8
   // TASK_DEPS: task-B2 task-B3
-  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task
   // TASK_CMD_OPTS: 1
   "task-C" -> "task-B2";
   "task-C" -> "task-B3";
@@ -273,14 +273,14 @@ the **DOT** results which can be used for further processing:
   // TASK_NAME: task-D
   // TASK_ID: 9
   // TASK_DEPS: task-C
-  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task
   // TASK_CMD_OPTS: 1
   "task-D" -> "task-C";
 
   // TASK_NAME: task-E
   // TASK_ID: 10
   // TASK_DEPS: task-B1 task-B4 task-B5 task-D
-  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+  // TASK_CMD: /home/user/makbet/examples/01.dummy/tasks/generic-task
   // TASK_CMD_OPTS: 1
   "task-E" -> "task-B1";
   "task-E" -> "task-B4";
@@ -376,28 +376,28 @@ Special **makbet's** target ``.show-merged-csv-events`` will display
   TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_EVENT_TYPE;TASK_DATE_TIME_[STARTED|TERMINATED];
   "1";"@01-INIT";"";"";"";"STARTED";"2020-08-31 23:56:00.649587995";
   "1";"@01-INIT";"";"";"";"TERMINATED";"2020-08-31 23:56:00.666786322";
-  "10";"task-E";"task-B1 task-B4 task-B5 task-D";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:10.289023250";
-  "10";"task-E";"task-B1 task-B4 task-B5 task-D";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:11.338833366";
+  "10";"task-E";"task-B1 task-B4 task-B5 task-D";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"STARTED";"2020-08-31 23:56:10.289023250";
+  "10";"task-E";"task-B1 task-B4 task-B5 task-D";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"TERMINATED";"2020-08-31 23:56:11.338833366";
   "11";"task-F";"task-E";"";"";"STARTED";"2020-08-31 23:56:11.482923596";
   "11";"task-F";"task-E";"";"";"TERMINATED";"2020-08-31 23:56:11.502223078";
   "13";"all";"task-F";"";"";"STARTED";"2020-08-31 23:56:11.602816027";
   "13";"all";"task-F";"";"";"TERMINATED";"2020-08-31 23:56:11.621920583";
-  "2";"task-A";"@01-INIT";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:00.759734577";
-  "2";"task-A";"@01-INIT";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:01.809743217";
-  "3";"task-B1";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:01.969186347";
-  "3";"task-B1";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:03.022288809";
-  "4";"task-B2";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:05.582568852";
-  "4";"task-B2";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:06.632680835";
-  "5";"task-B3";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:06.763160648";
-  "5";"task-B3";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:07.805955418";
-  "6";"task-B4";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:03.182027713";
-  "6";"task-B4";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:04.238375080";
-  "7";"task-B5";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:04.362296060";
-  "7";"task-B5";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:05.412659255";
-  "8";"task-C";"task-B2 task-B3";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:07.924800941";
-  "8";"task-C";"task-B2 task-B3";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:08.974943831";
-  "9";"task-D";"task-C";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"STARTED";"2020-08-31 23:56:09.103416326";
-  "9";"task-D";"task-C";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"TERMINATED";"2020-08-31 23:56:10.154993911";
+  "2";"task-A";"@01-INIT";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"STARTED";"2020-08-31 23:56:00.759734577";
+  "2";"task-A";"@01-INIT";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"TERMINATED";"2020-08-31 23:56:01.809743217";
+  "3";"task-B1";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"STARTED";"2020-08-31 23:56:01.969186347";
+  "3";"task-B1";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"TERMINATED";"2020-08-31 23:56:03.022288809";
+  "4";"task-B2";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"STARTED";"2020-08-31 23:56:05.582568852";
+  "4";"task-B2";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"TERMINATED";"2020-08-31 23:56:06.632680835";
+  "5";"task-B3";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"STARTED";"2020-08-31 23:56:06.763160648";
+  "5";"task-B3";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"TERMINATED";"2020-08-31 23:56:07.805955418";
+  "6";"task-B4";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"STARTED";"2020-08-31 23:56:03.182027713";
+  "6";"task-B4";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"TERMINATED";"2020-08-31 23:56:04.238375080";
+  "7";"task-B5";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"STARTED";"2020-08-31 23:56:04.362296060";
+  "7";"task-B5";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"TERMINATED";"2020-08-31 23:56:05.412659255";
+  "8";"task-C";"task-B2 task-B3";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"STARTED";"2020-08-31 23:56:07.924800941";
+  "8";"task-C";"task-B2 task-B3";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"TERMINATED";"2020-08-31 23:56:08.974943831";
+  "9";"task-D";"task-C";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"STARTED";"2020-08-31 23:56:09.103416326";
+  "9";"task-D";"task-C";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"TERMINATED";"2020-08-31 23:56:10.154993911";
 
   [user@localhost 01.dummy]$
 
@@ -433,7 +433,7 @@ execution command (by default ``MAKBET_PROF=0``) as in example below:
   2020-10-10 19:53:24.490 [INFO]: Task "task-A" (TASK_ID: 2) started.
 
   Script opts:
-  PATH (${0}) = /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+  PATH (${0}) = /home/user/makbet/examples/01.dummy/tasks/generic-task
   SLEEP (${1}) = 1
   EXIT_CODE (${2}) = 0
 
@@ -539,7 +539,7 @@ For example:
   2020-10-10 19:53:24.490 [INFO]: Task "task-A" (TASK_ID: 2) started.
 
   Script opts:
-  PATH (${0}) = /home/user/makbet/examples/01.dummy/tasks/generic-task.sh
+  PATH (${0}) = /home/user/makbet/examples/01.dummy/tasks/generic-task
   SLEEP (${1}) = 1
   EXIT_CODE (${2}) = 0
 
@@ -654,17 +654,17 @@ it as single listing on the console:
 
   TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_DATE_TIME_STARTED;TASK_DATE_TIME_TERMINATED;TASK_DURATION;
   "1";"@01-INIT";"";"";"";"2020-10-10 19:53:24.373039503";"2020-10-10 19:53:24.391242333";00h:00m:00s.018ms;
-  "10";"task-E";"task-B1 task-B4 task-B5 task-D";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:33.833312565";"2020-10-10 19:53:34.871290211";00h:00m:01s.037ms;
+  "10";"task-E";"task-B1 task-B4 task-B5 task-D";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"2020-10-10 19:53:33.833312565";"2020-10-10 19:53:34.871290211";00h:00m:01s.037ms;
   "11";"task-F";"task-E";"";"";"2020-10-10 19:53:34.988159983";"2020-10-10 19:53:35.009261860";00h:00m:00s.021ms;
   "13";"all";"task-F";"";"";"2020-10-10 19:53:35.123305878";"2020-10-10 19:53:35.143659530";00h:00m:00s.020ms;
-  "2";"task-A";"@01-INIT";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:24.490856272";"2020-10-10 19:53:25.524938384";00h:00m:01s.034ms;
-  "3";"task-B1";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:25.680238597";"2020-10-10 19:53:26.724783327";00h:00m:01s.044ms;
-  "4";"task-B2";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:29.184722456";"2020-10-10 19:53:30.216890547";00h:00m:01s.032ms;
-  "5";"task-B3";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:30.342059102";"2020-10-10 19:53:31.377982995";00h:00m:01s.035ms;
-  "6";"task-B4";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:26.857648363";"2020-10-10 19:53:27.897165844";00h:00m:01s.039ms;
-  "7";"task-B5";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:28.000244187";"2020-10-10 19:53:29.042166621";00h:00m:01s.041ms;
-  "8";"task-C";"task-B2 task-B3";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:31.499257448";"2020-10-10 19:53:32.549793914";00h:00m:01s.050ms;
-  "9";"task-D";"task-C";"/home/user/makbet/examples/01.dummy/tasks/generic-task.sh";"1";"2020-10-10 19:53:32.669063505";"2020-10-10 19:53:33.716411930";00h:00m:01s.047ms;
+  "2";"task-A";"@01-INIT";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"2020-10-10 19:53:24.490856272";"2020-10-10 19:53:25.524938384";00h:00m:01s.034ms;
+  "3";"task-B1";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"2020-10-10 19:53:25.680238597";"2020-10-10 19:53:26.724783327";00h:00m:01s.044ms;
+  "4";"task-B2";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"2020-10-10 19:53:29.184722456";"2020-10-10 19:53:30.216890547";00h:00m:01s.032ms;
+  "5";"task-B3";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"2020-10-10 19:53:30.342059102";"2020-10-10 19:53:31.377982995";00h:00m:01s.035ms;
+  "6";"task-B4";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"2020-10-10 19:53:26.857648363";"2020-10-10 19:53:27.897165844";00h:00m:01s.039ms;
+  "7";"task-B5";"task-A";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"2020-10-10 19:53:28.000244187";"2020-10-10 19:53:29.042166621";00h:00m:01s.041ms;
+  "8";"task-C";"task-B2 task-B3";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"2020-10-10 19:53:31.499257448";"2020-10-10 19:53:32.549793914";00h:00m:01s.050ms;
+  "9";"task-D";"task-C";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"2020-10-10 19:53:32.669063505";"2020-10-10 19:53:33.716411930";00h:00m:01s.047ms;
 
   [user@localhost 01.dummy]$ 
 

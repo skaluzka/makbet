@@ -42,7 +42,7 @@ The **makbet's** examples directory structure is:
   │   │   ├── output.dot
   │   │   └── output.png
   │   └── tasks/
-  │       └── generic-task.sh
+  │       └── generic-task
   ├── 02.toolchain-simple/
   │   ├── Makefile
   │   ├── README.rst
@@ -81,24 +81,24 @@ The **makbet's** examples directory structure is:
   ├── lib/
   │   └── tasks/
   │       ├── build-scripts/
-  │       │   ├── build-doxygen.sh
-  │       │   ├── build-git.sh
-  │       │   ├── build-kcov.sh
-  │       │   ├── build-make.sh
-  │       │   └── build-python.sh
+  │       │   ├── build-doxygen
+  │       │   ├── build-git
+  │       │   ├── build-kcov
+  │       │   ├── build-make
+  │       │   └── build-python
   │       └── common/
-  │           ├── check-dirs.sh
-  │           ├── check-files.sh
-  │           ├── create-dir-structure.sh
-  │           ├── download-file.sh
-  │           ├── exec-cmd.sh
-  │           ├── show-free-space.sh
-  │           ├── show-uname.sh
-  │           ├── show-uptime.sh
-  │           ├── delay.sh
-  │           ├── uncompress-tgz-file.sh
-  │           ├── uncompress-txz-file.sh
-  │           └── uncompress-zip-file.sh
+  │           ├── check-dirs
+  │           ├── check-files
+  │           ├── create-dir-structure
+  │           ├── download-file
+  │           ├── exec-cmd
+  │           ├── show-free-space
+  │           ├── show-uname
+  │           ├── show-uptime
+  │           ├── delay
+  │           ├── uncompress-tgz-file
+  │           ├── uncompress-txz-file
+  │           └── uncompress-zip-file
   └── README.rst
 
   17 directories, 49 files
@@ -121,7 +121,7 @@ where:
   example.
 - ``01.dummy/tasks/`` - Separate directory containing tasks specific only for
   **makbet's** ``01.dummy`` example.
-- ``01.dummy/tasks/generic-task.sh`` - Simple and generic **Bash** script used
+- ``01.dummy/tasks/generic-task`` - Simple and generic **Bash** script used
   only in **makbet's** ``01.dummy`` example.  It doesn't do anything special.
 
 |
@@ -177,23 +177,23 @@ where:
 - ``lib/tasks/build-scripts/`` - Separate directory containing all tasks
   common for both **02.toolchain-simple** and **03.toolchain-advanced**
   examples.
-- ``lib/tasks/build-scripts/build-doxygen.sh`` - This **Bash** script is
+- ``lib/tasks/build-scripts/build-doxygen`` - This **Bash** script is
   used by **two** ``build-doxygen`` tasks (defined in **02.toolchain-simple**
   and **03.toolchain-advanced** examples).  Its aim is to build
   **doxygen 1.8.20** from previously downloaded sources.
-- ``lib/tasks/build-scripts/build-git.sh`` - This **Bash** script is used
+- ``lib/tasks/build-scripts/build-git`` - This **Bash** script is used
   by **two** ``build-git`` tasks (defined in **02.toolchain-simple** and
   **03.toolchain-advanced** examples).  Its aim is to build **git 2.29.2**
   from previously downloaded sources.
-- ``lib/tasks/build-scripts/build-kcov.sh`` - This **Bash** script is used
+- ``lib/tasks/build-scripts/build-kcov`` - This **Bash** script is used
   by **two** ``build-kcov`` tasks (defined in **02.toolchain-simple** and
   **03.toolchain-advanced** examples).  Its aim is to build **kcov 38** from
   previously downloaded sources.
-- ``lib/tasks/build-scripts/build-make.sh`` - This **Bash** script is used
+- ``lib/tasks/build-scripts/build-make`` - This **Bash** script is used
   by **two** ``build-make`` tasks (defined in **02.toolchain-simple** and
   **03.toolchain-advanced** examples).  Its aim is to build **make 4.3** from
   previously downloaded sources.
-- ``lib/tasks/build-scripts/build-python.sh`` - This **Bash** script is used
+- ``lib/tasks/build-scripts/build-python`` - This **Bash** script is used
   by **two** ``build-python`` tasks (defined in **02.toolchain-simple** and
   **03.toolchain-advanced** examples).  Its aim is to build **python 3.9.1**
   from previously downloaded sources.

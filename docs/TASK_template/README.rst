@@ -134,7 +134,7 @@ The meanings of all parameters are:
     $(eval $(call TASK_template, \
         fetch-git-src, "Fetch git sources", \
         prepare-workdir-structure, \
-        $(MAKBET_TASKS_DIR)/common/download-file.sh, \
+        $(MAKBET_TASKS_DIR)/common/download-file, \
             https://github.com/git/git/archive/v2.29.2.zip \
             $(WORK_DIR)/git/v2.29.2.zip \
     ))
@@ -144,7 +144,7 @@ The meanings of all parameters are:
 - ``TASK_NAME``: ``fetch-git-src``
 - ``"TASK_DESCR"``: ``"Fetch git sources"``
 - ``TASK_DEPS``: ``prepare-workdir-structure``
-- ``TASK_CMD``: ``$(MAKBET_TASKS_DIR)/common/download-file.sh``
+- ``TASK_CMD``: ``$(MAKBET_TASKS_DIR)/common/download-file``
 - ``TASK_CMD_OPTS``:
 
   - ``https://github.com/git/git/archive/v2.29.2.zip``
@@ -157,7 +157,7 @@ The meanings of all parameters are:
     $(eval $(call TASK_template, \
         check-all-src-dirs, "Check all source code dirs", \
         unpack-doxygen-src unpack-git-src unpack-kcov-src unpack-make-src unpack-python-src, \
-        $(MAKBET_TASKS_DIR)/common/check-dirs.sh, \
+        $(MAKBET_TASKS_DIR)/common/check-dirs, \
             $(WORK_DIR)/doxygen/doxygen-Release_1_8_20/ \
             $(WORK_DIR)/git/git-2.29.2/ \
             $(WORK_DIR)/kcov/kcov-38/ \
@@ -177,7 +177,7 @@ The meanings of all parameters are:
   - ``unpack-make-src``
   - ``unpack-python-src``
 
-- ``TASK_CMD``: ``$(MAKBET_TASKS_DIR)/common/check-dirs.sh``
+- ``TASK_CMD``: ``$(MAKBET_TASKS_DIR)/common/check-dirs``
 - ``TASK_CMD_OPTS``:
 
   - ``$(WORK_DIR)/doxygen/doxygen-Release_1_8_20/``
