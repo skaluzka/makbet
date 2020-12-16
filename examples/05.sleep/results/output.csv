@@ -1,10 +1,10 @@
 TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_EVENT_TYPE;TASK_DATE_TIME_[STARTED|TERMINATED];
 "1";"@01-INIT";"";"";"";"STARTED";"2020-09-01 00:13:28.325054011";
 "1";"@01-INIT";"";"";"";"TERMINATED";"2020-09-01 00:13:28.344058632";
-"2";"sleep-1s";"@01-INIT";"/home/user/makbet/examples/lib/tasks/common/sleep.sh";"1s";"STARTED";"2020-09-01 00:13:28.433999597";
-"2";"sleep-1s";"@01-INIT";"/home/user/makbet/examples/lib/tasks/common/sleep.sh";"1s";"TERMINATED";"2020-09-01 00:13:29.483581085";
-"3";"sleep-2s";"@01-INIT";"/home/user/makbet/examples/lib/tasks/common/sleep.sh";"2s";"STARTED";"2020-09-01 00:13:29.631628073";
-"3";"sleep-2s";"@01-INIT";"/home/user/makbet/examples/lib/tasks/common/sleep.sh";"2s";"TERMINATED";"2020-09-01 00:13:31.679865127";
+"2";"sleep-1s";"@01-INIT";"/home/user/makbet/examples/lib/tasks/common/delay.sh";"1s";"STARTED";"2020-09-01 00:13:28.433999597";
+"2";"sleep-1s";"@01-INIT";"/home/user/makbet/examples/lib/tasks/common/delay.sh";"1s";"TERMINATED";"2020-09-01 00:13:29.483581085";
+"3";"sleep-2s";"@01-INIT";"/home/user/makbet/examples/lib/tasks/common/delay.sh";"2s";"STARTED";"2020-09-01 00:13:29.631628073";
+"3";"sleep-2s";"@01-INIT";"/home/user/makbet/examples/lib/tasks/common/delay.sh";"2s";"TERMINATED";"2020-09-01 00:13:31.679865127";
 "4";"sleep-3s";"@01-INIT";"sleep";"3s";"STARTED";"2020-09-01 00:13:31.790911817";
 "4";"sleep-3s";"@01-INIT";"sleep";"3s";"TERMINATED";"2020-09-01 00:13:34.835986202";
 "5";"sleep-5s";"@01-INIT";"sleep";"5s";"STARTED";"2020-09-01 00:13:34.963163464";

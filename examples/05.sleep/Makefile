@@ -24,13 +24,13 @@ $(eval $(call TASK_template, \
 $(eval $(call TASK_template, \
 	sleep-1s, "Do nothing - just sleep for 1 second", \
 	@01-INIT, \
-	$(MAKBET_TASKS_DIR)/common/sleep.sh, 1s \
+	$(MAKBET_TASKS_DIR)/common/delay.sh, 1s \
 ))
 
 $(eval $(call TASK_template, \
 	sleep-2s, "Do nothing - just sleep for 2 seconds", \
 	@01-INIT, \
-	$(MAKBET_TASKS_DIR)/common/sleep.sh, 2s \
+	$(MAKBET_TASKS_DIR)/common/delay.sh, 2s \
 ))
 
 $(eval $(call TASK_template, \

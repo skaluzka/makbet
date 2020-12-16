@@ -44,14 +44,14 @@ Found 7 valid task(s) defined in /home/user/makbet/examples/05.sleep/Makefile:
     - Id.:   2
     - Descr: "Do nothing - just sleep for 1 second"
     - Deps:  @01-INIT
-    - Cmd:   /home/user/makbet/examples/lib/tasks/common/sleep.sh
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/delay.sh
     - Opts:  1s
 
   sleep-2s
     - Id.:   3
     - Descr: "Do nothing - just sleep for 2 seconds"
     - Deps:  @01-INIT
-    - Cmd:   /home/user/makbet/examples/lib/tasks/common/sleep.sh
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/delay.sh
     - Opts:  2s
 
   sleep-3s

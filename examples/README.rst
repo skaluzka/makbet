@@ -95,7 +95,7 @@ The **makbet's** examples directory structure is:
   │           ├── show-free-space.sh
   │           ├── show-uname.sh
   │           ├── show-uptime.sh
-  │           ├── sleep.sh
+  │           ├── delay.sh
   │           ├── uncompress-tgz-file.sh
   │           ├── uncompress-txz-file.sh
   │           └── uncompress-zip-file.sh

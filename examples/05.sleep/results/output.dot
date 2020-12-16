@@ -33,14 +33,14 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_NAME: sleep-1s
 // TASK_ID: 2
 // TASK_DEPS: @01-INIT
-// TASK_CMD: /home/user/makbet//examples/lib/tasks/common/sleep.sh
+// TASK_CMD: /home/user/makbet//examples/lib/tasks/common/delay.sh
 // TASK_CMD_OPTS: 1s
 "sleep-1s" -> "@01-INIT";
 
 // TASK_NAME: sleep-2s
 // TASK_ID: 3
 // TASK_DEPS: @01-INIT
-// TASK_CMD: /home/user/makbet//examples/lib/tasks/common/sleep.sh
+// TASK_CMD: /home/user/makbet//examples/lib/tasks/common/delay.sh
 // TASK_CMD_OPTS: 2s
 "sleep-2s" -> "@01-INIT";
 
