@@ -5,7 +5,7 @@
 
 
 #
-# Check MAKBET_PATH env variable.
+# Check MAKBET_PATH environment variable.
 #
 ifndef MAKBET_PATH
   $(error [ERROR]: MAKBET_PATH is not defined)
