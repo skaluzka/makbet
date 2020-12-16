@@ -100,8 +100,7 @@ The **makbet's** key features are:
   ``master`` and all stable branches, with every commit and pull request,
 - follows so-called **semver** (`<https://semver.org>`_) versioning patterns
   (see also `Few words regarding backward compatibility`_ section),
-- minimal system requirements (see the next section
-  below - `System requirements`_).
+- minimal system requirements (see details in `System requirements`_ section).
 
 |
 
