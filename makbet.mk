@@ -146,7 +146,7 @@ endif
 #         └── csv/
 #
 # Usually it means - as soon as makbet.mk file was successfully included
-# and all provided CLI options were processed without any error.
+# and all provided CLI options were processed without errors.
 #
 $(shell mkdir -p $(MAKBET_DOT_DIR))
 $(shell mkdir -p $(MAKBET_EVENTS_CFG_DIR))
