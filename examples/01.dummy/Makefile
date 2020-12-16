@@ -4,7 +4,7 @@
 # Include mandatory makbet.mk file.
 #
 ifndef MAKBET_PATH
-  $(error MAKBET_PATH is not defined)
+  $(error [ERROR]: MAKBET_PATH is not defined)
 else
   include $(MAKBET_PATH)/makbet.mk
 endif
