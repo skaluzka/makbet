@@ -97,7 +97,8 @@ The **makbet's** key features are:
 - it's easy to debug (all debugging ways and techniques for makefiles
   and shell scripts can be used),
 - tested `continuously <https://github.com/skaluzka/makbet/actions>`_ on
-  ``master`` and all stable branches, with every commit and pull request,
+  ``master`` branch and other stable branches, with every commit and pull
+  request,
 - follows so-called **semver** (`<https://semver.org>`_) versioning patterns
   (see also `Few words regarding backward compatibility`_ section),
 - minimal system requirements (see details in `System requirements`_ section).
