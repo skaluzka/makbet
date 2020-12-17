@@ -131,8 +131,15 @@ Installing **makbet** is easy and straightforward.
 - Change directory to main **makbet's** directory then run ``make`` command
   to see default help message.
 
-That's all.  You are now ready to write your own scenarios (based on provided
-`template <templates/scenario>`_) or play with built-in `examples <examples>`_.
+|
+
+That's all! :)
+
+|
+
+Since now you are ready to write your own **makbet's** scenarios (you can
+base on provided scenario `template <templates/scenario>`_) or play with
+built-in `examples <examples>`_.
 
 |
 
