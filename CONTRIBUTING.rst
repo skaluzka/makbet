@@ -42,7 +42,7 @@ GitHub help pages:
 ----------------
 
 To make development process simple and fast we are distinguish only
-**three** type of commits in **makbet** project:
+**four** type of commits in **makbet** project:
 
 #. | Pure development commits - regular but small and reasonable updates,
      changes or enhancements including minor refactoring as well.  All of
@@ -78,6 +78,15 @@ To make development process simple and fast we are distinguish only
      ``[#5] Add README.rst file to examples/ dir``
    | `6a8464b <https://github.com/skaluzka/makbet/commit/6a8464b>`_:
      ``[#3] Add extended help target (make makbet-help)``
+
+#. | Release commits - these commits clearly indicate new **makbet's**
+     version.  All tags should be created only from release commits.  Such
+     commits are visible only on stable branches.
+   | Examples:
+   | `282cc9e <https://github.com/skaluzka/makbet/commit/282cc9e>`_
+     ``[REL] v0.1.0-rc2``
+   | `81728fb <https://github.com/skaluzka/makbet/commit/81728fb>`_
+     ``[REL] v0.1.0``
 
 |
 
