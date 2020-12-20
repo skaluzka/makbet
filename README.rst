@@ -165,10 +165,10 @@ DOT output
 ----------
 
 For every properly created scenario **makbet** is able to generate output
-in **DOT** language (in form of so-called **digraph** - directed
-graph - showing the flow direction between all tasks).  Such output can be
-easily saved or redirected to file.  This can be achieved by passing
-``MAKBET_DOT=1`` option to ``make`` execution command (by default
+in **DOT** - popular graph language (in a form of so-called
+**digraph** - directed graph - showing the flow direction between all tasks).
+Such output can be easily saved or redirected to file.  This can be achieved
+by passing ``MAKBET_DOT=1`` option to ``make`` execution command (by default
 ``MAKBET_DOT=0``) as in below example:
 
 ::
