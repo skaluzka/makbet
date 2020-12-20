@@ -432,7 +432,7 @@ target ``all``):
   [user@localhost 01.dummy]$ 
 
 Every **cfg** profiling file has so-called **key=value** format and can be
-easily used for further preprocessing if needed.
+easily used for further processing if needed.
 
 |
 
