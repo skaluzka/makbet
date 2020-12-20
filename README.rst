@@ -470,8 +470,9 @@ execution command (by default ``MAKBET_PROF=0``) as in example below:
 
 When ``MAKBET_PROF=1`` is passed to the ``make`` command then **makbet** will
 save some additional **cfg** files during the runtime.  All these files will
-be saved in ``.cache/prof/cfg/`` directory and can be seen by invoking one of
-**makbet's** special targets: ``.show-prof-dir`` or ``.show-prof-cfg-dir``.
+be saved in ``.cache/prof/cfg/`` directory and they can be seen by invoking
+one of **makbet's** special targets: ``.show-prof-dir`` or
+``.show-prof-cfg-dir``.
 
 For example:
 
