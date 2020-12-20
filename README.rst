@@ -129,7 +129,7 @@ Installing **makbet** is easy and straightforward.
 - Export ``MAKBET_PATH`` variable pointing to **makbet's** main directory
   (e.g.: ``export MAKBET_PATH=/home/user/makbet``).
 - Change directory to main **makbet's** directory then run ``make`` command
-  to see default help message.
+  (without options) to see default help message.
 
 |
 
