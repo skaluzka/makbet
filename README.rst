@@ -123,12 +123,12 @@ All provided examples were tested with **GNU Make 4.3** and **Bash 5.0.16**.
 Installing
 ----------
 
-Installing **makbet** is easy and straightforward.
+Installing **makbet** is easy and straightforward:
 
-- Clone (or alternatively download + unpack) **makbet** project from GitHub.
-- Export ``MAKBET_PATH`` variable pointing to **makbet's** main directory
-  (e.g.: ``export MAKBET_PATH=/home/user/makbet``).
-- Change directory to main **makbet's** directory then run ``make`` command
+- clone (or alternatively download + unpack) **makbet** project from GitHub,
+- export ``MAKBET_PATH`` variable pointing to **makbet's** main directory
+  (e.g.: ``export MAKBET_PATH=/home/user/makbet``),
+- change directory to main **makbet's** directory then run ``make`` command
   (without options) to see default help message.
 
 |
