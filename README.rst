@@ -112,8 +112,8 @@ Well... Nothing special here :)
 
 The only system requirements are:
 
-- **GNU/Linux** compatible OS.
-- **GNU Make** tool (version **3.82** or newer).
+- **GNU/Linux** compatible OS,
+- **GNU Make** tool (version **3.82** or newer),
 - **Bash** interpreter (available in ``/bin/bash`` location).
 
 All provided examples were tested with **GNU Make 4.3** and **Bash 5.0.16**.
