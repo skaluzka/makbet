@@ -317,6 +317,7 @@ $(if $(_q),,
   )
 )
 
+# End of TASK_template macro.
 endef
 
 
