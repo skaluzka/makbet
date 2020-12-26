@@ -10,7 +10,6 @@
 ifndef MAKBET_PATH
   $(error [ERROR]: MAKBET_PATH is not defined)
 else
-
   # Set the SHELL variable as soon as MAKBET_PATH is defined.
   SHELL=/bin/bash
 
