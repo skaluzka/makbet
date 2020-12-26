@@ -37,7 +37,7 @@ MAKBET_TASK_TOTAL := $(shell \
 )
 
 #
-# Handle makbet's version.
+# Define makbet's version.
 #
 MAKBET_VERSION := $(shell \
   $(MAKBET_CORE_DIR)/__get_makbet_version \
