@@ -2,7 +2,7 @@
 set -eu
 
 # This file is a part of makbet's tests suite.
-# Do not change it unless you know what you are doing.
+# Do not change it, unless you know what you are doing.
 
 
 # Fetch current working directory.
