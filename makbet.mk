@@ -10,7 +10,6 @@
 ifndef MAKBET_PATH
   $(error [ERROR]: MAKBET_PATH is not defined)
 else
-
   # Set the SHELL variable as soon as MAKBET_PATH is defined.
   SHELL := /bin/bash
 
@@ -19,6 +18,7 @@ else
   MAKBET_CACHE_DIR := $(MAKBET_PATH)/.cache
   MAKBET_CORE_DIR := $(MAKBET_PATH)/core
   MAKBET_SCENARIO_PATH := $(realpath $(firstword $(MAKEFILE_LIST)))
+  MAKBET_GNU_MAKE_VERSION := 3.82
 endif
 
 #
@@ -410,8 +410,13 @@ makbet-clean:
 	@-rm -rf $(MAKBET_PROF_DIR)
 
 
+.PHONY: check-make-version
+check-make-version:
+	@$(MAKBET_CORE_DIR)/__check_gnu_make_version $(MAKBET_GNU_MAKE_VERSION) $(MAKE_VERSION)
+
+
 .PHONY: makbet-version
-makbet-version:
+makbet-version: check-make-version
 	@echo ""
 	@echo "makbet $(MAKBET_VERSION)                                                      "
 	@echo ""

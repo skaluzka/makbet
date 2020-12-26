@@ -33,6 +33,7 @@ with any other kind of executable.
 ::
 
   $MAKBET_PATH/core/
+  ├── __check_gnu_make_version
   ├── __convert_cfg2csv
   ├── __count_tasks
   ├── __get_makbet_version
@@ -47,6 +48,10 @@ with any other kind of executable.
 |
 
 where:
+
+- ``__check_gnu_make_version`` - This script will check if GNU make version
+  is enough to run **makbet** (``makbet.mk``).  Currently required version
+  is **3.82** or newer.
 
 - ``__convert_cfg2csv`` - This script will convert a single ``*.cfg`` file
   to corresponding ``*.csv`` file.
