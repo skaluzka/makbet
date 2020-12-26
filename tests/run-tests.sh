@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eu
 
-# This file is a part of makbet's tests suite.
+# This file is a part of makbet's project tests suite.
 # Do not change it, unless you know what you are doing.
 
 
