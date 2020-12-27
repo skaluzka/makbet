@@ -5,7 +5,7 @@ set -eu
 # Fetch current working directory.
 readonly CWD="$(pwd)"
 
-# Export MAKBET_PATH variable.
+# Export mandatory MAKBET_PATH variable.
 export MAKBET_PATH="$( readlink -f "${CWD}/.." )"
 
 # Export MAKBET_CACHE_DIR variable.
