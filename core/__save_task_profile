@@ -23,8 +23,10 @@ echo "T1 = ${T1}"
 echo "T2 = ${T2}"
 echo "T2 - T1 = ${TASK_DURATION}"
 
-# Save profiling data to results *.cfg file.
+# Create an emtpy results *.cfg file.
 echo -n "" > "${3}"
+
+# Save profiling data to results *.cfg file.
 comm --nocheck-order "${1}" "${2}" \
     | grep -Pv "EVENT_TYPE" \
     | sed 's/^[ \t]*//' \
