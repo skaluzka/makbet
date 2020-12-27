@@ -2,6 +2,11 @@
 set -u
 
 
+# This file is a core part of makbet project.
+# Do not change it, unless you know what you are doing.
+#
+# Params:
+
 set +e
 if [ -d "${MAKBET_PATH}/.git" ]
 then

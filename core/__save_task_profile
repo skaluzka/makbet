@@ -2,8 +2,13 @@
 set -eu
 
 
-# ${1} - Path to T1 *.started.cfg event file.
-# ${2} - Path to T2 *.terminated.cfg event file.
+# This file is a core part of makbet project.
+# Do not change it, unless you know what you are doing.
+#
+# Params:
+#
+# ${1} - Path to *.started.cfg event file.
+# ${2} - Path to *.terminated.cfg event file.
 # ${3} - Path to results *.cfg file.
 
 # shellcheck source=/dev/null

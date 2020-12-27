@@ -2,6 +2,11 @@
 set -eu
 
 
+# This file is a core part of makbet project.
+# Do not change it, unless you know what you are doing.
+#
+# Params:
+#
 # ${1} - Path to input *.cfg file.
 # ${2} - Path to output *.dot file.
 
