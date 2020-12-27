@@ -18,7 +18,10 @@ set -eu
 readonly NOW=$( date "+%Y-%m-%d %H:%M:%S.%N" )
 readonly NOW_SHORT=$( date --date="${NOW}" "+%Y-%m-%d %H:%M:%S.%3N" )
 
+# Create an empty destination *.cfg event file.
 echo -n "" > "${6}"
+
+# Append data to destination *.cfg event file.
 # shellcheck disable=SC2129
 echo "TASK_ID=\"${1}\"" >> "${6}"
 echo "TASK_NAME=\"${2}\"" >> "${6}"
