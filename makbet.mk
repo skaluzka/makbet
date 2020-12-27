@@ -206,7 +206,7 @@ endif
 #
 define TASK_template =
 
-# Increment the MAKBET_TASK_ID variable.
+# Increment the task number.
 $(eval MAKBET_TASK_ID=$(shell echo $$(($(MAKBET_TASK_ID)+1))))
 
 .PHONY: $(1)
