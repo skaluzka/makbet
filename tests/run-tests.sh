@@ -57,7 +57,7 @@ mkdir -pv "${MAKBET_TESTS_LOGS_DIR}"
 # Collecting all test files.
 readonly test_files=$( find "${MAKBET_TESTS_SRC_DIR}" -type f -iname "t[0-9][0-9]__make*" | sort )
 
-# Declare some conuters.
+# Declare some counters.
 test_files_counter=0
 total_files=$(echo "${test_files}" | wc -l)
 failed_counter=0
