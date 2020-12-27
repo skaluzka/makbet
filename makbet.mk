@@ -13,6 +13,8 @@ else
   # Set the SHELL variable as soon as MAKBET_PATH is defined.
   SHELL := /bin/bash
 
+  # Set MAKBET_CACHE_DIR, MAKBET_CORE_DIR and MAKBET_SCENARIO_PATH
+  # variables as soon as MAKBET_PATH is defined.
   MAKBET_CACHE_DIR := $(MAKBET_PATH)/.cache
   MAKBET_CORE_DIR := $(MAKBET_PATH)/core
   MAKBET_SCENARIO_PATH := $(realpath $(firstword $(MAKEFILE_LIST)))
