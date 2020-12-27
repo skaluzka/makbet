@@ -44,7 +44,7 @@ mkdir -pv "${MAKBET_TESTS_OUTPUT_DIR}"
 rm -rf "${MAKBET_TESTS_LOGS_DIR}"
 mkdir -pv "${MAKBET_TESTS_LOGS_DIR}"
 
-# Build file list.
+# Collecting all test files.
 readonly FILE_LIST=$( find "${MAKBET_TESTS_SRC_DIR}" -type f -iname "t[0-9][0-9]__make*" | sort )
 
 # Declare some counter variables.
@@ -58,7 +58,7 @@ echo ""
 
 time {
 
-    # Start iteration through file list.
+    # Start iteration through test file list.
     for __file_path in ${FILE_LIST}
     do
 
@@ -78,19 +78,25 @@ time {
         # Create directory structure inside ./tests/output/ dir.
         mkdir -p "${output_subdir}"
 
+        #
         # Disable errors handling.
+        #
         set +e
 
-            # Call test scenario file.
+            #
+            # Call test case file.
+            #
             "${__file_path}" \
                 "${output_file_path}" \
                 "${__file_path//src/resources\/expected}" \
                 > "${log_file_path}" 2>&1
 
-            # Fetch file's return code.
+            # Fetch above^^ test case return code.
             __file_pathrc=$?
 
+        #
         # Enable errors handling.
+        #
         set -e
 
         # Print results.
@@ -117,7 +123,7 @@ time {
     echo "Failed:           ${failed_counter}"
     echo ""
 
-# End of "time {...}" block.
+# End of "time {...}" code block.
 }
 
 echo ""
