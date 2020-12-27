@@ -27,6 +27,8 @@ export MAKBET_TESTS_LOGS_DIR="${MAKBET_TESTS_DIR}/logs"
 # OK, Let's play!
 #
 
+echo ""
+
 # Print some extra debug messages.
 echo "[INFO]: CWD=${CWD}"
 echo ""
