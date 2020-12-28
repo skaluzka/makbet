@@ -298,7 +298,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 			"$(MAKBET_CSV_SEP)" ; \
 	fi
 
-# Add entry to scenario-help target.
+# Append entry to existing scenario-help target.
 .PHONY: scenario-help
 scenario-help::
 	@echo '  $(strip $(1))'
