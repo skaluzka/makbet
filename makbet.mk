@@ -195,7 +195,7 @@ ifeq ($(_v1), 1)
 endif
 
 #
-# Definition of TASK_template macro.
+# Define TASK_template macro.
 #
 # Where:
 # $(1) - TASK_NAME - The name of the task.
@@ -318,7 +318,9 @@ $(if $(_q),,
   )
 )
 
-# End of TASK_template macro.
+#
+# End of TASK_template macro definition.
+#
 endef
 
 
