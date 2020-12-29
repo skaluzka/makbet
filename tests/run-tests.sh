@@ -37,14 +37,10 @@ __rc="${RC_SUCCESS}"
 # OK, Let's play!
 #
 
-echo ""
-
 # Print some extra debug messages.
-echo "[INFO]: CWD=${CWD}"
-echo ""
+echo -e "\n[INFO]: CWD=${CWD}\n"
 
-echo "[INFO]: Preparing directory structure..."
-echo ""
+echo -e "[INFO]: Preparing directory structure...\n"
 
 # Prepare empty ./tests/output/ directory.
 rm -rf "${MAKBET_TESTS_OUTPUT_DIR}"
@@ -63,11 +59,8 @@ total_files=$(echo "${test_files}" | wc -l)
 failed_counter=0
 passed_counter=0
 
-echo ""
-echo "[INFO]: Found ${total_files} test files in ${CWD} directory."
-echo ""
-echo "[INFO]: Starting tests loop..."
-echo ""
+echo -e "\n[INFO]: Found ${total_files} test files in ${CWD} directory.\n"
+echo -e "\n[INFO]: Starting tests loop...\n"
 
 time {
 
@@ -133,21 +126,19 @@ time {
             echo "Please check the log file: ${log_file_path}"
         fi
 
-        echo ""
+        echo
 
     done
 
     # Show summary.
-    echo ""
-    echo "Total test files: ${test_files_counter}"
+    echo -e "\nTotal test files: ${test_files_counter}"
     echo "Passed:           ${passed_counter}"
-    echo "Failed:           ${failed_counter}"
-    echo ""
+    echo -e "Failed:           ${failed_counter}\n"
 
 # End of "time {...}" code block.
 }
 
-echo ""
+echo
 
 # Exit this script with either ${RC_SUCCESS} or ${RC_ERROR} value.
 exit "${__rc}"
