@@ -142,7 +142,7 @@ time {
 #
 }
 
-echo
+echo -e "\n\n[INFO]:Script ${0} completed.\n"
 
 # Exit the script with either ${RC_SUCCESS} or ${RC_ERROR} value.
 exit "${__rc}"
