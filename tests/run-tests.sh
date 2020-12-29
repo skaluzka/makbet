@@ -50,12 +50,12 @@ mkdir -pv "${MAKBET_TESTS_OUTPUT_DIR}"
 rm -rf "${MAKBET_TESTS_LOGS_DIR}"
 mkdir -pv "${MAKBET_TESTS_LOGS_DIR}"
 
-# Collecting all test files.
+# Collect all test files.
 readonly test_files=$( find "${MAKBET_TESTS_SRC_DIR}" -type f -iname "t[0-9][0-9]__make*" | sort )
 
-# Declare some counters.
+# Declare few global counters.
 test_files_counter=0
-total_files=$(echo "${test_files}" | wc -l)
+total_files="$(echo "${test_files}" | wc -l)"
 failed_counter=0
 passed_counter=0
 
@@ -68,7 +68,7 @@ time {
     for __file_path in ${test_files}
     do
 
-        # Increment test case counter.
+        # Increment test case file counter.
         test_files_counter=$(( test_files_counter+1 ))
 
         echo "FILE:    ${test_files_counter}/${total_files}"
@@ -90,7 +90,7 @@ time {
         mkdir -p "${output_subdir}"
 
         #
-        # Disable errors handling.
+        # Disable errors handling before calling the test case file.
         #
         set +e
 
@@ -102,15 +102,17 @@ time {
             "${__file_path//src/resources\/expected}" \
             > "${log_file_path}" 2>&1
 
-        # Fetch above^^ test case return code.
+        # Fetch return code of above^^ test case file.
         __file_pathrc=$?
 
         #
-        # Enable errors handling.
+        # Enable errors handling after calling test case file.
         #
         set -e
 
-        # Print results.
+        #
+        # Print test results.
+        #
         if [ "${__file_pathrc}" -eq 0 ]
         then
             passed_counter=$(( passed_counter+1 ))
@@ -130,17 +132,19 @@ time {
 
     done
 
-    # Show summary.
+    # Print short summary.
     echo -e "\nTotal test files: ${test_files_counter}"
     echo "Passed:           ${passed_counter}"
     echo -e "Failed:           ${failed_counter}\n"
 
+#
 # End of "time {...}" code block.
+#
 }
 
 echo
 
-# Exit this script with either ${RC_SUCCESS} or ${RC_ERROR} value.
+# Exit the script with either ${RC_SUCCESS} or ${RC_ERROR} value.
 exit "${__rc}"
 
 
