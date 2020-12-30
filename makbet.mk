@@ -301,12 +301,12 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 # Append entry to existing scenario-help target.
 .PHONY: scenario-help
 scenario-help::
-	@echo '  $(strip $(1))'
-	@echo '    - Id.:   $(MAKBET_TASK_ID)'
-	@echo '    - Descr: $(strip $(2))'
-	@echo '    - Deps:  $(strip $(3))'
-	@echo '    - Cmd:   $(strip $(4))'
-	@echo '    - Opts:  $(strip $(5))'
+	@echo "  $(strip $(1))"
+	@echo "    - Id.:   $(MAKBET_TASK_ID)"
+	@echo "    - Descr: \"$(strip $(2))\""
+	@echo "    - Deps:  $(strip $(3))"
+	@echo "    - Cmd:   $(strip $(4))"
+	@echo "    - Opts:  $(strip $(5))"
 	@echo
 
 # If MAKBET_VERBOSE=2 print task's command path (if any) immediately
