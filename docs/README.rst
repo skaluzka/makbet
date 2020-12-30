@@ -35,21 +35,27 @@ The **makbet's** documentation directory structure is:
 ::
 
   $MAKBET_PATH/docs/
-  ├── TASK_template/
+  ├── Parallelism
+  │   └── README.rst
+  ├── TASK_template
   │   └── README.rst
   └── README.rst
 
-  1 directory, 2 files
+  2 directories, 3 files
 
 where:
 
 - ``docs/`` - The **makbet's** main documentation directory.  Its absolute path
   can be defined as ``$MAKBET_PATH/docs`` (or ``$MAKBET_PATH/docs/``) assuming
   the ``$MAKBET_PATH`` variable is pointing to **makbet's** main directory.
+- ``docs/Parallelism/`` - Separate directory contains all documentation
+  regarding parallel tasks execution.
+- ``docs/Parallelism/README.rst`` - Detailed description about how to use
+  **makbet** framework to run many tasks simultaneously.
 - ``docs/TASK_template/`` - Separate directory contains documentation regarding
-  ``TASK_template`` macro from ``makbet.mk`` file.
-- ``docs/TASK_template/README.rst`` - Detailed syntax description of
-  ``TASK_template`` macro.
+  ``TASK_template`` macro defined inside ``makbet.mk`` file.
+- ``docs/TASK_template/README.rst`` - Detailed syntax description
+  of ``TASK_template`` macro.
 - ``README.rst`` - The file you are reading now.
 
 
