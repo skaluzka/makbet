@@ -207,7 +207,7 @@ endif
 #
 define TASK_template =
 
-# Increment the MAKBET_TASK_COUNTER variable.
+# Increment the task number.
 $(eval MAKBET_TASK_COUNTER=$(shell echo $$(($(MAKBET_TASK_COUNTER)+1))))
 
 .PHONY: $(1)
