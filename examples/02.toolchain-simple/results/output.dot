@@ -41,7 +41,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 15
 // TASK_DEPS: check-all-src-dirs
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/build-scripts/build-doxygen
-// TASK_CMD_OPTS: /tmp/makbet/examples/02.toolchain-simple/doxygen/doxygen-Release_1_8_20/
+// TASK_CMD_OPTS: /tmp/makbet/examples/02.toolchain-simple/doxygen/doxygen-Release_1_9_0/
 "build-doxygen" -> "check-all-src-dirs";
 
 // TASK_NAME: build-git
@@ -76,7 +76,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 14
 // TASK_DEPS: unpack-doxygen-src unpack-git-src unpack-kcov-src unpack-make-src unpack-python-src
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/common/check-dirs
-// TASK_CMD_OPTS: /tmp/makbet/examples/02.toolchain-simple/doxygen/doxygen-Release_1_8_20/ /tmp/makbet/examples/02.toolchain-simple/git/git-2.29.2/ /tmp/makbet/examples/02.toolchain-simple/kcov/kcov-38/ /tmp/makbet/examples/02.toolchain-simple/make/make-4.3/ /tmp/makbet/examples/02.toolchain-simple/python/Python-3.9.1/
+// TASK_CMD_OPTS: /tmp/makbet/examples/02.toolchain-simple/doxygen/doxygen-Release_1_9_0/ /tmp/makbet/examples/02.toolchain-simple/git/git-2.29.2/ /tmp/makbet/examples/02.toolchain-simple/kcov/kcov-38/ /tmp/makbet/examples/02.toolchain-simple/make/make-4.3/ /tmp/makbet/examples/02.toolchain-simple/python/Python-3.9.1/
 "check-all-src-dirs" -> "unpack-doxygen-src";
 "check-all-src-dirs" -> "unpack-git-src";
 "check-all-src-dirs" -> "unpack-kcov-src";
@@ -87,7 +87,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 4
 // TASK_DEPS: prepare-workdir-structure
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/common/download-file
-// TASK_CMD_OPTS: https://github.com/doxygen/doxygen/archive/Release_1_8_20.zip /tmp/makbet/examples/02.toolchain-simple/doxygen/Release_1_8_20.zip
+// TASK_CMD_OPTS: https://github.com/doxygen/doxygen/archive/Release_1_9_0.zip /tmp/makbet/examples/02.toolchain-simple/doxygen/Release_1_9_0.zip
 "fetch-doxygen-src" -> "prepare-workdir-structure";
 
 // TASK_NAME: fetch-git-src
@@ -141,7 +141,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 21
 // TASK_DEPS: build-doxygen
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/common/exec-cmd
-// TASK_CMD_OPTS: /tmp/makbet/examples/02.toolchain-simple/doxygen/doxygen-Release_1_8_20/build/bin/doxygen --version
+// TASK_CMD_OPTS: /tmp/makbet/examples/02.toolchain-simple/doxygen/doxygen-Release_1_9_0/build/bin/doxygen --version
 "print-doxygen-version" -> "build-doxygen";
 
 // TASK_NAME: print-git-version
@@ -176,7 +176,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 9
 // TASK_DEPS: fetch-doxygen-src
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/common/uncompress-zip-file
-// TASK_CMD_OPTS: /tmp/makbet/examples/02.toolchain-simple/doxygen/Release_1_8_20.zip /tmp/makbet/examples/02.toolchain-simple/doxygen/
+// TASK_CMD_OPTS: /tmp/makbet/examples/02.toolchain-simple/doxygen/Release_1_9_0.zip /tmp/makbet/examples/02.toolchain-simple/doxygen/
 "unpack-doxygen-src" -> "fetch-doxygen-src";
 
 // TASK_NAME: unpack-git-src
