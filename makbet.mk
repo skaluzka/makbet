@@ -4,6 +4,8 @@
 # "What's done, is done." - William Shakespeare, Macbeth.
 
 
+.SUFFIXES:
+
 #
 # Check MAKBET_PATH environment variable.
 #
