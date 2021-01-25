@@ -138,7 +138,7 @@ That's all! :)
 |
 
 Since now you are ready to write your own **makbet's** scenarios (you can
-base on provided scenario `template <templates/scenario>`_) or play with
+reuse provided scenario `template <templates/scenario>`_) or play with
 built-in `examples <examples>`_.
 
 |
