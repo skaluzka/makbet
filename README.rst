@@ -464,7 +464,7 @@ execution command (by default ``MAKBET_PROF=0``) as in example below:
   T1 = 1602352415.123305878
   T2 = 1602352415.143659530
   T2 - T1 = 00h:00m:00s.020ms
-  [user@localhost 01.dummy]$ 
+  [user@localhost 01.dummy]$
 
 **makbet** measures the duration of tasks with **milliseconds** (ms) accuracy.
 
@@ -497,7 +497,7 @@ For example:
   /home/user/makbet/.cache/prof/csv
 
   0 directories, 0 files
-  [user@localhost 01.dummy]$ 
+  [user@localhost 01.dummy]$
 
 An example content of **cfg** profiling file (generated for task ``all`` from
 `01.dummy <examples/01.dummy/>`__ example) can be seen below:
@@ -515,7 +515,7 @@ An example content of **cfg** profiling file (generated for task ``all`` from
   TASK_DATE_TIME_TERMINATED="2020-10-10 19:53:35.143659530"
   TASK_DURATION=00h:00m:00s.020ms
 
-  [user@localhost 01.dummy]$ 
+  [user@localhost 01.dummy]$
 
 Every **cfg** profiling file has so-called **key=value** format and can be
 easily used for further processing if needed.
@@ -571,7 +571,7 @@ For example:
   T1 = 1602352415.123305878
   T2 = 1602352415.143659530
   T2 - T1 = 00h:00m:00s.020ms
-  [user@localhost 01.dummy]$ 
+  [user@localhost 01.dummy]$
 
 When both ``MAKBET_PROF=1`` and ``MAKBET_CSV=1`` options are passed to the
 ``make`` command then **makbet** will save **a pair of additional files**
@@ -615,7 +615,7 @@ directory content can be shown by invoking **makbet's** special target
   └── [-rw-r--r-- user user         227]  /home/user/makbet/.cache/prof/csv/task-F.csv
 
   0 directories, 12 files
-  [user@localhost 01.dummy]$ 
+  [user@localhost 01.dummy]$
 
 For showing the content of ``.cache/prof/csv/`` directory only, dedicated
 special target ``.show-prof-csv-dir`` can be used:
@@ -638,7 +638,7 @@ special target ``.show-prof-csv-dir`` can be used:
   └── [-rw-r--r-- user user         227]  /home/user/makbet/.cache/prof/csv/task-F.csv
   
   0 directories, 12 files
-  [user@localhost 01.dummy]$ 
+  [user@localhost 01.dummy]$
 
 An example content of **csv** profiling file (generated for task ``all`` from
 `01.dummy <examples/01.dummy/>`__ example) can be seen below:
@@ -650,7 +650,7 @@ An example content of **csv** profiling file (generated for task ``all`` from
   TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_DATE_TIME_STARTED;TASK_DATE_TIME_TERMINATED;TASK_DURATION;
   "13";"all";"task-F";"";"";"2020-10-10 19:53:35.123305878";"2020-10-10 19:53:35.143659530";00h:00m:00s.020ms;
 
-  [user@localhost 01.dummy]$ 
+  [user@localhost 01.dummy]$
 
 The most sophisticated profiling target (named ``.show-merged-csv-profiles``)
 will merge all the contents of generated **csv** profiling files and display
@@ -674,7 +674,7 @@ it as a single listing on the console:
   "8";"task-C";"task-B2 task-B3";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"2020-10-10 19:53:31.499257448";"2020-10-10 19:53:32.549793914";00h:00m:01s.050ms;
   "9";"task-D";"task-C";"/home/user/makbet/examples/01.dummy/tasks/generic-task";"1";"2020-10-10 19:53:32.669063505";"2020-10-10 19:53:33.716411930";00h:00m:01s.047ms;
 
-  [user@localhost 01.dummy]$ 
+  [user@localhost 01.dummy]$
 
 Such output can be easily redirected/saved to the file for further processing
 or comparison.
