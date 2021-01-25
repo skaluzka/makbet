@@ -164,12 +164,14 @@ In doubts, follow the common sense and use `semantic versioning
 DOT output
 ----------
 
-For every properly created scenario **makbet** is able to generate output
-in **DOT** - popular graph language (in a form of so-called
-**digraph** - directed graph - showing the flow direction between all tasks).
-Such output can be easily saved or redirected to file.  This can be achieved
-by passing ``MAKBET_DOT=1`` option to ``make`` execution command (by default
-``MAKBET_DOT=0``) as in below example:
+For every properly created scenario, **makbet** is able to generate output
+in a **DOT** format.  The **DOT** is a popular and widely known graph language.
+The **makbet** is generating output in a form of so-called
+**digraph** - the **di**rected **graph** - showing the flow direction between
+all defined tasks.  Such output can be easily saved or redirected to a file
+for later processing.  The **DOT** output will be generated if ``MAKBET_DOT=1``
+variable will be set in environment, or passed to the ``make`` execution
+command (by default ``MAKBET_DOT=0``) as in below example:
 
 ::
 
