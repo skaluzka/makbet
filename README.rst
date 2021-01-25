@@ -654,7 +654,7 @@ An example content of **csv** profiling file (generated for task ``all`` from
 
 The most sophisticated profiling target (named ``.show-merged-csv-profiles``)
 will merge all the contents of generated **csv** profiling files and display
-it as single listing on the console:
+it as a single listing on the console:
 
 ::
 
@@ -676,7 +676,7 @@ it as single listing on the console:
 
   [user@localhost 01.dummy]$ 
 
-Such output can be easily redirected/save to the file for further processing
+Such output can be easily redirected/saved to the file for further processing
 or comparison.
 
 |
