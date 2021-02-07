@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -u
+set -euo pipefail
 
 # Based on: https://stackoverflow.com/a/24067243
 
