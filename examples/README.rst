@@ -180,7 +180,7 @@ where:
 - ``lib/tasks/build-scripts/build-doxygen`` - This **Bash** script is
   used by **two** ``build-doxygen`` tasks (defined in **02.toolchain-simple**
   and **03.toolchain-advanced** examples).  Its aim is to build
-  **doxygen 1.9.0** from previously downloaded sources.
+  **doxygen 1.9.1** from previously downloaded sources.
 - ``lib/tasks/build-scripts/build-git`` - This **Bash** script is used
   by **two** ``build-git`` tasks (defined in **02.toolchain-simple** and
   **03.toolchain-advanced** examples).  Its aim is to build **git 2.30.0**

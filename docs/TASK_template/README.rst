@@ -158,7 +158,7 @@ The meanings of all parameters are:
         check-all-src-dirs, "Check all source code dirs", \
         unpack-doxygen-src unpack-git-src unpack-kcov-src unpack-make-src unpack-python-src, \
         $(MAKBET_TASKS_DIR)/common/check-dirs, \
-            $(WORK_DIR)/doxygen/doxygen-Release_1_9_0/ \
+            $(WORK_DIR)/doxygen/doxygen-Release_1_9_1/ \
             $(WORK_DIR)/git/git-2.30.0/ \
             $(WORK_DIR)/kcov/kcov-38/ \
             $(WORK_DIR)/make/make-4.3/ \
@@ -180,7 +180,7 @@ The meanings of all parameters are:
 - ``TASK_CMD``: ``$(MAKBET_TASKS_DIR)/common/check-dirs``
 - ``TASK_CMD_OPTS``:
 
-  - ``$(WORK_DIR)/doxygen/doxygen-Release_1_9_0/``
+  - ``$(WORK_DIR)/doxygen/doxygen-Release_1_9_1/``
   - ``$(WORK_DIR)/git/git-2.30.0/``
   - ``$(WORK_DIR)/kcov/kcov-38/``
   - ``$(WORK_DIR)/make/make-4.3/``
