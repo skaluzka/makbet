@@ -55,7 +55,7 @@ Found 26 valid task(s) defined in /home/user/makbet/examples/03.toolchain-advanc
     - Descr: "Fetch python sources"
     - Deps:  prepare-workdir-structure
     - Cmd:   /home/user/makbet/examples/lib/tasks/common/download-file
-    - Opts:  https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tar.xz /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.1.tar.xz
+    - Opts:  https://www.python.org/ftp/python/3.9.4/Python-3.9.4.tar.xz /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.4.tar.xz
 
   unpack-doxygen-src
     - Id.:   9
@@ -90,14 +90,14 @@ Found 26 valid task(s) defined in /home/user/makbet/examples/03.toolchain-advanc
     - Descr: "Unpack python sources"
     - Deps:  fetch-python-src
     - Cmd:   /home/user/makbet/examples/lib/tasks/common/uncompress-txz-file
-    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.1.tar.xz /tmp/makbet/examples/03.toolchain-advanced/python/
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.4.tar.xz /tmp/makbet/examples/03.toolchain-advanced/python/
 
   check-all-src-dirs
     - Id.:   14
     - Descr: "Check all source code dirs"
     - Deps:  unpack-doxygen-src unpack-git-src unpack-kcov-src unpack-make-src unpack-python-src
     - Cmd:   /home/user/makbet/examples/lib/tasks/common/check-dirs
-    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_9_1/ /tmp/makbet/examples/03.toolchain-advanced/git/git-2.31.1/ /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/ /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/ /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.1/
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_9_1/ /tmp/makbet/examples/03.toolchain-advanced/git/git-2.31.1/ /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/ /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/ /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.4/
 
   build-doxygen
     - Id.:   15
@@ -132,14 +132,14 @@ Found 26 valid task(s) defined in /home/user/makbet/examples/03.toolchain-advanc
     - Descr: "Build python inside its source dir"
     - Deps:  build-make
     - Cmd:   /home/user/makbet/examples/lib/tasks/build-scripts/build-python
-    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.1/
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.4/
 
   check-build-binaries
     - Id.:   20
     - Descr: "Check the presence of all built binaries"
     - Deps:  build-doxygen build-git build-kcov build-make
     - Cmd:   /home/user/makbet/examples/lib/tasks/common/check-files
-    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_9_1/build/bin/doxygen /tmp/makbet/examples/03.toolchain-advanced/git/git-2.31.1/git /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/build/src/kcov /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/make /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.1/python
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_9_1/build/bin/doxygen /tmp/makbet/examples/03.toolchain-advanced/git/git-2.31.1/git /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/build/src/kcov /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/make /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.4/python
 
   print-doxygen-version
     - Id.:   21
@@ -174,7 +174,7 @@ Found 26 valid task(s) defined in /home/user/makbet/examples/03.toolchain-advanc
     - Descr: "Print version of python from source dir"
     - Deps:  build-python
     - Cmd:   /home/user/makbet/examples/lib/tasks/common/exec-cmd
-    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.1/python -V
+    - Opts:  /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.4/python -V
 
   build-all
     - Id.:   26
