@@ -183,7 +183,7 @@ where:
   **doxygen 1.9.1** from previously downloaded sources.
 - ``lib/tasks/build-scripts/build-git`` - This **Bash** script is used
   by **two** ``build-git`` tasks (defined in **02.toolchain-simple** and
-  **03.toolchain-advanced** examples).  Its aim is to build **git 2.30.0**
+  **03.toolchain-advanced** examples).  Its aim is to build **git 2.31.1**
   from previously downloaded sources.
 - ``lib/tasks/build-scripts/build-kcov`` - This **Bash** script is used
   by **two** ``build-kcov`` tasks (defined in **02.toolchain-simple** and
