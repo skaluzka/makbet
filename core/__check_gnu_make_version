@@ -21,7 +21,7 @@ else
     test "$(printf '%s\n' "${GNU_MAKE_REQUIRED_VER}" "${GNU_MAKE_VER}" | sort -V | head -n -1)" != "${GNU_MAKE_VER}"
     readonly rc=${?}
 
-    if (( ${rc} == 0 ))
+    if (( rc == 0 ))
     then
         exit 0
     else
