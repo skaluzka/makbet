@@ -83,9 +83,9 @@ To make development process simple and fast we are distinguish only
      version.  All tags should be created only from release commits.  Such
      commits are visible only on stable branches.
    | Examples:
-   | `282cc9e <https://github.com/skaluzka/makbet/commit/282cc9e>`_
+   | `282cc9e <https://github.com/skaluzka/makbet/commit/282cc9e>`_:
      ``[REL] v0.1.0-rc2``
-   | `81728fb <https://github.com/skaluzka/makbet/commit/81728fb>`_
+   | `81728fb <https://github.com/skaluzka/makbet/commit/81728fb>`_:
      ``[REL] v0.1.0``
 
 |
