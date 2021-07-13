@@ -10,6 +10,7 @@ set -eu
 set +e
 if [ -d "${MAKBET_PATH}/.git" ]
 then
+    # shellcheck disable=SC2155
     readonly LAST_COMMIT_DETAILS="$(git log -1 --format="g%h-%cI")"
     echo "$(cat "${MAKBET_PATH}/VERSION")+${LAST_COMMIT_DETAILS}"
 else
