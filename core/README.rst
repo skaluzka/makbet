@@ -21,7 +21,7 @@ Keep reading && have fun! :)
 
 This is **makbet's** core directory.  All files here are directly used
 inside main **makbet's** file - ``makbet.mk``.  Changing these files might
-significantly impact **makbet's** behaviour.  Currently all core scripts are
+significantly impact **makbet's** behavior.  Currently all core scripts are
 short, simple, **Bash** scripts, but they might be easily changed/replaced
 with any other kind of executable.
 
@@ -56,7 +56,7 @@ where:
 - ``__convert_cfg2csv`` - This script will convert a single ``*.cfg`` file
   to corresponding ``*.csv`` file.
 
-- ``__count_tasks`` -  This script will count all uncommented tasks
+- ``__count_tasks`` -  This script will count all un-commented tasks
   (means all instances of ``TASK_template`` macro) inside particular
   **makbet's** scenario file.
 
@@ -68,7 +68,7 @@ where:
 - ``__print_task_details`` - Short script for printing task's details
   (like task id, task name, task dependencies, ...) on the console, during
   the runtime.  This script is being run only in case ``MAKBET_VERBOSE``
-  variable is greater or equeal than ``1``.
+  variable is greater or equal than ``1``.
 
 - ``__save_dot_file`` - This script will save the **DOT** code, describing
   every task, to its dedicated file (file with ``*.dot`` extension) inside
