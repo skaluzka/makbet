@@ -22,15 +22,18 @@ set -eu
 # Define T1 variable (read-only) - take TASK_DATE_TIME_STARTED
 # value from "${1}" file and convert it to seconds.NANOSECONDS
 # format ssssssssss.NNNNNNNNN for further calculations.
+# shellcheck disable=SC2155
 readonly T1=$( date --date="${TASK_DATE_TIME_STARTED}" +"%s.%N" )
 
 # Define T2 variable (read-only) - take TASK_DATE_TIME_TERMINATED
 # value from "${2}" file and convert it to seconds.NANOSECONDS
 # format ssssssssss.NNNNNNNNN for further calculations.
+# shellcheck disable=SC2155
 readonly T2=$( date --date="${TASK_DATE_TIME_TERMINATED}" +"%s.%N" )
 
 # Calculate T2 - T1 time difference and round it to three
 # decimal places (milliseconds).
+# shellcheck disable=SC2155
 readonly TASK_DURATION=$( date --date="0 ${T2} sec - ${T1} sec" +"%Hh:%Mm:%Ss.%3Nms" )
 
 # Create an emtpy results *.cfg file.
