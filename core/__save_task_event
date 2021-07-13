@@ -15,7 +15,9 @@ set -eu
 # ${6} - TASK_EVENT_FILE - Destination *.cfg event file.
 # ${7} - TASK_EVENT_TYPE - The type of the event (STARTED or TERMINATED).
 
+# shellcheck disable=SC2155
 readonly NOW=$( date "+%Y-%m-%d %H:%M:%S.%N" )
+# shellcheck disable=SC2155
 readonly NOW_SHORT=$( date --date="${NOW}" "+%Y-%m-%d %H:%M:%S.%3N" )
 
 # Create an empty destination *.cfg event file.
