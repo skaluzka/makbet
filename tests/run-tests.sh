@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -eu
+set -euo pipefail
 
 # This file is a part of makbet's project tests suite.
 # Do not change it, unless you know what you are doing.
