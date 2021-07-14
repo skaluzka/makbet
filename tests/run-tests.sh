@@ -6,9 +6,11 @@ set -eu
 
 
 # Fetch current working directory.
+# shellcheck disable=SC2155
 readonly CWD="$(pwd)"
 
 # Export mandatory MAKBET_PATH variable.
+# shellcheck disable=SC2155
 export MAKBET_PATH="$( readlink -f "${CWD}/.." )"
 
 # Export MAKBET_CACHE_DIR variable.
@@ -51,6 +53,7 @@ rm -rf "${MAKBET_TESTS_LOGS_DIR}"
 mkdir -pv "${MAKBET_TESTS_LOGS_DIR}"
 
 # Collect all test files.
+# shellcheck disable=SC2155
 readonly test_files=$( find "${MAKBET_TESTS_SRC_DIR}" -type f -iname "t[0-9][0-9]__make*" | sort )
 
 # Declare few global counters.
@@ -118,6 +121,7 @@ time {
             passed_counter=$(( passed_counter+1 ))
             echo "PASSED:  ${__file_path}"
         else
+
             #
             # Set global exit code to ${RC_ERROR}.
             #
