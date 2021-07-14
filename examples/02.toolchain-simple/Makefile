@@ -228,7 +228,12 @@ $(eval $(call TASK_template, \
 
 $(eval $(call TASK_template, \
 	print-all-versions, "Checkpoint for all print-*-version tasks", \
-	build-all print-doxygen-version print-git-version print-kcov-version print-make-version print-python-version, \
+		build-all \
+		print-doxygen-version \
+		print-git-version \
+		print-kcov-version \
+		print-make-version \
+		print-python-version, \
 ))
 
 #
