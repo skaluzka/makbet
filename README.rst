@@ -217,16 +217,16 @@ the **DOT** results which can be used for further processing:
 
   // TASK_NAME: @01-INIT
   // TASK_ID: 1
-  // TASK_DEPS: 
-  // TASK_CMD: 
-  // TASK_CMD_OPTS: 
+  // TASK_DEPS:
+  // TASK_CMD:
+  // TASK_CMD_OPTS:
   "@01-INIT";
 
   // TASK_NAME: all
   // TASK_ID: 13
   // TASK_DEPS: task-F
-  // TASK_CMD: 
-  // TASK_CMD_OPTS: 
+  // TASK_CMD:
+  // TASK_CMD_OPTS:
   "all" -> "task-F";
 
   // TASK_NAME: task-A
@@ -299,8 +299,8 @@ the **DOT** results which can be used for further processing:
   // TASK_NAME: task-F
   // TASK_ID: 11
   // TASK_DEPS: task-E
-  // TASK_CMD: 
-  // TASK_CMD_OPTS: 
+  // TASK_CMD:
+  // TASK_CMD_OPTS:
   "task-F" -> "task-E";
 
   }
