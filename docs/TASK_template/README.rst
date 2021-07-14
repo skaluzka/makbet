@@ -44,7 +44,7 @@ the **five line** block format is recommended:
     4 | ``TASK_CMD, TASK_CMD_OPTS \`` | Defining task's command (``TASK_CMD``) and its options (``TASK_CMD_OPTS``).
     5 | ``))`` | End of ``TASK_template`` macro evaluation.
 
-In more complex cases it is recommended to use multiline constructions:
+In more complex cases it is recommended to use multi-line constructions:
 
 ::
 
@@ -77,9 +77,9 @@ The **TASK_template** macro accepts **five** positional parameters:
 5. ``TASK_CMD_OPTS``
 
 Order of all these parameters is important and cannot be mixed, otherwise
-evaluation of **TASK_template** macro might cause unexpected behaviour.
+evaluation of **TASK_template** macro might cause unexpected behavior.
 As parameter's separator, the comma (**,**) sign is used.
-Such comma-separated syntax is comming originally from **GNU make** utility
+Such comma-separated syntax is coming originally from **GNU make** utility
 (please read the links collected in `Useful links`_ section at the bottom
 of this page).
 
