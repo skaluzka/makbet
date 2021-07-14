@@ -1,4 +1,4 @@
-This document describes the correct way of uing **makbet** to run many tasks
+This document describes the correct way of using **makbet** to run many tasks
 simultaneously.
 
 |
@@ -186,7 +186,7 @@ Of course ``make all`` is the shortest option, therefore it is also the most
 comfortable.  All above will produce the same results.
 
 In **serial** case, **makbet** will run all tasks, one after another,
-analyzing their dependecies starting from task ``all`` (or ``ping-all``
+analyzing their dependencies starting from task ``all`` (or ``ping-all``
 if it was used instead of ``all``).  **makbet** will keep the order of tasks
 execution the same as order of tasks declaration inside the
 `Makefile <../../examples/04.ping-dns-servers/Makefile>`__ scenario.
@@ -196,7 +196,7 @@ execution the same as order of tasks declaration inside the
 In **parallel** mode, **makbet** framework will reuse **GNU Make** jobserver
 mechanism to run many tasks at the same time.  To run jobserver the ``make``
 command has to be invoked with ``-j/--jobs`` option.  The number of jobs, that
-is obvious, **has to be greather than one**, for example:
+is obvious, **has to be greater than one**, for example:
 
 ::
 
