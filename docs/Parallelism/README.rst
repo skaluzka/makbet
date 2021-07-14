@@ -107,9 +107,9 @@ Corresponding information regarding all tasks can be also displayed with
     @01-INIT
       - Id.:   1
       - Descr: "Entry point"
-      - Deps:  
-      - Cmd:   
-      - Opts:  
+      - Deps:
+      - Cmd:
+      - Opts:
 
     ping1111
       - Id.:   2
@@ -136,20 +136,20 @@ Corresponding information regarding all tasks can be also displayed with
       - Id.:   5
       - Descr: "Ping all dns servers"
       - Deps:  ping1111 ping8844 ping8888
-      - Cmd:   
-      - Opts:  
+      - Cmd:
+      - Opts:
 
     all
       - Id.:   6
       - Descr: "Ping all dns servers"
       - Deps:  ping1111 ping8844 ping8888
-      - Cmd:   
-      - Opts:  
+      - Cmd:
+      - Opts:
 
   [user@localhost 04.ping-dns-servers]$
 
 This scenario can be run in two modes: in **serial** mode and in **parallel**
-mode.  
+mode.
 
 In **serial** mode, ``make`` tool should be used together with ``-j 1``
 (or ``--jobs=1``), or without ``-j/--jobs`` option at all:
