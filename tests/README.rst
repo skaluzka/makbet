@@ -27,7 +27,7 @@ scenarios covering basic set of **makbet's** features.
 **Directory structure**
 -----------------------
 
-Please see below **makbet's** flatten tests directory strucutre (some files
+Please see below **makbet's** flatten tests directory structure (some files
 were intentionally omitted to shrink the listing).
 
 ::
