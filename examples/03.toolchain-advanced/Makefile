@@ -91,7 +91,12 @@ $(eval $(call TASK_template, \
 $(eval $(call TASK_template, \
 	prepare-workdir-structure, "Prepare initial dir structure", \
 	@01-INIT, \
-	$(CREATE_DIRS), $(DOXYGEN_DIR) $(GIT_DIR) $(KCOV_DIR) $(MAKE_DIR) $(PYTHON_DIR) \
+	$(CREATE_DIRS), \
+		$(DOXYGEN_DIR) \
+		$(GIT_DIR) \
+		$(KCOV_DIR) \
+		$(MAKE_DIR) \
+		$(PYTHON_DIR) \
 ))
 
 $(eval $(call TASK_template, \
@@ -157,7 +162,12 @@ $(eval $(call TASK_template, \
 $(eval $(call TASK_template, \
 	check-all-src-dirs, "Check all source code dirs", \
 	unpack-doxygen-src unpack-git-src unpack-kcov-src unpack-make-src unpack-python-src, \
-	$(CHECK_DIRS), $(DOXYGEN_UNPACK_DIR)/ $(GIT_UNPACK_DIR)/ $(KCOV_UNPACK_DIR)/ $(MAKE_UNPACK_DIR)/ $(PYTHON_UNPACK_DIR)/ \
+	$(CHECK_DIRS), \
+		$(DOXYGEN_UNPACK_DIR)/ \
+		$(GIT_UNPACK_DIR)/ \
+		$(KCOV_UNPACK_DIR)/ \
+		$(MAKE_UNPACK_DIR)/ \
+		$(PYTHON_UNPACK_DIR)/ \
 ))
 
 $(eval $(call TASK_template, \
@@ -193,7 +203,12 @@ $(eval $(call TASK_template, \
 $(eval $(call TASK_template, \
 	check-build-binaries, "Check the presence of all built binaries", \
 	build-doxygen build-git build-kcov build-make, \
-	$(CHECK_FILES), $(DOXYGEN_BIN) $(GIT_BIN) $(KCOV_BIN) $(MAKE_BIN) $(PYTHON_BIN) \
+	$(CHECK_FILES), \
+		$(DOXYGEN_BIN) \
+		$(GIT_BIN) \
+		$(KCOV_BIN) \
+		$(MAKE_BIN) \
+		$(PYTHON_BIN) \
 ))
 
 $(eval $(call TASK_template, \
