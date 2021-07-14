@@ -638,7 +638,7 @@ special target ``.show-prof-csv-dir`` can be used:
   ├── [-rw-r--r-- user user         304]  /home/user/makbet/.cache/prof/csv/task-D.csv
   ├── [-rw-r--r-- user user         329]  /home/user/makbet/.cache/prof/csv/task-E.csv
   └── [-rw-r--r-- user user         227]  /home/user/makbet/.cache/prof/csv/task-F.csv
-  
+
   0 directories, 12 files
   [user@localhost 01.dummy]$
 
