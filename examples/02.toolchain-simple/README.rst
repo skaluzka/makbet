@@ -8,7 +8,7 @@ a simple toolchain consists of the following tools:
 - **git 2.32.0**
 - **kcov 38**
 - **make 4.3**
-- **python 3.9.4**
+- **python 3.9.6**
 
 
 The ``Makefile`` file in current directory contains all tasks needed
