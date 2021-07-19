@@ -1,4 +1,4 @@
-Welcome to **makbet** project!
+Welcome to the **makbet** project!
 
 |
 
@@ -54,7 +54,7 @@ But also to help:
 
 |
 
-And (the last but not least):
+And (last but not least):
 
 - **FOR FUN! :)**
 
@@ -67,8 +67,8 @@ The **makbet's** key features are:
 
 - based on **GNU Make** tool and its features,
 - easily extensible,
-- built-in excellent support for parallelism (using jobserver mechanism
-  from **GNU Make**),
+- built-in excellent support for parallelism (using **GNU Make's** internal
+  jobserver mechanism),
 - can be easily added/embedded into existing projects as a 3rd party SW,
 - no ``root/admin`` privileges required,
 - pure console tool - no GUI required for usage,
