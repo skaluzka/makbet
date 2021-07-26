@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Based on: https://stackoverflow.com/a/24067243
 
 # This file is a core part of makbet project.
 # Do not change it, unless you know what you are doing.
@@ -10,6 +9,10 @@ set -euo pipefail
 #
 # ${1} - GNU_MAKE_REQUIRED_VER - Required version of GNU make tool.
 # ${2} - GNU_MAKE_VER - Actual version of GNU make tool.
+#
+# References:
+#
+# - https://stackoverflow.com/a/24067243
 
 readonly GNU_MAKE_REQUIRED_VER="${1}"
 readonly GNU_MAKE_VER="${2}"
