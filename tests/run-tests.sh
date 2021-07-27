@@ -28,12 +28,18 @@ export MAKBET_TESTS_SRC_DIR="${MAKBET_TESTS_DIR}/src"
 # Export MAKBET_TESTS_LOGS_DIR variable.
 export MAKBET_TESTS_LOGS_DIR="${MAKBET_TESTS_DIR}/logs"
 
+#
 # Declare return/exit codes.
+#
 readonly RC_SUCCESS=0
 readonly RC_ERROR=1
 
-# Init the global exit code variable with ${RC_SUCCESS}.
+#
+# Initialize the global return/exit code variable
+# with ${RC_SUCCESS} value (see above).
+#
 __rc="${RC_SUCCESS}"
+
 
 #
 # OK, Let's play!
@@ -148,7 +154,9 @@ time {
 
 echo -e "\n\n[INFO]: Script ${0} completed.\n"
 
+#
 # Exit the script with either ${RC_SUCCESS} or ${RC_ERROR} value.
+#
 exit "${__rc}"
 
 
