@@ -70,9 +70,8 @@ time {
         # Increment test case file counter.
         test_files_counter=$(( test_files_counter+1 ))
 
-        echo "FILE:    ${test_files_counter}/${total_files}"
-
-        echo "STARTED: ${__file_path}"
+        echo "Test:   ${test_files_counter}/${total_files}"
+        echo "File:   ${__file_path}"
 
         __file_name=$( basename "${__file_path}" )
 
@@ -115,7 +114,7 @@ time {
         if [ "${__file_pathrc}" -eq 0 ]
         then
             passed_counter=$(( passed_counter+1 ))
-            echo "PASSED:  ${__file_path}"
+            echo "Result: OK"
         else
 
             #
@@ -124,8 +123,8 @@ time {
             __rc="${RC_ERROR}"
 
             failed_counter=$(( failed_counter+1 ))
-            echo "FAILED:  ${__file_path}"
-            echo "Please check the log file: ${log_file_path}"
+            echo "Result: FAILED!!!"
+            echo "        Please check the log file: ${log_file_path}"
         fi
 
         echo
