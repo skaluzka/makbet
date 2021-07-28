@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+
+# This file is a core part of makbet project.
+# Do not change it, unless you know what you are doing.
+#
+# Params:
+#
+# ${1} - Path to input *.cfg file.
+# ${2} - Path to output *.gnuplot file.
+# ${3} - The csv separator.
+
+# Source input *.cfg file.
+# shellcheck source=/dev/null
+. "${1}"
+
+
+#
+# Calculate t1 in seconds since epoch.
+#
+readonly t1_epoch="$( date --date="${TASK_DATE_TIME_STARTED}" +"%s" )"
+
+#
+# Calculate t2 in seconds since epoch.
+#
+readonly t2_epoch="$( date --date="${TASK_DATE_TIME_TERMINATED}" +"%s" )"
+
+#
+# Calculate t1 for gnuplot.
+#
+readonly t1=$( date --date="${TASK_DATE_TIME_STARTED}" +"%Y-%m-%d %H:%M:%S.000" )
+
+#
+# Calculate time difference (td = t2_epoch - t1_epoch).
+#
+readonly td="$(( t2_epoch - t1_epoch ))"
+
+#
+# Calculate t2 for gnuplot.
+#
+if [ "${td}" -eq "0" ]
+then
+    readonly t2=$( date --date="${TASK_DATE_TIME_TERMINATED} 1 second" +"%Y-%m-%d %H:%M:%S.000" )
+else
+    readonly t2=$( date --date="${TASK_DATE_TIME_TERMINATED}" +"%Y-%m-%d %H:%M:%S.000" )
+fi
+
+
+
+
+
+#
+#
+#
+# echo "${TASK_NAME} ${3} ${TASK_DATE_TIME_STARTED} ${3} ${TASK_DATE_TIME_TERMINATED}" > "${2}"
+# echo "${TASK_NAME} ; ${TASK_DATE_TIME_STARTED} ; ${TASK_DATE_TIME_TERMINATED}" > "${2}"
+echo "${TASK_NAME} ; ${t1} ; ${t2}" > "${2}"
+
+# Append an empty line at the end of created *.csv file.
+echo "" >> "${2}"
+
+
+# End of file

@@ -18,7 +18,7 @@ echo "${3}" > "${2}"
 # shellcheck disable=SC2002
 cat "${1}" | cut -d '=' -f2 | tr "\n" "${4}" >> "${2}"
 
-# Append an empty line at the end of *.csv file.
+# Append an empty line at the end of created *.csv file.
 echo "" >> "${2}"
 
 

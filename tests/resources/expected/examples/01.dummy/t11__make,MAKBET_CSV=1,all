@@ -53,6 +53,7 @@
 │       └── task-F.terminated.csv
 └── prof/
     ├── cfg/
-    └── csv/
+    ├── csv/
+    └── gnuplot/
 
-7 directories, 48 files
+8 directories, 48 files

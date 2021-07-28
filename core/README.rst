@@ -34,7 +34,7 @@ with any other kind of executable.
 
   $MAKBET_PATH/core/
   ├── __check_gnu_make_version
-  ├── __convert_cfg2csv
+  ├── __create_csv_from_cfg
   ├── __count_tasks
   ├── __get_makbet_version
   ├── __print_task_details
@@ -53,7 +53,7 @@ where:
   is enough to run **makbet** (``makbet.mk``).  Currently required version
   is **3.82** or newer.
 
-- ``__convert_cfg2csv`` - This script will convert a single ``*.cfg`` file
+- ``__create_csv_from_cfg`` - This script will convert a single ``*.cfg`` file
   to corresponding ``*.csv`` file.
 
 - ``__count_tasks`` -  This script will count all un-commented tasks
@@ -79,7 +79,7 @@ where:
   into ``$MAKBET_PATH/.cache/events/cfg/`` directory.  Every task event file
   can be converted from ``*.cfg`` to ``*.csv`` form when ``MAKBET_CSV``
   variable is set to ``1``.  By default ``MAKBET_CSV=0``.  In case
-  ``MAKBET_CSV=1`` the script ``__convert_cfg2csv``, described above, will
+  ``MAKBET_CSV=1`` the script ``__create_csv_from_cfg``, described above, will
   convert ``*.cfg`` file to ``*.csv`` form, and save it into
   ``$MAKBET_PATH/.cache/events/csv/`` location.  The ``MAKBET_CSV_SEP`` and
   ``MAKBET_EVENTS_CSV_HEADER`` variables defined in ``makbet.mk`` file will
@@ -88,7 +88,7 @@ where:
 - ``__save_task_profile`` - This script will save task's ``*.cfg`` **profile**
   **results** - inside ``$MAKBET_PATH/.cache/prof/cfg/`` directory.  Tasks
   profiling is disabled by default (``MAKBET_PROF=0``).  In case
-  ``MAKBET_CSV=1`` the script ``__convert_cfg2csv``, described above, will
+  ``MAKBET_CSV=1`` the script ``__create_csv_from_cfg``, described above, will
   convert ``*.cfg`` file to ``*.csv`` form, and save it into
   ``$MAKBET_PATH/.cache/prof/csv/`` location.  The ``MAKBET_CSV_SEP`` and
   ``MAKBET_PROF_CSV_HEADER`` variables defined in ``makbet.mk`` file will

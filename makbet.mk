@@ -60,6 +60,7 @@ MAKBET_EVENTS_CSV_DIR := $(MAKBET_EVENTS_DIR)/csv
 MAKBET_PROF_DIR := $(MAKBET_CACHE_DIR)/prof
 MAKBET_PROF_CFG_DIR := $(MAKBET_PROF_DIR)/cfg
 MAKBET_PROF_CSV_DIR := $(MAKBET_PROF_DIR)/csv
+MAKBET_PROF_GNUPLOT_DIR := $(MAKBET_PROF_DIR)/gnuplot
 
 #
 # Handle CLI input: MAKBET_VERBOSE option.
@@ -145,7 +146,8 @@ endif
 #     │   └── csv/
 #     └── prof/
 #         ├── cfg/
-#         └── csv/
+#         ├── csv/
+#         └── gnuplot/
 #
 # Usually it means - as soon as makbet.mk file was successfully included
 # and all provided CLI options were processed without errors.
@@ -155,6 +157,7 @@ $(shell mkdir -p $(MAKBET_EVENTS_CFG_DIR))
 $(shell mkdir -p $(MAKBET_EVENTS_CSV_DIR))
 $(shell mkdir -p $(MAKBET_PROF_CFG_DIR))
 $(shell mkdir -p $(MAKBET_PROF_CSV_DIR))
+$(shell mkdir -p $(MAKBET_PROF_GNUPLOT_DIR))
 
 #
 # If MAKBET_VERBOSE=1 then print some extra information once.
@@ -267,11 +270,20 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 			"$(MAKBET_PROF_CFG_DIR)/$(strip $(1)).cfg" ; \
 	fi
 	@#
+	@# Compute GANTT...
+	$(_q)if (( $(MAKBET_PROF) == 1 )) && (( $(MAKBET_GANTT) == 1 )) ; \
+	then \
+		$(MAKBET_CORE_DIR)/__create_gnuplot_from_cfg \
+			"$(MAKBET_PROF_CFG_DIR)/$(strip $(1)).cfg" \
+			"$(MAKBET_PROF_GNUPLOT_DIR)/$(strip $(1)).gnuplot" \
+			"$(MAKBET_CSV_SEP)" ; \
+	fi
+	@#
 	@# Convert profile *.cfg file to -> profile *.csv file
 	@# if MAKBET_CSV=1 and MAKBET_PROF=1.
 	$(_q)if (( $(_c) == 1 )) && (( $(MAKBET_PROF) == 1 )); \
 	then \
-		$(MAKBET_CORE_DIR)/__convert_cfg2csv \
+		$(MAKBET_CORE_DIR)/__create_csv_from_cfg \
 			"$(MAKBET_PROF_CFG_DIR)/$(strip $(1)).cfg" \
 			"$(MAKBET_PROF_CSV_DIR)/$(strip $(1)).csv" \
 			"$(MAKBET_PROF_CSV_HEADER)" \
@@ -282,7 +294,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	@# if MAKBET_CSV=1.
 	$(_q)if (( $(_c) == 1 )) ; \
 	then \
-		$(MAKBET_CORE_DIR)/__convert_cfg2csv \
+		$(MAKBET_CORE_DIR)/__create_csv_from_cfg \
 			"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg" \
 			"$(MAKBET_EVENTS_CSV_DIR)/$(strip $(1)).started.csv" \
 			"$(MAKBET_EVENTS_CSV_HEADER)" \
@@ -293,7 +305,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	@# if MAKBET_CSV=1.
 	$(_q)if (( $(_c) == 1 )) ; \
 	then \
-		$(MAKBET_CORE_DIR)/__convert_cfg2csv \
+		$(MAKBET_CORE_DIR)/__create_csv_from_cfg \
 			"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg" \
 			"$(MAKBET_EVENTS_CSV_DIR)/$(strip $(1)).terminated.csv" \
 			"$(MAKBET_EVENTS_CSV_HEADER)" \
@@ -358,6 +370,58 @@ endef
 	@echo
 	@echo
 	@echo "// End of file"
+	@echo
+
+
+.PHONY: .show-merged-gnuplot-results
+.show-merged-gnuplot-results:
+	@echo
+	@echo "#"
+	@echo "# Very simple Gantt Chart"
+	@echo "# Demonstrate using timecolumn(N,format) to plot time data from"
+	@echo "# multiple columns"
+	@echo "#"
+	@echo
+	@echo "set datafile separator \";\""
+	@echo "\$$DATA << EOD"
+	@echo "_ ; `date +'%Y-%m-%d %H:%M:%.3S'` ; `date +'%Y-%m-%d %H:%M:%.3S'`"
+	@cat $(MAKBET_PROF_GNUPLOT_DIR)/*.gnuplot | sort -u
+	@echo "_ ; `date +'%Y-%m-%d %H:%M:%.3S'` ; `date +'%Y-%m-%d %H:%M:%.3S'`"
+	@echo
+	@echo "EOD"
+	@echo
+	@echo "#"
+	@echo "# Define chart parameters."
+	@echo "#"
+	@echo
+	@echo # "set terminal png size 1600,1200"
+	@echo # "set output 'output.gnuplot.png'"
+	@echo "set terminal svg size 1600,1200"
+	@echo "set output 'output.gnuplot.svg'"
+	@echo
+	@echo "timeformat = '%Y-%m-%d %H:%M:%S'"
+	@echo
+	@echo "unset key"
+	@echo "set border 3"
+	@echo "set grid x y"
+	@echo
+	@echo "set xdata time"
+	@echo "set format x '%H:%M:%'"
+	@echo "set mxtics 2"
+	@echo "set xtics out rotate by -60"
+	@echo
+	@echo "set ytics nomirror"
+	@echo
+	@echo "T(N) = timecolumn(N, timeformat)"
+	@echo
+	@echo "set style arrow 666 nohead linewidth 16"
+	@echo
+	@echo "plot \\"
+	@echo "    \$$DATA using (T(2)) : (\$$0) : (T(3)-T(2)) : (0.0) : yticlabel(1) with vector as 666, \\"
+	@echo "    \$$DATA using (T(2)) : (\$$0) : 666"
+	@echo
+	@echo
+	@echo "# End of file"
 	@echo
 
 
