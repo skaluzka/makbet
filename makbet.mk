@@ -39,7 +39,7 @@ MAKBET_TASK_ID := 0
 #
 # Count all valid tasks in scenario file.
 #
-MAKBET_TASK_TOTAL := $(shell \
+MAKBET_ALL_TASKS := $(shell \
   $(MAKBET_CORE_DIR)/__count_tasks $(MAKBET_SCENARIO_PATH) \
 )
 
@@ -554,10 +554,10 @@ main-help: makbet-version
 scenario-help::
 	@if [ "$(notdir $(MAKBET_SCENARIO_PATH))" != "makbet.mk" ] ; \
 	then \
-		if [ "$(MAKBET_TASK_TOTAL)" -gt "0" ] ; \
+		if [ "$(MAKBET_ALL_TASKS)" -gt "0" ] ; \
 		then \
 			echo ; \
-			echo "Found $(MAKBET_TASK_TOTAL) valid task(s) defined in $(MAKBET_SCENARIO_PATH):" ; \
+			echo "Found $(MAKBET_ALL_TASKS) valid task(s) defined in $(MAKBET_SCENARIO_PATH):" ; \
 			echo ; \
 		fi ; \
 	fi
