@@ -13,29 +13,22 @@ readonly CWD="$(pwd)"
 # shellcheck disable=SC2155
 export MAKBET_PATH="$( readlink -f "${CWD}/.." )"
 
-# Export MAKBET_CACHE_DIR variable.
+# Export MAKBET_CACHE_DIR variable in addition.
 export MAKBET_CACHE_DIR="${MAKBET_PATH}/.cache"
 
-# Export MAKBET_TESTS_DIR variable.
 export MAKBET_TESTS_DIR="${MAKBET_PATH}/tests"
-
-# Export MAKBET_TESTS_OUTPUT_DIR variable.
+export MAKBET_TESTS_LOGS_DIR="${MAKBET_TESTS_DIR}/logs"
 export MAKBET_TESTS_OUTPUT_DIR="${MAKBET_TESTS_DIR}/output"
-
-# Export MAKBET_TESTS_SRC_DIR variable.
 export MAKBET_TESTS_SRC_DIR="${MAKBET_TESTS_DIR}/src"
 
-# Export MAKBET_TESTS_LOGS_DIR variable.
-export MAKBET_TESTS_LOGS_DIR="${MAKBET_TESTS_DIR}/logs"
-
 #
-# Declare return/exit codes.
+# Declare exit/return codes.
 #
 readonly RC_SUCCESS=0
 readonly RC_ERROR=1
 
 #
-# Initialize the global return/exit code variable
+# Initialize the global exit/return code variable (__rc)
 # with ${RC_SUCCESS} value (see above).
 #
 __rc="${RC_SUCCESS}"
@@ -44,10 +37,7 @@ __rc="${RC_SUCCESS}"
 #
 # OK, Let's play!
 #
-
-# Print some extra debug messages.
 echo -e "\n[INFO]: CWD=${CWD}\n"
-
 echo -e "[INFO]: Preparing directory structure...\n"
 
 # Prepare empty ./tests/output/ directory.
@@ -111,7 +101,7 @@ time {
             "${__file_path//src/resources\/expected}" \
             > "${log_file_path}" 2>&1
 
-        # Fetch return code of above^^ test case file.
+        # Fetch exit/return code after execution of above^^ test case file.
         __file_pathrc=$?
 
         #
@@ -129,7 +119,7 @@ time {
         else
 
             #
-            # Set global exit code to ${RC_ERROR}.
+            # Set global exit/return code to ${RC_ERROR}.
             #
             __rc="${RC_ERROR}"
 
