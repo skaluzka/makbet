@@ -12,10 +12,10 @@
 ifndef MAKBET_PATH
   $(error [ERROR]: MAKBET_PATH is not defined)
 else
-  # Set the SHELL variable as soon as MAKBET_PATH is defined.
+  # Set SHELL variable as soon as MAKBET_PATH is defined.
   SHELL := /bin/bash
 
-  # Set required minimal GNU make version.
+  # Set minimal required GNU make version.
   MAKBET_GNU_MAKE_VERSION := 3.82
 
   # Set MAKBET_CACHE_DIR, MAKBET_CORE_DIR and MAKBET_SCENARIO_PATH
