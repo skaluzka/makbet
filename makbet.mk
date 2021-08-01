@@ -15,7 +15,7 @@ else
   # Set SHELL variable as soon as MAKBET_PATH is defined.
   SHELL := /bin/bash
 
-  # Set minimal required GNU make version.
+  # Set minimal required GNU Make version.
   MAKBET_GNU_MAKE_VERSION := 3.82
 
   # Set MAKBET_CACHE_DIR, MAKBET_CORE_DIR and MAKBET_SCENARIO_PATH
@@ -26,8 +26,8 @@ else
 endif
 
 #
-# Define default target for GNU make tool.  This target is made
-# in case make command is run without options.
+# Define default target for GNU Make tool.  This target is made
+# in case the make command is run without options.
 #
 .DEFAULT_GOAL := help
 
