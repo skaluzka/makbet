@@ -25,10 +25,10 @@ jobs:
   build:
 
     # The type of runner that the job will run on.
-    # More details about SW installed on "ubuntu-18.04" runner
+    # More details about SW installed on "ubuntu-20.04" runner
     # can be found on below page:
-    # https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu1804-README.md
-    runs-on: ubuntu-18.04
+    # https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-README.md
+    runs-on: ubuntu-20.04
 
     # Steps represent a sequence of tasks that will be executed
     # as part of the job.
