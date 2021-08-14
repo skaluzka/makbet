@@ -13,6 +13,8 @@ ifndef MAKBET_PATH
   $(error [ERROR]: MAKBET_PATH is not defined)
 else
   # Set SHELL variable as soon as MAKBET_PATH is defined.
+  # For more details please check below web page:
+  # https://www.gnu.org/software/make/manual/html_node/Choosing-the-Shell.html
   SHELL := /bin/bash
 
   # Set minimal required GNU Make version.
@@ -27,7 +29,10 @@ endif
 
 #
 # Define default target for GNU Make tool.  This target is made
-# in case the make command is run without options.
+# in case the make command is run without options.  For more details
+# please check below web pages:
+# https://www.gnu.org/software/make/manual/html_node/Goals.html
+# https://www.gnu.org/software/make/manual/html_node/Special-Variables.html
 #
 .DEFAULT_GOAL := help
 
