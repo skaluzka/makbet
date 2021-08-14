@@ -1,8 +1,8 @@
 name: CI - tests
 
 # Controls when the action will run.  Triggers the workflow on push
-# or pull request events but only for "master" and "stable/v0.1.x"
-# branches.
+# or pull request events but only for "master", "stable/v0.1.x" and
+# "stable/v0.2.x" branches.
 on:
 
   push:
