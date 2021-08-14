@@ -12,16 +12,22 @@
 ifndef MAKBET_PATH
   $(error [ERROR]: MAKBET_PATH is not defined)
 else
+  #
   # Set SHELL variable as soon as MAKBET_PATH is defined.
   # For more details please check below web page:
   # https://www.gnu.org/software/make/manual/html_node/Choosing-the-Shell.html
+  #
   SHELL := /bin/bash
 
+  #
   # Set minimal required GNU Make version.
+  #
   MAKBET_GNU_MAKE_VERSION := 3.82
 
+  #
   # Set MAKBET_CACHE_DIR, MAKBET_CORE_DIR and MAKBET_SCENARIO_PATH
   # variables as soon as MAKBET_PATH is defined.
+  #
   MAKBET_CACHE_DIR := $(MAKBET_PATH)/.cache
   MAKBET_CORE_DIR := $(MAKBET_PATH)/core
   MAKBET_SCENARIO_PATH := $(realpath $(firstword $(MAKEFILE_LIST)))
@@ -548,6 +554,7 @@ main-help: makbet-version
 	@echo "    make makbet-version                                                       "
 
 
+#
 # This is scenario-help target which generates the whole scenario-specific
 # help message.  If makbet.mk file (or symbolic link Makefile -> makbet.mk)
 # will be passed as make input file then below scenario-help target will
@@ -555,6 +562,7 @@ main-help: makbet-version
 # constructed makbet's scenario file.  For all such cases the help message
 # will be generated dynamically based on all tasks defined in scenario's
 # Makefile file.
+#
 .PHONY: scenario-help
 scenario-help::
 	@if [ "$(notdir $(MAKBET_SCENARIO_PATH))" != "makbet.mk" ] ; \
@@ -568,7 +576,9 @@ scenario-help::
 	fi
 
 
+#
 # This is makbet's default help target (see also the DEFAULT_GOAL at the top).
+#
 .PHONY: help
 help: main-help scenario-help
 
