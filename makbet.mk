@@ -4,6 +4,11 @@
 # "What's done, is done." - William Shakespeare, Macbeth.
 
 
+#
+# Eliminate the default known suffixes.
+# For more details please check below web page:
+# https://www.gnu.org/software/make/manual/html_node/Suffix-Rules.html
+#
 .SUFFIXES:
 
 #
