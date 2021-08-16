@@ -723,9 +723,9 @@ file.
 License
 -------
 
-**makbet** is licensed under the
-`MIT <LICENSE>`_
-license.
+The **makbet** is licensed under the `MIT <LICENSE>`_ license (check
+here -> https://choosealicense.com/licenses/mit/ to understand what
+does it mean).
 
 |
 
