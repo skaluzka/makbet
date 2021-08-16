@@ -14,7 +14,7 @@ readonly CWD="$(pwd)"
 export MAKBET_PATH="$( readlink -f "${CWD}/.." )"
 
 # Export MAKBET_CACHE_DIR variable in addition.
-export MAKBET_CACHE_DIR="${MAKBET_PATH}/.cache"
+export MAKBET_CACHE_DIR="${MAKBET_PATH}/.makbet-cache"
 
 export MAKBET_TESTS_DIR="${MAKBET_PATH}/tests"
 export MAKBET_TESTS_LOGS_DIR="${MAKBET_TESTS_DIR}/logs"

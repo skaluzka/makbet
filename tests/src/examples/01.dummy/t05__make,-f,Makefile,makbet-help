@@ -14,12 +14,12 @@ make -f "${MAKBET_PATH}/examples/01.dummy/Makefile" makbet-help \
 diff -u -s \
     <( \
         cat "${output_file}" \
-        | sed '2d;8d;34d' \
+        | sed '2d;8d;33d' \
         | nl -b a \
     ) \
     <( \
         cat "${expected_file}" \
-        | sed '2d;8d;34d' \
+        | sed '2d;8d;33d' \
         | nl -b a \
     )
 readonly __rc=$?

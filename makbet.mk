@@ -33,7 +33,7 @@ else
   # Set MAKBET_CACHE_DIR, MAKBET_CORE_DIR and MAKBET_SCENARIO_PATH
   # variables as soon as MAKBET_PATH is defined.
   #
-  MAKBET_CACHE_DIR := $(MAKBET_PATH)/.cache
+  MAKBET_CACHE_DIR := $(MAKBET_PATH)/.makbet-cache
   MAKBET_CORE_DIR := $(MAKBET_PATH)/core
   MAKBET_SCENARIO_PATH := $(realpath $(firstword $(MAKEFILE_LIST)))
 endif
@@ -154,7 +154,7 @@ endif
 # Create makbet's internals dir structure as fast as possible.
 #
 # $MAKBET_PATH/
-# └── .cache/
+# └── .makbet-cache/
 #     ├── dot/
 #     ├── events/
 #     │   ├── cfg/
@@ -266,7 +266,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 		"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg" \
 		"TERMINATED"
 	@#
-	@# Save *.dot file in .cache/dot/ dir if MAKBET_DOT=1.
+	@# Save *.dot file in .makbet-cache/dot/ dir if MAKBET_DOT=1.
 	$(_q)if (( $(MAKBET_DOT) == 1 )) ; \
 	then \
 		$(MAKBET_CORE_DIR)/__save_dot_file \
@@ -449,33 +449,33 @@ makbet-help: main-help
 	@echo
 	@echo "All makbet's special targets defined in $(MAKBET_PATH)/makbet.mk:             "
 	@echo
-	@echo "    .show-cache-dir              - Show entire content of makbet's internal   "
-	@echo "                                   \".cache/\" dir.                           "
-	@echo "    .show-dot-dir                - Show entire content of makbet's internal   "
-	@echo "                                   \".cache/dot/\" dir (this target requires  "
-	@echo "                                   prior MAKBET_DOT=1 usage).                 "
+	@echo "    .show-cache-dir              - Show entire content of internal            "
+	@echo "                                   \".makbet-cache/\" dir.                    "
+	@echo "    .show-dot-dir                - Show entire content of internal            "
+	@echo "                                   \".makbet-cache/dot/\" dir (this target    "
+	@echo "                                   requires prior MAKBET_DOT=1 usage).        "
 	@echo "    .show-merged-dot-results     - Show merged content of all dot files (this "
 	@echo "                                   target requires prior MAKBET_DOT=1 usage). "
-	@echo "    .show-events-dir             - Show entire content of makbet's internal   "
-	@echo "                                   \".cache/events/\" dir including all       "
-	@echo "                                   sub-dirs.                                  "
-	@echo "    .show-events-cfg-dir         - Show entire content of makbet's internal   "
-	@echo "                                   \".cache/events/cfg/\" dir.                "
-	@echo "    .show-events-csv-dir         - Show entire content of makbet's internal   "
-	@echo "                                   \".cache/events/csv/\" dir (this target    "
-	@echo "                                   requires prior MAKBET_CSV=1 usage).        "
+	@echo "    .show-events-dir             - Show entire content of internal            "
+	@echo "                                   \".makbet-cache/events/\" dir including    "
+	@echo "                                   all its sub-dirs.                          "
+	@echo "    .show-events-cfg-dir         - Show entire content of internal            "
+	@echo "                                   \".makbet-cache/events/cfg/\" dir.         "
+	@echo "    .show-events-csv-dir         - Show entire content of internal            "
+	@echo "                                   \".makbet-cache/events/csv/\" dir (this    "
+	@echo "                                   target requires prior MAKBET_CSV=1 usage). "
 	@echo "    .show-merged-csv-events      - Show merged content of all event csv files "
 	@echo "                                   (this target requires prior MAKBET_CSV=1   "
 	@echo "                                   usage).                                    "
-	@echo "    .show-prof-dir               - Show entire content of makbet's internal   "
-	@echo "                                   \".cache/prof/\" dir including all         "
-	@echo "                                   sub-dirs.                                  "
-	@echo "    .show-prof-cfg-dir           - Show entire content of makbet's internal   "
-	@echo "                                   \".cache/prof/cfg/\" dir (this target      "
-	@echo "                                   requires prior MAKBET_PROF=1 usage).       "
-	@echo "    .show-prof-csv-dir           - Show entire content of makbet's internal   "
-	@echo "                                   \".cache/prof/csv/\" dir (this target      "
-	@echo "                                   requires prior MAKBET_PROF=1 and           "
+	@echo "    .show-prof-dir               - Show entire content of internal            "
+	@echo "                                   \".makbet-cache/prof/\" dir including all  "
+	@echo "                                   its sub-dirs.                              "
+	@echo "    .show-prof-cfg-dir           - Show entire content of internal            "
+	@echo "                                   \".makbet-cache/prof/cfg/\" dir (this      "
+	@echo "                                   target requires prior MAKBET_PROF=1 usage)."
+	@echo "    .show-prof-csv-dir           - Show entire content of internal            "
+	@echo "                                   \".makbet-cache/prof/csv/\" dir (this      "
+	@echo "                                   target requires prior MAKBET_PROF=1 and    "
 	@echo "                                   MAKBET_CSV=1 usage).                       "
 	@echo "    .show-merged-csv-profiles    - Show merged content of all profile csv     "
 	@echo "                                   files (this target requires prior          "
@@ -545,8 +545,7 @@ main-help: makbet-version
 	@echo "                                   target \"help\" above) then append extended"
 	@echo "                                   help message containing the list of all    "
 	@echo "                                   special makbet's targets.                  "
-	@echo "    makbet-clean                 - Clean entire makbet's internal \".cache/\" "
-	@echo "                                   dir.                                       "
+	@echo "    makbet-clean                 - Clean entire \".makbet-cache/\" dir.       "
 	@echo "    makbet-version               - Print makbet's version only.               "
 	@echo
 	@echo "Examples:                                                                     "

@@ -472,8 +472,8 @@ execution command (by default ``MAKBET_PROF=0``) as in example below:
 
 When ``MAKBET_PROF=1`` is passed to the ``make`` command then **makbet** will
 save some additional **cfg** files during the runtime.  All these files will
-be saved in ``.cache/prof/cfg/`` directory and they can be seen by invoking
-one of **makbet's** special targets: ``.show-prof-dir`` or
+be saved in ``.makbet-cache/prof/cfg/`` directory and they can be seen by
+invoking one of **makbet's** special targets: ``.show-prof-dir`` or
 ``.show-prof-cfg-dir``.
 
 For example:
@@ -481,22 +481,22 @@ For example:
 ::
 
   [user@localhost 01.dummy]$ make .show-prof-dir
-  /home/user/makbet/.cache/prof/cfg
-  ├── [-rw-r--r-- user user         220]  /home/user/makbet/.cache/prof/cfg/@01-INIT.cfg
-  ├── [-rw-r--r-- user user         222]  /home/user/makbet/.cache/prof/cfg/all.cfg
-  ├── [-rw-r--r-- user user         304]  /home/user/makbet/.cache/prof/cfg/task-A.cfg
-  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.cache/prof/cfg/task-B1.cfg
-  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.cache/prof/cfg/task-B2.cfg
-  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.cache/prof/cfg/task-B3.cfg
-  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.cache/prof/cfg/task-B4.cfg
-  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.cache/prof/cfg/task-B5.cfg
-  ├── [-rw-r--r-- user user         311]  /home/user/makbet/.cache/prof/cfg/task-C.cfg
-  ├── [-rw-r--r-- user user         302]  /home/user/makbet/.cache/prof/cfg/task-D.cfg
-  ├── [-rw-r--r-- user user         327]  /home/user/makbet/.cache/prof/cfg/task-E.cfg
-  └── [-rw-r--r-- user user         225]  /home/user/makbet/.cache/prof/cfg/task-F.cfg
+  /home/user/makbet/.makbet-cache/prof/cfg
+  ├── [-rw-r--r-- user user         220]  /home/user/makbet/.makbet-cache/prof/cfg/@01-INIT.cfg
+  ├── [-rw-r--r-- user user         222]  /home/user/makbet/.makbet-cache/prof/cfg/all.cfg
+  ├── [-rw-r--r-- user user         304]  /home/user/makbet/.makbet-cache/prof/cfg/task-A.cfg
+  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.makbet-cache/prof/cfg/task-B1.cfg
+  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.makbet-cache/prof/cfg/task-B2.cfg
+  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.makbet-cache/prof/cfg/task-B3.cfg
+  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.makbet-cache/prof/cfg/task-B4.cfg
+  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.makbet-cache/prof/cfg/task-B5.cfg
+  ├── [-rw-r--r-- user user         311]  /home/user/makbet/.makbet-cache/prof/cfg/task-C.cfg
+  ├── [-rw-r--r-- user user         302]  /home/user/makbet/.makbet-cache/prof/cfg/task-D.cfg
+  ├── [-rw-r--r-- user user         327]  /home/user/makbet/.makbet-cache/prof/cfg/task-E.cfg
+  └── [-rw-r--r-- user user         225]  /home/user/makbet/.makbet-cache/prof/cfg/task-F.cfg
 
   0 directories, 12 files
-  /home/user/makbet/.cache/prof/csv
+  /home/user/makbet/.makbet-cache/prof/csv
 
   0 directories, 0 files
   [user@localhost 01.dummy]$
@@ -506,7 +506,7 @@ An example content of **cfg** profiling file (generated for task ``all`` from
 
 ::
 
-  [user@localhost 01.dummy]$ echo ; cat /home/user/makbet/.cache/prof/cfg/all.cfg ; echo
+  [user@localhost 01.dummy]$ echo ; cat /home/user/makbet/.makbet-cache/prof/cfg/all.cfg ; echo
 
   TASK_ID="13"
   TASK_NAME="all"
@@ -575,69 +575,70 @@ For example:
   T2 - T1 = 00h:00m:00s.020ms
   [user@localhost 01.dummy]$
 
-When both ``MAKBET_PROF=1`` and ``MAKBET_CSV=1`` options are passed to the
-``make`` command then **makbet** will save **a pair of additional files**
-for each target run during the runtime.  As already mentioned above the
-``MAKBET_PROF=1`` option will produce **cfg** files inside ``.cache/prof/cfg/``
-directory.  Using ``MAKBET_CSV=1`` option will generate extra **csv** files
-inside corresponding ``.cache/prof/csv/`` directory.  The whole ``.cache/prof/``
-directory content can be shown by invoking **makbet's** special target
-``.show-prof-dir`` as in example below:
+When both ``MAKBET_PROF=1`` and ``MAKBET_CSV=1`` options are passed
+to the ``make`` command then **makbet** will save **a pair of additional
+files** for each target run during the runtime.  As already mentioned
+above the ``MAKBET_PROF=1`` option will produce **cfg** files inside
+``.makbet-cache/prof/cfg/`` directory.  Using ``MAKBET_CSV=1`` option
+will generate extra **csv** files inside corresponding
+``.makbet-cache/prof/csv/`` directory.  The whole
+``.makbet-cache/prof/`` directory content can be shown by invoking
+**makbet's** special target ``.show-prof-dir`` as in example below:
 
 ::
 
   [user@localhost 01.dummy]$ make .show-prof-dir
-  /home/user/makbet/.cache/prof/cfg
-  ├── [-rw-r--r-- user user         220]  /home/user/makbet/.cache/prof/cfg/@01-INIT.cfg
-  ├── [-rw-r--r-- user user         222]  /home/user/makbet/.cache/prof/cfg/all.cfg
-  ├── [-rw-r--r-- user user         304]  /home/user/makbet/.cache/prof/cfg/task-A.cfg
-  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.cache/prof/cfg/task-B1.cfg
-  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.cache/prof/cfg/task-B2.cfg
-  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.cache/prof/cfg/task-B3.cfg
-  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.cache/prof/cfg/task-B4.cfg
-  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.cache/prof/cfg/task-B5.cfg
-  ├── [-rw-r--r-- user user         311]  /home/user/makbet/.cache/prof/cfg/task-C.cfg
-  ├── [-rw-r--r-- user user         302]  /home/user/makbet/.cache/prof/cfg/task-D.cfg
-  ├── [-rw-r--r-- user user         327]  /home/user/makbet/.cache/prof/cfg/task-E.cfg
-  └── [-rw-r--r-- user user         225]  /home/user/makbet/.cache/prof/cfg/task-F.cfg
+  /home/user/makbet/.makbet-cache/prof/cfg
+  ├── [-rw-r--r-- user user         220]  /home/user/makbet/.makbet-cache/prof/cfg/@01-INIT.cfg
+  ├── [-rw-r--r-- user user         222]  /home/user/makbet/.makbet-cache/prof/cfg/all.cfg
+  ├── [-rw-r--r-- user user         304]  /home/user/makbet/.makbet-cache/prof/cfg/task-A.cfg
+  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.makbet-cache/prof/cfg/task-B1.cfg
+  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.makbet-cache/prof/cfg/task-B2.cfg
+  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.makbet-cache/prof/cfg/task-B3.cfg
+  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.makbet-cache/prof/cfg/task-B4.cfg
+  ├── [-rw-r--r-- user user         303]  /home/user/makbet/.makbet-cache/prof/cfg/task-B5.cfg
+  ├── [-rw-r--r-- user user         311]  /home/user/makbet/.makbet-cache/prof/cfg/task-C.cfg
+  ├── [-rw-r--r-- user user         302]  /home/user/makbet/.makbet-cache/prof/cfg/task-D.cfg
+  ├── [-rw-r--r-- user user         327]  /home/user/makbet/.makbet-cache/prof/cfg/task-E.cfg
+  └── [-rw-r--r-- user user         225]  /home/user/makbet/.makbet-cache/prof/cfg/task-F.cfg
 
   0 directories, 12 files
-  /home/user/makbet/.cache/prof/csv
-  ├── [-rw-r--r-- user user         222]  /home/user/makbet/.cache/prof/csv/@01-INIT.csv
-  ├── [-rw-r--r-- user user         224]  /home/user/makbet/.cache/prof/csv/all.csv
-  ├── [-rw-r--r-- user user         306]  /home/user/makbet/.cache/prof/csv/task-A.csv
-  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B1.csv
-  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B2.csv
-  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B3.csv
-  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B4.csv
-  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B5.csv
-  ├── [-rw-r--r-- user user         313]  /home/user/makbet/.cache/prof/csv/task-C.csv
-  ├── [-rw-r--r-- user user         304]  /home/user/makbet/.cache/prof/csv/task-D.csv
-  ├── [-rw-r--r-- user user         329]  /home/user/makbet/.cache/prof/csv/task-E.csv
-  └── [-rw-r--r-- user user         227]  /home/user/makbet/.cache/prof/csv/task-F.csv
+  /home/user/makbet/.makbet-cache/prof/csv
+  ├── [-rw-r--r-- user user         222]  /home/user/makbet/.makbet-cache/prof/csv/@01-INIT.csv
+  ├── [-rw-r--r-- user user         224]  /home/user/makbet/.makbet-cache/prof/csv/all.csv
+  ├── [-rw-r--r-- user user         306]  /home/user/makbet/.makbet-cache/prof/csv/task-A.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.makbet-cache/prof/csv/task-B1.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.makbet-cache/prof/csv/task-B2.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.makbet-cache/prof/csv/task-B3.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.makbet-cache/prof/csv/task-B4.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.makbet-cache/prof/csv/task-B5.csv
+  ├── [-rw-r--r-- user user         313]  /home/user/makbet/.makbet-cache/prof/csv/task-C.csv
+  ├── [-rw-r--r-- user user         304]  /home/user/makbet/.makbet-cache/prof/csv/task-D.csv
+  ├── [-rw-r--r-- user user         329]  /home/user/makbet/.makbet-cache/prof/csv/task-E.csv
+  └── [-rw-r--r-- user user         227]  /home/user/makbet/.makbet-cache/prof/csv/task-F.csv
 
   0 directories, 12 files
   [user@localhost 01.dummy]$
 
-For showing the content of ``.cache/prof/csv/`` directory only, dedicated
-special target ``.show-prof-csv-dir`` can be used:
+For showing the content of ``.makbet-cache/prof/csv/`` directory only,
+dedicated special target ``.show-prof-csv-dir`` can be used:
 
 ::
 
   [user@localhost 01.dummy]$ make .show-prof-csv-dir
-  /home/user/.cache/prof/csv
-  ├── [-rw-r--r-- user user         222]  /home/user/makbet/.cache/prof/csv/@01-INIT.csv
-  ├── [-rw-r--r-- user user         224]  /home/user/makbet/.cache/prof/csv/all.csv
-  ├── [-rw-r--r-- user user         306]  /home/user/makbet/.cache/prof/csv/task-A.csv
-  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B1.csv
-  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B2.csv
-  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B3.csv
-  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B4.csv
-  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.cache/prof/csv/task-B5.csv
-  ├── [-rw-r--r-- user user         313]  /home/user/makbet/.cache/prof/csv/task-C.csv
-  ├── [-rw-r--r-- user user         304]  /home/user/makbet/.cache/prof/csv/task-D.csv
-  ├── [-rw-r--r-- user user         329]  /home/user/makbet/.cache/prof/csv/task-E.csv
-  └── [-rw-r--r-- user user         227]  /home/user/makbet/.cache/prof/csv/task-F.csv
+  /home/user/.makbet-cache/prof/csv
+  ├── [-rw-r--r-- user user         222]  /home/user/makbet/.makbet-cache/prof/csv/@01-INIT.csv
+  ├── [-rw-r--r-- user user         224]  /home/user/makbet/.makbet-cache/prof/csv/all.csv
+  ├── [-rw-r--r-- user user         306]  /home/user/makbet/.makbet-cache/prof/csv/task-A.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.makbet-cache/prof/csv/task-B1.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.makbet-cache/prof/csv/task-B2.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.makbet-cache/prof/csv/task-B3.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.makbet-cache/prof/csv/task-B4.csv
+  ├── [-rw-r--r-- user user         305]  /home/user/makbet/.makbet-cache/prof/csv/task-B5.csv
+  ├── [-rw-r--r-- user user         313]  /home/user/makbet/.makbet-cache/prof/csv/task-C.csv
+  ├── [-rw-r--r-- user user         304]  /home/user/makbet/.makbet-cache/prof/csv/task-D.csv
+  ├── [-rw-r--r-- user user         329]  /home/user/makbet/.makbet-cache/prof/csv/task-E.csv
+  └── [-rw-r--r-- user user         227]  /home/user/makbet/.makbet-cache/prof/csv/task-F.csv
 
   0 directories, 12 files
   [user@localhost 01.dummy]$
@@ -647,7 +648,7 @@ An example content of **csv** profiling file (generated for task ``all`` from
 
 ::
 
-  [user@localhost 01.dummy]$ echo ; cat /home/user/makbet/.cache/prof/csv/all.csv ; echo
+  [user@localhost 01.dummy]$ echo ; cat /home/user/makbet/.makbet-cache/prof/csv/all.csv ; echo
 
   TASK_ID;TASK_NAME;TASK_DEPS;TASK_CMD;TASK_CMD_OPTS;TASK_DATE_TIME_STARTED;TASK_DATE_TIME_TERMINATED;TASK_DURATION;
   "13";"all";"task-F";"";"";"2020-10-10 19:53:35.123305878";"2020-10-10 19:53:35.143659530";00h:00m:00s.020ms;

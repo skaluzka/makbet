@@ -72,26 +72,27 @@ where:
 
 - ``__save_dot_file`` - This script will save the **DOT** code, describing
   every task, to its dedicated file (file with ``*.dot`` extension) inside
-  the ``$MAKBET_PATH/.cache/dot/`` directory.  The script is being run only
-  when ``MAKBET_DOT`` variable is set to ``1``.  By default ``MAKBET_DOT=0``.
+  the ``$MAKBET_PATH/.makbet-cache/dot/`` directory.  The script is being
+  run only when ``MAKBET_DOT`` variable is set to ``1``.  By default
+  ``MAKBET_DOT=0``.
 
 - ``__save_task_event`` - This script will save task's ``*.cfg`` event file
-  into ``$MAKBET_PATH/.cache/events/cfg/`` directory.  Every task event file
-  can be converted from ``*.cfg`` to ``*.csv`` form when ``MAKBET_CSV``
+  into ``$MAKBET_PATH/.makbet-cache/events/cfg/`` directory.  Every task event
+  file can be converted from ``*.cfg`` to ``*.csv`` form when ``MAKBET_CSV``
   variable is set to ``1``.  By default ``MAKBET_CSV=0``.  In case
   ``MAKBET_CSV=1`` the script ``__convert_cfg2csv``, described above, will
   convert ``*.cfg`` file to ``*.csv`` form, and save it into
-  ``$MAKBET_PATH/.cache/events/csv/`` location.  The ``MAKBET_CSV_SEP`` and
-  ``MAKBET_EVENTS_CSV_HEADER`` variables defined in ``makbet.mk`` file will
-  be used during ``*.csv`` file generation.
+  ``$MAKBET_PATH/.makbet-cache/events/csv/`` location.  The ``MAKBET_CSV_SEP``
+  and ``MAKBET_EVENTS_CSV_HEADER`` variables defined in ``makbet.mk`` file
+  will be used during ``*.csv`` file generation.
 
 - ``__save_task_profile`` - This script will save task's ``*.cfg`` **profile**
-  **results** - inside ``$MAKBET_PATH/.cache/prof/cfg/`` directory.  Tasks
-  profiling is disabled by default (``MAKBET_PROF=0``).  In case
+  **results** - inside ``$MAKBET_PATH/.makbet-cache/prof/cfg/`` directory.
+  Tasks profiling is disabled by default (``MAKBET_PROF=0``).  In case
   ``MAKBET_CSV=1`` the script ``__convert_cfg2csv``, described above, will
   convert ``*.cfg`` file to ``*.csv`` form, and save it into
-  ``$MAKBET_PATH/.cache/prof/csv/`` location.  The ``MAKBET_CSV_SEP`` and
-  ``MAKBET_PROF_CSV_HEADER`` variables defined in ``makbet.mk`` file will
+  ``$MAKBET_PATH/.makbet-cache/prof/csv/`` location.  The ``MAKBET_CSV_SEP``
+  and ``MAKBET_PROF_CSV_HEADER`` variables defined in ``makbet.mk`` file will
   be used during ``*.csv`` file generation.
 
 - ``README.rst`` - The file you are reading now.

@@ -1,4 +1,4 @@
-.cache/
+.makbet-cache/
 ├── dot/
 │   ├── @01-INIT.dot
 │   ├── all.dot

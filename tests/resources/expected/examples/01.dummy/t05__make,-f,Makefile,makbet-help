@@ -18,8 +18,7 @@ All makbet's basic targets defined in /home/user/makbet/makbet.mk:
                                    target "help" above) then append extended
                                    help message containing the list of all    
                                    special makbet's targets.                  
-    makbet-clean                 - Clean entire makbet's internal ".cache/" 
-                                   dir.                                       
+    makbet-clean                 - Clean entire ".makbet-cache/" dir.       
     makbet-version               - Print makbet's version only.               
 
 Examples:                                                                     
@@ -33,33 +32,33 @@ Examples:
 
 All makbet's special targets defined in /home/user/makbet/makbet.mk:             
 
-    .show-cache-dir              - Show entire content of makbet's internal   
-                                   ".cache/" dir.                           
-    .show-dot-dir                - Show entire content of makbet's internal   
-                                   ".cache/dot/" dir (this target requires  
-                                   prior MAKBET_DOT=1 usage).                 
+    .show-cache-dir              - Show entire content of internal            
+                                   ".makbet-cache/" dir.                    
+    .show-dot-dir                - Show entire content of internal            
+                                   ".makbet-cache/dot/" dir (this target    
+                                   requires prior MAKBET_DOT=1 usage).        
     .show-merged-dot-results     - Show merged content of all dot files (this 
                                    target requires prior MAKBET_DOT=1 usage). 
-    .show-events-dir             - Show entire content of makbet's internal   
-                                   ".cache/events/" dir including all       
-                                   sub-dirs.                                  
-    .show-events-cfg-dir         - Show entire content of makbet's internal   
-                                   ".cache/events/cfg/" dir.                
-    .show-events-csv-dir         - Show entire content of makbet's internal   
-                                   ".cache/events/csv/" dir (this target    
-                                   requires prior MAKBET_CSV=1 usage).        
+    .show-events-dir             - Show entire content of internal            
+                                   ".makbet-cache/events/" dir including    
+                                   all its sub-dirs.                          
+    .show-events-cfg-dir         - Show entire content of internal            
+                                   ".makbet-cache/events/cfg/" dir.         
+    .show-events-csv-dir         - Show entire content of internal            
+                                   ".makbet-cache/events/csv/" dir (this    
+                                   target requires prior MAKBET_CSV=1 usage). 
     .show-merged-csv-events      - Show merged content of all event csv files 
                                    (this target requires prior MAKBET_CSV=1   
                                    usage).                                    
-    .show-prof-dir               - Show entire content of makbet's internal   
-                                   ".cache/prof/" dir including all         
-                                   sub-dirs.                                  
-    .show-prof-cfg-dir           - Show entire content of makbet's internal   
-                                   ".cache/prof/cfg/" dir (this target      
-                                   requires prior MAKBET_PROF=1 usage).       
-    .show-prof-csv-dir           - Show entire content of makbet's internal   
-                                   ".cache/prof/csv/" dir (this target      
-                                   requires prior MAKBET_PROF=1 and           
+    .show-prof-dir               - Show entire content of internal            
+                                   ".makbet-cache/prof/" dir including all  
+                                   its sub-dirs.                              
+    .show-prof-cfg-dir           - Show entire content of internal            
+                                   ".makbet-cache/prof/cfg/" dir (this      
+                                   target requires prior MAKBET_PROF=1 usage).
+    .show-prof-csv-dir           - Show entire content of internal            
+                                   ".makbet-cache/prof/csv/" dir (this      
+                                   target requires prior MAKBET_PROF=1 and    
                                    MAKBET_CSV=1 usage).                       
     .show-merged-csv-profiles    - Show merged content of all profile csv     
                                    files (this target requires prior          

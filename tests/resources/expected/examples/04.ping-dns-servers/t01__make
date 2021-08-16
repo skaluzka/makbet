@@ -18,8 +18,7 @@ All makbet's basic targets defined in /home/user/makbet//makbet.mk:
                                    target "help" above) then append extended
                                    help message containing the list of all    
                                    special makbet's targets.                  
-    makbet-clean                 - Clean entire makbet's internal ".cache/" 
-                                   dir.                                       
+    makbet-clean                 - Clean entire ".makbet-cache/" dir.       
     makbet-version               - Print makbet's version only.               
 
 Examples:                                                                     

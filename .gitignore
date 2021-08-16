@@ -1,5 +1,5 @@
 # Ignore makbet's cache directory.
-.cache/
+.makbet-cache/
 
 # Ignore the top-level Visual Studio Code directory.
 .vscode/

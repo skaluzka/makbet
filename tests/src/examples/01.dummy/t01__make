@@ -14,12 +14,12 @@ make \
 diff -u -s \
     <( \
         cat "${output_file}" \
-        | sed '2d;8d;34d;47d;54d;61d;68d;75d;82d;89d;96d;103d;117d' \
+        | sed '2d;8d;33d;46d;53d;60d;67d;74d;81d;88d;95d;102d;116d' \
         | nl -b a \
     ) \
     <( \
         cat "${expected_file}" \
-        | sed '2d;8d;34d;47d;54d;61d;68d;75d;82d;89d;96d;103d;117d' \
+        | sed '2d;8d;33d;46d;53d;60d;67d;74d;81d;88d;95d;102d;116d' \
         | nl -b a \
     )
 readonly __rc=$?
