@@ -13,9 +13,14 @@ readonly CWD="$(pwd)"
 # shellcheck disable=SC2155
 export MAKBET_PATH="$( readlink -f "${CWD}/.." )"
 
+#
 # Export MAKBET_CACHE_DIR variable in addition.
+#
 export MAKBET_CACHE_DIR="${MAKBET_PATH}/.makbet-cache"
 
+#
+# Export few test directory paths.
+#
 export MAKBET_TESTS_DIR="${MAKBET_PATH}/tests"
 export MAKBET_TESTS_LOGS_DIR="${MAKBET_TESTS_DIR}/logs"
 export MAKBET_TESTS_OUTPUT_DIR="${MAKBET_TESTS_DIR}/output"
@@ -28,8 +33,8 @@ readonly RC_SUCCESS=0
 readonly RC_ERROR=1
 
 #
-# Initialize the global exit/return code variable (__rc)
-# with ${RC_SUCCESS} value (see above).
+# Initialize the global exit/return code variable "__rc"
+# with "${RC_SUCCESS}" value (see its definition above).
 #
 __rc="${RC_SUCCESS}"
 
@@ -93,7 +98,7 @@ time {
         set +e
 
         #
-        # Call test case file.
+        # Run test case file.
         #
         "${__file_path}" \
             "${output_file_path}" \
@@ -144,7 +149,7 @@ time {
 echo -e "\n\n[INFO]: Script ${0} completed.\n"
 
 #
-# Exit the script with either ${RC_SUCCESS} or ${RC_ERROR} value.
+# Exit the script with either "${RC_SUCCESS}" or "${RC_ERROR}" value.
 #
 exit "${__rc}"
 
