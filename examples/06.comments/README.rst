@@ -15,4 +15,4 @@ also correctly.  The aim of this example is to show how to properly
 comment tasks out inside inside scenario ``Makefile``.
 
 
-.. End of file
+.. EOF

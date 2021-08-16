@@ -15,4 +15,4 @@ The ``Makefile`` file in current directory contains all tasks needed
 for downloading the sources and building every tool listed above.
 
 
-.. End of file
+.. EOF

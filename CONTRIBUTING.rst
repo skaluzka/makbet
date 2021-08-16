@@ -163,4 +163,4 @@ https://github.com/github/hub/issues/1241) we are merging code locally
 without using GitHub GUI.
 
 
-.. End of file
+.. EOF

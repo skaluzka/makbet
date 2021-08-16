@@ -37,4 +37,4 @@ echo "TASK_DATE_TIME_${7}=\"${NOW}\"" >> "${6}"
 echo -e "\n${NOW_SHORT} [INFO]: Task \"${2}\" (TASK_ID: ${1}) ${7,,}.\n"
 
 
-# End of file
+# EOF

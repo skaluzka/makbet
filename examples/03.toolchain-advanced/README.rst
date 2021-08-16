@@ -12,4 +12,4 @@ purposes.  As expected final results for both **02.toolchain-simple** and
 **03.toolchain-advanced** should be the same.
 
 
-.. End of file
+.. EOF

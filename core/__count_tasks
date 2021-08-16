@@ -13,4 +13,4 @@ set -u
 grep -c '^$(eval $(call TASK_template' "${1}"
 
 
-# End of file
+# EOF

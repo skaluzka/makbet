@@ -238,4 +238,4 @@ The meanings of all parameters are:
 - http://make.mad-scientist.net/the-eval-function/
 
 
-.. End of file
+.. EOF

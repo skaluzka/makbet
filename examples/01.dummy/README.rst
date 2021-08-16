@@ -10,4 +10,4 @@ script), therefore this example can be run at any time with minimal
 requirements and effort.
 
 
-.. End of file
+.. EOF

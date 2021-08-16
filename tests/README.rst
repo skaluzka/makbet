@@ -99,4 +99,4 @@ where:
   all tests from ``src/`` directory structure.
 
 
-.. End of file
+.. EOF

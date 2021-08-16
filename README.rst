@@ -306,7 +306,7 @@ the **DOT** results which can be used for further processing:
   }
 
 
-  // End of file
+  // EOF
 
   [user@localhost 01.dummy]$
 
@@ -736,4 +736,4 @@ Mission statement
 *"What's done, is done."* - William Shakespeare, **Macbeth**.
 
 
-.. End of file
+.. EOF

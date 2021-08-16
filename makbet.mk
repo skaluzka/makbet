@@ -373,7 +373,7 @@ endef
 	@echo "}"
 	@echo
 	@echo
-	@echo "// End of file"
+	@echo "// EOF"
 	@echo
 
 
@@ -587,4 +587,4 @@ scenario-help::
 help: main-help scenario-help
 
 
-# End of file
+# EOF

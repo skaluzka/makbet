@@ -20,4 +20,4 @@ fi
 exit "${EXIT_CODE}"
 
 
-# End of file
+# EOF

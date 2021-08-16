@@ -11,4 +11,4 @@ command.  In general if jobs value (``-j``) will be greater than 1, tasks
 will be executed simultaneously.
 
 
-.. End of file
+.. EOF

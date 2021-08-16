@@ -108,4 +108,4 @@ $(eval $(call TASK_template, \
 ALL: task-F
 
 
-# End of file
+# EOF

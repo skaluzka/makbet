@@ -209,4 +209,4 @@ where:
 - ``README.rst`` - The file you are reading now.
 
 
-.. End of file
+.. EOF

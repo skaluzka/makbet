@@ -149,4 +149,4 @@ echo -e "\n\n[INFO]: Script ${0} completed.\n"
 exit "${__rc}"
 
 
-# End of file
+# EOF

@@ -427,4 +427,4 @@ the best and optimal tasks combination for big projects.
 |
 
 
-.. End of file
+.. EOF

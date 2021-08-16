@@ -16,4 +16,4 @@ macro.  Input params for ``ping`` command can be different for different
 servers.
 
 
-.. End of file
+.. EOF

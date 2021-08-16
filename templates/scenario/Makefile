@@ -44,4 +44,4 @@ $(eval $(call TASK_template, \
 ))
 
 
-# End of file
+# EOF
