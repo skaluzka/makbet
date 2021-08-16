@@ -9,10 +9,11 @@ assignees: ''
 
 ## **makbet's version**
 Please paste below the version of **makbet** used (use
-``make -f "${MAKBET_PATH}/makbet.mk" makbet-version`` command to fetch it).
+``make -f "${MAKBET_PATH}/makbet.mk" makbet-version``
+command to fetch it).
 
 ```
-make -f "${MAKBET_PATH}/makbet.mk" makbet-version # printing makbet's version
+Paste here the result of above command^^
 ```
 
 ## **Feature description**
@@ -23,5 +24,5 @@ Please provide as detailed as possible description of what is expected
 to happen.
 
 ## **Additional context**
-Add any other context or screenshots about the feature request here.
-Please type N/A if not applicable.
+Add any other content (e.g.: logs, screenshots) related to requested
+feature (please type N/A if not applicable).
