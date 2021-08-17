@@ -48,7 +48,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 16
 // TASK_DEPS: build-doxygen
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/build-scripts/build-git
-// TASK_CMD_OPTS: /tmp/makbet/examples/02.toolchain-simple/git/git-2.32.0/
+// TASK_CMD_OPTS: /tmp/makbet/examples/02.toolchain-simple/git/git-2.33.0/
 "build-git" -> "build-doxygen";
 
 // TASK_NAME: build-kcov
@@ -76,7 +76,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 14
 // TASK_DEPS: unpack-doxygen-src unpack-git-src unpack-kcov-src unpack-make-src unpack-python-src
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/common/check-dirs
-// TASK_CMD_OPTS: /tmp/makbet/examples/02.toolchain-simple/doxygen/doxygen-Release_1_9_1/ /tmp/makbet/examples/02.toolchain-simple/git/git-2.32.0/ /tmp/makbet/examples/02.toolchain-simple/kcov/kcov-38/ /tmp/makbet/examples/02.toolchain-simple/make/make-4.3/ /tmp/makbet/examples/02.toolchain-simple/python/Python-3.9.6/
+// TASK_CMD_OPTS: /tmp/makbet/examples/02.toolchain-simple/doxygen/doxygen-Release_1_9_1/ /tmp/makbet/examples/02.toolchain-simple/git/git-2.33.0/ /tmp/makbet/examples/02.toolchain-simple/kcov/kcov-38/ /tmp/makbet/examples/02.toolchain-simple/make/make-4.3/ /tmp/makbet/examples/02.toolchain-simple/python/Python-3.9.6/
 "check-all-src-dirs" -> "unpack-doxygen-src";
 "check-all-src-dirs" -> "unpack-git-src";
 "check-all-src-dirs" -> "unpack-kcov-src";
@@ -94,7 +94,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 5
 // TASK_DEPS: prepare-workdir-structure
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/common/download-file
-// TASK_CMD_OPTS: https://github.com/git/git/archive/v2.32.0.zip /tmp/makbet/examples/02.toolchain-simple/git/v2.32.0.zip
+// TASK_CMD_OPTS: https://github.com/git/git/archive/v2.33.0.zip /tmp/makbet/examples/02.toolchain-simple/git/v2.33.0.zip
 "fetch-git-src" -> "prepare-workdir-structure";
 
 // TASK_NAME: fetch-kcov-src
@@ -148,7 +148,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 22
 // TASK_DEPS: build-git
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/common/exec-cmd
-// TASK_CMD_OPTS: /tmp/makbet/examples/02.toolchain-simple/git/git-2.32.0/git --version
+// TASK_CMD_OPTS: /tmp/makbet/examples/02.toolchain-simple/git/git-2.33.0/git --version
 "print-git-version" -> "build-git";
 
 // TASK_NAME: print-kcov-version
@@ -183,7 +183,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 10
 // TASK_DEPS: fetch-git-src
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/common/uncompress-zip-file
-// TASK_CMD_OPTS: /tmp/makbet/examples/02.toolchain-simple/git/v2.32.0.zip /tmp/makbet/examples/02.toolchain-simple/git/
+// TASK_CMD_OPTS: /tmp/makbet/examples/02.toolchain-simple/git/v2.33.0.zip /tmp/makbet/examples/02.toolchain-simple/git/
 "unpack-git-src" -> "fetch-git-src";
 
 // TASK_NAME: unpack-kcov-src
