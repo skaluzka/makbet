@@ -131,12 +131,10 @@ ifndef MAKBET_CSV
   MAKBET_CSV := 0
 endif
 ifeq ($(MAKBET_CSV), 0)
-  _c := 0
   MAKBET_CSV_SEP :=
   MAKBET_EVENTS_CSV_HEADER :=
   MAKBET_PROF_CSV_HEADER :=
 else ifeq ($(MAKBET_CSV), 1)
-  _c := 1
   ifndef MAKBET_CSV_SEP
     MAKBET_CSV_SEP := ;
   endif
@@ -285,7 +283,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	@#
 	@# Convert profile *.cfg file to -> profile *.csv file
 	@# if MAKBET_CSV=1 and MAKBET_PROF=1.
-	$(_q)if (( $(_c) == 1 )) && (( $(MAKBET_PROF) == 1 )); \
+	$(_q)if (( $(MAKBET_CSV) == 1 )) && (( $(MAKBET_PROF) == 1 )); \
 	then \
 		$(MAKBET_CORE_DIR)/__convert_cfg2csv \
 			"$(MAKBET_PROF_CFG_DIR)/$(strip $(1)).cfg" \
@@ -296,7 +294,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	@#
 	@# Convert *.started.cfg file to -> *.started.csv file
 	@# if MAKBET_CSV=1.
-	$(_q)if (( $(_c) == 1 )) ; \
+	$(_q)if (( $(MAKBET_CSV) == 1 )) ; \
 	then \
 		$(MAKBET_CORE_DIR)/__convert_cfg2csv \
 			"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).started.cfg" \
@@ -307,7 +305,7 @@ $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET
 	@#
 	@# Convert *.terminated.cfg file to -> *.terminated.csv file
 	@# if MAKBET_CSV=1.
-	$(_q)if (( $(_c) == 1 )) ; \
+	$(_q)if (( $(MAKBET_CSV) == 1 )) ; \
 	then \
 		$(MAKBET_CORE_DIR)/__convert_cfg2csv \
 			"$(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg" \
