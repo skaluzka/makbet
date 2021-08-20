@@ -26,6 +26,8 @@ else
 
   #
   # Set minimal required GNU Make version.
+  # For more details please check below web page:
+  # https://github.com/skaluzka/makbet/issues/9
   #
   MAKBET_GNU_MAKE_VERSION := 3.82
 
