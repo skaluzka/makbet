@@ -1,4 +1,4 @@
-Welcome to **makbet's** documentation!
+Welcome to **makbet's** documentation directory!
 
 |
 

@@ -1,4 +1,4 @@
-Welcome to **makbet's** tests content!
+Welcome to **makbet's** tests directory!
 
 |
 

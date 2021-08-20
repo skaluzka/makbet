@@ -1,4 +1,4 @@
-Welcome to **makbet's** examples content!
+Welcome to **makbet's** examples directory!
 
 |
 
