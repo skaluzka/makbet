@@ -87,15 +87,12 @@ ifndef MAKBET_VERBOSE
 endif
 ifeq ($(MAKBET_VERBOSE), 0)
   _v := 0
-  _v1 := 0
   _q := @
 else ifeq ($(MAKBET_VERBOSE), 1)
   _v := 1
-  _v1 := 1
   _q := @
 else ifeq ($(MAKBET_VERBOSE), 2)
   _v := 2
-  _v1 := 1
   _q :=
 else
   $(error [ERROR]: Wrong input for MAKBET_VERBOSE option!  Expected value: {0|1|2} (found MAKBET_VERBOSE=$(MAKBET_VERBOSE)))
@@ -175,7 +172,7 @@ $(shell mkdir -p $(MAKBET_PROF_CSV_DIR))
 #
 # If MAKBET_VERBOSE=1 then print some extra information once.
 #
-ifeq ($(_v1), 1)
+ifeq ($(MAKBET_VERBOSE), 1)
   $(info )
   $(info File $(lastword $(MAKEFILE_LIST)) included successfully.)
   $(info )
