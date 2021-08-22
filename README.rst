@@ -3,7 +3,7 @@ Welcome to the **makbet** project!
 |
 
 The **makbet** stands for **mak**\ (efile) **b**\ (ased)
-**e** \(xtraordinary) **t**\ (ool).
+**e**\ (xtraordinary) **t**\ (ool).
 
 Keep reading && have fun! :)
 
