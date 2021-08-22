@@ -86,13 +86,10 @@ ifndef MAKBET_VERBOSE
   export MAKBET_VERBOSE := 0
 endif
 ifeq ($(MAKBET_VERBOSE), 0)
-  _v := 0
   _q := @
 else ifeq ($(MAKBET_VERBOSE), 1)
-  _v := 1
   _q := @
 else ifeq ($(MAKBET_VERBOSE), 2)
-  _v := 2
   _q :=
 else
   $(error [ERROR]: Wrong input for MAKBET_VERBOSE option!  Expected value: {0|1|2} (found MAKBET_VERBOSE=$(MAKBET_VERBOSE)))
@@ -230,7 +227,7 @@ $(1): $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg $(foreach d,$(3),$(M
 $(MAKBET_EVENTS_CFG_DIR)/$(strip $(1)).terminated.cfg: $(foreach d,$(3),$(MAKBET_EVENTS_CFG_DIR)/$(d).terminated.cfg)
 	@#
 	@# Print additional information if MAKBET_VERBOSE=1 or MAKBET_VERBOSE=2.
-	$(_q)if (( $(_v) >= 1 )) ; \
+	$(_q)if (( $(MAKBET_VERBOSE) >= 1 )) ; \
 	then \
 		$(MAKBET_CORE_DIR)/__print_task_details \
 			"$(strip $(MAKBET_TASK_ID))" \
