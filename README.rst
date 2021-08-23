@@ -621,7 +621,7 @@ will generate extra **csv** files inside corresponding
   [user@localhost 01.dummy]$
 
 For showing the content of ``.makbet-cache/prof/csv/`` directory only,
-dedicated special target ``.show-prof-csv-dir`` can be used:
+special, dedicated target ``.show-prof-csv-dir`` can be used:
 
 ::
 
