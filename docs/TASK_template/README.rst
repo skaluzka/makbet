@@ -148,7 +148,7 @@ The meanings of all parameters are:
 - ``TASK_CMD_OPTS``:
 
   - ``https://github.com/git/git/archive/v2.33.0.zip``
-  - ``TASK_CMD_OPTS``: ``$(WORK_DIR)/git/v2.33.0.zip``
+  - ``$(WORK_DIR)/git/v2.33.0.zip``
 
 **Example 3:**
 
