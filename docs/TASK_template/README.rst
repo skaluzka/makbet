@@ -235,7 +235,7 @@ The meanings of all parameters are:
 - https://www.gnu.org/software/make/manual/html_node/Call-Function.html
 - https://www.gnu.org/software/make/manual/html_node/Eval-Function.html
 - https://www.cmcrossroads.com/article/basics-gnu-make
-- http://make.mad-scientist.net/the-eval-function/
+- http://make.mad-scientist.net/the-eval-function
 
 
 .. EOF
