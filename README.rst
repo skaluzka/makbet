@@ -725,7 +725,7 @@ License
 -------
 
 The **makbet** is licensed under the `MIT <LICENSE>`_ license (check
-here -> https://choosealicense.com/licenses/mit to understand what
+`here <https://choosealicense.com/licenses/mit>`_ to understand what
 does it mean).
 
 |
