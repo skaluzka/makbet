@@ -148,16 +148,16 @@ endif
 # Create makbet's internals dir structure as fast as possible.
 #
 # $MAKBET_PATH/
-# └── .makbet-cache/
-#     ├── dot/
-#     ├── events/
-#     │   ├── cfg/
-#     │   └── csv/
-#     └── prof/
-#         ├── cfg/
-#         └── csv/
+# └──.makbet-cache/
+#    ├──dot/
+#    ├──events/
+#    │  ├──cfg/
+#    │  └──csv/
+#    └──prof/
+#       ├──cfg/
+#       └──csv/
 #
-# Usually it means - as soon as makbet.mk file was successfully included
+# Usually it means, as soon as makbet.mk file was successfully included
 # and all provided CLI options were processed without errors.
 #
 $(shell mkdir -p $(MAKBET_DOT_DIR))
