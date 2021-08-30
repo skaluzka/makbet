@@ -20,7 +20,7 @@ Keep reading && have fun! :)
 --------------
 
 We are providing **six** complete examples for further study and examination.
-Every example can be freely run with all combinations of **makbet's**
+Each example can be freely run with all combinations of **makbet's**
 CLI options (``MAKBET_*``) as well as easily modified.  All results of
 modifications are easy to observe and notice.
 
@@ -34,72 +34,72 @@ The **makbet's** examples directory structure is:
 ::
 
   $MAKBET_PATH/examples/
-  ├── 01.dummy/
-  │   ├── Makefile
-  │   ├── README.rst
-  │   ├── results/
-  │   │   ├── output.csv
-  │   │   ├── output.dot
-  │   │   └── output.png
-  │   └── tasks/
-  │       └── generic-task
-  ├── 02.toolchain-simple/
-  │   ├── Makefile
-  │   ├── README.rst
-  │   └── results/
-  │       ├── output.csv
-  │       ├── output.dot
-  │       └── output.png
-  ├── 03.toolchain-advanced/
-  │   ├── Makefile
-  │   ├── README.rst
-  │   └── results/
-  │       ├── output.csv
-  │       ├── output.dot
-  │       └── output.png
-  ├── 04.ping-dns-servers/
-  │   ├── Makefile
-  │   ├── README.rst
-  │   └── results/
-  │       ├── output.csv
-  │       ├── output.dot
-  │       └── output.png
-  ├── 05.sleep/
-  │   ├── Makefile
-  │   ├── README.rst
-  │   └── results/
-  │       ├── output.csv
-  │       ├── output.dot
-  │       └── output.png
-  ├── 06.comments/
-  │   ├── Makefile
-  │   ├── README.rst
-  │   └── results/
-  │       ├── output.csv
-  │       ├── output.dot
-  │       └── output.png
-  ├── lib/
-  │   └── tasks/
-  │       ├── build-scripts/
-  │       │   ├── build-doxygen
-  │       │   ├── build-git
-  │       │   ├── build-kcov
-  │       │   ├── build-make
-  │       │   └── build-python
-  │       └── common/
-  │           ├── check-dirs
-  │           ├── check-files
-  │           ├── create-dir-structure
-  │           ├── download-file
-  │           ├── exec-cmd
-  │           ├── show-free-space
-  │           ├── show-uname
-  │           ├── show-uptime
-  │           ├── delay
-  │           ├── uncompress-tgz-file
-  │           ├── uncompress-txz-file
-  │           └── uncompress-zip-file
-  └── README.rst
+  ├──01.dummy/
+  │  ├──Makefile
+  │  ├──README.rst
+  │  ├──results/
+  │  │  ├──output.csv
+  │  │  ├──output.dot
+  │  │  └──output.png
+  │  └──tasks/
+  │      └──generic-task
+  ├──02.toolchain-simple/
+  │  ├──Makefile
+  │  ├──README.rst
+  │  └──results/
+  │     ├──output.csv
+  │     ├──output.dot
+  │     └──output.png
+  ├──03.toolchain-advanced/
+  │  ├──Makefile
+  │  ├──README.rst
+  │  └──results/
+  │     ├──output.csv
+  │     ├──output.dot
+  │     └──output.png
+  ├──04.ping-dns-servers/
+  │  ├──Makefile
+  │  ├──README.rst
+  │  └──results/
+  │      ├──output.csv
+  │      ├──output.dot
+  │      └──output.png
+  ├──05.sleep/
+  │  ├──Makefile
+  │  ├──README.rst
+  │  └──results/
+  │      ├──output.csv
+  │      ├──output.dot
+  │      └──output.png
+  ├──06.comments/
+  │  ├──Makefile
+  │  ├──README.rst
+  │  └──results/
+  │      ├──output.csv
+  │      ├──output.dot
+  │      └──output.png
+  ├──lib/
+  │  └──tasks/
+  │     ├──build-scripts/
+  │     │  ├──build-doxygen
+  │     │  ├──build-git
+  │     │  ├──build-kcov
+  │     │  ├──build-make
+  │     │  └──build-python
+  │     └──common/
+  │        ├──check-dirs
+  │        ├──check-files
+  │        ├──create-dir-structure
+  │        ├──download-file
+  │        ├──exec-cmd
+  │        ├──show-free-space
+  │        ├──show-uname
+  │        ├──show-uptime
+  │        ├──delay
+  │        ├──uncompress-tgz-file
+  │        ├──uncompress-txz-file
+  │        └──uncompress-zip-file
+  └──README.rst
 
   17 directories, 49 files
 
