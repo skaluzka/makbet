@@ -42,7 +42,7 @@ The **makbet's** examples directory structure is:
   │  │  ├──output.dot
   │  │  └──output.png
   │  └──tasks/
-  │      └──generic-task
+  │     └──generic-task
   ├──02.toolchain-simple/
   │  ├──Makefile
   │  ├──README.rst
@@ -61,23 +61,23 @@ The **makbet's** examples directory structure is:
   │  ├──Makefile
   │  ├──README.rst
   │  └──results/
-  │      ├──output.csv
-  │      ├──output.dot
-  │      └──output.png
+  │     ├──output.csv
+  │     ├──output.dot
+  │     └──output.png
   ├──05.sleep/
   │  ├──Makefile
   │  ├──README.rst
   │  └──results/
-  │      ├──output.csv
-  │      ├──output.dot
-  │      └──output.png
+  │     ├──output.csv
+  │     ├──output.dot
+  │     └──output.png
   ├──06.comments/
   │  ├──Makefile
   │  ├──README.rst
   │  └──results/
-  │      ├──output.csv
-  │      ├──output.dot
-  │      └──output.png
+  │     ├──output.csv
+  │     ├──output.dot
+  │     └──output.png
   ├──lib/
   │  └──tasks/
   │     ├──build-scripts/
