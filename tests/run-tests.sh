@@ -53,11 +53,15 @@ mkdir -pv "${MAKBET_TESTS_OUTPUT_DIR}"
 rm -rf "${MAKBET_TESTS_LOGS_DIR}"
 mkdir -pv "${MAKBET_TESTS_LOGS_DIR}"
 
+#
 # Collect all test files.
+#
 # shellcheck disable=SC2155
 readonly test_files=$( find "${MAKBET_TESTS_SRC_DIR}" -type f -iname "t[0-9][0-9]__make*" | sort )
 
+#
 # Declare few global counters.
+#
 test_files_counter=0
 total_files="$(echo "${test_files}" | wc -l)"
 failed_counter=0
@@ -72,7 +76,9 @@ time {
     for __file_path in ${test_files}
     do
 
+        #
         # Increment test case file counter.
+        #
         test_files_counter=$(( test_files_counter+1 ))
 
         echo "Test:   ${test_files_counter}/${total_files}"
@@ -149,7 +155,7 @@ time {
 echo -e "\n\n[INFO]: Script ${0} completed.\n"
 
 #
-# Exit the script with either "${RC_SUCCESS}" or "${RC_ERROR}" value.
+# Exit script with either "${RC_SUCCESS}" or "${RC_ERROR}" value.
 #
 exit "${__rc}"
 
