@@ -156,35 +156,35 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_NAME: unpack-doxygen-src
 // TASK_ID: 9
 // TASK_DEPS: fetch-doxygen-src
-// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/uncompress-zip-file
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/extract-zip-file
 // TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/doxygen/Release_1_9_2.zip /tmp/makbet/examples/03.toolchain-advanced/doxygen/
 "unpack-doxygen-src" -> "fetch-doxygen-src";
 
 // TASK_NAME: unpack-git-src
 // TASK_ID: 10
 // TASK_DEPS: fetch-git-src
-// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/uncompress-zip-file
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/extract-zip-file
 // TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/git/v2.33.0.zip /tmp/makbet/examples/03.toolchain-advanced/git/
 "unpack-git-src" -> "fetch-git-src";
 
 // TASK_NAME: unpack-kcov-src
 // TASK_ID: 11
 // TASK_DEPS: fetch-kcov-src
-// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/uncompress-zip-file
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/extract-zip-file
 // TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/kcov/38.zip /tmp/makbet/examples/03.toolchain-advanced/kcov/
 "unpack-kcov-src" -> "fetch-kcov-src";
 
 // TASK_NAME: unpack-make-src
 // TASK_ID: 12
 // TASK_DEPS: fetch-make-src
-// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/uncompress-tgz-file
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/extract-tgz-file
 // TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3.tar.gz /tmp/makbet/examples/03.toolchain-advanced/make/
 "unpack-make-src" -> "fetch-make-src";
 
 // TASK_NAME: unpack-python-src
 // TASK_ID: 13
 // TASK_DEPS: fetch-python-src
-// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/uncompress-txz-file
+// TASK_CMD: /home/user/makbet/examples/lib/tasks/common/extract-txz-file
 // TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.6.tar.xz /tmp/makbet/examples/03.toolchain-advanced/python/
 "unpack-python-src" -> "fetch-python-src";
 

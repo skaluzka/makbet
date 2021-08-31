@@ -44,9 +44,9 @@ PYTHON_URL := https://www.python.org/ftp/python/3.9.6/$(PYTHON_VER)
 
 CREATE_DIRS := $(MAKBET_TASKS_DIR)/common/create-dir-structure
 DOWNLOAD := $(MAKBET_TASKS_DIR)/common/download-file
-UNPACK_ZIP := $(MAKBET_TASKS_DIR)/common/uncompress-zip-file
-UNPACK_TGZ := $(MAKBET_TASKS_DIR)/common/uncompress-tgz-file
-UNPACK_TXZ := $(MAKBET_TASKS_DIR)/common/uncompress-txz-file
+UNPACK_ZIP := $(MAKBET_TASKS_DIR)/common/extract-zip-file
+UNPACK_TGZ := $(MAKBET_TASKS_DIR)/common/extract-tgz-file
+UNPACK_TXZ := $(MAKBET_TASKS_DIR)/common/extract-txz-file
 CHECK_DIRS := $(MAKBET_TASKS_DIR)/common/check-dirs
 
 DOXYGEN_UNPACK_DIR := $(DOXYGEN_DIR)/doxygen-Release_1_9_2

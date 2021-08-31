@@ -87,7 +87,7 @@ $(eval $(call TASK_template, \
 $(eval $(call TASK_template, \
 	unpack-doxygen-src, "Unpack doxygen sources", \
 	fetch-doxygen-src, \
-	$(MAKBET_TASKS_DIR)/common/uncompress-zip-file, \
+	$(MAKBET_TASKS_DIR)/common/extract-zip-file, \
 		$(WORK_DIR)/doxygen/Release_1_9_2.zip \
 		$(WORK_DIR)/doxygen/ \
 ))
@@ -95,7 +95,7 @@ $(eval $(call TASK_template, \
 $(eval $(call TASK_template, \
 	unpack-git-src, "Unpack git sources", \
 	fetch-git-src, \
-	$(MAKBET_TASKS_DIR)/common/uncompress-zip-file, \
+	$(MAKBET_TASKS_DIR)/common/extract-zip-file, \
 		$(WORK_DIR)/git/v2.33.0.zip \
 		$(WORK_DIR)/git/ \
 ))
@@ -103,7 +103,7 @@ $(eval $(call TASK_template, \
 $(eval $(call TASK_template, \
 	unpack-kcov-src, "Unpack kcov sources",  \
 	fetch-kcov-src, \
-	$(MAKBET_TASKS_DIR)/common/uncompress-zip-file, \
+	$(MAKBET_TASKS_DIR)/common/extract-zip-file, \
 		$(WORK_DIR)/kcov/38.zip \
 		$(WORK_DIR)/kcov/ \
 ))
@@ -111,7 +111,7 @@ $(eval $(call TASK_template, \
 $(eval $(call TASK_template, \
 	unpack-make-src, "Unpack GNU Make sources", \
 	fetch-make-src, \
-	$(MAKBET_TASKS_DIR)/common/uncompress-tgz-file, \
+	$(MAKBET_TASKS_DIR)/common/extract-tgz-file, \
 		$(WORK_DIR)/make/make-4.3.tar.gz \
 		$(WORK_DIR)/make/ \
 ))
@@ -119,7 +119,7 @@ $(eval $(call TASK_template, \
 $(eval $(call TASK_template, \
 	unpack-python-src, "Unpack python sources", \
 	fetch-python-src, \
-	$(MAKBET_TASKS_DIR)/common/uncompress-txz-file, \
+	$(MAKBET_TASKS_DIR)/common/extract-txz-file, \
 		$(WORK_DIR)/python/Python-3.9.6.tar.xz \
 		$(WORK_DIR)/python/ \
 ))

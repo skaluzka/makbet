@@ -96,9 +96,9 @@ The **makbet's** examples directory structure is:
   │        ├──show-uname
   │        ├──show-uptime
   │        ├──delay
-  │        ├──uncompress-tgz-file
-  │        ├──uncompress-txz-file
-  │        └──uncompress-zip-file
+  │        ├──extract-tgz-file
+  │        ├──extract-txz-file
+  │        └──extract-zip-file
   └──README.rst
 
   17 directories, 49 files

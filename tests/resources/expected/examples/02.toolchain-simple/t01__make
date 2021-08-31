@@ -92,35 +92,35 @@ Found 28 valid task(s) defined in /home/user/makbet/examples/02.toolchain-simple
     - Id.:   9
     - Descr: "Unpack doxygen sources"
     - Deps:  fetch-doxygen-src
-    - Cmd:   /home/user/makbet/examples/lib/tasks/common/uncompress-zip-file
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/extract-zip-file
     - Opts:  /tmp/makbet/examples/02.toolchain-simple/doxygen/Release_1_9_2.zip /tmp/makbet/examples/02.toolchain-simple/doxygen/
 
   unpack-git-src
     - Id.:   10
     - Descr: "Unpack git sources"
     - Deps:  fetch-git-src
-    - Cmd:   /home/user/makbet/examples/lib/tasks/common/uncompress-zip-file
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/extract-zip-file
     - Opts:  /tmp/makbet/examples/02.toolchain-simple/git/v2.33.0.zip /tmp/makbet/examples/02.toolchain-simple/git/
 
   unpack-kcov-src
     - Id.:   11
     - Descr: "Unpack kcov sources"
     - Deps:  fetch-kcov-src
-    - Cmd:   /home/user/makbet/examples/lib/tasks/common/uncompress-zip-file
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/extract-zip-file
     - Opts:  /tmp/makbet/examples/02.toolchain-simple/kcov/38.zip /tmp/makbet/examples/02.toolchain-simple/kcov/
 
   unpack-make-src
     - Id.:   12
     - Descr: "Unpack GNU Make sources"
     - Deps:  fetch-make-src
-    - Cmd:   /home/user/makbet/examples/lib/tasks/common/uncompress-tgz-file
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/extract-tgz-file
     - Opts:  /tmp/makbet/examples/02.toolchain-simple/make/make-4.3.tar.gz /tmp/makbet/examples/02.toolchain-simple/make/
 
   unpack-python-src
     - Id.:   13
     - Descr: "Unpack python sources"
     - Deps:  fetch-python-src
-    - Cmd:   /home/user/makbet/examples/lib/tasks/common/uncompress-txz-file
+    - Cmd:   /home/user/makbet/examples/lib/tasks/common/extract-txz-file
     - Opts:  /tmp/makbet/examples/02.toolchain-simple/python/Python-3.9.6.tar.xz /tmp/makbet/examples/02.toolchain-simple/python/
 
   check-all-src-dirs
