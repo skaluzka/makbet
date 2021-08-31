@@ -1,7 +1,7 @@
 **02.toolchain-simple**
 -----------------------
 
-The main goal of this example is to build (locally from the source code)
+The main goal of this example is to build locally (from the source code)
 a simple toolchain consists of the following tools:
 
 - **doxygen 1.9.2**
