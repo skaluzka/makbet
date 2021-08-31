@@ -19,13 +19,13 @@ ifndef MAKBET_PATH
 else
   #
   # Set SHELL variable as soon as MAKBET_PATH is defined.
-  # For more details please check below web page:
+  # For more details regarding SHELL variable please check below web page:
   # https://www.gnu.org/software/make/manual/html_node/Choosing-the-Shell.html
   #
   SHELL := /bin/bash
 
   #
-  # Set minimal required GNU Make version.
+  # Set minimal supported GNU Make version.
   # For more details please check below web page:
   # https://github.com/skaluzka/makbet/issues/9
   #
@@ -167,7 +167,7 @@ $(shell mkdir -p $(MAKBET_PROF_CFG_DIR))
 $(shell mkdir -p $(MAKBET_PROF_CSV_DIR))
 
 #
-# If MAKBET_VERBOSE=1 then print some extra information once.
+# If MAKBET_VERBOSE=1 then print some extra information.
 #
 ifeq ($(MAKBET_VERBOSE), 1)
   $(info )
