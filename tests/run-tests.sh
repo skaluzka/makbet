@@ -27,7 +27,7 @@ export MAKBET_TESTS_OUTPUT_DIR="${MAKBET_TESTS_DIR}/output"
 export MAKBET_TESTS_SRC_DIR="${MAKBET_TESTS_DIR}/src"
 
 #
-# Declare exit/return codes.
+# Define exit/return codes.
 #
 readonly RC_SUCCESS=0
 readonly RC_ERROR=1
