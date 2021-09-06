@@ -5,11 +5,15 @@ set -euo pipefail
 # Do not change it, unless you know what you are doing.
 
 
+#
 # Fetch current working directory.
+#
 # shellcheck disable=SC2155
 readonly CWD="$(pwd)"
 
+#
 # Export mandatory MAKBET_PATH variable.
+#
 # shellcheck disable=SC2155
 export MAKBET_PATH="$( readlink -f "${CWD}/.." )"
 
@@ -45,11 +49,15 @@ __rc="${RC_SUCCESS}"
 echo -e "\n[INFO]: CWD=${CWD}\n"
 echo -e "[INFO]: Preparing directory structure...\n"
 
+#
 # Prepare empty ./tests/output/ directory.
+#
 rm -rf "${MAKBET_TESTS_OUTPUT_DIR}"
 mkdir -pv "${MAKBET_TESTS_OUTPUT_DIR}"
 
+#
 # Prepare empty ./tests/logs/ directory.
+#
 rm -rf "${MAKBET_TESTS_LOGS_DIR}"
 mkdir -pv "${MAKBET_TESTS_LOGS_DIR}"
 
@@ -72,7 +80,9 @@ echo -e "\n[INFO]: Starting tests loop...\n"
 
 time {
 
+    #
     # Start iteration through test file list.
+    #
     for __file_path in ${test_files}
     do
 
@@ -99,7 +109,7 @@ time {
         mkdir -p "${output_subdir}"
 
         #
-        # Disable errors handling before calling the test case file.
+        # Disable errors handling before running the test case file.
         #
         set +e
 
@@ -111,11 +121,13 @@ time {
             "${__file_path//src/resources\/expected}" \
             > "${log_file_path}" 2>&1
 
-        # Fetch exit/return code after execution of above^^ test case file.
+        #
+        # Fetch exit/return code after above^^ test case file execution.
+        #
         __file_pathrc=$?
 
         #
-        # Enable errors handling after calling test case file.
+        # Enable errors handling after running test case file.
         #
         set -e
 
@@ -142,7 +154,9 @@ time {
 
     done
 
+    #
     # Print short summary.
+    #
     echo -e "\nTotal test files: ${test_files_counter}"
     echo "Passed:           ${passed_counter}"
     echo -e "Failed:           ${failed_counter}\n"
@@ -150,6 +164,7 @@ time {
 #
 # End of "time {...}" code block.
 #
+
 }
 
 echo -e "\n\n[INFO]: Script ${0} completed.\n"
