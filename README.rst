@@ -36,7 +36,7 @@ About
 
 This project has been created for several reasons...
 
-Mainly to help:
+Mainly to help with:
 
 - automating various complex scenarios,
 - modeling, and prototyping complex real-life processes consisting of many
@@ -46,11 +46,11 @@ Mainly to help:
   circular dependencies, or long execution paths),
 - optimizing execution paths in existing systems.
 
-But also to help:
+But also to:
 
-- learning **GNU Make** utility,
-- learning **DOT** language,
-- learning **Bash** scripting.
+- help learning **GNU Make** utility,
+- help learning **DOT** language,
+- help learning **Bash** scripting.
 
 |
 
