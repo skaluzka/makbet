@@ -33,19 +33,19 @@ were intentionally omitted to shrink the listing).
 ::
 
   $MAKBET_PATH/tests/
-  ├── resources/
-  │   └── expected/
-  │       └── examples/
-  │           ├── 01.dummy/
-  │           ...
-  │           └── 06.comments/
-  ├── src/
-  │   └── examples/
-  │       ├── 01.dummy/
-  │       ...
-  │       └── 06.comments/
-  ├── README.rst
-  └── run-tests.sh
+  ├──resources/
+  │  └──expected/
+  │     └──examples/
+  │        ├──01.dummy/
+  │        ...
+  │        └──06.comments/
+  ├──src/
+  │  └──examples/
+  │     ├──01.dummy/
+  │     ...
+  │     └──06.comments/
+  ├──README.rst
+  └──run-tests.sh
 
   17 directories, 130 files
 
