@@ -121,15 +121,24 @@ does it mean).
 System requirements
 -------------------
 
-Well... Nothing special here :)
-
-The only system requirements are:
+Basic system requirements are:
 
 - **GNU/Linux** compatible OS,
 - **GNU Make** tool (version **3.82** or newer),
 - **Bash** interpreter (available in ``/bin/bash`` location).
 
+This is enough for tasks' running, tasks' profiling and for generating
+corresponding DOT files (see `DOT output`_ section).
+
+However, DOT files can be converted, in general, to many different
+output formats, like PDF, PNG, SVG... For such conversion additional
+tooling is required.  It is recommended to use
+``graphviz <https://graphviz.gitlab.io/>``_ which has been successfully
+tested with **makbet** (please read ``PNG output``_ section).
+
 All provided examples were tested with **GNU Make 4.3** and **Bash 5.0.16**.
+
+For DOT -> PNG conversion, **graphviz 2.50.0** was used.
 
 |
 
