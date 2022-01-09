@@ -102,6 +102,8 @@ The **makbet's** key features are:
   branches,
 - follows so-called **semver** (`<https://semver.org>`_) versioning patterns
   (see also `Few words regarding backward compatibility`_ section),
+- hosted officially on `GitHub <https://github.com/skaluzka/makbet>`_ and
+  mirrored officially on `GitLab <https://gitlab.com/skaluzka/makbet>`_,
 - minimal system requirements (see details in `System requirements`_ section).
 
 |
