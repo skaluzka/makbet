@@ -39,6 +39,9 @@ jobs:
       - name: Install "tree" utility...
         run: sudo apt-get install tree
 
+      - name: Install "graphviz" utility...
+        run: sudo apt-get install graphviz
+
       - name: Check "tree" version...
         run: tree --version
 
