@@ -6,7 +6,7 @@ a simple toolchain consists of the following tools:
 
 - **doxygen 1.9.3**
 - **git 2.33.0**
-- **kcov 38**
+- **kcov 40**
 - **make 4.3**
 - **python 3.9.6**
 

@@ -160,7 +160,7 @@ The meanings of all parameters are:
         $(MAKBET_TASKS_DIR)/common/check-dirs, \
             $(WORK_DIR)/doxygen/doxygen-Release_1_9_3/ \
             $(WORK_DIR)/git/git-2.33.0/ \
-            $(WORK_DIR)/kcov/kcov-38/ \
+            $(WORK_DIR)/kcov/kcov-40/ \
             $(WORK_DIR)/make/make-4.3/ \
             $(WORK_DIR)/python/Python-3.9.6/ \
     ))
@@ -182,7 +182,7 @@ The meanings of all parameters are:
 
   - ``$(WORK_DIR)/doxygen/doxygen-Release_1_9_3/``
   - ``$(WORK_DIR)/git/git-2.33.0/``
-  - ``$(WORK_DIR)/kcov/kcov-38/``
+  - ``$(WORK_DIR)/kcov/kcov-40/``
   - ``$(WORK_DIR)/make/make-4.3/``
   - ``$(WORK_DIR)/python/Python-3.9.6/``
 

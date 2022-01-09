@@ -187,7 +187,7 @@ where:
   from previously downloaded sources.
 - ``lib/tasks/build-scripts/build-kcov`` - This **Bash** script is used
   by **two** ``build-kcov`` tasks (defined in **02.toolchain-simple** and
-  **03.toolchain-advanced** examples).  Its aim is to build **kcov 38** from
+  **03.toolchain-advanced** examples).  Its aim is to build **kcov 40** from
   previously downloaded sources.
 - ``lib/tasks/build-scripts/build-make`` - This **Bash** script is used
   by **two** ``build-make`` tasks (defined in **02.toolchain-simple** and

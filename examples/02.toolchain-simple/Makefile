@@ -64,8 +64,8 @@ $(eval $(call TASK_template, \
 	fetch-kcov-src, "Fetch kcov sources", \
 	prepare-workdir-structure, \
 	$(MAKBET_TASKS_DIR)/common/download-file, \
-		https://github.com/SimonKagstrom/kcov/archive/38.zip \
-		$(WORK_DIR)/kcov/38.zip \
+		https://github.com/SimonKagstrom/kcov/archive/v40.zip \
+		$(WORK_DIR)/kcov/v40.zip \
 ))
 
 $(eval $(call TASK_template, \
@@ -104,7 +104,7 @@ $(eval $(call TASK_template, \
 	unpack-kcov-src, "Unpack kcov sources",  \
 	fetch-kcov-src, \
 	$(MAKBET_TASKS_DIR)/common/extract-zip-file, \
-		$(WORK_DIR)/kcov/38.zip \
+		$(WORK_DIR)/kcov/v40.zip \
 		$(WORK_DIR)/kcov/ \
 ))
 
@@ -130,7 +130,7 @@ $(eval $(call TASK_template, \
 	$(MAKBET_TASKS_DIR)/common/check-dirs, \
 		$(WORK_DIR)/doxygen/doxygen-Release_1_9_3/ \
 		$(WORK_DIR)/git/git-2.33.0/ \
-		$(WORK_DIR)/kcov/kcov-38/ \
+		$(WORK_DIR)/kcov/kcov-40/ \
 		$(WORK_DIR)/make/make-4.3/ \
 		$(WORK_DIR)/python/Python-3.9.6/ \
 ))
@@ -153,7 +153,7 @@ $(eval $(call TASK_template, \
 	build-kcov, "Build kcov inside its source dir", \
 	build-git, \
 	$(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-kcov, \
-		$(WORK_DIR)/kcov/kcov-38/ \
+		$(WORK_DIR)/kcov/kcov-40/ \
 ))
 
 $(eval $(call TASK_template, \
@@ -176,7 +176,7 @@ $(eval $(call TASK_template, \
 	$(MAKBET_TASKS_DIR)/common/check-files, \
 		$(WORK_DIR)/doxygen/doxygen-Release_1_9_3/build/bin/doxygen \
 		$(WORK_DIR)/git/git-2.33.0/git \
-		$(WORK_DIR)/kcov/kcov-38/build/src/kcov \
+		$(WORK_DIR)/kcov/kcov-40/build/src/kcov \
 		$(WORK_DIR)/make/make-4.3/make \
 		$(WORK_DIR)/python/Python-3.9.6/python \
 ))
@@ -201,7 +201,7 @@ $(eval $(call TASK_template, \
 	print-kcov-version, "Print version of kcov from source dir", \
 	build-kcov, \
 	$(MAKBET_TASKS_DIR)/common/exec-cmd, \
-		$(WORK_DIR)/kcov/kcov-38/build/src/kcov \
+		$(WORK_DIR)/kcov/kcov-40/build/src/kcov \
 		--version \
 ))
 

@@ -48,7 +48,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 17
 // TASK_DEPS: build-git
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/build-scripts/build-kcov
-// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-40/
 "build-kcov" -> "build-git";
 
 // TASK_NAME: build-make
@@ -69,7 +69,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 14
 // TASK_DEPS: unpack-doxygen-src unpack-git-src unpack-kcov-src unpack-make-src unpack-python-src
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/common/check-dirs
-// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_9_3/ /tmp/makbet/examples/03.toolchain-advanced/git/git-2.33.0/ /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/ /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/ /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.6/
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/doxygen/doxygen-Release_1_9_3/ /tmp/makbet/examples/03.toolchain-advanced/git/git-2.33.0/ /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-40/ /tmp/makbet/examples/03.toolchain-advanced/make/make-4.3/ /tmp/makbet/examples/03.toolchain-advanced/python/Python-3.9.6/
 "check-all-src-dirs" -> "unpack-doxygen-src";
 "check-all-src-dirs" -> "unpack-git-src";
 "check-all-src-dirs" -> "unpack-kcov-src";
@@ -94,7 +94,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 6
 // TASK_DEPS: prepare-workdir-structure
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/common/download-file
-// TASK_CMD_OPTS: https://github.com/SimonKagstrom/kcov/archive/38.zip /tmp/makbet/examples/03.toolchain-advanced/kcov/38.zip
+// TASK_CMD_OPTS: https://github.com/SimonKagstrom/kcov/archive/v40.zip /tmp/makbet/examples/03.toolchain-advanced/kcov/v40.zip
 "fetch-kcov-src" -> "prepare-workdir-structure";
 
 // TASK_NAME: fetch-make-src
@@ -136,7 +136,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 23
 // TASK_DEPS: build-kcov
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/common/exec-cmd
-// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-38/build/src/kcov --version
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/kcov/kcov-40/build/src/kcov --version
 "print-kcov-version" -> "build-kcov";
 
 // TASK_NAME: print-make-version
@@ -171,7 +171,7 @@ node [shape="box" style="rounded, bold, filled" fillcolor="azure"];
 // TASK_ID: 11
 // TASK_DEPS: fetch-kcov-src
 // TASK_CMD: /home/user/makbet/examples/lib/tasks/common/extract-zip-file
-// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/kcov/38.zip /tmp/makbet/examples/03.toolchain-advanced/kcov/
+// TASK_CMD_OPTS: /tmp/makbet/examples/03.toolchain-advanced/kcov/v40.zip /tmp/makbet/examples/03.toolchain-advanced/kcov/
 "unpack-kcov-src" -> "fetch-kcov-src";
 
 // TASK_NAME: unpack-make-src
