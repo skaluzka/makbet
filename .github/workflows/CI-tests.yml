@@ -45,6 +45,9 @@ jobs:
       - name: Check "tree" version...
         run: tree --version
 
+      - name: Check "dot" version...
+        run: dot -V
+
       - name: Check "GNU Make" version...
         run: make --version
 
