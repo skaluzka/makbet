@@ -162,7 +162,7 @@ The meanings of all parameters are:
             $(WORK_DIR)/git/git-2.34.1/ \
             $(WORK_DIR)/kcov/kcov-40/ \
             $(WORK_DIR)/make/make-4.3/ \
-            $(WORK_DIR)/python/Python-3.9.6/ \
+            $(WORK_DIR)/python/Python-3.10.1/ \
     ))
 
 **Example 3 - explanation:**
@@ -184,7 +184,7 @@ The meanings of all parameters are:
   - ``$(WORK_DIR)/git/git-2.34.1/``
   - ``$(WORK_DIR)/kcov/kcov-40/``
   - ``$(WORK_DIR)/make/make-4.3/``
-  - ``$(WORK_DIR)/python/Python-3.9.6/``
+  - ``$(WORK_DIR)/python/Python-3.10.1/``
 
 
 **Minimized forms - examples**

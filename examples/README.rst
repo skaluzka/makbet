@@ -195,7 +195,7 @@ where:
   previously downloaded sources.
 - ``lib/tasks/build-scripts/build-python`` - This **Bash** script is used
   by **two** ``build-python`` tasks (defined in **02.toolchain-simple** and
-  **03.toolchain-advanced** examples).  Its aim is to build **python 3.9.6**
+  **03.toolchain-advanced** examples).  Its aim is to build **python 3.10.1**
   from previously downloaded sources.
 
 |

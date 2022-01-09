@@ -80,8 +80,8 @@ $(eval $(call TASK_template, \
 	fetch-python-src, "Fetch python sources", \
 	prepare-workdir-structure, \
 	$(MAKBET_TASKS_DIR)/common/download-file, \
-		https://www.python.org/ftp/python/3.9.6/Python-3.9.6.tar.xz \
-		$(WORK_DIR)/python/Python-3.9.6.tar.xz \
+		https://www.python.org/ftp/python/3.10.1/Python-3.10.1.tar.xz \
+		$(WORK_DIR)/python/Python-3.10.1.tar.xz \
 ))
 
 $(eval $(call TASK_template, \
@@ -120,7 +120,7 @@ $(eval $(call TASK_template, \
 	unpack-python-src, "Unpack python sources", \
 	fetch-python-src, \
 	$(MAKBET_TASKS_DIR)/common/extract-txz-file, \
-		$(WORK_DIR)/python/Python-3.9.6.tar.xz \
+		$(WORK_DIR)/python/Python-3.10.1.tar.xz \
 		$(WORK_DIR)/python/ \
 ))
 
@@ -132,7 +132,7 @@ $(eval $(call TASK_template, \
 		$(WORK_DIR)/git/git-2.34.1/ \
 		$(WORK_DIR)/kcov/kcov-40/ \
 		$(WORK_DIR)/make/make-4.3/ \
-		$(WORK_DIR)/python/Python-3.9.6/ \
+		$(WORK_DIR)/python/Python-3.10.1/ \
 ))
 
 $(eval $(call TASK_template, \
@@ -167,7 +167,7 @@ $(eval $(call TASK_template, \
 	build-python, "Build python inside its source dir", \
 	build-make, \
 	$(MAKBET_PATH)/examples/lib/tasks/build-scripts/build-python, \
-		$(WORK_DIR)/python/Python-3.9.6/ \
+		$(WORK_DIR)/python/Python-3.10.1/ \
 ))
 
 $(eval $(call TASK_template, \
@@ -178,7 +178,7 @@ $(eval $(call TASK_template, \
 		$(WORK_DIR)/git/git-2.34.1/git \
 		$(WORK_DIR)/kcov/kcov-40/build/src/kcov \
 		$(WORK_DIR)/make/make-4.3/make \
-		$(WORK_DIR)/python/Python-3.9.6/python \
+		$(WORK_DIR)/python/Python-3.10.1/python \
 ))
 
 $(eval $(call TASK_template, \
@@ -217,7 +217,7 @@ $(eval $(call TASK_template, \
 	print-python-version, "Print version of python from source dir", \
 	build-python, \
 	$(MAKBET_TASKS_DIR)/common/exec-cmd, \
-		$(WORK_DIR)/python/Python-3.9.6/python \
+		$(WORK_DIR)/python/Python-3.10.1/python \
 		-V \
 ))
 
