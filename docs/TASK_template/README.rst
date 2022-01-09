@@ -135,8 +135,8 @@ The meanings of all parameters are:
         fetch-git-src, "Fetch git sources", \
         prepare-workdir-structure, \
         $(MAKBET_TASKS_DIR)/common/download-file, \
-            https://github.com/git/git/archive/v2.33.0.zip \
-            $(WORK_DIR)/git/v2.33.0.zip \
+            https://github.com/git/git/archive/v2.34.1.zip \
+            $(WORK_DIR)/git/v2.34.1.zip \
     ))
 
 **Example 2 - explanation:**
@@ -147,8 +147,8 @@ The meanings of all parameters are:
 - ``TASK_CMD``: ``$(MAKBET_TASKS_DIR)/common/download-file``
 - ``TASK_CMD_OPTS``:
 
-  - ``https://github.com/git/git/archive/v2.33.0.zip``
-  - ``$(WORK_DIR)/git/v2.33.0.zip``
+  - ``https://github.com/git/git/archive/v2.34.1.zip``
+  - ``$(WORK_DIR)/git/v2.34.1.zip``
 
 **Example 3:**
 
@@ -159,7 +159,7 @@ The meanings of all parameters are:
         unpack-doxygen-src unpack-git-src unpack-kcov-src unpack-make-src unpack-python-src, \
         $(MAKBET_TASKS_DIR)/common/check-dirs, \
             $(WORK_DIR)/doxygen/doxygen-Release_1_9_3/ \
-            $(WORK_DIR)/git/git-2.33.0/ \
+            $(WORK_DIR)/git/git-2.34.1/ \
             $(WORK_DIR)/kcov/kcov-40/ \
             $(WORK_DIR)/make/make-4.3/ \
             $(WORK_DIR)/python/Python-3.9.6/ \
@@ -181,7 +181,7 @@ The meanings of all parameters are:
 - ``TASK_CMD_OPTS``:
 
   - ``$(WORK_DIR)/doxygen/doxygen-Release_1_9_3/``
-  - ``$(WORK_DIR)/git/git-2.33.0/``
+  - ``$(WORK_DIR)/git/git-2.34.1/``
   - ``$(WORK_DIR)/kcov/kcov-40/``
   - ``$(WORK_DIR)/make/make-4.3/``
   - ``$(WORK_DIR)/python/Python-3.9.6/``
