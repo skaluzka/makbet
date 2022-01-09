@@ -65,6 +65,7 @@ Key features
 
 The **makbet's** key features are:
 
+- it's free and OSSW (see `License`_),
 - based on **GNU Make** tool and its features,
 - easily extensible,
 - built-in excellent support for parallelism (using **GNU Make's** internal
@@ -74,8 +75,8 @@ The **makbet's** key features are:
 - pure console tool - no GUI required for usage,
 - good and fast integration with other console tools,
 - fast and easy installation process,
-- unified naming scheme of all environment variables (every **makbet's**
-  environment variable has ``MAKBET_`` prefix),
+- unified naming scheme of all internal environment variables (every
+  environment variable defined/used by **makbet** has ``MAKBET_`` prefix),
 - unified syntax of all CLI options (every **makbet's** CLI option has
   ``MAKBET_`` prefix),
 - saving tasks' details in **key=value** ``*.cfg`` files for further
