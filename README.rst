@@ -103,7 +103,8 @@ The **makbet's** key features are:
 - follows so-called **semver** (`<https://semver.org>`_) versioning patterns
   (see also `Few words regarding backward compatibility`_ section),
 - hosted officially on `GitHub <https://github.com/skaluzka/makbet>`_ and
-  mirrored officially on `GitLab <https://gitlab.com/skaluzka/makbet>`_,
+  mirrored officially on `GitLab <https://gitlab.com/skaluzka/makbet>`_
+  (synced every hour),
 - minimal system requirements (see details in `System requirements`_ section).
 
 |
@@ -139,8 +140,8 @@ Installing **makbet** is easy and straightforward:
 
 - clone (or alternatively download + unpack) **makbet** project from
   `GitHub <https://github.com/skaluzka/makbet>`_ (if, for some reasons,
-  GitHub is not an option, **makbet's** official mirror on
-  `GitLab <https://gitlab.com/skaluzka/makbet>`_ can be used),
+  GitHub is not an option, you can use **makbet's** official mirror, synced
+  every hour, from `GitLab <https://gitlab.com/skaluzka/makbet>`_),
 - export ``MAKBET_PATH`` variable pointing to **makbet's** main directory
   (e.g.: ``export MAKBET_PATH=/home/user/makbet``),
 - change directory to main **makbet's** directory then run ``make`` command
