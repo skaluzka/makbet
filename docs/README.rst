@@ -35,11 +35,11 @@ The **makbet's** documentation directory structure is:
 ::
 
   $MAKBET_PATH/docs/
-  ├── Parallelism
-  │   └── README.rst
-  ├── TASK_template
-  │   └── README.rst
-  └── README.rst
+  ├──Parallelism
+  │  └──README.rst
+  ├──TASK_template
+  │  └──README.rst
+  └──README.rst
 
   2 directories, 3 files
 
