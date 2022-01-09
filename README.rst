@@ -16,6 +16,7 @@ Keep reading && have fun! :)
 
 - | `About`_
 - | `Key features`_
+- | `License`_
 - | `System requirements`_
 - | `Installing`_
 - | `Few words regarding backward compatibility`_
@@ -26,7 +27,6 @@ Keep reading && have fun! :)
 - | `Saving profiling results in CSV files`_
 - | `References`_
 - | `Contributing`_
-- | `License`_
 - | `Mission statement`_
 
 |
@@ -103,6 +103,15 @@ The **makbet's** key features are:
 - follows so-called **semver** (`<https://semver.org>`_) versioning patterns
   (see also `Few words regarding backward compatibility`_ section),
 - minimal system requirements (see details in `System requirements`_ section).
+
+|
+
+License
+-------
+
+The **makbet** is licensed under the `MIT <LICENSE>`_ license (check
+`here <https://choosealicense.com/licenses/mit>`_ to understand what
+does it mean).
 
 |
 
@@ -720,15 +729,6 @@ Pull requests are welcome! :)
 For more details about contributing rules please check
 `CONTRIBUTING.rst <CONTRIBUTING.rst>`_
 file.
-
-|
-
-License
--------
-
-The **makbet** is licensed under the `MIT <LICENSE>`_ license (check
-`here <https://choosealicense.com/licenses/mit>`_ to understand what
-does it mean).
 
 |
 
