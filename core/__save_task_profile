@@ -44,7 +44,7 @@ comm --nocheck-order "${1}" "${2}" \
     | grep -Pv "EVENT_TYPE" \
     | sed 's/^[ \t]*//' \
     > "${3}"
-echo "TASK_DURATION=${TASK_DURATION}" >> "${3}"
+echo "TASK_DURATION=\"${TASK_DURATION}\"" >> "${3}"
 
 # Print profiling results to the console.
 echo "Profiling results:"
