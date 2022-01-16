@@ -1,7 +1,7 @@
 # This is Makefile file for "03.toolchain-advanced" example scenario.
 
 #
-# Include mandatory makbet.mk file.
+# Include mandatory "$MAKBET_PATH/makbet.mk -> $MAKBET_PATH/Makefile" file.
 #
 ifndef MAKBET_PATH
   $(error [ERROR]: MAKBET_PATH is not defined)
