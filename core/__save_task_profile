@@ -61,10 +61,12 @@ echo "TASK_DURATION=\"${TASK_DURATION}\"" >> "${3}"
 #
 # Print profiling results to the console.
 #
-echo "Profiling results:"
-echo "T1 = ${T1}"
-echo "T2 = ${T2}"
-echo "T2 - T1 = ${TASK_DURATION}"
+printf "\
+Profiling results of \"%s\" task:
+T1: %ss
+T2: %ss
+T2 - T1: %s
+" "${TASK_NAME}" "${T1}" "${T2}" "${TASK_DURATION}"
 
 
 # EOF
