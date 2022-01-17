@@ -3,7 +3,7 @@ Welcome to the **makbet** project!
 |
 
 The **makbet** is a simple, and generic purpose, task executor
-for *NIX operating systems.
+for \*NIX operating systems.
 
 |
 
