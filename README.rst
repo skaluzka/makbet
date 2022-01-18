@@ -19,7 +19,7 @@ Keep reading && have fun! :)
 **Table of Contents**
 ---------------------
 
-- | `About`_
+- | `Rationale`_
 - | `Key features`_
 - | `License`_
 - | `System requirements`_
@@ -36,8 +36,8 @@ Keep reading && have fun! :)
 
 |
 
-About
------
+Rationale
+---------
 
 This project has been created for several reasons...
 

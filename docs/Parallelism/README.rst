@@ -407,10 +407,11 @@ and ``MAKBET_DOT=1``. For more details please check main
 |
 
 As already mentioned, in top-level `README <../../README.rst>`__ file
-(`About <../../README.rst#about>`_ section), one of main **makbet's** goal
-is to visualize complex flows for optimization purposes.  Running scenarios
-in **serial** and **parallel** mode is a good practice while searching
-the best and optimal tasks combination for big projects.
+(`Rationale <../../README.rst#rationale>`_ section), one of main
+**makbet's** goal is to visualize complex flows for optimization
+purposes.  Running scenarios in **serial** and **parallel** mode
+is a good practice while searching the best and optimal tasks
+combination for big projects.
 
 |
 
