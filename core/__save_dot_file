@@ -14,9 +14,12 @@ set -eu
 # shellcheck source=/dev/null
 . "${1}"
 
-# Create new *.dot file.
+# Create new, empty *.dot file.
 echo "" > "${2}"
 
+#
+# Add to file some task's details as a comments.
+#
 # shellcheck disable=SC2129
 echo "// TASK_NAME: ${TASK_NAME}" >> "${2}"
 echo "// TASK_ID: ${TASK_ID}" >> "${2}"
@@ -24,8 +27,8 @@ echo "// TASK_DEPS: ${TASK_DEPS}" >> "${2}"
 echo "// TASK_CMD: ${TASK_CMD}" >> "${2}"
 echo "// TASK_CMD_OPTS: ${TASK_CMD_OPTS}" >> "${2}"
 
-# Append information regarding node and its dependencies (if
-# there are any) to *.dot file created above.
+# Append information about node and its dependencies (if there
+# are any) to *.dot file created above.
 if [ -z "${TASK_DEPS}" ]
 then
     echo "\"${TASK_NAME}\";" >> "${2}"
