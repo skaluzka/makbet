@@ -13,11 +13,13 @@ set -eu
 # ${4} - TASK_CMD - Task command.
 # ${5} - TASK_CMD_OPTS - Input options for TASK_CMD above.
 
-echo "TASK_ID = ${1}"
-echo "TASK_NAME = ${2}"
-echo "TASK_DEPS = ${3:-"None"}"
-echo "TASK_CMD = ${4:-"None"}"
-echo "TASK_CMD_OPTS = ${5:-"None"}"
+printf "\
+TASK_ID: %s
+TASK_NAME: %s
+TASK_DEPS: %s
+TASK_CMD: %s
+TASK_CMD_OPTS: %s
+" "${1}" "${2}" "${3:-"None"}" "${4:-"None"}" "${5:-"None"}"
 
 
 # EOF
