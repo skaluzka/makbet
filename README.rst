@@ -467,10 +467,10 @@ execution command (by default ``MAKBET_PROF=0``) as in example below:
 
   2020-10-10 19:53:24.391 [INFO]: Task "@01-INIT" (TASK_ID: 1) terminated.
 
-  Profiling results:
-  T1 = 1602352404.373039503
-  T2 = 1602352404.391242333
-  T2 - T1 = 00h:00m:00s.018ms
+  Profiling results of "@01-INIT" task:
+  T1: 1602352404.373039503s
+  T2: 1602352404.391242333s
+  T2 - T1: 00h:00m:00s.018ms
 
   2020-10-10 19:53:24.490 [INFO]: Task "task-A" (TASK_ID: 2) started.
 
@@ -481,10 +481,10 @@ execution command (by default ``MAKBET_PROF=0``) as in example below:
 
   2020-10-10 19:53:25.524 [INFO]: Task "task-A" (TASK_ID: 2) terminated.
 
-  Profiling results:
-  T1 = 1602352404.490856272
-  T2 = 1602352405.524938384
-  T2 - T1 = 00h:00m:01s.034ms
+  Profiling results of "task-A" task:
+  T1: 1602352404.490856272s
+  T2: 1602352405.524938384s
+  T2 - T1: 00h:00m:01s.034ms
 
   2020-10-10 19:53:25.680 [INFO]: Task "task-B1" (TASK_ID: 3) started.
 
@@ -495,10 +495,10 @@ execution command (by default ``MAKBET_PROF=0``) as in example below:
 
   2020-10-10 19:53:35.143 [INFO]: Task "all" (TASK_ID: 13) terminated.
 
-  Profiling results:
-  T1 = 1602352415.123305878
-  T2 = 1602352415.143659530
-  T2 - T1 = 00h:00m:00s.020ms
+  Profiling results of "all" task:
+  T1: 1602352415.123305878s
+  T2: 1602352415.143659530s
+  T2 - T1: 00h:00m:00s.020ms
   [user@localhost 01.dummy]$
 
 **makbet** measures the duration of tasks with **milliseconds** (ms) accuracy.
