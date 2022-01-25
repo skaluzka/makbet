@@ -2,8 +2,8 @@ Welcome to the **makbet** project!
 
 |
 
-The **makbet** is a simple, and generic purpose, task executor
-for \*NIX operating systems.
+The **makbet** is a simple, and generic purpose, task execution
+engine for \*NIX operating systems.
 
 |
 
