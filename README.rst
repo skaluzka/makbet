@@ -96,12 +96,12 @@ The **makbet's** key features are:
 - widely and richly commented,
 - contains few useful examples, including small built-in tasks library (set
   of several, simple **Bash** scripts),
-- based on easy development model (all features are being developed on a
-  ``master`` branch, while all releases are made from dedicated
-  ``stable/vMAJOR.minor.x`` branches),
 - it's developed according to good SW development practices,
 - it's easy to debug (all debugging ways and techniques for makefiles
   and shell scripts can be used),
+- based on branch development model (all features are being developed
+  on a ``master`` branch, while all releases are made from dedicated
+  ``stable/vMAJOR.minor.x`` branches),
 - tested `continuously <https://github.com/skaluzka/makbet/actions>`_ (for
   every commit and pull request) on ``master`` branch and all stable
   branches,
