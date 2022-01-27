@@ -117,7 +117,7 @@ The **makbet's** key features are:
 License
 -------
 
-The **makbet** is licensed under the `MIT <LICENSE>`_ license (check
+The **makbet** project is licensed under the `MIT <LICENSE>`_ license (check
 `here <https://choosealicense.com/licenses/mit>`_ to understand what
 does it mean).
 
