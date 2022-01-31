@@ -4,7 +4,7 @@ digraph {
 // Generation date: Tue Dec  8 09:14:27 PM CET 2020
 // Scenario file: /home/user/makbet/examples/04.ping-dns-servers/Makefile
 
-// Define graph title.
+// Define graph title (an absolute path to scenario file) at the top.
 labelloc="t";
 label="Scenario file: /home/user/makbet/examples/04.ping-dns-servers/Makefile\n\n\n\n";
 

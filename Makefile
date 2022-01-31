@@ -355,7 +355,7 @@ endef
 	@echo "// Generation date: $$(date)"
 	@echo "// Scenario file: $(MAKBET_SCENARIO_PATH)"
 	@echo
-	@echo "// Define graph title."
+	@echo "// Define graph title (an absolute path to scenario file) at the top."
 	@echo "labelloc=\"t\";"
 	@echo "label=\"Scenario file: $(MAKBET_SCENARIO_PATH)\\n\\n\\n\\n\";"
 	@echo
