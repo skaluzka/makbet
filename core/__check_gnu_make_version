@@ -28,10 +28,16 @@ else
     then
         exit 0
     else
-        echo "[INFO]: Checking required GNU Make version..."
-        echo "[INFO]: Required GNU Make version: ${GNU_MAKE_REQUIRED_VER}"
-        echo "[INFO]: Found: ${GNU_MAKE_VER}"
-        echo "[ERROR]: Please update GNU Make!"
+        printf "\n[INFO]: Checking required GNU Make version...
+[INFO]: Required GNU Make version: %s
+[INFO]: Found: %s
+[INFO]: make -> %s
+
+[ERROR]: Please update GNU Make!!!\n
+" \
+"${GNU_MAKE_REQUIRED_VER}" \
+"${GNU_MAKE_VER}" \
+"$(which make)"
         exit 1
     fi
 fi
