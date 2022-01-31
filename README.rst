@@ -135,15 +135,15 @@ Basic system requirements are:
 This is enough for tasks' running, tasks' profiling and for generating
 corresponding DOT files (see `DOT output`_ section).
 
-However, DOT files can be converted, in general, to many different
-output formats, like PDF, PNG, SVG... For such conversion additional
-tooling is required.  It is recommended to use
-`graphviz <https://graphviz.gitlab.io/>`_ which has been successfully
-tested with **makbet** (please read `PNG output`_ section).
+However the DOT files can be converted, in general, to many different
+output formats, like PDF, PNG, SVG...
+For such conversion additional tooling is required.  It is recommended
+to use `graphviz <https://graphviz.gitlab.io/>`_ which has been successfully
+tested with **makbet** (please check `PNG output`_ section).
 
 All provided examples were tested with **GNU Make 4.3** and **Bash 5.0.16**.
 
-For DOT -> PNG conversion, **graphviz 2.50.0** was used.
+For DOT -> PNG conversion, here **graphviz 2.50.0** package was used.
 
 |
 
