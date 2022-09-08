@@ -1,4 +1,4 @@
-# This file is a part of makbet - mak(efile) b(ased) e(xtraordinary) (t)ool.
+# This file is a part of makbet - mak(efile) b(ased) e(xtraordinary) t(ool).
 # Do not change it, unless you know what you are doing.
 #
 # "What's done, is done." - William Shakespeare, Macbeth.
